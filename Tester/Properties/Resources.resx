@@ -118,39 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Frame 1 (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame 1 (5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Frame 1 (9)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame 1 (9).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Frame 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Frame 1 (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame 1 (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Frame 1 (7)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame 1 (7).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Frame 1 (11)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame 1 (11).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Frame 1 (6)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame 1 (6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Frame 3 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame 3 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Frame 1 (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame 1 (4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Frame 1 (10)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame 1 (10).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Frame 1 (8)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame 1 (8).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="OpenSans_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Fonts\OpenSans-Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

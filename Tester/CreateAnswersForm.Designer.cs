@@ -99,7 +99,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = global::Tester.Properties.Resources.Frame_1__11_;
             this.button6.Location = new System.Drawing.Point(283, 257);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(477, 23);

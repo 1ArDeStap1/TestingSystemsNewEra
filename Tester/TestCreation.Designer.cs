@@ -115,7 +115,6 @@
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::Tester.Properties.Resources.Frame_1__6_;
             this.button4.Location = new System.Drawing.Point(51, 533);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(355, 32);

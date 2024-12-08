@@ -13,7 +13,7 @@ namespace Tester
     public partial class AdminForm : Form
     {
 
-        
+
         public AdminForm()
         {
             InitializeComponent();
@@ -35,14 +35,14 @@ namespace Tester
             questionTableAdapter1.Fill(this.testerDataSet.question);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet.test". При необходимости она может быть перемещена или удалена.
             testTableAdapter.Fill(this.testerDataSet.test);
-            
+
 
             question_TypesTableAdapter1.Fill(this.testerDataSet.Question_Types);
 
 
         }
 
-        private void InsertedMessage ()
+        private void InsertedMessage()
         {
             MessageBox.Show("Запись успешно добавлена!");
         }
@@ -76,15 +76,15 @@ namespace Tester
             testTableAdapter.Fill(testerDataSet.test);
             UpdatedMessage();
 
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             try
             {
-                    questionTableAdapter1.Update(textBox3.Text, textBox4.Text, imageToByteArray(pictureBox1.Image), Convert.ToInt32(Grid.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView7.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView8.SelectedRows[0].Cells[0].Value), Convert.ToInt32(((Button)sender).Tag), Convert.ToInt32(Grid.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView7.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView8.SelectedRows[0].Cells[0].Value));
-                    questionTableAdapter1.Fill(testerDataSet.question);
+                questionTableAdapter1.Update(textBox3.Text, textBox4.Text, imageToByteArray(pictureBox1.Image), Convert.ToInt32(Grid.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView7.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView8.SelectedRows[0].Cells[0].Value), Convert.ToInt32(((Button)sender).Tag), Convert.ToInt32(Grid.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView7.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView8.SelectedRows[0].Cells[0].Value));
+                questionTableAdapter1.Fill(testerDataSet.question);
 
 
             }
@@ -105,7 +105,8 @@ namespace Tester
                     testTableAdapter.Fill(testerDataSet.test);
                 }
             }
-            catch {
+            catch
+            {
 
                 MessageBox.Show("Возникла неизвестная ошибка");
             }
@@ -135,11 +136,11 @@ namespace Tester
         {
             try
             {
-                
-                    //questionTableAdapter.Insert(textBox8.Text, textBox9.Text, imageToByteArray(pictureBox2.Image), Convert.ToInt32(Grid.SelectedRows[0].Cells[0].Value), opk);
-                    questionTableAdapter1.Fill(testerDataSet.question);
-                    InsertedMessage();
-                
+
+                //questionTableAdapter.Insert(textBox8.Text, textBox9.Text, imageToByteArray(pictureBox2.Image), Convert.ToInt32(Grid.SelectedRows[0].Cells[0].Value), opk);
+                questionTableAdapter1.Fill(testerDataSet.question);
+                InsertedMessage();
+
                 /*
                     questionTableAdapter.Insert(textBox8.Text, textBox9.Text, imageToByteArray(pictureBox2.Image), Convert.ToInt32(Grid.SelectedRows[0].Cells[0].Value));
                     questionTableAdapter.Fill(testerDataSet.question);
@@ -171,12 +172,12 @@ namespace Tester
             Show();
         }
 
-       /* private void button6_Click(object sender, EventArgs e)
-        {
-            //answerTableAdapter.Insert(textBox10.Text, checkBox2.Checked, Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value));
-            answerTableAdapter.Fill(testerDataSet.answer);
-            InsertedMessage();
-        }*/
+        /* private void button6_Click(object sender, EventArgs e)
+         {
+             //answerTableAdapter.Insert(textBox10.Text, checkBox2.Checked, Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value));
+             answerTableAdapter.Fill(testerDataSet.answer);
+             InsertedMessage();
+         }*/
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -220,12 +221,12 @@ namespace Tester
 
         private void dataGridView3_SelectionChanged(object sender, EventArgs e)
         {
-            if ((dataGridView3.SelectedRows.Count  > 0) && (dataGridView6.Rows.Count > 0))
+            if ((dataGridView3.SelectedRows.Count > 0) && (dataGridView6.Rows.Count > 0))
             {
                 string filt = "";
                 for (int i = 0; i < dataGridView6.Rows.Count; i++)
                 {
-                    filt += "id = " + dataGridView6.Rows[i].Cells[2].Value+" OR ";
+                    filt += "id = " + dataGridView6.Rows[i].Cells[2].Value + " OR ";
                 }
                 if (filt.EndsWith("OR "))
                 {
@@ -234,7 +235,8 @@ namespace Tester
                 fKanswerquestionBindingSource1.Filter = filt;
                 Debug.WriteLine(filt);
                 fKanswerquestionBindingSource1.ResetBindings(true);
-            } else
+            }
+            else
             {
                 fKanswerquestionBindingSource1.Filter = "id = 0";
             }
@@ -252,7 +254,7 @@ namespace Tester
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-            
+
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -323,9 +325,9 @@ namespace Tester
             FolderBrowserDialog FBD = new FolderBrowserDialog();
             if (FBD.ShowDialog() == DialogResult.OK)
             {
-                wb.SaveAs(FBD.SelectedPath+"\\WorksheetName.xlsx");
+                wb.SaveAs(FBD.SelectedPath + "\\WorksheetName.xlsx");
             }
-            
+
         }
 
         private void AdminForm_Activated(object sender, EventArgs e)

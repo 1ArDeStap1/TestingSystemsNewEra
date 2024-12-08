@@ -67,7 +67,7 @@ namespace Tester
                 SqlConnection conn = new SqlConnection(Properties.Settings.Default.testerConnectionString);
                 conn.Open();
                 SqlCommand checkLogin = conn.CreateCommand();
-                checkLogin.CommandText = "SELECT id FROM users WHERE CONVERT(VARCHAR, login) = '" + customTextBox2.TextInput + "' AND CONVERT(VARCHAR, password) = '" + customTextBox1.TextInput + "'";
+                checkLogin.CommandText = "SELECT id FROM users WHERE CONVERT(VARCHAR, login) = '" + textBox1.TextInput + "' AND CONVERT(VARCHAR, password) = '" + textBox2.TextInput + "'";
                 authed = Convert.ToInt32(checkLogin.ExecuteScalar());
                 conn.Close();
             }
@@ -75,7 +75,7 @@ namespace Tester
             {
 
             }
-            if (customTextBox2.TextInput == Properties.Settings.Default.Логин_администратора && customTextBox1.TextInput == Properties.Settings.Default.Пароль_администратора)
+            if (textBox1.TextInput == Properties.Settings.Default.Логин_администратора && textBox2.TextInput == Properties.Settings.Default.Пароль_администратора)
             {
                 AdminForm adminForm = new AdminForm();
                 Hide();
@@ -117,9 +117,12 @@ namespace Tester
 
         private void AuthForm_Load(object sender, EventArgs e)
         {
-            formsStyle.Apply();
+            formsStyle1.Apply();
         }
 
+        private void textBox2_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
