@@ -30,32 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuthForm));
-            this.formsStyle1 = new Tester.FormsStyle(this.components);
-            this.textBox1 = new Tester.CustomStyles.CustomTextBox();
-            this.textBox2 = new Tester.CustomStyles.CustomTextBox();
             this.Войти = new Tester.CustomButton();
+            this.textBox2 = new Tester.CustomStyles.CustomTextBox();
+            this.textBox1 = new Tester.CustomStyles.CustomTextBox();
+            this.formsStyle1 = new Tester.FormsStyle(this.components);
             this.SuspendLayout();
             // 
-            // formsStyle1
+            // Войти
             // 
-            this.formsStyle1.form = this;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderColor = System.Drawing.Color.DarkBlue;
-            this.textBox1.BorderColorNotActive = System.Drawing.Color.DarkGray;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 11.5F);
-            this.textBox1.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(12, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(476, 48);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextInput = "";
-            this.textBox1.TextPreview = "Логин";
-            this.textBox1.UseSystemPasswordChars = false;
-            this.textBox1.VerticalOffset = 10;
+            this.Войти.BackColor = System.Drawing.Color.DarkBlue;
+            this.Войти.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Войти.ForeColor = System.Drawing.Color.Chartreuse;
+            this.Войти.Location = new System.Drawing.Point(282, 198);
+            this.Войти.Name = "Войти";
+            this.Войти.RoundingEnabled = true;
+            this.Войти.RoundingPercent = 30;
+            this.Войти.Size = new System.Drawing.Size(206, 52);
+            this.Войти.TabIndex = 2;
+            this.Войти.Text = "Войти";
+            this.Войти.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox2
             // 
@@ -75,19 +68,26 @@
             this.textBox2.VerticalOffset = 20;
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             // 
-            // Войти
+            // textBox1
             // 
-            this.Войти.BackColor = System.Drawing.Color.DarkBlue;
-            this.Войти.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Войти.ForeColor = System.Drawing.Color.Chartreuse;
-            this.Войти.Location = new System.Drawing.Point(282, 198);
-            this.Войти.Name = "Войти";
-            this.Войти.RoundingEnabled = true;
-            this.Войти.RoundingPercent = 30;
-            this.Войти.Size = new System.Drawing.Size(206, 52);
-            this.Войти.TabIndex = 2;
-            this.Войти.Text = "Войти";
-            this.Войти.Click += new System.EventHandler(this.button1_Click);
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderColor = System.Drawing.Color.DarkBlue;
+            this.textBox1.BorderColorNotActive = System.Drawing.Color.DarkGray;
+            this.textBox1.Font = new System.Drawing.Font("Arial", 11.5F);
+            this.textBox1.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.textBox1.ForeColor = System.Drawing.Color.Black;
+            this.textBox1.Location = new System.Drawing.Point(12, 21);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(476, 48);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.TextInput = "";
+            this.textBox1.TextPreview = "Логин";
+            this.textBox1.UseSystemPasswordChars = false;
+            this.textBox1.VerticalOffset = 10;
+            // 
+            // formsStyle1
+            // 
+            this.formsStyle1.form = this;
             // 
             // AuthForm
             // 

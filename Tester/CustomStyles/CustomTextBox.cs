@@ -45,13 +45,6 @@ namespace Tester.CustomStyles
             set => tbInput.UseSystemPasswordChar = value;
         }
 
-       public int verticalOffset
-        {
-            get => VerticalOffset;
-            set {
-                VerticalOffset = value;
-            }
-        }
 
         [Browsable(false)]
         public new string Text { get; set; }

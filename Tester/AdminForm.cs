@@ -72,7 +72,7 @@ namespace Tester
 
         private void button1_Click(object sender, EventArgs e)
         {
-            testTableAdapter.Update(textBox1.TextInput, textBox2.Text, Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(((Button)sender).Tag), Convert.ToInt32(((Button)sender).Tag));
+            testTableAdapter.Update(textBox1.TextInput, textBox2.TextInput, Convert.ToInt32(numericUpDown1.TextInput), Convert.ToInt32(((Button)sender).Tag), Convert.ToInt32(((Button)sender).Tag));
             testTableAdapter.Fill(testerDataSet.test);
             UpdatedMessage();
 
