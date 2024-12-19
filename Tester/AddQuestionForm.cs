@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tester.AnimationClasses;
 using Tester.testerDataSetTableAdapters;
 
 namespace Tester
@@ -24,6 +25,7 @@ namespace Tester
         public AddQuestionForm()
         {
             InitializeComponent();
+            Animator.Start();
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
@@ -48,7 +50,7 @@ namespace Tester
                     MessageBox.Show("Вы не выбрали ни одной компетенции");
                     return;
                 }
-                else if (textBox8.Text == "")
+                else if (textBox8.TextInput == "")
                 {
                     MessageBox.Show("Не все поля заполнены");
                     return;
@@ -60,7 +62,7 @@ namespace Tester
             }
 
 
-            questionTableAdapter.Insert(textBox8.Text, textBox9.Text, imageToByteArray(pictureBox2.Image), adminForm.testTableAdapter.GetData()[LastTest].id, Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value));
+            questionTableAdapter.Insert(textBox8.TextInput, textBox9.TextInput, imageToByteArray(pictureBox2.Image), adminForm.testTableAdapter.GetData()[LastTest].id, Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value));
 
             this.questionTableAdapter.Fill(this.testerDataSet1.question);
 
@@ -78,6 +80,7 @@ namespace Tester
         private void AddQuestionForm_Load(object sender, EventArgs e)
         {
 
+            formsStyle1.Apply();
             // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet1.Question_Types". При необходимости она может быть перемещена или удалена.
             this.question_TypesTableAdapter.Fill(this.testerDataSet1.Question_Types);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet1.question". При необходимости она может быть перемещена или удалена.
@@ -106,7 +109,7 @@ namespace Tester
 
         private void button1_Click(object sender, EventArgs e)
         {
-            opkTableAdapter1.Insert(textBox1.Text);
+            opkTableAdapter1.Insert(textBox1.TextInput);
             opkTableAdapter1.Update(testerDataSet1.OPK);
             opkTableAdapter1.Fill(testerDataSet1.OPK);
         }
@@ -187,6 +190,16 @@ namespace Tester
                     break;
                 }
             }
+        }
+
+        private void textBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

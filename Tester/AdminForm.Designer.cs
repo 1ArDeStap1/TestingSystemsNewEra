@@ -382,7 +382,7 @@ namespace Tester
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(803, 595);
+            this.tabControl1.Size = new System.Drawing.Size(1094, 595);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -501,7 +501,7 @@ namespace Tester
             this.customButton1.Margin = new System.Windows.Forms.Padding(4);
             this.customButton1.Name = "customButton1";
             this.customButton1.RoundingEnabled = true;
-            this.customButton1.RoundingPercent = 75;
+            this.customButton1.RoundingPercent = 100;
             this.customButton1.Size = new System.Drawing.Size(53, 53);
             this.customButton1.TabIndex = 10;
             this.customButton1.Text = "+";
@@ -1000,16 +1000,16 @@ namespace Tester
             this.tabPage11.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage11.Size = new System.Drawing.Size(795, 567);
+            this.tabPage11.Size = new System.Drawing.Size(1086, 567);
             this.tabPage11.TabIndex = 2;
             this.tabPage11.Text = "Результаты";
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(412, 218);
+            this.btnExport.Location = new System.Drawing.Point(878, 503);
             this.btnExport.Margin = new System.Windows.Forms.Padding(4);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(342, 215);
+            this.btnExport.Size = new System.Drawing.Size(200, 56);
             this.btnExport.TabIndex = 11;
             this.btnExport.Text = "EXPORT To EXCEL";
             this.btnExport.UseVisualStyleBackColor = true;
@@ -1292,7 +1292,7 @@ namespace Tester
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
-            this.ClientSize = new System.Drawing.Size(1046, 654);
+            this.ClientSize = new System.Drawing.Size(1335, 654);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.Grid);
             this.Controls.Add(this.ToolStripMenu);

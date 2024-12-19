@@ -28,130 +28,122 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label14 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestCreation));
             this.label8 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.formsStyle1 = new Tester.FormsStyle(this.components);
+            this.textBox6 = new Tester.CustomStyles.CustomTextBox();
+            this.numericUpDown2 = new Tester.CustomStyles.CustomTextBox();
+            this.textBox7 = new Tester.CustomStyles.CustomTextBox();
+            this.customButton1 = new Tester.CustomButton();
             this.SuspendLayout();
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label14.Location = new System.Drawing.Point(48, 72);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(358, 13);
-            this.label14.TabIndex = 18;
-            this.label14.Text = "Максимальная длительность теста, в секундах (0 - без ограничения)";
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDown2.BackColor = System.Drawing.SystemColors.Control;
-            this.numericUpDown2.Location = new System.Drawing.Point(51, 88);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(67, 20);
-            this.numericUpDown2.TabIndex = 17;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(51, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Название теста";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox6.Location = new System.Drawing.Point(51, 39);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(289, 20);
-            this.textBox6.TabIndex = 12;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox7.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.ForeColor = System.Drawing.Color.Transparent;
-            this.textBox7.Location = new System.Drawing.Point(51, 138);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(472, 353);
-            this.textBox7.TabIndex = 14;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label8.Location = new System.Drawing.Point(48, 122);
+            this.label8.Location = new System.Drawing.Point(230, 208);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 13);
             this.label8.TabIndex = 15;
             this.label8.Text = "Описание теста";
             // 
-            // button4
+            // formsStyle1
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(51, 533);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(355, 32);
-            this.button4.TabIndex = 16;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.formsStyle1.form = this;
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.Color.White;
+            this.textBox6.BorderColor = System.Drawing.Color.DarkBlue;
+            this.textBox6.BorderColorNotActive = System.Drawing.Color.DarkGray;
+            this.textBox6.Font = new System.Drawing.Font("Arial", 11.5F);
+            this.textBox6.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.textBox6.ForeColor = System.Drawing.Color.Black;
+            this.textBox6.Location = new System.Drawing.Point(25, 31);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(509, 53);
+            this.textBox6.TabIndex = 19;
+            this.textBox6.TextInput = "";
+            this.textBox6.TextPreview = "Название теста";
+            this.textBox6.UseSystemPasswordChars = false;
+            this.textBox6.VerticalOffset = 8;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.BackColor = System.Drawing.Color.White;
+            this.numericUpDown2.BorderColor = System.Drawing.Color.DarkBlue;
+            this.numericUpDown2.BorderColorNotActive = System.Drawing.Color.DarkGray;
+            this.numericUpDown2.Font = new System.Drawing.Font("Arial", 11.5F);
+            this.numericUpDown2.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.numericUpDown2.ForeColor = System.Drawing.Color.Black;
+            this.numericUpDown2.Location = new System.Drawing.Point(25, 99);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(180, 53);
+            this.numericUpDown2.TabIndex = 20;
+            this.numericUpDown2.TextInput = "";
+            this.numericUpDown2.TextPreview = "Длительность теста";
+            this.numericUpDown2.UseSystemPasswordChars = false;
+            this.numericUpDown2.VerticalOffset = 8;
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.Color.White;
+            this.textBox7.BorderColor = System.Drawing.Color.DarkBlue;
+            this.textBox7.BorderColorNotActive = System.Drawing.Color.DarkGray;
+            this.textBox7.Font = new System.Drawing.Font("Arial", 11.5F);
+            this.textBox7.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.textBox7.ForeColor = System.Drawing.Color.Black;
+            this.textBox7.Location = new System.Drawing.Point(25, 172);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(509, 288);
+            this.textBox7.TabIndex = 21;
+            this.textBox7.TextInput = "";
+            this.textBox7.TextPreview = "Описание теста";
+            this.textBox7.UseSystemPasswordChars = false;
+            this.textBox7.VerticalOffset = 8;
+            // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.Color.DarkBlue;
+            this.customButton1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.customButton1.ForeColor = System.Drawing.Color.Chartreuse;
+            this.customButton1.Location = new System.Drawing.Point(25, 488);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.RoundingEnabled = true;
+            this.customButton1.RoundingPercent = 30;
+            this.customButton1.Size = new System.Drawing.Size(509, 76);
+            this.customButton1.TabIndex = 22;
+            this.customButton1.Text = "Добавить тест";
+            this.customButton1.Click += new System.EventHandler(this.button4_Click);
             // 
             // TestCreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 601);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox6);
+            this.BackColor = System.Drawing.Color.Honeydew;
+            this.ClientSize = new System.Drawing.Size(562, 601);
+            this.Controls.Add(this.customButton1);
             this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.button4);
+            this.ForeColor = System.Drawing.Color.DarkBlue;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TestCreation";
-            this.Text = "TestCreation";
+            this.Text = "Создание теста";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button4;
+        private FormsStyle formsStyle1;
+        private CustomStyles.CustomTextBox textBox6;
+        private CustomButton customButton1;
+        private CustomStyles.CustomTextBox textBox7;
+        private CustomStyles.CustomTextBox numericUpDown2;
     }
 }
