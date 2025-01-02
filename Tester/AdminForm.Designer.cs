@@ -216,7 +216,7 @@ namespace Tester
             // 
             this.testBindingSource.DataMember = "test";
             this.testBindingSource.DataSource = this.testerDataSet;
-            this.testBindingSource.CurrentChanged += new System.EventHandler(this.testBindingSource_CurrentChanged);
+            //this.testBindingSource.CurrentChanged += new System.EventHandler(this.testBindingSource_CurrentChanged);
             // 
             // testerDataSet
             // 
@@ -247,8 +247,8 @@ namespace Tester
             // 
             this.fKresultvariantresultBindingSource1.DataMember = "FK_result_variant_result";
             this.fKresultvariantresultBindingSource1.DataSource = this.fKresulttestBindingSource;
-            this.fKresultvariantresultBindingSource1.CurrentChanged += new System.EventHandler(this.fKresultvariantresultBindingSource1_CurrentChanged);
-            this.fKresultvariantresultBindingSource1.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.fKresultvariantresultBindingSource1_ListChanged);
+            //this.fKresultvariantresultBindingSource1.CurrentChanged += new System.EventHandler(this.fKresultvariantresultBindingSource1_CurrentChanged);
+            //this.fKresultvariantresultBindingSource1.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.fKresultvariantresultBindingSource1_ListChanged);
             // 
             // fKresulttestBindingSource
             // 
@@ -298,7 +298,7 @@ namespace Tester
             this.Grid.Size = new System.Drawing.Size(211, 591);
             this.Grid.TabIndex = 9;
             this.Grid.TabStop = false;
-            this.Grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellContentClick);
+          //  this.Grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -475,7 +475,7 @@ namespace Tester
             this.textBox1.TextPreview = "Название Теста";
             this.textBox1.UseSystemPasswordChars = false;
             this.textBox1.VerticalOffset = 0;
-            this.textBox1.Click += new System.EventHandler(this.TextBox1_Click);
+            //this.textBox1.Click += new System.EventHandler(this.TextBox1_Click);
             // 
             // customButton2
             // 
@@ -607,7 +607,7 @@ namespace Tester
             this.dataGridView1.Size = new System.Drawing.Size(223, 600);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.TabStop = false;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            //this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -873,7 +873,7 @@ namespace Tester
             this.dataGridView2.Size = new System.Drawing.Size(838, 450);
             this.dataGridView2.TabIndex = 12;
             this.dataGridView2.TabStop = false;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+           // this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn2
             // 
