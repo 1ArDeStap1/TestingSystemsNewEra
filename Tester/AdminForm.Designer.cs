@@ -41,6 +41,8 @@ namespace Tester
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             this.ToolStripMenu = new System.Windows.Forms.MenuStrip();
+            this.Группы = new System.Windows.Forms.ToolStripMenuItem();
+            this.Пользователи = new System.Windows.Forms.ToolStripMenuItem();
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.группыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -135,8 +137,6 @@ namespace Tester
             this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.formsStyle1 = new Tester.FormsStyle(this.components);
-            this.Группы = new System.Windows.Forms.ToolStripMenuItem();
-            this.Пользователи = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testerDataSet)).BeginInit();
@@ -192,6 +192,20 @@ namespace Tester
             this.ToolStripMenu.TabIndex = 0;
             this.ToolStripMenu.Text = "Группы";
             // 
+            // Группы
+            // 
+            this.Группы.Name = "Группы";
+            this.Группы.Size = new System.Drawing.Size(61, 20);
+            this.Группы.Text = "Группы";
+            this.Группы.Click += new System.EventHandler(this.группыToolStripMenuItem_Click);
+            // 
+            // Пользователи
+            // 
+            this.Пользователи.Name = "Пользователи";
+            this.Пользователи.Size = new System.Drawing.Size(97, 20);
+            this.Пользователи.Text = "Пользователи";
+            this.Пользователи.Click += new System.EventHandler(this.пользователиToolStripMenuItem_Click);
+            // 
             // пользователиToolStripMenuItem
             // 
             this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
@@ -216,7 +230,6 @@ namespace Tester
             // 
             this.testBindingSource.DataMember = "test";
             this.testBindingSource.DataSource = this.testerDataSet;
-            //this.testBindingSource.CurrentChanged += new System.EventHandler(this.testBindingSource_CurrentChanged);
             // 
             // testerDataSet
             // 
@@ -247,8 +260,6 @@ namespace Tester
             // 
             this.fKresultvariantresultBindingSource1.DataMember = "FK_result_variant_result";
             this.fKresultvariantresultBindingSource1.DataSource = this.fKresulttestBindingSource;
-            //this.fKresultvariantresultBindingSource1.CurrentChanged += new System.EventHandler(this.fKresultvariantresultBindingSource1_CurrentChanged);
-            //this.fKresultvariantresultBindingSource1.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.fKresultvariantresultBindingSource1_ListChanged);
             // 
             // fKresulttestBindingSource
             // 
@@ -298,7 +309,6 @@ namespace Tester
             this.Grid.Size = new System.Drawing.Size(211, 591);
             this.Grid.TabIndex = 9;
             this.Grid.TabStop = false;
-          //  this.Grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -393,7 +403,7 @@ namespace Tester
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(795, 567);
+            this.tabPage1.Size = new System.Drawing.Size(1086, 567);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Информация о тесте";
             // 
@@ -405,7 +415,7 @@ namespace Tester
             this.tabControl3.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(787, 559);
+            this.tabControl3.Size = new System.Drawing.Size(1078, 559);
             this.tabControl3.TabIndex = 7;
             // 
             // tabPage3
@@ -421,7 +431,7 @@ namespace Tester
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Size = new System.Drawing.Size(779, 531);
+            this.tabPage3.Size = new System.Drawing.Size(1070, 531);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Изменение";
             // 
@@ -430,6 +440,7 @@ namespace Tester
             this.textBox2.BackColor = System.Drawing.Color.White;
             this.textBox2.BorderColor = System.Drawing.Color.DarkBlue;
             this.textBox2.BorderColorNotActive = System.Drawing.Color.DarkGray;
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "description", true));
             this.textBox2.Font = new System.Drawing.Font("Arial", 11.5F);
             this.textBox2.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
             this.textBox2.ForeColor = System.Drawing.Color.Black;
@@ -437,7 +448,7 @@ namespace Tester
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(762, 265);
             this.textBox2.TabIndex = 14;
-            this.textBox2.TextInput = "";
+            this.textBox2.Text = "";
             this.textBox2.TextPreview = "Описание теста";
             this.textBox2.UseSystemPasswordChars = false;
             this.textBox2.VerticalOffset = 100;
@@ -447,6 +458,7 @@ namespace Tester
             this.numericUpDown1.BackColor = System.Drawing.Color.White;
             this.numericUpDown1.BorderColor = System.Drawing.Color.DarkBlue;
             this.numericUpDown1.BorderColorNotActive = System.Drawing.Color.DarkGray;
+            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "time", true));
             this.numericUpDown1.Font = new System.Drawing.Font("Arial", 11.5F);
             this.numericUpDown1.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
             this.numericUpDown1.ForeColor = System.Drawing.Color.Black;
@@ -454,7 +466,7 @@ namespace Tester
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(275, 52);
             this.numericUpDown1.TabIndex = 13;
-            this.numericUpDown1.TextInput = "";
+            this.numericUpDown1.Text= "";
             this.numericUpDown1.TextPreview = "Время прохождения теста";
             this.numericUpDown1.UseSystemPasswordChars = false;
             this.numericUpDown1.VerticalOffset = 100;
@@ -464,6 +476,7 @@ namespace Tester
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.BorderColor = System.Drawing.Color.DarkBlue;
             this.textBox1.BorderColorNotActive = System.Drawing.Color.DarkGray;
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "name", true));
             this.textBox1.Font = new System.Drawing.Font("Arial", 11.5F);
             this.textBox1.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
             this.textBox1.ForeColor = System.Drawing.Color.Black;
@@ -471,11 +484,10 @@ namespace Tester
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(702, 54);
             this.textBox1.TabIndex = 12;
-            this.textBox1.TextInput = "";
+            this.textBox1.Text = "";
             this.textBox1.TextPreview = "Название Теста";
             this.textBox1.UseSystemPasswordChars = false;
             this.textBox1.VerticalOffset = 0;
-            //this.textBox1.Click += new System.EventHandler(this.TextBox1_Click);
             // 
             // customButton2
             // 
@@ -513,7 +525,7 @@ namespace Tester
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.testBindingSource, "id", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.linkLabel1.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel1.Location = new System.Drawing.Point(40, 480);
+            this.linkLabel1.Location = new System.Drawing.Point(40, 484);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(80, 15);
@@ -532,7 +544,7 @@ namespace Tester
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(795, 567);
+            this.tabPage2.Size = new System.Drawing.Size(1086, 567);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Вопросы";
             // 
@@ -607,7 +619,6 @@ namespace Tester
             this.dataGridView1.Size = new System.Drawing.Size(223, 600);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.TabStop = false;
-            //this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -724,7 +735,7 @@ namespace Tester
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.fKquestiontestBindingSource, "id", true));
             this.linkLabel2.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel2.Location = new System.Drawing.Point(7, 504);
+            this.linkLabel2.Location = new System.Drawing.Point(7, 508);
             this.linkLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(97, 15);
@@ -745,7 +756,7 @@ namespace Tester
             this.pictureBox1.Location = new System.Drawing.Point(7, 67);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(561, 334);
+            this.pictureBox1.Size = new System.Drawing.Size(561, 338);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
@@ -760,7 +771,7 @@ namespace Tester
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.Lavender;
-            this.button2.Location = new System.Drawing.Point(118, 498);
+            this.button2.Location = new System.Drawing.Point(118, 502);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(695, 26);
@@ -796,7 +807,7 @@ namespace Tester
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label5.Location = new System.Drawing.Point(7, 406);
+            this.label5.Location = new System.Drawing.Point(7, 410);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(248, 15);
@@ -821,7 +832,7 @@ namespace Tester
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox4.BackColor = System.Drawing.SystemColors.Control;
             this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fKquestiontestBindingSource, "description", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.textBox4.Location = new System.Drawing.Point(7, 423);
+            this.textBox4.Location = new System.Drawing.Point(7, 427);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
@@ -873,7 +884,6 @@ namespace Tester
             this.dataGridView2.Size = new System.Drawing.Size(838, 450);
             this.dataGridView2.TabIndex = 12;
             this.dataGridView2.TabStop = false;
-           // this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn2
             // 
@@ -1272,20 +1282,6 @@ namespace Tester
             // formsStyle1
             // 
             this.formsStyle1.form = this;
-            // 
-            // Группы
-            // 
-            this.Группы.Name = "Группы";
-            this.Группы.Size = new System.Drawing.Size(61, 20);
-            this.Группы.Text = "Группы";
-            this.Группы.Click += new System.EventHandler(this.группыToolStripMenuItem_Click);
-            // 
-            // Пользователи
-            // 
-            this.Пользователи.Name = "Пользователи";
-            this.Пользователи.Size = new System.Drawing.Size(97, 20);
-            this.Пользователи.Text = "Пользователи";
-            this.Пользователи.Click += new System.EventHandler(this.пользователиToolStripMenuItem_Click);
             // 
             // AdminForm
             // 

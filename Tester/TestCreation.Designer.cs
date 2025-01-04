@@ -64,7 +64,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(509, 53);
             this.textBox6.TabIndex = 19;
-            this.textBox6.TextInput = "";
+            this.textBox6.Text = "";
             this.textBox6.TextPreview = "Название теста";
             this.textBox6.UseSystemPasswordChars = false;
             this.textBox6.VerticalOffset = 8;
@@ -81,7 +81,7 @@
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(180, 53);
             this.numericUpDown2.TabIndex = 20;
-            this.numericUpDown2.TextInput = "";
+            this.numericUpDown2.Text = "";
             this.numericUpDown2.TextPreview = "Длительность теста";
             this.numericUpDown2.UseSystemPasswordChars = false;
             this.numericUpDown2.VerticalOffset = 8;
@@ -98,7 +98,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(509, 288);
             this.textBox7.TabIndex = 21;
-            this.textBox7.TextInput = "";
+            this.textBox7.Text = "";
             this.textBox7.TextPreview = "Описание теста";
             this.textBox7.UseSystemPasswordChars = false;
             this.textBox7.VerticalOffset = 8;

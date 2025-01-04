@@ -50,7 +50,7 @@ namespace Tester
                     MessageBox.Show("Вы не выбрали ни одной компетенции");
                     return;
                 }
-                else if (textBox8.TextInput == "")
+                else if (textBox8.Text== "")
                 {
                     MessageBox.Show("Не все поля заполнены");
                     return;
@@ -62,7 +62,7 @@ namespace Tester
             }
 
 
-            questionTableAdapter.Insert(textBox8.TextInput, textBox9.TextInput, imageToByteArray(pictureBox2.Image), adminForm.testTableAdapter.GetData()[LastTest].id, Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value));
+            questionTableAdapter.Insert(textBox8.Text, textBox9.Text, imageToByteArray(pictureBox2.Image), adminForm.testTableAdapter.GetData()[LastTest].id, Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value));
 
             this.questionTableAdapter.Fill(this.testerDataSet1.question);
 
@@ -109,7 +109,7 @@ namespace Tester
 
         private void button1_Click(object sender, EventArgs e)
         {
-            opkTableAdapter1.Insert(textBox1.TextInput);
+            opkTableAdapter1.Insert(textBox1.Text);
             opkTableAdapter1.Update(testerDataSet1.OPK);
             opkTableAdapter1.Fill(testerDataSet1.OPK);
         }

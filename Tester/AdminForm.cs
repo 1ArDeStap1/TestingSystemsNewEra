@@ -69,8 +69,8 @@ namespace Tester
         {
             try
             {
-                testTableAdapter.Update(textBox1.TextInput, textBox2.TextInput, 
-                    Convert.ToInt32(numericUpDown1.TextInput), 
+                testTableAdapter.Update(textBox1.Text, textBox2.Text, 
+                    Convert.ToInt32(numericUpDown1.Text), 
                     Convert.ToInt32(((Button)sender).Tag), 
                     Convert.ToInt32(((Button)sender).Tag));
                 testTableAdapter.Fill(testerDataSet.test);

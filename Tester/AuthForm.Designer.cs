@@ -62,7 +62,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(476, 49);
             this.textBox2.TabIndex = 1;
-            this.textBox2.TextInput = "";
+            this.textBox2.Text = "";
             this.textBox2.TextPreview = "Пароль";
             this.textBox2.UseSystemPasswordChars = false;
             this.textBox2.VerticalOffset = 20;
@@ -80,7 +80,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(476, 48);
             this.textBox1.TabIndex = 0;
-            this.textBox1.TextInput = "";
+            this.textBox1.Text = "";
             this.textBox1.TextPreview = "Логин";
             this.textBox1.UseSystemPasswordChars = false;
             this.textBox1.VerticalOffset = 10;

@@ -16,6 +16,7 @@ namespace Tester
 {
     public partial class DoTestForm : Form
     {
+        int questionTypeId = 0;
         int testId = 0;
         int userId = 0;
         bool trening;
@@ -64,6 +65,7 @@ namespace Tester
                     {
                         Answer[] tmpAnswers = new Answer[dataGridView3.RowCount];
                         int[] tmpCAnswers = new int[0];
+                        string[] tmpCAnswersText = new string[0];
                         for (int j=0; j < dataGridView3.RowCount; j++)
                         {
                             tmpAnswers[j] = new Answer();
@@ -73,6 +75,8 @@ namespace Tester
                             {
                                 Array.Resize<int>(ref tmpCAnswers, tmpCAnswers.Length + 1);
                                 tmpCAnswers[tmpCAnswers.Length - 1] = j;
+                                Array.Resize<string>(ref tmpCAnswersText, tmpCAnswersText.Length + 1);
+                                tmpCAnswersText[tmpCAnswers.Length - 1] = tmpAnswers[j].content;
                             }
                         }
                         Bitmap question;
@@ -101,7 +105,7 @@ namespace Tester
                             question = new Bitmap(new MemoryStream((byte[])(dataGridView2.Rows[i].Cells[3].Value)));
                         }
 
-                        questions[i] = new Question((int)dataGridView2.Rows[i].Cells[0].Value, (string)dataGridView2.Rows[i].Cells[1].Value, question, tmpAnswers, tmpCAnswers);
+                        questions[i] = new Question((int)dataGridView2.Rows[i].Cells[0].Value, (string)dataGridView2.Rows[i].Cells[1].Value, question, tmpAnswers, tmpCAnswers, tmpCAnswersText, false, (int)dataGridView2.Rows[i].Cells[6].Value);
                     }
                 }
 
@@ -125,6 +129,18 @@ namespace Tester
             answersList.Items.Clear();
             answersList.Items.AddRange(question.answers);
             countLabel.Text = q.ToString() + " из " + test.Count.ToString();
+            questionTypeId = question.type_id;
+
+            if (questionTypeId == 2)
+            {
+                answersList.Visible = false;
+                AnswerTextBox1.Visible = true;
+            } else
+            {
+                answersList.Visible = true;
+                AnswerTextBox1.Visible = false;
+            }
+
         }
 
         private void backQuestion_Click(object sender, EventArgs e)
@@ -148,10 +164,19 @@ namespace Tester
             q++;
             nextQuestion.Enabled = false;
             backQuestion.Enabled = true;
-            int[] currentAnswers = new int[answersList.SelectedIndices.Count];
-            for (int i = 0; i < currentAnswers.Length; i++)
-                currentAnswers[i] = answersList.SelectedIndices[i];
-            test.answers = currentAnswers;
+
+            Dictionary<int, string> currentAnswers = new Dictionary<int, string>();
+            if (questionTypeId == 1)
+            {
+                for (int i = 0; i < answersList.SelectedIndices.Count; i++)
+                    currentAnswers.Add(answersList.SelectedIndices[i], "");
+                test.answers = currentAnswers;
+            } else
+            {
+                currentAnswers.Add(((Tester.Answer)answersList.Items[0]).id, AnswerTextBox1.Text);
+                test.answers = currentAnswers;
+            }
+   
             if (!test.isEnd() && !hardEnd)
             {
                 fillQuestion(test.nextQuestion());
@@ -195,6 +220,7 @@ namespace Tester
 
         private void DoTestForm_Load(object sender, EventArgs e)
         {
+            formsStyle1.Apply();
             // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet1.result_answer". При необходимости она может быть перемещена или удалена.
             this.result_answerTableAdapter.Fill(this.testerDataSet.result_answer);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet1.result". При необходимости она может быть перемещена или удалена.
@@ -261,6 +287,13 @@ namespace Tester
             SizeF size = g.MeasureString(lb.Items[e.Index].ToString(), lb.Font, Width - 5 - SystemInformation.VerticalScrollBarWidth);
             e.ItemHeight = Convert.ToInt32(size.Height) + 5;
             e.ItemWidth = Convert.ToInt32(size.Width) + 5;
+        }
+
+
+
+        private void AnswerTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            nextQuestion.Enabled = true;
         }
     }
 }

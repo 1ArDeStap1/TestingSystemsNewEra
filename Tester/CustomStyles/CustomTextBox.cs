@@ -33,7 +33,7 @@ namespace Tester.CustomStyles
         public Color BorderColor { get; set; } = Color.DarkBlue;
         public Color BorderColorNotActive { get; set; } = Color.DarkGray;
         
-        public string TextInput
+        public override string Text
         {
             get => tbInput.Text;
             set => tbInput.Text = value;
@@ -47,7 +47,7 @@ namespace Tester.CustomStyles
 
 
         [Browsable(false)]
-        public new string Text { get; set; }
+        public string text { get; set; }
 
         #endregion
 
@@ -81,10 +81,12 @@ namespace Tester.CustomStyles
             tbInput.BackColor = BackColor;
             tbInput.ForeColor = ForeColor;
             tbInput.Font = Font;
+            tbInput.Multiline = true;
+            tbInput.WordWrap = true;
 
             int offset = TextRenderer.MeasureText(TextPreview, FontTextPreview).Height / 2;
             tbInput.Location = new Point(10, Height / 2 - offset + VerticalOffset);
-            tbInput.Size = new Size(Width - 10, tbInput.Height);
+            tbInput.Size = new Size(Width, Height - 20);
 
 
             tbInput.LostFocus += Tb_LostFocus;
@@ -99,7 +101,7 @@ namespace Tester.CustomStyles
         {
             base.OnCreateControl();
             
-            TextPreviewAction(TextInput.Length > 0);
+            TextPreviewAction(Text.Length > 0);
         }
 
         protected override void OnBackColorChanged(EventArgs e)
@@ -148,7 +150,6 @@ namespace Tester.CustomStyles
 
             Size TextPreviewRectSize = g.MeasureString(TextPreview, ActualFontTextPrev).ToSize();
             Rectangle rectTextPreview = new Rectangle(5, (int)TextPopUp.Value, TextPreviewRectSize.Width + 3, TextPreviewRectSize.Height);
-
             g.DrawRectangle(new Pen(tbInput.Focused ? BorderColor : BorderColorNotActive), rectBase);
 
 
@@ -158,6 +159,8 @@ namespace Tester.CustomStyles
             g.FillRectangle(new SolidBrush(BackColor), rectBase);
 
             g.DrawString(TextPreview, ActualFontTextPrev, new SolidBrush(tbInput.Focused ? BorderColor : BorderColorNotActive), rectTextPreview, SF);
+
+
         }
 
         private void TextPreviewAction(bool OTop)
@@ -176,7 +179,7 @@ namespace Tester.CustomStyles
             }
             else
             {
-                if (TextInput.Length == 0)
+                if (Text.Length == 0)
                 {
                     TextPopUp = new Animation("TextPreviewLocationY_" + Handle, Invalidate, TextPopUp.Value, tbInput.Location.Y);
                     FontSizeChanger = new Animation("FontSizeChangerY_" + Handle, Invalidate, FontSizeChanger.Value, Font.Size);

@@ -29,8 +29,8 @@ namespace Tester
         {
             AdminForm Adm = new AdminForm();
 
-            Adm.testTableAdapter.Insert(textBox6.TextInput, textBox7.TextInput, Convert.ToInt32(numericUpDown2.TextInput));
-
+            Adm.testTableAdapter.Insert(textBox6.Text, textBox7.Text, Convert.ToInt32(numericUpDown2.Text));
+                
             Adm.testTableAdapter.Update(Adm.testerDataSet.test);
 
             Adm.testTableAdapter.Fill(Adm.testerDataSet.test);

@@ -440,7 +440,7 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(473, 50);
             this.textBox8.TabIndex = 45;
-            this.textBox8.TextInput = "";
+            this.textBox8.Text = "";
             this.textBox8.TextPreview = "Вопрос";
             this.textBox8.UseSystemPasswordChars = false;
             this.textBox8.VerticalOffset = 8;
@@ -458,7 +458,7 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(473, 127);
             this.textBox9.TabIndex = 46;
-            this.textBox9.TextInput = "";
+            this.textBox9.Text = "";
             this.textBox9.TextPreview = "Содержимое вопроса";
             this.textBox9.UseSystemPasswordChars = false;
             this.textBox9.VerticalOffset = 8;
@@ -517,7 +517,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(459, 57);
             this.textBox1.TabIndex = 46;
-            this.textBox1.TextInput = "";
+            this.textBox1.Text = "";
             this.textBox1.TextPreview = "Название компетенции";
             this.textBox1.UseSystemPasswordChars = false;
             this.textBox1.VerticalOffset = 8;
