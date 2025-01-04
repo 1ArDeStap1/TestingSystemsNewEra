@@ -39,8 +39,10 @@ namespace Tester.AnimationClasses
         public static void AnimationInvoker() {
             while (true)
             {
-                AnimationList.RemoveAll(a => a.Status == Animation.AnimationStatus.Completed);
-
+                try
+                {
+                    AnimationList.RemoveAll(a => a.Status == Animation.AnimationStatus.Completed);
+                } catch { }
                 Parallel.For(0, AnimationCount(), index =>
                 {
                     AnimationList[index].UpdateFrame();

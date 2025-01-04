@@ -30,9 +30,9 @@ namespace Tester
         public bool right;
         public int id;
         public int type_id;
-        public string[] textAnswer;
+        public Dictionary<int, string> textAnswer;
 
-        public Question(int id,string cont, Bitmap image, Answer[] answers, int[] correct, string[] correctText, bool mix = false, int type = 1)
+        public Question(int id,string cont, Bitmap image, Answer[] answers, int[] correct, Dictionary<int, string> correctText, bool mix = false, int type = 1)
         {
             this.id = id;
             this.cont = cont;
@@ -77,6 +77,7 @@ namespace Tester
             if (answerType == 1)
             {
                 answered = right = true;
+                int CorrectsCurrentAnswers = 0;
                 foreach (var givedAnswer in givedAnswers)
                 {
                     answersIds.Add(answers[givedAnswer.Key].id);
@@ -85,15 +86,29 @@ namespace Tester
 
                         right = false;
                         return false;
+                    } else
+                    {
+                        CorrectsCurrentAnswers++;
                     }
+
+                }
+                if (CorrectsCurrentAnswers == correct.Length)
+                {
+                    right = true;
+                    return true;
+                } else
+                {
+                    right = false;
+                    return false;
                 }
             }
             else if (answerType == 2) {
                 answered = right = true;
-                for (int i = 0; i < textAnswer.Length; i++)
+                foreach (var tempAnswer in textAnswer)
                 {
-                    if (textAnswer[i] == givedAnswers[answers[0].id])
+                    if (tempAnswer.Value == givedAnswers[answers[0].id])
                     {
+                        answersIds.Add(tempAnswer.Key);
                         return true;
                     }
                 }
@@ -109,12 +124,12 @@ namespace Tester
 
     class Questions
     {
-        Question[] questions;
+        public Question[] questions;
         public Dictionary<int, string> answers;
         public int answerType = 1;
         public List<int> answersIds = new List<int>();
         public int lastAnswersCount;
-        int now = -1;
+        public int now = -1;
         bool returned = false;
 
         public int Count
@@ -146,7 +161,7 @@ namespace Tester
             else
             {
                 now--;
-                return new Question(0,"", new Bitmap(10, 10), new Answer[1] { new Answer() }, new int[1] { 0 }, new string[1] { "" });
+                return new Question(0,"", new Bitmap(10, 10), new Answer[1] { new Answer() }, new int[1] { 0 }, new Dictionary<int, string>());
             }
         }
 

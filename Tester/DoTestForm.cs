@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tester.testerDataSetTableAdapters;
 
 namespace Tester
 {
@@ -65,7 +66,7 @@ namespace Tester
                     {
                         Answer[] tmpAnswers = new Answer[dataGridView3.RowCount];
                         int[] tmpCAnswers = new int[0];
-                        string[] tmpCAnswersText = new string[0];
+                        Dictionary<int, string> tmpCAnswersData = new Dictionary<int, string>();
                         for (int j=0; j < dataGridView3.RowCount; j++)
                         {
                             tmpAnswers[j] = new Answer();
@@ -75,8 +76,7 @@ namespace Tester
                             {
                                 Array.Resize<int>(ref tmpCAnswers, tmpCAnswers.Length + 1);
                                 tmpCAnswers[tmpCAnswers.Length - 1] = j;
-                                Array.Resize<string>(ref tmpCAnswersText, tmpCAnswersText.Length + 1);
-                                tmpCAnswersText[tmpCAnswers.Length - 1] = tmpAnswers[j].content;
+                                tmpCAnswersData.Add(tmpAnswers[j].id, tmpAnswers[j].content);
                             }
                         }
                         Bitmap question;
@@ -105,7 +105,7 @@ namespace Tester
                             question = new Bitmap(new MemoryStream((byte[])(dataGridView2.Rows[i].Cells[3].Value)));
                         }
 
-                        questions[i] = new Question((int)dataGridView2.Rows[i].Cells[0].Value, (string)dataGridView2.Rows[i].Cells[1].Value, question, tmpAnswers, tmpCAnswers, tmpCAnswersText, false, (int)dataGridView2.Rows[i].Cells[6].Value);
+                        questions[i] = new Question((int)dataGridView2.Rows[i].Cells[0].Value, (string)dataGridView2.Rows[i].Cells[1].Value, question, tmpAnswers, tmpCAnswers, tmpCAnswersData, false, (int)dataGridView2.Rows[i].Cells[6].Value);
                     }
                 }
 
@@ -179,7 +179,17 @@ namespace Tester
    
             if (!test.isEnd() && !hardEnd)
             {
-                fillQuestion(test.nextQuestion());
+                Question NextQuest = test.nextQuestion();
+                if (questionTypeId == 2)
+                {
+                    if (!test.questions[test.now - 1].right) {
+                        answerTableAdapter.Insert(AnswerTextBox1.Text, false, test.questions[test.now - 1].id);
+                        answerTableAdapter.Fill(testerDataSet.answer);
+                        int NewID = (int)answerTableAdapter.GetData()[answerTableAdapter.GetData().Count - 1][0];
+                        test.answersIds.Add(NewID);
+                    }
+                }
+                fillQuestion(NextQuest);
             }
             else
             {
