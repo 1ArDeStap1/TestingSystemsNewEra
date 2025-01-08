@@ -163,6 +163,12 @@
       <DependentUpon>FormsStyle.cs</DependentUpon>
     </Compile>
     <Compile Include="Drawer.cs" />
+    <Compile Include="Opk_Result_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opk_Result_Form.Designer.cs">
+      <DependentUpon>Opk_Result_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -229,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomStyles\FormsStyle.resx">
       <DependentUpon>FormsStyle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Opk_Result_Form.resx">
+      <DependentUpon>Opk_Result_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestCreation.resx">
       <DependentUpon>TestCreation.cs</DependentUpon>

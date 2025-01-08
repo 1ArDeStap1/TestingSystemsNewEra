@@ -13,9 +13,13 @@ namespace Tester
 {
     public partial class ShowResultsForm : Form
     {
+        int testId;
+        int userId;
         public ShowResultsForm(int testId, int userId)
         {
             InitializeComponent();
+            this.testId = testId;
+            this.userId = userId;
             questionBindingSource.Filter = "test_id = "+testId.ToString();
             resultBindingSource.Filter = "user_id = " + userId.ToString() + " AND test_id = "+testId.ToString();
         }

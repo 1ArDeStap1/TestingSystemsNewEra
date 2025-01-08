@@ -109,7 +109,7 @@ namespace Tester
 
         private void button1_Click(object sender, EventArgs e)
         {
-            opkTableAdapter1.Insert(textBox1.Text);
+            opkTableAdapter1.Insert(textBox1.Text, numericUpDown1.Value);
             opkTableAdapter1.Update(testerDataSet1.OPK);
             opkTableAdapter1.Fill(testerDataSet1.OPK);
         }

@@ -53,7 +53,7 @@
             this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.testidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OPK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OPK_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.questionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -272,7 +272,7 @@
             this.idDataGridViewTextBoxColumn2,
             this.nameDataGridViewTextBoxColumn,
             this.testidDataGridViewTextBoxColumn,
-            this.OPK});
+            this.OPK_id});
             this.dataGridView4.DataSource = this.questionBindingSource;
             this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView4.GridColor = System.Drawing.SystemColors.Control;
@@ -316,12 +316,12 @@
             this.testidDataGridViewTextBoxColumn.ReadOnly = true;
             this.testidDataGridViewTextBoxColumn.Visible = false;
             // 
-            // OPK
+            // OPK_id
             // 
-            this.OPK.DataPropertyName = "OPK";
-            this.OPK.HeaderText = "OPK";
-            this.OPK.Name = "OPK";
-            this.OPK.ReadOnly = true;
+            this.OPK_id.DataPropertyName = "OPK_id";
+            this.OPK_id.HeaderText = "OPK_id";
+            this.OPK_id.Name = "OPK_id";
+            this.OPK_id.ReadOnly = true;
             // 
             // questionBindingSource
             // 
@@ -487,9 +487,6 @@
         internal System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource questionBindingSource;
         private testerDataSetTableAdapters.questionTableAdapter questionTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn testidDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource fKanswerquestionBindingSource;
         private testerDataSetTableAdapters.answerTableAdapter answerTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
@@ -499,6 +496,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mark;
         private System.Windows.Forms.DataGridViewTextBoxColumn st;
         private System.Windows.Forms.DataGridViewTextBoxColumn atDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OPK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn testidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OPK_id;
     }
 }

@@ -52,16 +52,30 @@ namespace Tester
         int seconds = 0;
         string qsPath = Application.StartupPath + "\\questions\\";
         DateTime startedTime;
+        List<int> opk_ids = new List<int>();
 
         private void initGame()
         {
             if (dataGridView2.RowCount > 0)
             {
                 Question[] questions = new Question[dataGridView2.RowCount];
+                
                 for (int i = 0; i < dataGridView2.RowCount; i++)
                 {
                     answerBindingSource.Filter = "question_id = " + dataGridView2.Rows[i].Cells[0].Value.ToString();
                     answerBindingSource.ResetBindings(true);
+
+                    oPKBindingSource.Filter = "Id = " + dataGridView2.Rows[i].Cells[5].Value.ToString();
+                    oPKBindingSource.ResetBindings(true);
+                    OPK tmpOpk = new OPK();
+                    tmpOpk.OPK_ID = Convert.ToInt32(dataGridView4.Rows[0].Cells[0].Value.ToString());
+                    tmpOpk.OPK_DESCRIPTION = dataGridView4.Rows[0].Cells[1].Value.ToString();
+                    tmpOpk.OPK_PERCENT = Convert.ToDecimal(dataGridView4.Rows[0].Cells[2].Value.ToString());
+                    if (!opk_ids.Contains(tmpOpk.OPK_ID))
+                    {
+                        opk_ids.Add(tmpOpk.OPK_ID);
+                    }
+
                     if (dataGridView3.RowCount > 0)
                     {
                         Answer[] tmpAnswers = new Answer[dataGridView3.RowCount];
@@ -105,7 +119,7 @@ namespace Tester
                             question = new Bitmap(new MemoryStream((byte[])(dataGridView2.Rows[i].Cells[3].Value)));
                         }
 
-                        questions[i] = new Question((int)dataGridView2.Rows[i].Cells[0].Value, (string)dataGridView2.Rows[i].Cells[1].Value, question, tmpAnswers, tmpCAnswers, tmpCAnswersData, false, (int)dataGridView2.Rows[i].Cells[6].Value);
+                        questions[i] = new Question((int)dataGridView2.Rows[i].Cells[0].Value, (string)dataGridView2.Rows[i].Cells[1].Value, question, tmpAnswers, tmpCAnswers, tmpCAnswersData, tmpOpk, false, (int)dataGridView2.Rows[i].Cells[6].Value);
                     }
                 }
 
@@ -196,10 +210,8 @@ namespace Tester
                 timer.Stop();
                 q--;
                 test.nextQuestion();
-                double mark = Math.Floor((Convert.ToDouble(test.rightsCount) / Convert.ToDouble(test.Count)) * 1000.0) / 100.0;
-                MessageBox.Show("Молодец, так держать!\nТы ответил правильно на " + test.rightsCount.ToString() + " вопросов из " + test.Count.ToString() + "!\n" +
-                    "Предполагаемая отметка: " + mark.ToString() + "\n" +
-                    "Время прохождения теста в секундах: " + timerLabel.Text + "\r\nОсвоены компетенции ");
+                double mark = Math.Floor((Convert.ToDouble(test.rightsCount) / Convert.ToDouble(test.Count)) * 100.0);
+                
                 if (!trening)
                 {
                     int inserted = Convert.ToInt32(resultTableAdapter.InsertQuery(userId, testId, mark, startedTime));
@@ -209,7 +221,62 @@ namespace Tester
                         result_answerTableAdapter.Insert(inserted, answer);
                     }
                     resultTableAdapter.Fill(testerDataSet.result);
+
+                    string opksResult = "";
+                    int rightsOpks = 0;
+                    int AllQuestOpk = 0;
+                    decimal TmpOpkPercent = 0;
+                    foreach (int opk_id in opk_ids)
+                    {
+                        rightsOpks = 0;
+                        AllQuestOpk = 0;
+                        string tmpOpkDesc = "";
+                        foreach (Question quest in test.questions)
+                        {
+                            if (quest.opk.OPK_ID == opk_id)
+                            {
+                                tmpOpkDesc = quest.opk.ToString();
+                                TmpOpkPercent = quest.opk.OPK_PERCENT;
+                                if (quest.right)
+                                {
+                                    rightsOpks++;
+                                    AllQuestOpk++;
+                                }
+                                else
+                                {
+                                    AllQuestOpk++;
+                                }
+                            }
+                        }
+                        string resultMsg = "Компетенция не освоена";
+                        decimal CompletePercent = (decimal)Math.Round(Convert.ToDouble(rightsOpks) / Convert.ToDouble(AllQuestOpk) * 100, 2);
+                        if (CompletePercent >= TmpOpkPercent)
+                        {
+                            if (rightsOpks == AllQuestOpk)
+                            {
+                                resultMsg = "Компетенция полностью освоена";
+                            }
+                            else
+                            {
+                                resultMsg = "Компетенция освоена, но следует подучить учебный материал";
+                            }
+                            opksResult = opksResult + tmpOpkDesc + " на " + Convert.ToString(CompletePercent) + "%\r\n";
+
+                        }
+                        opk_resultTableAdapter1.InsertQuery(opk_id, userId, rightsOpks, AllQuestOpk, CompletePercent, inserted, resultMsg);
+                        
+                    }
+                    opk_resultTableAdapter1.Fill(testerDataSet.opk_result);
                     result_answerTableAdapter.Fill(testerDataSet.result_answer);
+
+                    MessageBox.Show("Молодец, так держать!\nТы ответил правильно на " + test.rightsCount.ToString() + " вопросов из " + test.Count.ToString() + "!\n" +
+                    "Предполагаемая отметка: " + mark.ToString() + "\n" +
+                    "Время прохождения теста в секундах: " + timerLabel.Text + "\r\nОсвоены компетенции: \r\n" + opksResult);
+                } else
+                {
+                    MessageBox.Show("Молодец, так держать!\nТы ответил правильно на " + test.rightsCount.ToString() + " вопросов из " + test.Count.ToString() + "!\n" +
+                    "Предполагаемая отметка: " + mark.ToString() + "\n" +
+                    "Время прохождения теста в секундах: " + timerLabel.Text);
                 }
                 Close();
             }
@@ -230,6 +297,8 @@ namespace Tester
 
         private void DoTestForm_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet.opk_result". При необходимости она может быть перемещена или удалена.
+            this.opk_resultTableAdapter1.Fill(this.testerDataSet.opk_result);
             formsStyle1.Apply();
             // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet1.result_answer". При необходимости она может быть перемещена или удалена.
             this.result_answerTableAdapter.Fill(this.testerDataSet.result_answer);
@@ -238,6 +307,8 @@ namespace Tester
             this.answerTableAdapter.Fill(this.testerDataSet.answer);
             this.questionTableAdapter.Fill(this.testerDataSet.question);
             this.testTableAdapter.Fill(this.testerDataSet.test);
+            this.opkTableAdapter1.Fill(this.testerDataSet.OPK);
+            this.opk_resultTableAdapter1.Fill(this.testerDataSet.opk_result);
 
             answersList.DrawMode = DrawMode.OwnerDrawVariable;
 

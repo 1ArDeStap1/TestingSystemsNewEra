@@ -38,28 +38,35 @@
             this.timerLabel = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.testBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.testerDataSet = new Tester.testerDataSet();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.testidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OPK_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fKquestiontestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.complition_percent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AnswerTextBox1 = new Tester.CustomStyles.CustomTextBox();
+            this.formsStyle1 = new Tester.FormsStyle(this.components);
             this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correctDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.questionidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.answerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.testerDataSet = new Tester.testerDataSet();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.testBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oPKBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.testidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.testTableAdapter = new Tester.testerDataSetTableAdapters.testTableAdapter();
             this.questionTableAdapter = new Tester.testerDataSetTableAdapters.questionTableAdapter();
             this.answerTableAdapter = new Tester.testerDataSetTableAdapters.answerTableAdapter();
@@ -67,17 +74,19 @@
             this.resultTableAdapter = new Tester.testerDataSetTableAdapters.resultTableAdapter();
             this.resultanswerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.result_answerTableAdapter = new Tester.testerDataSetTableAdapters.result_answerTableAdapter();
-            this.AnswerTextBox1 = new Tester.CustomStyles.CustomTextBox();
-            this.formsStyle1 = new Tester.FormsStyle(this.components);
+            this.opkTableAdapter1 = new Tester.testerDataSetTableAdapters.OPKTableAdapter();
+            this.opk_resultTableAdapter1 = new Tester.testerDataSetTableAdapters.opk_resultTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.questionImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKquestiontestBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.answerBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.answerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testerDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oPKBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultanswerBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -186,37 +195,6 @@
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.Visible = false;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // testBindingSource
-            // 
-            this.testBindingSource.DataMember = "test";
-            this.testBindingSource.DataSource = this.testerDataSet;
-            // 
-            // testerDataSet
-            // 
-            this.testerDataSet.DataSetName = "testerDataSet";
-            this.testerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
@@ -238,41 +216,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(446, 229);
             this.dataGridView2.TabIndex = 13;
             this.dataGridView2.Visible = false;
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "name";
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn1
-            // 
-            this.descriptionDataGridViewTextBoxColumn1.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn1.HeaderText = "description";
-            this.descriptionDataGridViewTextBoxColumn1.Name = "descriptionDataGridViewTextBoxColumn1";
-            this.descriptionDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // imageDataGridViewImageColumn
-            // 
-            this.imageDataGridViewImageColumn.DataPropertyName = "image";
-            this.imageDataGridViewImageColumn.HeaderText = "image";
-            this.imageDataGridViewImageColumn.Name = "imageDataGridViewImageColumn";
-            this.imageDataGridViewImageColumn.ReadOnly = true;
-            // 
-            // testidDataGridViewTextBoxColumn
-            // 
-            this.testidDataGridViewTextBoxColumn.DataPropertyName = "test_id";
-            this.testidDataGridViewTextBoxColumn.HeaderText = "test_id";
-            this.testidDataGridViewTextBoxColumn.Name = "testidDataGridViewTextBoxColumn";
-            this.testidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // OPK_id
             // 
@@ -312,6 +255,90 @@
             this.dataGridView3.TabIndex = 14;
             this.dataGridView3.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(954, 27);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Вопрос 1";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.dataGridView4);
+            this.panel1.Controls.Add(this.countLabel);
+            this.panel1.Controls.Add(this.timerLabel);
+            this.panel1.Controls.Add(this.dataGridView2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.questionImage);
+            this.panel1.Location = new System.Drawing.Point(12, 9);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(954, 422);
+            this.panel1.TabIndex = 16;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.AllowUserToResizeColumns = false;
+            this.dataGridView4.AllowUserToResizeRows = false;
+            this.dataGridView4.AutoGenerateColumns = false;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn3,
+            this.nameDataGridViewTextBoxColumn2,
+            this.complition_percent});
+            this.dataGridView4.DataSource = this.oPKBindingSource;
+            this.dataGridView4.Location = new System.Drawing.Point(446, 343);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.ShowCellErrors = false;
+            this.dataGridView4.ShowCellToolTips = false;
+            this.dataGridView4.ShowEditingIcon = false;
+            this.dataGridView4.ShowRowErrors = false;
+            this.dataGridView4.Size = new System.Drawing.Size(346, 76);
+            this.dataGridView4.TabIndex = 16;
+            this.dataGridView4.Visible = false;
+            // 
+            // complition_percent
+            // 
+            this.complition_percent.DataPropertyName = "complition_percent";
+            this.complition_percent.HeaderText = "complition_percent";
+            this.complition_percent.Name = "complition_percent";
+            this.complition_percent.ReadOnly = true;
+            // 
+            // AnswerTextBox1
+            // 
+            this.AnswerTextBox1.BackColor = System.Drawing.Color.White;
+            this.AnswerTextBox1.BorderColor = System.Drawing.Color.DarkBlue;
+            this.AnswerTextBox1.BorderColorNotActive = System.Drawing.Color.DarkGray;
+            this.AnswerTextBox1.Font = new System.Drawing.Font("Arial", 11.5F);
+            this.AnswerTextBox1.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.AnswerTextBox1.ForeColor = System.Drawing.Color.Black;
+            this.AnswerTextBox1.Location = new System.Drawing.Point(27, 494);
+            this.AnswerTextBox1.Name = "AnswerTextBox1";
+            this.AnswerTextBox1.Size = new System.Drawing.Size(665, 51);
+            this.AnswerTextBox1.TabIndex = 17;
+            this.AnswerTextBox1.text = null;
+            this.AnswerTextBox1.TextPreview = "Input Text";
+            this.AnswerTextBox1.UseSystemPasswordChars = false;
+            this.AnswerTextBox1.VerticalOffset = 8;
+            this.AnswerTextBox1.TextChanged += new System.EventHandler(this.AnswerTextBox1_TextChanged);
+            this.AnswerTextBox1.Click += new System.EventHandler(this.AnswerTextBox1_TextChanged);
+            // 
+            // formsStyle1
+            // 
+            this.formsStyle1.form = this;
+            // 
             // idDataGridViewTextBoxColumn2
             // 
             this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
@@ -345,34 +372,90 @@
             this.answerBindingSource.DataMember = "answer";
             this.answerBindingSource.DataSource = this.testerDataSet;
             // 
-            // label1
+            // testerDataSet
             // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(954, 27);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Вопрос 1";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.testerDataSet.DataSetName = "testerDataSet";
+            this.testerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // panel1
+            // idDataGridViewTextBoxColumn
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Controls.Add(this.countLabel);
-            this.panel1.Controls.Add(this.timerLabel);
-            this.panel1.Controls.Add(this.dataGridView2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.questionImage);
-            this.panel1.Location = new System.Drawing.Point(12, 9);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(954, 422);
-            this.panel1.TabIndex = 16;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // testBindingSource
+            // 
+            this.testBindingSource.DataMember = "test";
+            this.testBindingSource.DataSource = this.testerDataSet;
+            // 
+            // idDataGridViewTextBoxColumn3
+            // 
+            this.idDataGridViewTextBoxColumn3.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn3.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
+            this.idDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn2
+            // 
+            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
+            this.nameDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // oPKBindingSource
+            // 
+            this.oPKBindingSource.DataMember = "OPK";
+            this.oPKBindingSource.DataSource = this.testerDataSet;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn1
+            // 
+            this.descriptionDataGridViewTextBoxColumn1.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn1.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn1.Name = "descriptionDataGridViewTextBoxColumn1";
+            this.descriptionDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // imageDataGridViewImageColumn
+            // 
+            this.imageDataGridViewImageColumn.DataPropertyName = "image";
+            this.imageDataGridViewImageColumn.HeaderText = "image";
+            this.imageDataGridViewImageColumn.Name = "imageDataGridViewImageColumn";
+            this.imageDataGridViewImageColumn.ReadOnly = true;
+            // 
+            // testidDataGridViewTextBoxColumn
+            // 
+            this.testidDataGridViewTextBoxColumn.DataPropertyName = "test_id";
+            this.testidDataGridViewTextBoxColumn.HeaderText = "test_id";
+            this.testidDataGridViewTextBoxColumn.Name = "testidDataGridViewTextBoxColumn";
+            this.testidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // testTableAdapter
             // 
@@ -404,28 +487,13 @@
             // 
             this.result_answerTableAdapter.ClearBeforeFill = true;
             // 
-            // AnswerTextBox1
+            // opkTableAdapter1
             // 
-            this.AnswerTextBox1.BackColor = System.Drawing.Color.White;
-            this.AnswerTextBox1.BorderColor = System.Drawing.Color.DarkBlue;
-            this.AnswerTextBox1.BorderColorNotActive = System.Drawing.Color.DarkGray;
-            this.AnswerTextBox1.Font = new System.Drawing.Font("Arial", 11.5F);
-            this.AnswerTextBox1.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.AnswerTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.AnswerTextBox1.Location = new System.Drawing.Point(27, 494);
-            this.AnswerTextBox1.Name = "AnswerTextBox1";
-            this.AnswerTextBox1.Size = new System.Drawing.Size(665, 51);
-            this.AnswerTextBox1.TabIndex = 17;
-            this.AnswerTextBox1.text = null;
-            this.AnswerTextBox1.TextPreview = "Input Text";
-            this.AnswerTextBox1.UseSystemPasswordChars = false;
-            this.AnswerTextBox1.VerticalOffset = 8;
-            this.AnswerTextBox1.TextChanged += new System.EventHandler(this.AnswerTextBox1_TextChanged);
-            this.AnswerTextBox1.Click += new System.EventHandler(this.AnswerTextBox1_TextChanged);
+            this.opkTableAdapter1.ClearBeforeFill = true;
             // 
-            // formsStyle1
+            // opk_resultTableAdapter1
             // 
-            this.formsStyle1.form = this;
+            this.opk_resultTableAdapter1.ClearBeforeFill = true;
             // 
             // DoTestForm
             // 
@@ -448,14 +516,16 @@
             this.Load += new System.EventHandler(this.DoTestForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.questionImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testerDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKquestiontestBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.answerBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.answerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testerDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oPKBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultanswerBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -503,5 +573,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn OPK_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type_id;
         private CustomStyles.CustomTextBox AnswerTextBox1;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.BindingSource oPKBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn complition_percent;
+        private testerDataSetTableAdapters.OPKTableAdapter opkTableAdapter1;
+        private testerDataSetTableAdapters.opk_resultTableAdapter opk_resultTableAdapter1;
     }
 }

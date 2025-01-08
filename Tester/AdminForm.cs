@@ -266,5 +266,15 @@ namespace Tester
         {
             LoadDataTables();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            
+            using (Opk_Result_Form opkResForm = new Opk_Result_Form((int)dataGridView3.SelectedRows[0].Cells[6].Value, (int)dataGridView3.SelectedRows[0].Cells[3].Value))
+            {
+                opkResForm.ShowDialog(this);
+                Show();
+            }
+        }
     }
 }

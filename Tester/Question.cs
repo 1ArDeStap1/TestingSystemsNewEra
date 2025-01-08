@@ -8,6 +8,18 @@ using System.Threading.Tasks;
 
 namespace Tester
 {
+    
+    class OPK
+    {
+        public int OPK_ID;
+        public string OPK_DESCRIPTION;
+        public decimal OPK_PERCENT;
+
+        public override string ToString()
+        {
+            return OPK_DESCRIPTION;
+        }
+    }
 
     class Answer
     {
@@ -22,6 +34,7 @@ namespace Tester
 
     class Question
     {
+        public OPK opk;
         public string cont;
         public Bitmap image;
         public Answer[] answers;
@@ -32,7 +45,7 @@ namespace Tester
         public int type_id;
         public Dictionary<int, string> textAnswer;
 
-        public Question(int id,string cont, Bitmap image, Answer[] answers, int[] correct, Dictionary<int, string> correctText, bool mix = false, int type = 1)
+        public Question(int id,string cont, Bitmap image, Answer[] answers, int[] correct, Dictionary<int, string> correctText, OPK Opk, bool mix = false, int type = 1)
         {
             this.id = id;
             this.cont = cont;
@@ -42,6 +55,7 @@ namespace Tester
             if (mix) this.mix();
             this.type_id = type;
             this.textAnswer = correctText;
+            this.opk = Opk;
         }
 
         private void mix()
@@ -161,7 +175,7 @@ namespace Tester
             else
             {
                 now--;
-                return new Question(0,"", new Bitmap(10, 10), new Answer[1] { new Answer() }, new int[1] { 0 }, new Dictionary<int, string>());
+                return new Question(0,"", new Bitmap(10, 10), new Answer[1] { new Answer() }, new int[1] { 0 }, new Dictionary<int, string>(), new OPK());
             }
         }
 

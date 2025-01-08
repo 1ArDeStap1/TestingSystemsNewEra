@@ -46,32 +46,13 @@ namespace Tester
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.группыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.testerDataSet = new Tester.testerDataSet();
-            this.questionTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fKquestiontestBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.oPKBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fKanswerquestionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fKresultvariantresultBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.fKresulttestBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fKquestiontestBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.fKanswerquestionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.Grid = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.testBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testerDataSet = new Tester.testerDataSet();
             this.dataSet1 = new System.Data.DataSet();
-            this.testTableAdapter = new Tester.testerDataSetTableAdapters.testTableAdapter();
-            this.answerTableAdapter = new Tester.testerDataSetTableAdapters.answerTableAdapter();
-            this.resultTableAdapter = new Tester.testerDataSetTableAdapters.resultTableAdapter();
-            this.result_answerTableAdapter = new Tester.testerDataSetTableAdapters.result_answerTableAdapter();
-            this.questionTableAdapter1 = new Tester.testerDataSetTableAdapters.questionTableAdapter();
-            this.fKresultvariantresultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fKresultvariantanswerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.questionOPKBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.oPKTableAdapter = new Tester.testerDataSetTableAdapters.OPKTableAdapter();
-            this.questionQuestionTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.question_TypesTableAdapter1 = new Tester.testerDataSetTableAdapters.Question_TypesTableAdapter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
@@ -86,9 +67,11 @@ namespace Tester
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oPKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fKquestiontestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
@@ -96,6 +79,7 @@ namespace Tester
             this.dataGridView8 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.questionTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -107,6 +91,7 @@ namespace Tester
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fKanswerquestionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl5 = new System.Windows.Forms.TabControl();
             this.tabPage9 = new System.Windows.Forms.TabPage();
@@ -116,67 +101,85 @@ namespace Tester
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.btnShowOpk_Result = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.resultidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.answeridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fKresultvariantresultBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.fKresulttestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correctDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.fKanswerquestionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.fKquestiontestBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OPK_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.formsStyle1 = new Tester.FormsStyle(this.components);
+            this.fKresultvariantresultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fKresultvariantanswerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.questionOPKBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.questionQuestionTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testTableAdapter = new Tester.testerDataSetTableAdapters.testTableAdapter();
+            this.answerTableAdapter = new Tester.testerDataSetTableAdapters.answerTableAdapter();
+            this.resultTableAdapter = new Tester.testerDataSetTableAdapters.resultTableAdapter();
+            this.result_answerTableAdapter = new Tester.testerDataSetTableAdapters.result_answerTableAdapter();
+            this.questionTableAdapter1 = new Tester.testerDataSetTableAdapters.questionTableAdapter();
+            this.oPKTableAdapter = new Tester.testerDataSetTableAdapters.OPKTableAdapter();
+            this.question_TypesTableAdapter1 = new Tester.testerDataSetTableAdapters.Question_TypesTableAdapter();
             this.test_idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.markColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.atDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correctDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.formsStyle1 = new Tester.FormsStyle(this.components);
             this.ToolStripMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testerDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKquestiontestBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oPKBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKanswerquestionBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKresultvariantresultBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKresulttestBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKquestiontestBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKanswerquestionBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKresultvariantresultBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKresultvariantanswerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionOPKBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionQuestionTypesBindingSource)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl3.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oPKBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKquestiontestBindingSource)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKanswerquestionBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabControl5.SuspendLayout();
             this.tabPage9.SuspendLayout();
             this.tabPage11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKresultvariantresultBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKresulttestBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKanswerquestionBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKquestiontestBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKresultvariantresultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKresultvariantanswerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionOPKBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionQuestionTypesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ToolStripMenu
@@ -225,56 +228,6 @@ namespace Tester
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
             this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.справкаToolStripMenuItem.Text = "Справка";
-            // 
-            // testBindingSource
-            // 
-            this.testBindingSource.DataMember = "test";
-            this.testBindingSource.DataSource = this.testerDataSet;
-            // 
-            // testerDataSet
-            // 
-            this.testerDataSet.CaseSensitive = true;
-            this.testerDataSet.DataSetName = "testerDataSet";
-            this.testerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // questionTypesBindingSource
-            // 
-            this.questionTypesBindingSource.DataMember = "Question_Types";
-            this.questionTypesBindingSource.DataSource = this.testerDataSet;
-            // 
-            // fKquestiontestBindingSource
-            // 
-            this.fKquestiontestBindingSource.DataMember = "FK_question_test";
-            this.fKquestiontestBindingSource.DataSource = this.testBindingSource;
-            // 
-            // oPKBindingSource
-            // 
-            this.oPKBindingSource.DataMember = "OPK";
-            this.oPKBindingSource.DataSource = this.testerDataSet;
-            // 
-            // fKanswerquestionBindingSource
-            // 
-            this.fKanswerquestionBindingSource.DataSource = this.fKquestiontestBindingSource;
-            // 
-            // fKresultvariantresultBindingSource1
-            // 
-            this.fKresultvariantresultBindingSource1.DataMember = "FK_result_variant_result";
-            this.fKresultvariantresultBindingSource1.DataSource = this.fKresulttestBindingSource;
-            // 
-            // fKresulttestBindingSource
-            // 
-            this.fKresulttestBindingSource.DataMember = "FK_result_test";
-            this.fKresulttestBindingSource.DataSource = this.testBindingSource;
-            // 
-            // fKquestiontestBindingSource1
-            // 
-            this.fKquestiontestBindingSource1.DataMember = "FK_question_test";
-            this.fKquestiontestBindingSource1.DataSource = this.testBindingSource;
-            // 
-            // fKanswerquestionBindingSource1
-            // 
-            this.fKanswerquestionBindingSource1.DataMember = "FK_answer_question";
-            this.fKanswerquestionBindingSource1.DataSource = this.fKquestiontestBindingSource1;
             // 
             // Grid
             // 
@@ -334,54 +287,20 @@ namespace Tester
             this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             this.descriptionDataGridViewTextBoxColumn.Visible = false;
             // 
+            // testBindingSource
+            // 
+            this.testBindingSource.DataMember = "test";
+            this.testBindingSource.DataSource = this.testerDataSet;
+            // 
+            // testerDataSet
+            // 
+            this.testerDataSet.CaseSensitive = true;
+            this.testerDataSet.DataSetName = "testerDataSet";
+            this.testerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // dataSet1
             // 
             this.dataSet1.DataSetName = "NewDataSet";
-            // 
-            // testTableAdapter
-            // 
-            this.testTableAdapter.ClearBeforeFill = true;
-            // 
-            // answerTableAdapter
-            // 
-            this.answerTableAdapter.ClearBeforeFill = true;
-            // 
-            // resultTableAdapter
-            // 
-            this.resultTableAdapter.ClearBeforeFill = true;
-            // 
-            // result_answerTableAdapter
-            // 
-            this.result_answerTableAdapter.ClearBeforeFill = true;
-            // 
-            // questionTableAdapter1
-            // 
-            this.questionTableAdapter1.ClearBeforeFill = true;
-            // 
-            // fKresultvariantresultBindingSource
-            // 
-            this.fKresultvariantresultBindingSource.DataMember = "FK_result_variant_result";
-            this.fKresultvariantresultBindingSource.DataSource = this.fKresulttestBindingSource;
-            // 
-            // fKresultvariantanswerBindingSource
-            // 
-            this.fKresultvariantanswerBindingSource.DataSource = this.fKanswerquestionBindingSource;
-            // 
-            // questionOPKBindingSource
-            // 
-            this.questionOPKBindingSource.DataSource = this.fKquestiontestBindingSource;
-            // 
-            // oPKTableAdapter
-            // 
-            this.oPKTableAdapter.ClearBeforeFill = true;
-            // 
-            // questionQuestionTypesBindingSource
-            // 
-            this.questionQuestionTypesBindingSource.DataSource = this.fKquestiontestBindingSource;
-            // 
-            // question_TypesTableAdapter1
-            // 
-            this.question_TypesTableAdapter1.ClearBeforeFill = true;
             // 
             // tabControl1
             // 
@@ -448,7 +367,7 @@ namespace Tester
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(762, 265);
             this.textBox2.TabIndex = 14;
-            this.textBox2.Text = "";
+            this.textBox2.text = null;
             this.textBox2.TextPreview = "Описание теста";
             this.textBox2.UseSystemPasswordChars = false;
             this.textBox2.VerticalOffset = 100;
@@ -466,7 +385,7 @@ namespace Tester
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(275, 52);
             this.numericUpDown1.TabIndex = 13;
-            this.numericUpDown1.Text= "";
+            this.numericUpDown1.text = null;
             this.numericUpDown1.TextPreview = "Время прохождения теста";
             this.numericUpDown1.UseSystemPasswordChars = false;
             this.numericUpDown1.VerticalOffset = 100;
@@ -484,7 +403,7 @@ namespace Tester
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(702, 54);
             this.textBox1.TabIndex = 12;
-            this.textBox1.Text = "";
+            this.textBox1.text = null;
             this.textBox1.TextPreview = "Название Теста";
             this.textBox1.UseSystemPasswordChars = false;
             this.textBox1.VerticalOffset = 0;
@@ -525,7 +444,7 @@ namespace Tester
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.testBindingSource, "id", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.linkLabel1.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel1.Location = new System.Drawing.Point(40, 484);
+            this.linkLabel1.Location = new System.Drawing.Point(40, 486);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(80, 15);
@@ -587,6 +506,11 @@ namespace Tester
             this.nameDataGridViewTextBoxColumn4.Name = "nameDataGridViewTextBoxColumn4";
             this.nameDataGridViewTextBoxColumn4.ReadOnly = true;
             // 
+            // oPKBindingSource
+            // 
+            this.oPKBindingSource.DataMember = "OPK";
+            this.oPKBindingSource.DataSource = this.testerDataSet;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -635,6 +559,11 @@ namespace Tester
             this.nameDataGridViewTextBoxColumn1.HeaderText = "Вопрос";
             this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
             this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // fKquestiontestBindingSource
+            // 
+            this.fKquestiontestBindingSource.DataMember = "FK_question_test";
+            this.fKquestiontestBindingSource.DataSource = this.testBindingSource;
             // 
             // tabControl2
             // 
@@ -729,13 +658,18 @@ namespace Tester
             this.typeNameDataGridViewTextBoxColumn.Name = "typeNameDataGridViewTextBoxColumn";
             this.typeNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // questionTypesBindingSource
+            // 
+            this.questionTypesBindingSource.DataMember = "Question_Types";
+            this.questionTypesBindingSource.DataSource = this.testerDataSet;
+            // 
             // linkLabel2
             // 
             this.linkLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.fKquestiontestBindingSource, "id", true));
             this.linkLabel2.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel2.Location = new System.Drawing.Point(7, 508);
+            this.linkLabel2.Location = new System.Drawing.Point(7, 510);
             this.linkLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(97, 15);
@@ -756,7 +690,7 @@ namespace Tester
             this.pictureBox1.Location = new System.Drawing.Point(7, 67);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(561, 338);
+            this.pictureBox1.Size = new System.Drawing.Size(561, 340);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
@@ -771,7 +705,7 @@ namespace Tester
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.Lavender;
-            this.button2.Location = new System.Drawing.Point(118, 502);
+            this.button2.Location = new System.Drawing.Point(118, 504);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(695, 26);
@@ -807,7 +741,7 @@ namespace Tester
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label5.Location = new System.Drawing.Point(7, 410);
+            this.label5.Location = new System.Drawing.Point(7, 412);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(248, 15);
@@ -832,7 +766,7 @@ namespace Tester
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox4.BackColor = System.Drawing.SystemColors.Control;
             this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fKquestiontestBindingSource, "description", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.textBox4.Location = new System.Drawing.Point(7, 427);
+            this.textBox4.Location = new System.Drawing.Point(7, 429);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
@@ -893,6 +827,10 @@ namespace Tester
             this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
             this.idDataGridViewTextBoxColumn2.ReadOnly = true;
             this.idDataGridViewTextBoxColumn2.Width = 45;
+            // 
+            // fKanswerquestionBindingSource
+            // 
+            this.fKanswerquestionBindingSource.DataSource = this.fKquestiontestBindingSource;
             // 
             // panel1
             // 
@@ -1001,6 +939,7 @@ namespace Tester
             // tabPage11
             // 
             this.tabPage11.BackColor = System.Drawing.Color.Honeydew;
+            this.tabPage11.Controls.Add(this.btnShowOpk_Result);
             this.tabPage11.Controls.Add(this.btnExport);
             this.tabPage11.Controls.Add(this.dataGridView6);
             this.tabPage11.Controls.Add(this.dataGridView3);
@@ -1014,9 +953,20 @@ namespace Tester
             this.tabPage11.TabIndex = 2;
             this.tabPage11.Text = "Результаты";
             // 
+            // btnShowOpk_Result
+            // 
+            this.btnShowOpk_Result.Location = new System.Drawing.Point(8, 476);
+            this.btnShowOpk_Result.Margin = new System.Windows.Forms.Padding(4);
+            this.btnShowOpk_Result.Name = "btnShowOpk_Result";
+            this.btnShowOpk_Result.Size = new System.Drawing.Size(242, 56);
+            this.btnShowOpk_Result.TabIndex = 12;
+            this.btnShowOpk_Result.Text = "Посмотреть результат освоения компетенций";
+            this.btnShowOpk_Result.UseVisualStyleBackColor = true;
+            this.btnShowOpk_Result.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(878, 503);
+            this.btnExport.Location = new System.Drawing.Point(328, 476);
             this.btnExport.Margin = new System.Windows.Forms.Padding(4);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(200, 56);
@@ -1080,6 +1030,16 @@ namespace Tester
             this.answeridDataGridViewTextBoxColumn.Name = "answeridDataGridViewTextBoxColumn";
             this.answeridDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // fKresultvariantresultBindingSource1
+            // 
+            this.fKresultvariantresultBindingSource1.DataMember = "FK_result_variant_result";
+            this.fKresultvariantresultBindingSource1.DataSource = this.fKresulttestBindingSource;
+            // 
+            // fKresulttestBindingSource
+            // 
+            this.fKresulttestBindingSource.DataMember = "FK_result_test";
+            this.fKresulttestBindingSource.DataSource = this.testBindingSource;
+            // 
             // dataGridView3
             // 
             this.dataGridView3.AllowUserToAddRows = false;
@@ -1099,10 +1059,11 @@ namespace Tester
             this.idDataGridViewTextBoxColumn3,
             this.nameDataGridViewTextBoxColumn2,
             this.loginDataGridViewTextBoxColumn,
+            this.user_id,
             this.atDataGridViewTextBoxColumn});
             this.dataGridView3.DataSource = this.fKresulttestBindingSource;
             this.dataGridView3.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView3.Location = new System.Drawing.Point(9, 0);
+            this.dataGridView3.Location = new System.Drawing.Point(4, 4);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView3.MultiSelect = false;
             this.dataGridView3.Name = "dataGridView3";
@@ -1114,10 +1075,183 @@ namespace Tester
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(525, 600);
+            this.dataGridView3.Size = new System.Drawing.Size(524, 464);
             this.dataGridView3.TabIndex = 10;
             this.dataGridView3.TabStop = false;
             this.dataGridView3.SelectionChanged += new System.EventHandler(this.dataGridView3_SelectionChanged);
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.AllowUserToAddRows = false;
+            this.dataGridView5.AllowUserToDeleteRows = false;
+            this.dataGridView5.AutoGenerateColumns = false;
+            this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView5.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView5.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView5.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView5.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn5,
+            this.descriptionDataGridViewTextBoxColumn2,
+            this.correctDataGridViewCheckBoxColumn1});
+            this.dataGridView5.DataSource = this.fKanswerquestionBindingSource1;
+            this.dataGridView5.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridView5.Location = new System.Drawing.Point(823, 4);
+            this.dataGridView5.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView5.MultiSelect = false;
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.ReadOnly = true;
+            this.dataGridView5.RowHeadersVisible = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView5.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView5.Size = new System.Drawing.Size(259, 528);
+            this.dataGridView5.TabIndex = 11;
+            this.dataGridView5.TabStop = false;
+            // 
+            // idDataGridViewTextBoxColumn5
+            // 
+            this.idDataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idDataGridViewTextBoxColumn5.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn5.HeaderText = "№";
+            this.idDataGridViewTextBoxColumn5.Name = "idDataGridViewTextBoxColumn5";
+            this.idDataGridViewTextBoxColumn5.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn5.Width = 45;
+            // 
+            // descriptionDataGridViewTextBoxColumn2
+            // 
+            this.descriptionDataGridViewTextBoxColumn2.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn2.HeaderText = "Ответ";
+            this.descriptionDataGridViewTextBoxColumn2.Name = "descriptionDataGridViewTextBoxColumn2";
+            this.descriptionDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // correctDataGridViewCheckBoxColumn1
+            // 
+            this.correctDataGridViewCheckBoxColumn1.DataPropertyName = "correct";
+            this.correctDataGridViewCheckBoxColumn1.HeaderText = "Правильный";
+            this.correctDataGridViewCheckBoxColumn1.Name = "correctDataGridViewCheckBoxColumn1";
+            this.correctDataGridViewCheckBoxColumn1.ReadOnly = true;
+            // 
+            // fKanswerquestionBindingSource1
+            // 
+            this.fKanswerquestionBindingSource1.DataMember = "FK_answer_question";
+            this.fKanswerquestionBindingSource1.DataSource = this.fKquestiontestBindingSource1;
+            // 
+            // fKquestiontestBindingSource1
+            // 
+            this.fKquestiontestBindingSource1.DataMember = "FK_question_test";
+            this.fKquestiontestBindingSource1.DataSource = this.testBindingSource;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.AutoGenerateColumns = false;
+            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView4.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView4.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView4.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn4,
+            this.nameDataGridViewTextBoxColumn3,
+            this.OPK_id});
+            this.dataGridView4.DataSource = this.fKquestiontestBindingSource1;
+            this.dataGridView4.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridView4.Location = new System.Drawing.Point(536, 4);
+            this.dataGridView4.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView4.MultiSelect = false;
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.RowHeadersVisible = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView4.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView4.Size = new System.Drawing.Size(278, 528);
+            this.dataGridView4.TabIndex = 10;
+            this.dataGridView4.TabStop = false;
+            // 
+            // idDataGridViewTextBoxColumn4
+            // 
+            this.idDataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idDataGridViewTextBoxColumn4.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn4.HeaderText = "№";
+            this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
+            this.idDataGridViewTextBoxColumn4.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn4.Width = 45;
+            // 
+            // nameDataGridViewTextBoxColumn3
+            // 
+            this.nameDataGridViewTextBoxColumn3.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn3.HeaderText = "Вопрос";
+            this.nameDataGridViewTextBoxColumn3.Name = "nameDataGridViewTextBoxColumn3";
+            this.nameDataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // OPK_id
+            // 
+            this.OPK_id.DataPropertyName = "OPK_id";
+            this.OPK_id.HeaderText = "Компетенция";
+            this.OPK_id.Name = "OPK_id";
+            this.OPK_id.ReadOnly = true;
+            // 
+            // formsStyle1
+            // 
+            this.formsStyle1.form = this;
+            // 
+            // fKresultvariantresultBindingSource
+            // 
+            this.fKresultvariantresultBindingSource.DataMember = "FK_result_variant_result";
+            this.fKresultvariantresultBindingSource.DataSource = this.fKresulttestBindingSource;
+            // 
+            // fKresultvariantanswerBindingSource
+            // 
+            this.fKresultvariantanswerBindingSource.DataSource = this.fKanswerquestionBindingSource;
+            // 
+            // questionOPKBindingSource
+            // 
+            this.questionOPKBindingSource.DataSource = this.fKquestiontestBindingSource;
+            // 
+            // questionQuestionTypesBindingSource
+            // 
+            this.questionQuestionTypesBindingSource.DataSource = this.fKquestiontestBindingSource;
+            // 
+            // testTableAdapter
+            // 
+            this.testTableAdapter.ClearBeforeFill = true;
+            // 
+            // answerTableAdapter
+            // 
+            this.answerTableAdapter.ClearBeforeFill = true;
+            // 
+            // resultTableAdapter
+            // 
+            this.resultTableAdapter.ClearBeforeFill = true;
+            // 
+            // result_answerTableAdapter
+            // 
+            this.result_answerTableAdapter.ClearBeforeFill = true;
+            // 
+            // questionTableAdapter1
+            // 
+            this.questionTableAdapter1.ClearBeforeFill = true;
+            // 
+            // oPKTableAdapter
+            // 
+            this.oPKTableAdapter.ClearBeforeFill = true;
+            // 
+            // question_TypesTableAdapter1
+            // 
+            this.question_TypesTableAdapter1.ClearBeforeFill = true;
             // 
             // test_idColumn
             // 
@@ -1148,6 +1282,7 @@ namespace Tester
             this.idDataGridViewTextBoxColumn3.HeaderText = "№";
             this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
             this.idDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn3.Visible = false;
             this.idDataGridViewTextBoxColumn3.Width = 45;
             // 
             // nameDataGridViewTextBoxColumn2
@@ -1164,6 +1299,14 @@ namespace Tester
             this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
             this.loginDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // user_id
+            // 
+            this.user_id.DataPropertyName = "user_id";
+            this.user_id.HeaderText = "user_id";
+            this.user_id.Name = "user_id";
+            this.user_id.ReadOnly = true;
+            this.user_id.Visible = false;
+            // 
             // atDataGridViewTextBoxColumn
             // 
             this.atDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -1172,116 +1315,6 @@ namespace Tester
             this.atDataGridViewTextBoxColumn.Name = "atDataGridViewTextBoxColumn";
             this.atDataGridViewTextBoxColumn.ReadOnly = true;
             this.atDataGridViewTextBoxColumn.Width = 67;
-            // 
-            // dataGridView5
-            // 
-            this.dataGridView5.AllowUserToAddRows = false;
-            this.dataGridView5.AllowUserToDeleteRows = false;
-            this.dataGridView5.AutoGenerateColumns = false;
-            this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView5.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView5.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView5.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView5.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn5,
-            this.descriptionDataGridViewTextBoxColumn2,
-            this.correctDataGridViewCheckBoxColumn1});
-            this.dataGridView5.DataSource = this.fKanswerquestionBindingSource1;
-            this.dataGridView5.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView5.Location = new System.Drawing.Point(816, 0);
-            this.dataGridView5.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView5.MultiSelect = false;
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.ReadOnly = true;
-            this.dataGridView5.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView5.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView5.Size = new System.Drawing.Size(270, 579);
-            this.dataGridView5.TabIndex = 11;
-            this.dataGridView5.TabStop = false;
-            // 
-            // idDataGridViewTextBoxColumn5
-            // 
-            this.idDataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idDataGridViewTextBoxColumn5.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn5.HeaderText = "№";
-            this.idDataGridViewTextBoxColumn5.Name = "idDataGridViewTextBoxColumn5";
-            this.idDataGridViewTextBoxColumn5.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn5.Width = 45;
-            // 
-            // descriptionDataGridViewTextBoxColumn2
-            // 
-            this.descriptionDataGridViewTextBoxColumn2.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn2.HeaderText = "Ответ";
-            this.descriptionDataGridViewTextBoxColumn2.Name = "descriptionDataGridViewTextBoxColumn2";
-            this.descriptionDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // correctDataGridViewCheckBoxColumn1
-            // 
-            this.correctDataGridViewCheckBoxColumn1.DataPropertyName = "correct";
-            this.correctDataGridViewCheckBoxColumn1.HeaderText = "Правильный";
-            this.correctDataGridViewCheckBoxColumn1.Name = "correctDataGridViewCheckBoxColumn1";
-            this.correctDataGridViewCheckBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.AutoGenerateColumns = false;
-            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView4.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView4.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView4.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn4,
-            this.nameDataGridViewTextBoxColumn3});
-            this.dataGridView4.DataSource = this.fKquestiontestBindingSource1;
-            this.dataGridView4.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView4.Location = new System.Drawing.Point(541, 0);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView4.MultiSelect = false;
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.RowHeadersVisible = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView4.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView4.Size = new System.Drawing.Size(278, 579);
-            this.dataGridView4.TabIndex = 10;
-            this.dataGridView4.TabStop = false;
-            // 
-            // idDataGridViewTextBoxColumn4
-            // 
-            this.idDataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idDataGridViewTextBoxColumn4.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn4.HeaderText = "№";
-            this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
-            this.idDataGridViewTextBoxColumn4.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn4.Width = 45;
-            // 
-            // nameDataGridViewTextBoxColumn3
-            // 
-            this.nameDataGridViewTextBoxColumn3.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn3.HeaderText = "Вопрос";
-            this.nameDataGridViewTextBoxColumn3.Name = "nameDataGridViewTextBoxColumn3";
-            this.nameDataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // formsStyle1
-            // 
-            this.formsStyle1.form = this;
             // 
             // AdminForm
             // 
@@ -1304,22 +1337,10 @@ namespace Tester
             this.Load += new System.EventHandler(this.AdminForm_Load);
             this.ToolStripMenu.ResumeLayout(false);
             this.ToolStripMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testerDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKquestiontestBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oPKBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKanswerquestionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKresultvariantresultBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKresulttestBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKquestiontestBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKanswerquestionBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKresultvariantresultBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKresultvariantanswerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionOPKBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionQuestionTypesBindingSource)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabControl3.ResumeLayout(false);
@@ -1327,25 +1348,37 @@ namespace Tester
             this.tabPage3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oPKBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKquestiontestBindingSource)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKanswerquestionBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.tabControl5.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
             this.tabPage11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKresultvariantresultBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKresulttestBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKanswerquestionBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKquestiontestBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKresultvariantresultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKresultvariantanswerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionOPKBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionQuestionTypesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1427,20 +1460,11 @@ namespace Tester
         private DataGridViewTextBoxColumn resultidDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn answeridDataGridViewTextBoxColumn;
         internal DataGridView dataGridView3;
-        private DataGridViewTextBoxColumn test_idColumn;
-        private DataGridViewTextBoxColumn markColumn;
-        private DataGridViewTextBoxColumn stColumn;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn atDataGridViewTextBoxColumn;
         internal DataGridView dataGridView5;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn5;
         private DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn2;
         private DataGridViewCheckBoxColumn correctDataGridViewCheckBoxColumn1;
         internal DataGridView dataGridView4;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn3;
         private TabPage tabPage3;
         private CustomStyles.CustomTextBox textBox1;
         private CustomButton customButton2;
@@ -1450,5 +1474,17 @@ namespace Tester
         private CustomStyles.CustomTextBox textBox2;
         private ToolStripMenuItem Группы;
         private ToolStripMenuItem Пользователи;
+        private Button btnShowOpk_Result;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn OPK_id;
+        private DataGridViewTextBoxColumn test_idColumn;
+        private DataGridViewTextBoxColumn markColumn;
+        private DataGridViewTextBoxColumn stColumn;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn user_id;
+        private DataGridViewTextBoxColumn atDataGridViewTextBoxColumn;
     }
 }
