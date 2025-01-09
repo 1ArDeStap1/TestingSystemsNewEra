@@ -276,5 +276,11 @@ namespace Tester
                 Show();
             }
         }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            MailForm mailForm = new MailForm();
+            mailForm.ShowDialog(this);
+        }
     }
 }

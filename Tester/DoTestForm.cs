@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClosedXML.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,7 @@ namespace Tester
         int testId = 0;
         int userId = 0;
         bool trening;
+        int result_id;
         int timeLimit = 0;
         bool hardEnd = false;
         public DoTestForm(int testId, int userId, int timeLimit = 0)
@@ -272,6 +274,9 @@ namespace Tester
                     MessageBox.Show("Молодец, так держать!\nТы ответил правильно на " + test.rightsCount.ToString() + " вопросов из " + test.Count.ToString() + "!\n" +
                     "Предполагаемая отметка: " + mark.ToString() + "\n" +
                     "Время прохождения теста в секундах: " + timerLabel.Text + "\r\nОсвоены компетенции: \r\n" + opksResult);
+                    this.result_id = inserted;
+                    ExportToExcel();
+
                 } else
                 {
                     MessageBox.Show("Молодец, так держать!\nТы ответил правильно на " + test.rightsCount.ToString() + " вопросов из " + test.Count.ToString() + "!\n" +
@@ -370,7 +375,76 @@ namespace Tester
             e.ItemWidth = Convert.ToInt32(size.Width) + 5;
         }
 
+        private void ExportToExcel()
+        {
+            using (var workbook = new XLWorkbook())
+            {
+                var worksheetResult = workbook.Worksheets.Add("Результат основной ");
+                DataTable dt = new DataTable();
+                DataRow[] dtr = testerDataSet.result.Select("id = " + result_id.ToString());
+                dt = dtr.CopyToDataTable();
+                dt = DtColumnsRemove(dt, new string[] { "id", "user_id", "test_id", "opk_result_id" });
+                dt = DtColumnsRename(dt, new string[] { "Дата завершения", "Логин", "Фамилия", "Имя", "Отчество", "Название группы", "Оценка (в %)", "Дата начала" });
+                worksheetResult.Cell(1, 1).InsertTable(dt, false);
+                var worksheetResult_OPK = workbook.Worksheets.Add("Результат по компетенциям ");
+                dtr = testerDataSet.opk_result.Select("result_id = " + result_id.ToString());
+                dt = dtr.CopyToDataTable();
+                dt = DtColumnsRemove(dt, new string[] { "Id", "user_id", "result_id" });
+                dt = DtColumnsRename(dt, new string[] { "Идентификатор Компетенции", "Кол-во правильных", "Кол-во вопросов", "% Освоения", "Описание результата", "Название компетенции", "Требуемый % для освоения компетенции" });
+                worksheetResult_OPK.Cell(1, 1).InsertTable(dt, false);
+                var worksheetResult_QA = workbook.Worksheets.Add("Результат подробно ");
+                dtr = testerDataSet.question.Select("test_id = " + testId);
+                dt = dtr.CopyToDataTable();
+                dt = DtColumnsRemove(dt, new string[] { "id", "image", "test_id" });
+                dt = DtColumnsRename(dt, new string[] { "Название", "Описание", "Идентификатор компетенции", "Идентификатор типа" });
+                List<string> tmpColumnNames = new List<string>();
+                foreach (DataColumn column in dt.Columns)
+                    tmpColumnNames.Add(column.ColumnName);
+                tmpColumnNames.Add("Ответ");
+                tmpColumnNames.Add("Правильный");
+                worksheetResult_QA.Cell(1, 1).InsertData(tmpColumnNames, true);
+                int x = 2;
+                int y = 1;
+                DataTable dtRA = testerDataSet.result_answer.Select("result_id = "+result_id.ToString()).CopyToDataTable();
+                foreach (DataRow Row in dtr)
+                {
+                    worksheetResult_QA.Cell(x, y).InsertData(new string[] { Row[1].ToString(), Row[2].ToString(), Row[5].ToString(), Row[6].ToString()  }, true);
+                    y += 4;
+                    DataRow[] dtrA = testerDataSet.answer.Select("question_id = "+ Row[0].ToString());
+                    foreach (DataRow AnswerRow in dtrA)
+                    {
+                        DataRow[] RowsToWrite = dtRA.Select("answer_id = " + AnswerRow[0].ToString());
+                        if (RowsToWrite != null && RowsToWrite.Length > 0)
+                        {
+                            worksheetResult_QA.Cell(x, y).InsertData(new string[] { AnswerRow[1].ToString(), AnswerRow[2].ToString() }, true);
+                            x++;
+                        }
+                    }
+                    x++;
+                    y = 1;
+                    
+                }
+                workbook.SaveAs("path_to_your_exported_file.xlsx");
+            }
+        }
 
+        private DataTable DtColumnsRename(DataTable dt, string[] names)
+        {
+            for (int i = 0; i < names.Length; i++)
+            {
+                dt.Columns[i].ColumnName = names[i];
+            }
+            return dt;
+        }
+
+        private DataTable DtColumnsRemove(DataTable dt, string[] names)
+        {
+            for (int i = 0; i < names.Length; i++)
+            {
+                dt.Columns.Remove(dt.Columns[names[i]]);
+            }
+            return dt;
+        }
 
         private void AnswerTextBox1_TextChanged(object sender, EventArgs e)
         {

@@ -57,6 +57,7 @@ namespace Tester
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new Tester.CustomStyles.CustomTextBox();
             this.numericUpDown1 = new Tester.CustomStyles.CustomTextBox();
             this.textBox1 = new Tester.CustomStyles.CustomTextBox();
@@ -110,6 +111,14 @@ namespace Tester
             this.fKresultvariantresultBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.fKresulttestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.test_idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.markColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.atDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -132,14 +141,6 @@ namespace Tester
             this.questionTableAdapter1 = new Tester.testerDataSetTableAdapters.questionTableAdapter();
             this.oPKTableAdapter = new Tester.testerDataSetTableAdapters.OPKTableAdapter();
             this.question_TypesTableAdapter1 = new Tester.testerDataSetTableAdapters.Question_TypesTableAdapter();
-            this.test_idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.markColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.atDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToolStripMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
@@ -340,6 +341,7 @@ namespace Tester
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.Honeydew;
+            this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.textBox2);
             this.tabPage3.Controls.Add(this.numericUpDown1);
             this.tabPage3.Controls.Add(this.textBox1);
@@ -353,6 +355,17 @@ namespace Tester
             this.tabPage3.Size = new System.Drawing.Size(1070, 531);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Изменение";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(891, 108);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // textBox2
             // 
@@ -444,7 +457,7 @@ namespace Tester
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.testBindingSource, "id", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.linkLabel1.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel1.Location = new System.Drawing.Point(40, 486);
+            this.linkLabel1.Location = new System.Drawing.Point(40, 490);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(80, 15);
@@ -669,7 +682,7 @@ namespace Tester
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.fKquestiontestBindingSource, "id", true));
             this.linkLabel2.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel2.Location = new System.Drawing.Point(7, 510);
+            this.linkLabel2.Location = new System.Drawing.Point(7, 514);
             this.linkLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(97, 15);
@@ -690,7 +703,7 @@ namespace Tester
             this.pictureBox1.Location = new System.Drawing.Point(7, 67);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(561, 340);
+            this.pictureBox1.Size = new System.Drawing.Size(561, 344);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
@@ -705,7 +718,7 @@ namespace Tester
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.Lavender;
-            this.button2.Location = new System.Drawing.Point(118, 504);
+            this.button2.Location = new System.Drawing.Point(118, 508);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(695, 26);
@@ -741,7 +754,7 @@ namespace Tester
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label5.Location = new System.Drawing.Point(7, 412);
+            this.label5.Location = new System.Drawing.Point(7, 416);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(248, 15);
@@ -766,7 +779,7 @@ namespace Tester
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox4.BackColor = System.Drawing.SystemColors.Control;
             this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fKquestiontestBindingSource, "description", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.textBox4.Location = new System.Drawing.Point(7, 429);
+            this.textBox4.Location = new System.Drawing.Point(7, 433);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
@@ -1080,6 +1093,68 @@ namespace Tester
             this.dataGridView3.TabStop = false;
             this.dataGridView3.SelectionChanged += new System.EventHandler(this.dataGridView3_SelectionChanged);
             // 
+            // test_idColumn
+            // 
+            this.test_idColumn.DataPropertyName = "test_id";
+            this.test_idColumn.HeaderText = "test_id";
+            this.test_idColumn.Name = "test_idColumn";
+            this.test_idColumn.ReadOnly = true;
+            this.test_idColumn.Visible = false;
+            // 
+            // markColumn
+            // 
+            this.markColumn.DataPropertyName = "mark";
+            this.markColumn.HeaderText = "Отметка";
+            this.markColumn.Name = "markColumn";
+            this.markColumn.ReadOnly = true;
+            // 
+            // stColumn
+            // 
+            this.stColumn.DataPropertyName = "st";
+            this.stColumn.HeaderText = "Начало";
+            this.stColumn.Name = "stColumn";
+            this.stColumn.ReadOnly = true;
+            // 
+            // idDataGridViewTextBoxColumn3
+            // 
+            this.idDataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idDataGridViewTextBoxColumn3.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn3.HeaderText = "№";
+            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
+            this.idDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn2
+            // 
+            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn2.HeaderText = "Группа";
+            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
+            this.nameDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // loginDataGridViewTextBoxColumn
+            // 
+            this.loginDataGridViewTextBoxColumn.DataPropertyName = "login";
+            this.loginDataGridViewTextBoxColumn.HeaderText = "Пользователь";
+            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+            this.loginDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // user_id
+            // 
+            this.user_id.DataPropertyName = "user_id";
+            this.user_id.HeaderText = "user_id";
+            this.user_id.Name = "user_id";
+            this.user_id.ReadOnly = true;
+            this.user_id.Visible = false;
+            // 
+            // atDataGridViewTextBoxColumn
+            // 
+            this.atDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.atDataGridViewTextBoxColumn.DataPropertyName = "at";
+            this.atDataGridViewTextBoxColumn.HeaderText = "Конец";
+            this.atDataGridViewTextBoxColumn.Name = "atDataGridViewTextBoxColumn";
+            this.atDataGridViewTextBoxColumn.ReadOnly = true;
+            this.atDataGridViewTextBoxColumn.Width = 67;
+            // 
             // dataGridView5
             // 
             this.dataGridView5.AllowUserToAddRows = false;
@@ -1253,69 +1328,6 @@ namespace Tester
             // 
             this.question_TypesTableAdapter1.ClearBeforeFill = true;
             // 
-            // test_idColumn
-            // 
-            this.test_idColumn.DataPropertyName = "test_id";
-            this.test_idColumn.HeaderText = "test_id";
-            this.test_idColumn.Name = "test_idColumn";
-            this.test_idColumn.ReadOnly = true;
-            this.test_idColumn.Visible = false;
-            // 
-            // markColumn
-            // 
-            this.markColumn.DataPropertyName = "mark";
-            this.markColumn.HeaderText = "Отметка";
-            this.markColumn.Name = "markColumn";
-            this.markColumn.ReadOnly = true;
-            // 
-            // stColumn
-            // 
-            this.stColumn.DataPropertyName = "st";
-            this.stColumn.HeaderText = "Начало";
-            this.stColumn.Name = "stColumn";
-            this.stColumn.ReadOnly = true;
-            // 
-            // idDataGridViewTextBoxColumn3
-            // 
-            this.idDataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idDataGridViewTextBoxColumn3.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn3.HeaderText = "№";
-            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
-            this.idDataGridViewTextBoxColumn3.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn3.Visible = false;
-            this.idDataGridViewTextBoxColumn3.Width = 45;
-            // 
-            // nameDataGridViewTextBoxColumn2
-            // 
-            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn2.HeaderText = "Группа";
-            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
-            this.nameDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // loginDataGridViewTextBoxColumn
-            // 
-            this.loginDataGridViewTextBoxColumn.DataPropertyName = "login";
-            this.loginDataGridViewTextBoxColumn.HeaderText = "Пользователь";
-            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
-            this.loginDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // user_id
-            // 
-            this.user_id.DataPropertyName = "user_id";
-            this.user_id.HeaderText = "user_id";
-            this.user_id.Name = "user_id";
-            this.user_id.ReadOnly = true;
-            this.user_id.Visible = false;
-            // 
-            // atDataGridViewTextBoxColumn
-            // 
-            this.atDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.atDataGridViewTextBoxColumn.DataPropertyName = "at";
-            this.atDataGridViewTextBoxColumn.HeaderText = "Конец";
-            this.atDataGridViewTextBoxColumn.Name = "atDataGridViewTextBoxColumn";
-            this.atDataGridViewTextBoxColumn.ReadOnly = true;
-            this.atDataGridViewTextBoxColumn.Width = 67;
-            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1486,5 +1498,6 @@ namespace Tester
         private DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn user_id;
         private DataGridViewTextBoxColumn atDataGridViewTextBoxColumn;
+        private Button button1;
     }
 }
