@@ -77,6 +77,7 @@
             this.opkTableAdapter1 = new Tester.testerDataSetTableAdapters.OPKTableAdapter();
             this.opk_resultTableAdapter1 = new Tester.testerDataSetTableAdapters.opk_resultTableAdapter();
             this.opkresultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.adminNetworkDataTableAdapter1 = new Tester.testerDataSetTableAdapters.adminNetworkDataTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.questionImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
@@ -502,6 +503,10 @@
             this.opkresultBindingSource.DataMember = "opk_result";
             this.opkresultBindingSource.DataSource = this.testerDataSet;
             // 
+            // adminNetworkDataTableAdapter1
+            // 
+            this.adminNetworkDataTableAdapter1.ClearBeforeFill = true;
+            // 
             // DoTestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -589,5 +594,6 @@
         private testerDataSetTableAdapters.OPKTableAdapter opkTableAdapter1;
         private testerDataSetTableAdapters.opk_resultTableAdapter opk_resultTableAdapter1;
         private System.Windows.Forms.BindingSource opkresultBindingSource;
+        private testerDataSetTableAdapters.adminNetworkDataTableAdapter adminNetworkDataTableAdapter1;
     }
 }

@@ -22,6 +22,10 @@ namespace Tester
         {
             formsStyle1.Apply();
             LoadDataTables();
+            if (testerDataSet.adminNetworkData.Select("Id = 1")[0][7].ToString() == "" || testerDataSet.adminNetworkData.Select("Id = 1")[0][7].ToString() == "Null")
+            {
+                MessageBox.Show("У вас не привязана почта для рассылки результатов. \r\nДля привязки зайдите на вкладку 'Управление почтой' и введите свой почтовый адрес");
+            }
         }
 
         private void LoadDataTables()
@@ -33,6 +37,8 @@ namespace Tester
             this.questionTableAdapter1.Fill(this.testerDataSet.question);
             this.testTableAdapter.Fill(this.testerDataSet.test);
             this.question_TypesTableAdapter1.Fill(this.testerDataSet.Question_Types);
+            this.adminNetworkDataTableAdapter1.Fill(this.testerDataSet.adminNetworkData);
+
         }
 
         private void InsertedMessage()

@@ -275,8 +275,18 @@ namespace Tester
                     "Предполагаемая отметка: " + mark.ToString() + "\n" +
                     "Время прохождения теста в секундах: " + timerLabel.Text + "\r\nОсвоены компетенции: \r\n" + opksResult);
                     this.result_id = inserted;
-                    ExportToExcel();
-
+                    string FileResult = ExportToExcel();
+                    this.adminNetworkDataTableAdapter1.Fill(testerDataSet.adminNetworkData);
+                    DataRow dataForSend = testerDataSet.adminNetworkData.Select("Id = 1")[0];
+                    string testName = testerDataSet.test.Select("id = " + testId.ToString())[0]["name"].ToString();
+                    if (dataForSend != null && dataForSend["SendTo"].ToString() != "" && dataForSend["SendTo"].ToString() != "Null")
+                    {
+                        SMTP_Mail SendMail = new SMTP_Mail();
+                        string[] fi = FileResult.Split(new[] { "_" }, StringSplitOptions.None);
+                        StreamReader fileReader = new StreamReader(@"SendTemplate.html");
+                        string template = fileReader.ReadToEnd();
+                        SendMail.SendMail(dataForSend["smtpServer"].ToString(), dataForSend["smtpPort"].ToString(), dataForSend["smtpUsername"].ToString(), dataForSend["smtpUserpassword"].ToString(), dataForSend["smtpSendFrom"].ToString(), dataForSend["smtpSenderName"].ToString(), fi[0] + " " + fi[1] + " Прошёл тест " + testName, template, dataForSend["SendTo"].ToString(), true, FileResult);
+                    }
                 } else
                 {
                     MessageBox.Show("Молодец, так держать!\nТы ответил правильно на " + test.rightsCount.ToString() + " вопросов из " + test.Count.ToString() + "!\n" +
@@ -375,7 +385,7 @@ namespace Tester
             e.ItemWidth = Convert.ToInt32(size.Width) + 5;
         }
 
-        private void ExportToExcel()
+        private string ExportToExcel()
         {
             using (var workbook = new XLWorkbook())
             {
@@ -385,6 +395,8 @@ namespace Tester
                 dt = dtr.CopyToDataTable();
                 dt = DtColumnsRemove(dt, new string[] { "id", "user_id", "test_id", "opk_result_id" });
                 dt = DtColumnsRename(dt, new string[] { "Дата завершения", "Логин", "Фамилия", "Имя", "Отчество", "Название группы", "Оценка (в %)", "Дата начала" });
+                DateTime Savedt = DateTime.Now;
+                string SaveFileName = dt.Rows[0]["Фамилия"].ToString() + "_" + dt.Rows[0]["Имя"].ToString() + "_" + Savedt.ToString("yyyyMMddHHmmss") + ".xlsx";
                 worksheetResult.Cell(1, 1).InsertTable(dt, false);
                 var worksheetResult_OPK = workbook.Worksheets.Add("Результат по компетенциям ");
                 dtr = testerDataSet.opk_result.Select("result_id = " + result_id.ToString());
@@ -424,7 +436,8 @@ namespace Tester
                     y = 1;
                     
                 }
-                workbook.SaveAs("path_to_your_exported_file.xlsx");
+                workbook.SaveAs(SaveFileName);
+                return SaveFileName;
             }
         }
 

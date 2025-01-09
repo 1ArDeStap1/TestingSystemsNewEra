@@ -57,12 +57,6 @@ namespace Tester
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new Tester.CustomStyles.CustomTextBox();
-            this.numericUpDown1 = new Tester.CustomStyles.CustomTextBox();
-            this.textBox1 = new Tester.CustomStyles.CustomTextBox();
-            this.customButton2 = new Tester.CustomButton();
-            this.customButton1 = new Tester.CustomButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
@@ -129,7 +123,6 @@ namespace Tester
             this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OPK_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.formsStyle1 = new Tester.FormsStyle(this.components);
             this.fKresultvariantresultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fKresultvariantanswerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.questionOPKBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -141,6 +134,14 @@ namespace Tester
             this.questionTableAdapter1 = new Tester.testerDataSetTableAdapters.questionTableAdapter();
             this.oPKTableAdapter = new Tester.testerDataSetTableAdapters.OPKTableAdapter();
             this.question_TypesTableAdapter1 = new Tester.testerDataSetTableAdapters.Question_TypesTableAdapter();
+            this.управлениеПочтойToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminNetworkDataTableAdapter1 = new Tester.testerDataSetTableAdapters.adminNetworkDataTableAdapter();
+            this.textBox2 = new Tester.CustomStyles.CustomTextBox();
+            this.numericUpDown1 = new Tester.CustomStyles.CustomTextBox();
+            this.textBox1 = new Tester.CustomStyles.CustomTextBox();
+            this.customButton2 = new Tester.CustomButton();
+            this.customButton1 = new Tester.CustomButton();
+            this.formsStyle1 = new Tester.FormsStyle(this.components);
             this.ToolStripMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
@@ -188,11 +189,12 @@ namespace Tester
             this.ToolStripMenu.Dock = System.Windows.Forms.DockStyle.None;
             this.ToolStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Группы,
-            this.Пользователи});
+            this.Пользователи,
+            this.управлениеПочтойToolStripMenuItem});
             this.ToolStripMenu.Location = new System.Drawing.Point(13, 9);
             this.ToolStripMenu.Name = "ToolStripMenu";
             this.ToolStripMenu.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.ToolStripMenu.Size = new System.Drawing.Size(167, 24);
+            this.ToolStripMenu.Size = new System.Drawing.Size(295, 24);
             this.ToolStripMenu.TabIndex = 0;
             this.ToolStripMenu.Text = "Группы";
             // 
@@ -341,7 +343,6 @@ namespace Tester
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.Honeydew;
-            this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.textBox2);
             this.tabPage3.Controls.Add(this.numericUpDown1);
             this.tabPage3.Controls.Add(this.textBox1);
@@ -355,101 +356,6 @@ namespace Tester
             this.tabPage3.Size = new System.Drawing.Size(1070, 531);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Изменение";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(891, 108);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderColor = System.Drawing.Color.DarkBlue;
-            this.textBox2.BorderColorNotActive = System.Drawing.Color.DarkGray;
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "description", true));
-            this.textBox2.Font = new System.Drawing.Font("Arial", 11.5F);
-            this.textBox2.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(7, 157);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(762, 265);
-            this.textBox2.TabIndex = 14;
-            this.textBox2.text = null;
-            this.textBox2.TextPreview = "Описание теста";
-            this.textBox2.UseSystemPasswordChars = false;
-            this.textBox2.VerticalOffset = 100;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.BackColor = System.Drawing.Color.White;
-            this.numericUpDown1.BorderColor = System.Drawing.Color.DarkBlue;
-            this.numericUpDown1.BorderColorNotActive = System.Drawing.Color.DarkGray;
-            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "time", true));
-            this.numericUpDown1.Font = new System.Drawing.Font("Arial", 11.5F);
-            this.numericUpDown1.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.numericUpDown1.ForeColor = System.Drawing.Color.Black;
-            this.numericUpDown1.Location = new System.Drawing.Point(7, 80);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(275, 52);
-            this.numericUpDown1.TabIndex = 13;
-            this.numericUpDown1.text = null;
-            this.numericUpDown1.TextPreview = "Время прохождения теста";
-            this.numericUpDown1.UseSystemPasswordChars = false;
-            this.numericUpDown1.VerticalOffset = 100;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderColor = System.Drawing.Color.DarkBlue;
-            this.textBox1.BorderColorNotActive = System.Drawing.Color.DarkGray;
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "name", true));
-            this.textBox1.Font = new System.Drawing.Font("Arial", 11.5F);
-            this.textBox1.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(7, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(702, 54);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.text = null;
-            this.textBox1.TextPreview = "Название Теста";
-            this.textBox1.UseSystemPasswordChars = false;
-            this.textBox1.VerticalOffset = 0;
-            // 
-            // customButton2
-            // 
-            this.customButton2.BackColor = System.Drawing.Color.DarkBlue;
-            this.customButton2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.customButton2.ForeColor = System.Drawing.Color.Chartreuse;
-            this.customButton2.Location = new System.Drawing.Point(339, 452);
-            this.customButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.RoundingEnabled = true;
-            this.customButton2.RoundingPercent = 30;
-            this.customButton2.Size = new System.Drawing.Size(430, 57);
-            this.customButton2.TabIndex = 11;
-            this.customButton2.Text = "Сохранить Изменения";
-            this.customButton2.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // customButton1
-            // 
-            this.customButton1.BackColor = System.Drawing.Color.DarkBlue;
-            this.customButton1.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.customButton1.ForeColor = System.Drawing.Color.Chartreuse;
-            this.customButton1.Location = new System.Drawing.Point(716, 8);
-            this.customButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.RoundingEnabled = true;
-            this.customButton1.RoundingPercent = 100;
-            this.customButton1.Size = new System.Drawing.Size(53, 53);
-            this.customButton1.TabIndex = 10;
-            this.customButton1.Text = "+";
-            this.customButton1.Click += new System.EventHandler(this.button4_Click);
             // 
             // linkLabel1
             // 
@@ -495,14 +401,14 @@ namespace Tester
             this.idDataGridViewTextBoxColumn7,
             this.nameDataGridViewTextBoxColumn4});
             this.dataGridView7.DataSource = this.oPKBindingSource;
-            this.dataGridView7.Location = new System.Drawing.Point(4, 128);
+            this.dataGridView7.Location = new System.Drawing.Point(24, 137);
             this.dataGridView7.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView7.MultiSelect = false;
             this.dataGridView7.Name = "dataGridView7";
             this.dataGridView7.ReadOnly = true;
             this.dataGridView7.RowHeadersVisible = false;
             this.dataGridView7.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView7.Size = new System.Drawing.Size(246, 307);
+            this.dataGridView7.Size = new System.Drawing.Size(205, 307);
             this.dataGridView7.TabIndex = 28;
             // 
             // idDataGridViewTextBoxColumn7
@@ -1123,6 +1029,7 @@ namespace Tester
             this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
             this.idDataGridViewTextBoxColumn3.ReadOnly = true;
             this.idDataGridViewTextBoxColumn3.Visible = false;
+            this.idDataGridViewTextBoxColumn3.Width = 43;
             // 
             // nameDataGridViewTextBoxColumn2
             // 
@@ -1279,10 +1186,6 @@ namespace Tester
             this.OPK_id.Name = "OPK_id";
             this.OPK_id.ReadOnly = true;
             // 
-            // formsStyle1
-            // 
-            this.formsStyle1.form = this;
-            // 
             // fKresultvariantresultBindingSource
             // 
             this.fKresultvariantresultBindingSource.DataMember = "FK_result_variant_result";
@@ -1327,6 +1230,105 @@ namespace Tester
             // question_TypesTableAdapter1
             // 
             this.question_TypesTableAdapter1.ClearBeforeFill = true;
+            // 
+            // управлениеПочтойToolStripMenuItem
+            // 
+            this.управлениеПочтойToolStripMenuItem.Name = "управлениеПочтойToolStripMenuItem";
+            this.управлениеПочтойToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
+            this.управлениеПочтойToolStripMenuItem.Text = "Управление почтой";
+            this.управлениеПочтойToolStripMenuItem.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // adminNetworkDataTableAdapter1
+            // 
+            this.adminNetworkDataTableAdapter1.ClearBeforeFill = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.White;
+            this.textBox2.BorderColor = System.Drawing.Color.DarkBlue;
+            this.textBox2.BorderColorNotActive = System.Drawing.Color.DarkGray;
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "description", true));
+            this.textBox2.Font = new System.Drawing.Font("Arial", 11.5F);
+            this.textBox2.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.textBox2.ForeColor = System.Drawing.Color.Black;
+            this.textBox2.Location = new System.Drawing.Point(7, 157);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(762, 265);
+            this.textBox2.TabIndex = 14;
+            this.textBox2.text = null;
+            this.textBox2.TextPreview = "Описание теста";
+            this.textBox2.UseSystemPasswordChars = false;
+            this.textBox2.VerticalOffset = 100;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.BackColor = System.Drawing.Color.White;
+            this.numericUpDown1.BorderColor = System.Drawing.Color.DarkBlue;
+            this.numericUpDown1.BorderColorNotActive = System.Drawing.Color.DarkGray;
+            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "time", true));
+            this.numericUpDown1.Font = new System.Drawing.Font("Arial", 11.5F);
+            this.numericUpDown1.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.numericUpDown1.ForeColor = System.Drawing.Color.Black;
+            this.numericUpDown1.Location = new System.Drawing.Point(7, 80);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(275, 52);
+            this.numericUpDown1.TabIndex = 13;
+            this.numericUpDown1.text = null;
+            this.numericUpDown1.TextPreview = "Время прохождения теста";
+            this.numericUpDown1.UseSystemPasswordChars = false;
+            this.numericUpDown1.VerticalOffset = 100;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderColor = System.Drawing.Color.DarkBlue;
+            this.textBox1.BorderColorNotActive = System.Drawing.Color.DarkGray;
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "name", true));
+            this.textBox1.Font = new System.Drawing.Font("Arial", 11.5F);
+            this.textBox1.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.textBox1.ForeColor = System.Drawing.Color.Black;
+            this.textBox1.Location = new System.Drawing.Point(7, 7);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(702, 54);
+            this.textBox1.TabIndex = 12;
+            this.textBox1.text = null;
+            this.textBox1.TextPreview = "Название Теста";
+            this.textBox1.UseSystemPasswordChars = false;
+            this.textBox1.VerticalOffset = 0;
+            // 
+            // customButton2
+            // 
+            this.customButton2.BackColor = System.Drawing.Color.DarkBlue;
+            this.customButton2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.customButton2.ForeColor = System.Drawing.Color.Chartreuse;
+            this.customButton2.Location = new System.Drawing.Point(339, 452);
+            this.customButton2.Margin = new System.Windows.Forms.Padding(4);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.RoundingEnabled = true;
+            this.customButton2.RoundingPercent = 30;
+            this.customButton2.Size = new System.Drawing.Size(430, 57);
+            this.customButton2.TabIndex = 11;
+            this.customButton2.Text = "Сохранить Изменения";
+            this.customButton2.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.Color.DarkBlue;
+            this.customButton1.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.customButton1.ForeColor = System.Drawing.Color.Chartreuse;
+            this.customButton1.Location = new System.Drawing.Point(716, 8);
+            this.customButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.RoundingEnabled = true;
+            this.customButton1.RoundingPercent = 100;
+            this.customButton1.Size = new System.Drawing.Size(53, 53);
+            this.customButton1.TabIndex = 10;
+            this.customButton1.Text = "+";
+            this.customButton1.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // formsStyle1
+            // 
+            this.formsStyle1.form = this;
             // 
             // AdminForm
             // 
@@ -1498,6 +1500,7 @@ namespace Tester
         private DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn user_id;
         private DataGridViewTextBoxColumn atDataGridViewTextBoxColumn;
-        private Button button1;
+        private ToolStripMenuItem управлениеПочтойToolStripMenuItem;
+        private testerDataSetTableAdapters.adminNetworkDataTableAdapter adminNetworkDataTableAdapter1;
     }
 }

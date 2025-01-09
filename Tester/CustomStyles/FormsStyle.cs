@@ -66,7 +66,7 @@ namespace Tester
             }
         }
 
-        public void Apply()
+        public void Apply(bool ChangePosition = true)
         {
             SF.Alignment = StringAlignment.Center;
             SF.LineAlignment = StringAlignment.Center;
@@ -75,7 +75,9 @@ namespace Tester
 
             setDoubleBuffer(form);
 
-            OffsetHeaderControl();
+            if (ChangePosition)
+                OffsetHeaderControl();
+            else form.Refresh();
 
             form.Paint += Form_Paint;
             form.MouseDown += Form_MouseDown;
