@@ -220,13 +220,13 @@ namespace Tester
                     Debug.WriteLine("id: " + inserted.ToString());
                     foreach (int answer in test.answersIds)
                     {
-                        result_answerTableAdapter.Insert(inserted, answer);
+                        result_answerTableAdapter.InsertQuery(inserted, answer);
                     }
                     resultTableAdapter.Fill(testerDataSet.result);
 
                     string opksResult = "";
-                    int rightsOpks = 0;
-                    int AllQuestOpk = 0;
+                    int rightsOpks;
+                    int AllQuestOpk;
                     decimal TmpOpkPercent = 0;
                     foreach (int opk_id in opk_ids)
                     {
@@ -422,15 +422,11 @@ namespace Tester
                 {
                     worksheetResult_QA.Cell(x, y).InsertData(new string[] { Row[1].ToString(), Row[2].ToString(), Row[5].ToString(), Row[6].ToString()  }, true);
                     y += 4;
-                    DataRow[] dtrA = testerDataSet.answer.Select("question_id = "+ Row[0].ToString());
+                    DataRow[] dtrA = dtRA.Select("question_id = "+ Row[0].ToString());
                     foreach (DataRow AnswerRow in dtrA)
                     {
-                        DataRow[] RowsToWrite = dtRA.Select("answer_id = " + AnswerRow[0].ToString());
-                        if (RowsToWrite != null && RowsToWrite.Length > 0)
-                        {
-                            worksheetResult_QA.Cell(x, y).InsertData(new string[] { AnswerRow[1].ToString(), AnswerRow[2].ToString() }, true);
-                            x++;
-                        }
+                        worksheetResult_QA.Cell(x, y).InsertData(new string[] { AnswerRow[3].ToString(), (bool)AnswerRow[4]? "ДА": "НЕТ" }, true);
+                        x++;
                     }
                     x++;
                     y = 1;

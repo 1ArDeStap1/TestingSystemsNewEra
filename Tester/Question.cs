@@ -92,6 +92,7 @@ namespace Tester
             {
                 answered = right = true;
                 int CorrectsCurrentAnswers = 0;
+                int wrongAnswers = 0;
                 foreach (var givedAnswer in givedAnswers)
                 {
                     answersIds.Add(answers[givedAnswer.Key].id);
@@ -99,14 +100,15 @@ namespace Tester
                     {
 
                         right = false;
-                        return false;
+                        wrongAnswers++;
+
                     } else
                     {
                         CorrectsCurrentAnswers++;
                     }
 
                 }
-                if (CorrectsCurrentAnswers == correct.Length)
+                if (CorrectsCurrentAnswers == correct.Length && wrongAnswers == 0)
                 {
                     right = true;
                     return true;

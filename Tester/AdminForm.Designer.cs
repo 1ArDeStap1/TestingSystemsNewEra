@@ -34,11 +34,11 @@ namespace Tester
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             this.ToolStripMenu = new System.Windows.Forms.MenuStrip();
             this.Группы = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,8 +84,6 @@ namespace Tester
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fKanswerquestionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl5 = new System.Windows.Forms.TabControl();
@@ -142,6 +140,10 @@ namespace Tester
             this.customButton2 = new Tester.CustomButton();
             this.customButton1 = new Tester.CustomButton();
             this.formsStyle1 = new Tester.FormsStyle(this.components);
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ToolStripMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
@@ -164,7 +166,6 @@ namespace Tester
             ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKanswerquestionBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabControl5.SuspendLayout();
@@ -182,6 +183,7 @@ namespace Tester
             ((System.ComponentModel.ISupportInitialize)(this.fKresultvariantanswerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionOPKBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionQuestionTypesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // ToolStripMenu
@@ -705,48 +707,6 @@ namespace Tester
             this.tabPage5.Text = "Варианты ответа";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn2});
-            this.dataGridView2.DataSource = this.fKanswerquestionBindingSource;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView2.Location = new System.Drawing.Point(4, 118);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(838, 450);
-            this.dataGridView2.TabIndex = 12;
-            this.dataGridView2.TabStop = false;
-            // 
-            // idDataGridViewTextBoxColumn2
-            // 
-            this.idDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn2.HeaderText = "№";
-            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
-            this.idDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn2.Width = 45;
-            // 
             // fKanswerquestionBindingSource
             // 
             this.fKanswerquestionBindingSource.DataSource = this.fKquestiontestBindingSource;
@@ -846,7 +806,7 @@ namespace Tester
             // 
             this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox1.AutoSize = true;
-            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.fKanswerquestionBindingSource, "correct", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.fKanswerquestionBindingSource1, "correct", true));
             this.checkBox1.Location = new System.Drawing.Point(751, 25);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
@@ -1330,6 +1290,62 @@ namespace Tester
             // 
             this.formsStyle1.form = this;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.description,
+            this.correct});
+            this.dataGridView2.DataSource = this.fKanswerquestionBindingSource1;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridView2.Location = new System.Drawing.Point(4, 118);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView2.MultiSelect = false;
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(838, 450);
+            this.dataGridView2.TabIndex = 12;
+            this.dataGridView2.TabStop = false;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "description";
+            this.description.HeaderText = "description";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            // 
+            // correct
+            // 
+            this.correct.DataPropertyName = "correct";
+            this.correct.HeaderText = "correct";
+            this.correct.Name = "correct";
+            this.correct.ReadOnly = true;
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1374,7 +1390,6 @@ namespace Tester
             ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKanswerquestionBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.tabControl5.ResumeLayout(false);
@@ -1393,6 +1408,7 @@ namespace Tester
             ((System.ComponentModel.ISupportInitialize)(this.fKresultvariantanswerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionOPKBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionQuestionTypesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1457,8 +1473,6 @@ namespace Tester
         private TextBox textBox3;
         private TextBox textBox4;
         private TabPage tabPage5;
-        internal DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
         private Panel panel1;
         private TabControl tabControl5;
         private TabPage tabPage9;
@@ -1502,5 +1516,9 @@ namespace Tester
         private DataGridViewTextBoxColumn atDataGridViewTextBoxColumn;
         private ToolStripMenuItem управлениеПочтойToolStripMenuItem;
         private testerDataSetTableAdapters.adminNetworkDataTableAdapter adminNetworkDataTableAdapter1;
+        internal DataGridView dataGridView2;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn description;
+        private DataGridViewCheckBoxColumn correct;
     }
 }
