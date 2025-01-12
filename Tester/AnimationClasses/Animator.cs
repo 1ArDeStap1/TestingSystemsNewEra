@@ -41,7 +41,8 @@ namespace Tester.AnimationClasses
             {
                 try
                 {
-                    AnimationList.RemoveAll(a => a.Status == Animation.AnimationStatus.Completed);
+
+                    AnimationList.RemoveAll(a => a != null? a.Status == Animation.AnimationStatus.Completed : false) ;
                     Parallel.For(0, AnimationCount(), index =>
                     {
                         AnimationList[index].UpdateFrame();

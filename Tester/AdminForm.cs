@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using Tester.AnimationClasses;
 using Tester.testerDataSetTableAdapters;
 using System.Linq;
+using System.Data;
 
 namespace Tester
 {
@@ -38,7 +39,8 @@ namespace Tester
             this.testTableAdapter.Fill(this.testerDataSet.test);
             this.question_TypesTableAdapter1.Fill(this.testerDataSet.Question_Types);
             this.adminNetworkDataTableAdapter1.Fill(this.testerDataSet.adminNetworkData);
-
+            this.groupTableAdapter1.Fill(this.testerDataSet.group);
+            this.usersTableAdapter1.Fill(this.testerDataSet.users);
         }
 
         private void InsertedMessage()
@@ -287,6 +289,69 @@ namespace Tester
         {
             MailForm mailForm = new MailForm();
             mailForm.ShowDialog(this);
+        }
+
+        private void сохранитьБазуДанныхToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+            {
+                if (fbd.ShowDialog() == DialogResult.OK)
+                {
+                    string result = "";
+                    result += ExportDTToXML(new DataTable());
+
+
+
+                    DateTime now = DateTime.Now;
+                    File.AppendAllText(fbd.SelectedPath + @"/" + "ExportData"+ now.ToString("yyyyMMddHHmmss"), result);
+                    
+                }
+            }
+        }
+
+        public string ExportDTToXML(DataTable dt)
+        {
+            string result;
+            using (StringWriter sw = new StringWriter())
+            {
+                testerDataSet.test.WriteXml(sw, XmlWriteMode.IgnoreSchema);
+                testerDataSet.question.WriteXml(sw, XmlWriteMode.IgnoreSchema);
+                testerDataSet.answer.WriteXml(sw, XmlWriteMode.IgnoreSchema);
+                testerDataSet.OPK.WriteXml(sw, XmlWriteMode.IgnoreSchema);
+                testerDataSet.group.WriteXml(sw, XmlWriteMode.IgnoreSchema);
+                testerDataSet.users.WriteXml(sw, XmlWriteMode.IgnoreSchema);
+                testerDataSet.adminNetworkData.WriteXml(sw, XmlWriteMode.IgnoreSchema);
+
+                result = sw.ToString();
+            }
+            return result;
+        }
+
+        private void загрузитьБазуДанныхToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog fbd = new OpenFileDialog())
+            {
+                if (fbd.ShowDialog() == DialogResult.OK)
+                {
+                    string file = fbd.FileName;
+                    try
+                    {
+                        var ds = new DataTable();
+
+
+                        testerDataSet.ReadXml(file, XmlReadMode.Fragment);
+                        testerDataSet.AcceptChanges();
+                        LoadDataTables();
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex);
+                    }
+                }
+            }
         }
     }
 }
