@@ -31,6 +31,8 @@ namespace Tester
 
         private void LoadDataTables()
         {
+            
+            
             this.oPKTableAdapter.Fill(this.testerDataSet.OPK);
             this.result_answerTableAdapter.Fill(this.testerDataSet.result_answer);
             this.resultTableAdapter.Fill(this.testerDataSet.result);
@@ -41,6 +43,7 @@ namespace Tester
             this.adminNetworkDataTableAdapter1.Fill(this.testerDataSet.adminNetworkData);
             this.groupTableAdapter1.Fill(this.testerDataSet.group);
             this.usersTableAdapter1.Fill(this.testerDataSet.users);
+
         }
 
         private void InsertedMessage()
@@ -297,35 +300,14 @@ namespace Tester
             {
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
-                    string result = "";
-                    result += ExportDTToXML(new DataTable());
 
+                    SerializerXML Xmls = new SerializerXML();
+                    Xmls.SaveToXML(testerDataSet, new DataTable[8] { testerDataSet.adminNetworkData, testerDataSet.test, testerDataSet.OPK, testerDataSet.Question_Types, testerDataSet.question, testerDataSet.answer, testerDataSet.group, testerDataSet.users }, fbd.SelectedPath);
 
-
-                    DateTime now = DateTime.Now;
-                    File.AppendAllText(fbd.SelectedPath + @"/" + "ExportData"+ now.ToString("yyyyMMddHHmmss"), result);
-                    
                 }
             }
         }
 
-        public string ExportDTToXML(DataTable dt)
-        {
-            string result;
-            using (StringWriter sw = new StringWriter())
-            {
-                testerDataSet.test.WriteXml(sw, XmlWriteMode.IgnoreSchema);
-                testerDataSet.question.WriteXml(sw, XmlWriteMode.IgnoreSchema);
-                testerDataSet.answer.WriteXml(sw, XmlWriteMode.IgnoreSchema);
-                testerDataSet.OPK.WriteXml(sw, XmlWriteMode.IgnoreSchema);
-                testerDataSet.group.WriteXml(sw, XmlWriteMode.IgnoreSchema);
-                testerDataSet.users.WriteXml(sw, XmlWriteMode.IgnoreSchema);
-                testerDataSet.adminNetworkData.WriteXml(sw, XmlWriteMode.IgnoreSchema);
-
-                result = sw.ToString();
-            }
-            return result;
-        }
 
         private void загрузитьБазуДанныхToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -333,23 +315,8 @@ namespace Tester
             {
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
-                    string file = fbd.FileName;
-                    try
-                    {
-                        var ds = new DataTable();
-
-
-                        testerDataSet.ReadXml(file, XmlReadMode.Fragment);
-                        testerDataSet.AcceptChanges();
-                        LoadDataTables();
-
-
-
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex);
-                    }
+                    SerializerXML Xmls = new SerializerXML();
+                    Xmls.ImportFromXML(testerDataSet, fbd.FileName);
                 }
             }
         }

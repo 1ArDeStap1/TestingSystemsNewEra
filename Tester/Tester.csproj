@@ -180,6 +180,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SerializerXML.cs" />
     <Compile Include="SMTP_Mail.cs" />
     <Compile Include="TestCreation.cs">
       <SubType>Form</SubType>
