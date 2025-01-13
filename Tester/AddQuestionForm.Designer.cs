@@ -36,70 +36,70 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.questionTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testerDataSet1 = new Tester.testerDataSet();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.complitionpercentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oPKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.questionQuestionTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.questionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Grid = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oPKidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fKquestiontestBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.testBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.questionOPKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.fillBy2ToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillBy2ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.testBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.testerDataSet1 = new Tester.testerDataSet();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oPKidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customButton1 = new Tester.CustomButton();
-            this.textBox9 = new Tester.CustomStyles.CustomTextBox();
-            this.textBox8 = new Tester.CustomStyles.CustomTextBox();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.questionTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.complitionpercentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oPKBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customButton2 = new Tester.CustomButton();
-            this.textBox1 = new Tester.CustomStyles.CustomTextBox();
-            this.questionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fillBy2ToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillBy2ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.questionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.opkTableAdapter1 = new Tester.testerDataSetTableAdapters.OPKTableAdapter();
             this.questionTableAdapter = new Tester.testerDataSetTableAdapters.questionTableAdapter();
             this.question_TypesTableAdapter = new Tester.testerDataSetTableAdapters.Question_TypesTableAdapter();
             this.testTableAdapter1 = new Tester.testerDataSetTableAdapters.testTableAdapter();
+            this.customButton1 = new Tester.CustomButton();
+            this.textBox9 = new Tester.CustomStyles.CustomTextBox();
+            this.textBox8 = new Tester.CustomStyles.CustomTextBox();
+            this.customButton2 = new Tester.CustomButton();
+            this.textBox1 = new Tester.CustomStyles.CustomTextBox();
             this.formsStyle1 = new Tester.FormsStyle(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testerDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oPKBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionQuestionTypesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKquestiontestBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionOPKBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.fillBy2ToolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testerDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oPKBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,6 +176,30 @@
             this.dataGridView2.TabIndex = 44;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // typeNameDataGridViewTextBoxColumn
+            // 
+            this.typeNameDataGridViewTextBoxColumn.DataPropertyName = "Type_Name";
+            this.typeNameDataGridViewTextBoxColumn.HeaderText = "Название типа";
+            this.typeNameDataGridViewTextBoxColumn.Name = "typeNameDataGridViewTextBoxColumn";
+            this.typeNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // questionTypesBindingSource
+            // 
+            this.questionTypesBindingSource.DataMember = "Question_Types";
+            this.questionTypesBindingSource.DataSource = this.testerDataSet1;
+            // 
+            // testerDataSet1
+            // 
+            this.testerDataSet1.DataSetName = "testerDataSet";
+            this.testerDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -242,6 +266,32 @@
             this.dataGridView1.TabStop = false;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "идентификатор";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Название";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // complitionpercentDataGridViewTextBoxColumn
+            // 
+            this.complitionpercentDataGridViewTextBoxColumn.DataPropertyName = "complition_percent";
+            this.complitionpercentDataGridViewTextBoxColumn.HeaderText = "Процент для освоения";
+            this.complitionpercentDataGridViewTextBoxColumn.Name = "complitionpercentDataGridViewTextBoxColumn";
+            this.complitionpercentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // oPKBindingSource
+            // 
+            this.oPKBindingSource.DataMember = "OPK";
+            this.oPKBindingSource.DataSource = this.testerDataSet1;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label2);
@@ -303,6 +353,11 @@
             this.questionQuestionTypesBindingSource.DataMember = "question_Question_Types";
             this.questionQuestionTypesBindingSource.DataSource = this.questionBindingSource;
             // 
+            // questionBindingSource
+            // 
+            this.questionBindingSource.DataMember = "question";
+            this.questionBindingSource.DataSource = this.testerDataSet1;
+            // 
             // Grid
             // 
             this.Grid.AllowUserToAddRows = false;
@@ -335,7 +390,22 @@
             this.Grid.Size = new System.Drawing.Size(331, 591);
             this.Grid.TabIndex = 43;
             this.Grid.TabStop = false;
-            this.Grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_CellContentClick);
+            this.Grid.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.Grid_RowsAdded);
+            this.Grid.SelectionChanged += new System.EventHandler(this.Grid_SelectionChanged);
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "НазваниеВопроса";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // oPKidDataGridViewTextBoxColumn
+            // 
+            this.oPKidDataGridViewTextBoxColumn.DataPropertyName = "OPK_id";
+            this.oPKidDataGridViewTextBoxColumn.HeaderText = "Компетенция";
+            this.oPKidDataGridViewTextBoxColumn.Name = "oPKidDataGridViewTextBoxColumn";
+            this.oPKidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Type_id
             // 
@@ -348,6 +418,11 @@
             // 
             this.fKquestiontestBindingSource1.DataMember = "FK_question_test";
             this.fKquestiontestBindingSource1.DataSource = this.testBindingSource;
+            // 
+            // testBindingSource
+            // 
+            this.testBindingSource.DataMember = "test";
+            this.testBindingSource.DataSource = this.testerDataSet1;
             // 
             // questionOPKBindingSource
             // 
@@ -378,25 +453,6 @@
             this.dataGridView3.TabIndex = 45;
             this.dataGridView3.Visible = false;
             // 
-            // fillBy2ToolStrip
-            // 
-            this.fillBy2ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillBy2ToolStripButton});
-            this.fillBy2ToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillBy2ToolStrip.Name = "fillBy2ToolStrip";
-            this.fillBy2ToolStrip.Size = new System.Drawing.Size(1172, 25);
-            this.fillBy2ToolStrip.TabIndex = 46;
-            this.fillBy2ToolStrip.Text = "fillBy2ToolStrip";
-            this.fillBy2ToolStrip.Visible = false;
-            // 
-            // fillBy2ToolStripButton
-            // 
-            this.fillBy2ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillBy2ToolStripButton.Name = "fillBy2ToolStripButton";
-            this.fillBy2ToolStripButton.Size = new System.Drawing.Size(45, 22);
-            this.fillBy2ToolStripButton.Text = "FillBy2";
-            this.fillBy2ToolStripButton.Click += new System.EventHandler(this.fillBy2ToolStripButton_Click);
-            // 
             // idDataGridViewTextBoxColumn2
             // 
             this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
@@ -425,29 +481,45 @@
             this.timeDataGridViewTextBoxColumn.Name = "timeDataGridViewTextBoxColumn";
             this.timeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // testBindingSource
+            // fillBy2ToolStrip
             // 
-            this.testBindingSource.DataMember = "test";
-            this.testBindingSource.DataSource = this.testerDataSet1;
+            this.fillBy2ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillBy2ToolStripButton});
+            this.fillBy2ToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillBy2ToolStrip.Name = "fillBy2ToolStrip";
+            this.fillBy2ToolStrip.Size = new System.Drawing.Size(1172, 25);
+            this.fillBy2ToolStrip.TabIndex = 46;
+            this.fillBy2ToolStrip.Text = "fillBy2ToolStrip";
+            this.fillBy2ToolStrip.Visible = false;
             // 
-            // testerDataSet1
+            // fillBy2ToolStripButton
             // 
-            this.testerDataSet1.DataSetName = "testerDataSet";
-            this.testerDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.fillBy2ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillBy2ToolStripButton.Name = "fillBy2ToolStripButton";
+            this.fillBy2ToolStripButton.Size = new System.Drawing.Size(45, 22);
+            this.fillBy2ToolStripButton.Text = "FillBy2";
+            this.fillBy2ToolStripButton.Click += new System.EventHandler(this.fillBy2ToolStripButton_Click);
             // 
-            // nameDataGridViewTextBoxColumn
+            // questionBindingSource1
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "НазваниеВопроса";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.questionBindingSource1.DataMember = "question";
+            this.questionBindingSource1.DataSource = this.testerDataSet1;
             // 
-            // oPKidDataGridViewTextBoxColumn
+            // opkTableAdapter1
             // 
-            this.oPKidDataGridViewTextBoxColumn.DataPropertyName = "OPK_id";
-            this.oPKidDataGridViewTextBoxColumn.HeaderText = "Компетенция";
-            this.oPKidDataGridViewTextBoxColumn.Name = "oPKidDataGridViewTextBoxColumn";
-            this.oPKidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.opkTableAdapter1.ClearBeforeFill = true;
+            // 
+            // questionTableAdapter
+            // 
+            this.questionTableAdapter.ClearBeforeFill = true;
+            // 
+            // question_TypesTableAdapter
+            // 
+            this.question_TypesTableAdapter.ClearBeforeFill = true;
+            // 
+            // testTableAdapter1
+            // 
+            this.testTableAdapter1.ClearBeforeFill = true;
             // 
             // customButton1
             // 
@@ -498,51 +570,6 @@
             this.textBox8.VerticalOffset = 8;
             this.textBox8.Click += new System.EventHandler(this.textBox8_Click);
             // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // typeNameDataGridViewTextBoxColumn
-            // 
-            this.typeNameDataGridViewTextBoxColumn.DataPropertyName = "Type_Name";
-            this.typeNameDataGridViewTextBoxColumn.HeaderText = "Название типа";
-            this.typeNameDataGridViewTextBoxColumn.Name = "typeNameDataGridViewTextBoxColumn";
-            this.typeNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // questionTypesBindingSource
-            // 
-            this.questionTypesBindingSource.DataMember = "Question_Types";
-            this.questionTypesBindingSource.DataSource = this.testerDataSet1;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "идентификатор";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Название";
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // complitionpercentDataGridViewTextBoxColumn
-            // 
-            this.complitionpercentDataGridViewTextBoxColumn.DataPropertyName = "complition_percent";
-            this.complitionpercentDataGridViewTextBoxColumn.HeaderText = "Процент для освоения";
-            this.complitionpercentDataGridViewTextBoxColumn.Name = "complitionpercentDataGridViewTextBoxColumn";
-            this.complitionpercentDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // oPKBindingSource
-            // 
-            this.oPKBindingSource.DataMember = "OPK";
-            this.oPKBindingSource.DataSource = this.testerDataSet1;
-            // 
             // customButton2
             // 
             this.customButton2.BackColor = System.Drawing.Color.DarkBlue;
@@ -574,32 +601,6 @@
             this.textBox1.UseSystemPasswordChars = false;
             this.textBox1.VerticalOffset = 8;
             // 
-            // questionBindingSource
-            // 
-            this.questionBindingSource.DataMember = "question";
-            this.questionBindingSource.DataSource = this.testerDataSet1;
-            // 
-            // questionBindingSource1
-            // 
-            this.questionBindingSource1.DataMember = "question";
-            this.questionBindingSource1.DataSource = this.testerDataSet1;
-            // 
-            // opkTableAdapter1
-            // 
-            this.opkTableAdapter1.ClearBeforeFill = true;
-            // 
-            // questionTableAdapter
-            // 
-            this.questionTableAdapter.ClearBeforeFill = true;
-            // 
-            // question_TypesTableAdapter
-            // 
-            this.question_TypesTableAdapter.ClearBeforeFill = true;
-            // 
-            // testTableAdapter1
-            // 
-            this.testTableAdapter1.ClearBeforeFill = true;
-            // 
             // formsStyle1
             // 
             this.formsStyle1.form = this;
@@ -626,25 +627,25 @@
             this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testerDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oPKBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionQuestionTypesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKquestiontestBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionOPKBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.fillBy2ToolStrip.ResumeLayout(false);
             this.fillBy2ToolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testerDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oPKBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

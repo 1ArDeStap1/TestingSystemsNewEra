@@ -7208,9 +7208,10 @@ FROM            result INNER JOIN
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        TOP (1) id, name, description, time\r\nFROM            test\r\nORDER BY" +
-                " id DESC";
+            this._commandCollection[1].CommandText = "SELECT         id, name, description, time\r\nFROM            test\r\nWHERE test.id =" +
+                " @Test_id";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Test_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT        TOP (1) id, name, description, time\r\nFROM            test\r\nORDER BY" +
@@ -7252,8 +7253,9 @@ FROM            result INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(testerDataSet.testDataTable dataTable) {
+        public virtual int FillBy(testerDataSet.testDataTable dataTable, int Test_id) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Test_id));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }

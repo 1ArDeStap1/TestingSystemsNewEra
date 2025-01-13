@@ -74,6 +74,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(848, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Visible = false;
             // 
             // учебныйМатераилToolStripMenuItem
             // 
@@ -134,7 +135,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             this.Grid.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid.Size = new System.Drawing.Size(246, 502);
+            this.Grid.Size = new System.Drawing.Size(290, 607);
             this.Grid.TabIndex = 10;
             this.Grid.TabStop = false;
             // 
@@ -186,8 +187,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(824, 502);
-            this.splitContainer1.SplitterDistance = 246;
+            this.splitContainer1.Size = new System.Drawing.Size(973, 607);
+            this.splitContainer1.SplitterDistance = 290;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 11;
             this.splitContainer1.TabStop = false;
@@ -198,7 +199,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(246, 0);
+            this.panel1.Size = new System.Drawing.Size(290, 0);
             this.panel1.TabIndex = 11;
             // 
             // panel2
@@ -206,21 +207,22 @@
             this.panel2.Controls.Add(this.linkLabel1);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 473);
+            this.panel2.Location = new System.Drawing.Point(0, 557);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(577, 29);
+            this.panel2.Size = new System.Drawing.Size(682, 50);
             this.panel2.TabIndex = 16;
             // 
             // linkLabel1
             // 
             this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(507, 8);
+            this.linkLabel1.Location = new System.Drawing.Point(612, 29);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(67, 13);
             this.linkLabel1.TabIndex = 1;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Результаты";
+            this.linkLabel1.Visible = false;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // button1
@@ -230,7 +232,7 @@
             this.button1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.testBindingSource, "id", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.button1.Location = new System.Drawing.Point(5, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(496, 23);
+            this.button1.Size = new System.Drawing.Size(601, 44);
             this.button1.TabIndex = 0;
             this.button1.Text = "Начать тестирование";
             this.button1.UseVisualStyleBackColor = true;
@@ -246,7 +248,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.label1.Size = new System.Drawing.Size(577, 27);
+            this.label1.Size = new System.Drawing.Size(682, 27);
             this.label1.TabIndex = 12;
             this.label1.Text = "label1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -257,13 +259,13 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.testBindingSource, "time", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.label2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "description", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(-1, 27);
+            this.label2.Location = new System.Drawing.Point(5, 27);
             this.label2.MaximumSize = new System.Drawing.Size(560, 10000);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(15);
-            this.label2.Size = new System.Drawing.Size(74, 46);
+            this.label2.Size = new System.Drawing.Size(80, 48);
             this.label2.TabIndex = 17;
             this.label2.Text = "label2";
             this.label2.SizeChanged += new System.EventHandler(this.label2_SizeChanged);
@@ -286,7 +288,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(848, 541);
+            this.ClientSize = new System.Drawing.Size(997, 646);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

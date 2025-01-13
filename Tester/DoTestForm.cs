@@ -150,10 +150,12 @@ namespace Tester
             if (questionTypeId == 2)
             {
                 answersList.Visible = false;
+                label2.Visible = true;
                 AnswerTextBox1.Visible = true;
             } else
             {
                 answersList.Visible = true;
+                label2.Visible = false;
                 AnswerTextBox1.Visible = false;
             }
 
@@ -380,8 +382,8 @@ namespace Tester
             Graphics g = e.Graphics;
             //We will get the size of the string which we are about to draw, 
             //so that we could set the ItemHeight and ItemWidth property 
-            SizeF size = g.MeasureString(lb.Items[e.Index].ToString(), lb.Font, Width - 5 - SystemInformation.VerticalScrollBarWidth);
-            e.ItemHeight = Convert.ToInt32(size.Height) + 5;
+            SizeF size = g.MeasureString(lb.Items[e.Index].ToString(), lb.Font, Width - 10 - SystemInformation.VerticalScrollBarWidth);
+            e.ItemHeight = Convert.ToInt32(size.Height) + 20;
             e.ItemWidth = Convert.ToInt32(size.Width) + 5;
         }
 
