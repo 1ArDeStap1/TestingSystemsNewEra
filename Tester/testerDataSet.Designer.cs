@@ -8640,12 +8640,10 @@ SELECT id, name, description, image, test_id, OPK_id, Type_id FROM question WHER
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        question.id, question.name, question.description, question.image, question.test_id, question.OPK_id, question.Type_id
-FROM            question INNER JOIN
-                         test ON question.test_id =
-                             (SELECT        MAX(id) AS Expr1
-                               FROM            test)";
+            this._commandCollection[1].CommandText = "SELECT        id, name, description, image, test_id, OPK_id, Type_id\r\nFROM       " +
+                "     question\r\nWHERE        (id =@Qid)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Qid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT        id, name, description, image, test_id, OPK_id, Type_id\r\nFROM       " +
@@ -8682,8 +8680,9 @@ FROM            question INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(testerDataSet.questionDataTable dataTable) {
+        public virtual int FillBy(testerDataSet.questionDataTable dataTable, int Qid) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Qid));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }

@@ -19,6 +19,10 @@ namespace Tester {
 
 namespace Tester.testerDataSetTableAdapters
 {
+    partial class questionTableAdapter
+    {
+    }
+
     partial class resultTableAdapter
     {
     }

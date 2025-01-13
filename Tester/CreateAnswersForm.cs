@@ -34,6 +34,7 @@ namespace Tester
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet.question". При необходимости она может быть перемещена или удалена.
             this.questionTableAdapter.FillBy1(this.testerDataSet.question);
+            this.questionTableAdapter.FillBy(this.testerDataSet.question, qurrQuestId);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet.answer". При необходимости она может быть перемещена или удалена.
             this.answerTableAdapter.Fill(this.testerDataSet.answer);
 

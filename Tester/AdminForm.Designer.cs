@@ -60,11 +60,6 @@ namespace Tester
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.textBox2 = new Tester.CustomStyles.CustomTextBox();
-            this.numericUpDown1 = new Tester.CustomStyles.CustomTextBox();
-            this.textBox1 = new Tester.CustomStyles.CustomTextBox();
-            this.customButton2 = new Tester.CustomButton();
-            this.customButton1 = new Tester.CustomButton();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
@@ -149,9 +144,14 @@ namespace Tester
             this.oPKTableAdapter = new Tester.testerDataSetTableAdapters.OPKTableAdapter();
             this.question_TypesTableAdapter1 = new Tester.testerDataSetTableAdapters.Question_TypesTableAdapter();
             this.adminNetworkDataTableAdapter1 = new Tester.testerDataSetTableAdapters.adminNetworkDataTableAdapter();
-            this.formsStyle1 = new Tester.FormsStyle(this.components);
             this.usersTableAdapter1 = new Tester.testerDataSetTableAdapters.usersTableAdapter();
             this.groupTableAdapter1 = new Tester.testerDataSetTableAdapters.groupTableAdapter();
+            this.textBox2 = new Tester.CustomStyles.CustomTextBox();
+            this.numericUpDown1 = new Tester.CustomStyles.CustomTextBox();
+            this.textBox1 = new Tester.CustomStyles.CustomTextBox();
+            this.customButton2 = new Tester.CustomButton();
+            this.customButton1 = new Tester.CustomButton();
+            this.formsStyle1 = new Tester.FormsStyle(this.components);
             this.ToolStripMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
@@ -390,97 +390,13 @@ namespace Tester
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Изменение";
             // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderColor = System.Drawing.Color.DarkBlue;
-            this.textBox2.BorderColorNotActive = System.Drawing.Color.DarkGray;
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "description", true));
-            this.textBox2.Font = new System.Drawing.Font("Arial", 11.5F);
-            this.textBox2.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(7, 157);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(762, 265);
-            this.textBox2.TabIndex = 14;
-            this.textBox2.text = null;
-            this.textBox2.TextPreview = "Описание теста";
-            this.textBox2.UseSystemPasswordChars = false;
-            this.textBox2.VerticalOffset = 100;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.BackColor = System.Drawing.Color.White;
-            this.numericUpDown1.BorderColor = System.Drawing.Color.DarkBlue;
-            this.numericUpDown1.BorderColorNotActive = System.Drawing.Color.DarkGray;
-            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "time", true));
-            this.numericUpDown1.Font = new System.Drawing.Font("Arial", 11.5F);
-            this.numericUpDown1.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.numericUpDown1.ForeColor = System.Drawing.Color.Black;
-            this.numericUpDown1.Location = new System.Drawing.Point(7, 80);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(275, 52);
-            this.numericUpDown1.TabIndex = 13;
-            this.numericUpDown1.text = null;
-            this.numericUpDown1.TextPreview = "Время прохождения теста";
-            this.numericUpDown1.UseSystemPasswordChars = false;
-            this.numericUpDown1.VerticalOffset = 100;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderColor = System.Drawing.Color.DarkBlue;
-            this.textBox1.BorderColorNotActive = System.Drawing.Color.DarkGray;
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "name", true));
-            this.textBox1.Font = new System.Drawing.Font("Arial", 11.5F);
-            this.textBox1.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(7, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(702, 54);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.text = null;
-            this.textBox1.TextPreview = "Название Теста";
-            this.textBox1.UseSystemPasswordChars = false;
-            this.textBox1.VerticalOffset = 0;
-            // 
-            // customButton2
-            // 
-            this.customButton2.BackColor = System.Drawing.Color.DarkBlue;
-            this.customButton2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.customButton2.ForeColor = System.Drawing.Color.Chartreuse;
-            this.customButton2.Location = new System.Drawing.Point(339, 452);
-            this.customButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.RoundingEnabled = true;
-            this.customButton2.RoundingPercent = 30;
-            this.customButton2.Size = new System.Drawing.Size(430, 57);
-            this.customButton2.TabIndex = 11;
-            this.customButton2.Text = "Сохранить Изменения";
-            this.customButton2.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // customButton1
-            // 
-            this.customButton1.BackColor = System.Drawing.Color.DarkBlue;
-            this.customButton1.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.customButton1.ForeColor = System.Drawing.Color.Chartreuse;
-            this.customButton1.Location = new System.Drawing.Point(716, 8);
-            this.customButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.RoundingEnabled = true;
-            this.customButton1.RoundingPercent = 100;
-            this.customButton1.Size = new System.Drawing.Size(53, 53);
-            this.customButton1.TabIndex = 10;
-            this.customButton1.Text = "+";
-            this.customButton1.Click += new System.EventHandler(this.button4_Click);
-            // 
             // linkLabel1
             // 
             this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.testBindingSource, "id", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.linkLabel1.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel1.Location = new System.Drawing.Point(40, 494);
+            this.linkLabel1.Location = new System.Drawing.Point(40, 486);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(80, 15);
@@ -670,14 +586,14 @@ namespace Tester
             this.idDataGridViewTextBoxColumn8,
             this.typeNameDataGridViewTextBoxColumn});
             this.dataGridView8.DataSource = this.questionTypesBindingSource;
-            this.dataGridView8.Location = new System.Drawing.Point(489, 127);
+            this.dataGridView8.Location = new System.Drawing.Point(571, 67);
             this.dataGridView8.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView8.MultiSelect = false;
             this.dataGridView8.Name = "dataGridView8";
             this.dataGridView8.ReadOnly = true;
             this.dataGridView8.RowHeadersVisible = false;
             this.dataGridView8.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView8.Size = new System.Drawing.Size(276, 173);
+            this.dataGridView8.Size = new System.Drawing.Size(251, 136);
             this.dataGridView8.TabIndex = 12;
             // 
             // idDataGridViewTextBoxColumn8
@@ -705,7 +621,7 @@ namespace Tester
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.fKquestiontestBindingSource, "id", true));
             this.linkLabel2.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel2.Location = new System.Drawing.Point(7, 518);
+            this.linkLabel2.Location = new System.Drawing.Point(7, 510);
             this.linkLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(97, 15);
@@ -726,7 +642,7 @@ namespace Tester
             this.pictureBox1.Location = new System.Drawing.Point(7, 67);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(561, 348);
+            this.pictureBox1.Size = new System.Drawing.Size(561, 340);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
@@ -741,7 +657,7 @@ namespace Tester
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.Lavender;
-            this.button2.Location = new System.Drawing.Point(118, 512);
+            this.button2.Location = new System.Drawing.Point(0, 486);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(695, 26);
@@ -777,7 +693,7 @@ namespace Tester
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label5.Location = new System.Drawing.Point(7, 420);
+            this.label5.Location = new System.Drawing.Point(7, 412);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(248, 15);
@@ -802,7 +718,7 @@ namespace Tester
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox4.BackColor = System.Drawing.SystemColors.Control;
             this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fKquestiontestBindingSource, "description", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.textBox4.Location = new System.Drawing.Point(7, 437);
+            this.textBox4.Location = new System.Drawing.Point(7, 429);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
@@ -1202,6 +1118,7 @@ namespace Tester
             this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
             this.idDataGridViewTextBoxColumn3.ReadOnly = true;
             this.idDataGridViewTextBoxColumn3.Visible = false;
+            this.idDataGridViewTextBoxColumn3.Width = 43;
             // 
             // nameDataGridViewTextBoxColumn2
             // 
@@ -1397,10 +1314,6 @@ namespace Tester
             // 
             this.adminNetworkDataTableAdapter1.ClearBeforeFill = true;
             // 
-            // formsStyle1
-            // 
-            this.formsStyle1.form = this;
-            // 
             // usersTableAdapter1
             // 
             this.usersTableAdapter1.ClearBeforeFill = true;
@@ -1408,6 +1321,94 @@ namespace Tester
             // groupTableAdapter1
             // 
             this.groupTableAdapter1.ClearBeforeFill = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.White;
+            this.textBox2.BorderColor = System.Drawing.Color.DarkBlue;
+            this.textBox2.BorderColorNotActive = System.Drawing.Color.DarkGray;
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "description", true));
+            this.textBox2.Font = new System.Drawing.Font("Arial", 11.5F);
+            this.textBox2.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.textBox2.ForeColor = System.Drawing.Color.Black;
+            this.textBox2.Location = new System.Drawing.Point(7, 157);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(762, 265);
+            this.textBox2.TabIndex = 14;
+            this.textBox2.text = null;
+            this.textBox2.TextPreview = "Описание теста";
+            this.textBox2.UseSystemPasswordChars = false;
+            this.textBox2.VerticalOffset = 100;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.BackColor = System.Drawing.Color.White;
+            this.numericUpDown1.BorderColor = System.Drawing.Color.DarkBlue;
+            this.numericUpDown1.BorderColorNotActive = System.Drawing.Color.DarkGray;
+            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "time", true));
+            this.numericUpDown1.Font = new System.Drawing.Font("Arial", 11.5F);
+            this.numericUpDown1.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.numericUpDown1.ForeColor = System.Drawing.Color.Black;
+            this.numericUpDown1.Location = new System.Drawing.Point(7, 80);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(275, 52);
+            this.numericUpDown1.TabIndex = 13;
+            this.numericUpDown1.text = null;
+            this.numericUpDown1.TextPreview = "Время прохождения теста";
+            this.numericUpDown1.UseSystemPasswordChars = false;
+            this.numericUpDown1.VerticalOffset = 100;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderColor = System.Drawing.Color.DarkBlue;
+            this.textBox1.BorderColorNotActive = System.Drawing.Color.DarkGray;
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "name", true));
+            this.textBox1.Font = new System.Drawing.Font("Arial", 11.5F);
+            this.textBox1.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.textBox1.ForeColor = System.Drawing.Color.Black;
+            this.textBox1.Location = new System.Drawing.Point(7, 7);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(702, 54);
+            this.textBox1.TabIndex = 12;
+            this.textBox1.text = null;
+            this.textBox1.TextPreview = "Название Теста";
+            this.textBox1.UseSystemPasswordChars = false;
+            this.textBox1.VerticalOffset = 0;
+            // 
+            // customButton2
+            // 
+            this.customButton2.BackColor = System.Drawing.Color.DarkBlue;
+            this.customButton2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.customButton2.ForeColor = System.Drawing.Color.Chartreuse;
+            this.customButton2.Location = new System.Drawing.Point(339, 452);
+            this.customButton2.Margin = new System.Windows.Forms.Padding(4);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.RoundingEnabled = true;
+            this.customButton2.RoundingPercent = 30;
+            this.customButton2.Size = new System.Drawing.Size(430, 57);
+            this.customButton2.TabIndex = 11;
+            this.customButton2.Text = "Сохранить Изменения";
+            this.customButton2.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // customButton1
+            // 
+            this.customButton1.BackColor = System.Drawing.Color.DarkBlue;
+            this.customButton1.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.customButton1.ForeColor = System.Drawing.Color.Chartreuse;
+            this.customButton1.Location = new System.Drawing.Point(716, 8);
+            this.customButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.RoundingEnabled = true;
+            this.customButton1.RoundingPercent = 100;
+            this.customButton1.Size = new System.Drawing.Size(53, 53);
+            this.customButton1.TabIndex = 10;
+            this.customButton1.Text = "+";
+            this.customButton1.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // formsStyle1
+            // 
+            this.formsStyle1.form = this;
             // 
             // AdminForm
             // 

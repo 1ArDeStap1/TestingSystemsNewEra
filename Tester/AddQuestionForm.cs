@@ -148,7 +148,7 @@ namespace Tester
         {
             try
             {
-                this.questionTableAdapter.FillBy(this.testerDataSet1.question);
+                this.questionTableAdapter.FillBy(this.testerDataSet1.question, qurrentQuestiion);
             }
             catch (System.Exception ex)
             {
