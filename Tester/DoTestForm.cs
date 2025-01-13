@@ -312,6 +312,8 @@ namespace Tester
 
         private void DoTestForm_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet.Question_Types". При необходимости она может быть перемещена или удалена.
+            this.question_TypesTableAdapter.Fill(this.testerDataSet.Question_Types);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet.opk_result". При необходимости она может быть перемещена или удалена.
             this.opk_resultTableAdapter1.Fill(this.testerDataSet.opk_result);
             formsStyle1.Apply();
@@ -420,7 +422,9 @@ namespace Tester
                 DataTable dtRA = testerDataSet.result_answer.Select("result_id = "+result_id.ToString()).CopyToDataTable();
                 foreach (DataRow Row in dtr)
                 {
-                    worksheetResult_QA.Cell(x, y).InsertData(new string[] { Row[1].ToString(), Row[2].ToString(), Row[5].ToString(), Row[6].ToString()  }, true);
+                    DataRow opkTextRow = testerDataSet.OPK.Select("Id = " + Row[5])[0];
+                    DataRow TypeTextRow = testerDataSet.Question_Types.Select("Id = " + Row[6])[0];
+                    worksheetResult_QA.Cell(x, y).InsertData(new string[] { Row[1].ToString(), Row[2].ToString(), opkTextRow[1].ToString(), TypeTextRow[1].ToString()  }, true);
                     y += 4;
                     DataRow[] dtrA = dtRA.Select("question_id = "+ Row[0].ToString());
                     foreach (DataRow AnswerRow in dtrA)
@@ -432,7 +436,7 @@ namespace Tester
                     y = 1;
                     
                 }
-                workbook.SaveAs(SaveFileName);
+                workbook.SaveAs(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"/" + SaveFileName);
                 return SaveFileName;
             }
         }

@@ -78,6 +78,11 @@
             this.opk_resultTableAdapter1 = new Tester.testerDataSetTableAdapters.opk_resultTableAdapter();
             this.opkresultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.adminNetworkDataTableAdapter1 = new Tester.testerDataSetTableAdapters.adminNetworkDataTableAdapter();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.questionTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.question_TypesTableAdapter = new Tester.testerDataSetTableAdapters.Question_TypesTableAdapter();
+            this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.questionImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
@@ -92,6 +97,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.resultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultanswerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.opkresultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // countLabel
@@ -376,6 +383,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.dataGridView5);
             this.panel1.Controls.Add(this.dataGridView4);
             this.panel1.Controls.Add(this.countLabel);
             this.panel1.Controls.Add(this.timerLabel);
@@ -507,6 +515,46 @@
             // 
             this.adminNetworkDataTableAdapter1.ClearBeforeFill = true;
             // 
+            // dataGridView5
+            // 
+            this.dataGridView5.AllowUserToAddRows = false;
+            this.dataGridView5.AllowUserToDeleteRows = false;
+            this.dataGridView5.AutoGenerateColumns = false;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn4,
+            this.typeNameDataGridViewTextBoxColumn});
+            this.dataGridView5.DataSource = this.questionTypesBindingSource;
+            this.dataGridView5.Location = new System.Drawing.Point(199, 355);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.ReadOnly = true;
+            this.dataGridView5.Size = new System.Drawing.Size(204, 55);
+            this.dataGridView5.TabIndex = 17;
+            this.dataGridView5.Visible = false;
+            // 
+            // questionTypesBindingSource
+            // 
+            this.questionTypesBindingSource.DataMember = "Question_Types";
+            this.questionTypesBindingSource.DataSource = this.testerDataSet;
+            // 
+            // question_TypesTableAdapter
+            // 
+            this.question_TypesTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn4
+            // 
+            this.idDataGridViewTextBoxColumn4.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn4.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
+            this.idDataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // typeNameDataGridViewTextBoxColumn
+            // 
+            this.typeNameDataGridViewTextBoxColumn.DataPropertyName = "Type_Name";
+            this.typeNameDataGridViewTextBoxColumn.HeaderText = "Type_Name";
+            this.typeNameDataGridViewTextBoxColumn.Name = "typeNameDataGridViewTextBoxColumn";
+            this.typeNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // DoTestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -541,6 +589,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.resultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultanswerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.opkresultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -595,5 +645,10 @@
         private testerDataSetTableAdapters.opk_resultTableAdapter opk_resultTableAdapter1;
         private System.Windows.Forms.BindingSource opkresultBindingSource;
         private testerDataSetTableAdapters.adminNetworkDataTableAdapter adminNetworkDataTableAdapter1;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.BindingSource questionTypesBindingSource;
+        private testerDataSetTableAdapters.Question_TypesTableAdapter question_TypesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeNameDataGridViewTextBoxColumn;
     }
 }
