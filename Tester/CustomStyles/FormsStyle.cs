@@ -17,7 +17,7 @@ namespace Tester
         #region Variables
 
         public Color HeaderColor = Color.FromArgb(0, 0, 60);
-        public int HeaderHeight = 30;
+        public int HeaderHeight = 40;
         public Form form { get; set; }
 
         public StringFormat SF = new StringFormat();
@@ -196,9 +196,9 @@ namespace Tester
             Rectangle RectTitle = new Rectangle(rectHeader.X, rectHeader.Y, rectHeader.Width, rectHeader.Height);
 
             Rectangle RectIcon = new Rectangle(
-                rectHeader.Height / 2 - IconSize.Width / 2,
-                rectHeader.Height / 2 - IconSize.Height / 2,
-                IconSize.Width, IconSize.Height
+                rectHeader.Height / 4 - IconSize.Width / 3,
+                rectHeader.Height / 4 - IconSize.Height / 3,
+                IconSize.Width*2, IconSize.Height*2
                 );
 
             Rectangle rectCrosshair = new Rectangle(

@@ -62,7 +62,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(476, 49);
             this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "";
+            this.textBox2.text = null;
             this.textBox2.TextPreview = "Пароль";
             this.textBox2.UseSystemPasswordChars = false;
             this.textBox2.VerticalOffset = 20;
@@ -80,7 +80,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(476, 48);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "";
+            this.textBox1.text = null;
             this.textBox1.TextPreview = "Логин";
             this.textBox1.UseSystemPasswordChars = false;
             this.textBox1.VerticalOffset = 10;
@@ -96,11 +96,11 @@
             this.Controls.Add(this.Войти);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ForeColor = System.Drawing.Color.DarkBlue;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AuthForm";
-            this.Text = "Авторизация";
+            this.Text = "АВТОРИЗАЦИЯ";
             this.Load += new System.EventHandler(this.AuthForm_Load);
             this.ResumeLayout(false);
 
