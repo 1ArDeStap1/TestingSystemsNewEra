@@ -21,7 +21,7 @@ namespace Tester
 
         public void AdminForm_Load(object sender, EventArgs e)
         {
-            formsStyle1.Apply();
+            
             LoadDataTables();
             if (testerDataSet.adminNetworkData.Select("Id = 1")[0][7].ToString() == "" || testerDataSet.adminNetworkData.Select("Id = 1")[0][7].ToString() == "Null")
             {

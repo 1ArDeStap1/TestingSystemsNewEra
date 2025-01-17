@@ -61,6 +61,16 @@ namespace Tester.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_NGPU_ico {
+            get {
+                object obj = ResourceManager.GetObject("Logo_NGPU_ico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
         internal static byte[] OpenSans_Regular {

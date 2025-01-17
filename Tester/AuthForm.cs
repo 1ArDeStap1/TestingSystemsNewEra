@@ -14,14 +14,30 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tester.AnimationClasses;
 
+using MaterialSkin;
+using MaterialSkin.Controls;
+
 namespace Tester
 {
-    public partial class AuthForm : Form
+    public partial class AuthForm : MaterialForm
     {
         public AuthForm()
         {
             InitializeComponent();
-            Animator.Start();
+            
+
+            // Create a material theme manager and add the form to manage (this)
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            // Configure color schema
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue900, Primary.Blue800,
+                Primary.Blue700, Accent.LightBlue700,
+                TextShade.WHITE
+            );
+
 
             string fontName = "Open Sans";
             string fontPath = Application.StartupPath+"/Fonts/OpenSans-Regular.ttf";
@@ -117,7 +133,7 @@ namespace Tester
 
         private void AuthForm_Load(object sender, EventArgs e)
         {
-            formsStyle1.Apply();
+            
         }
 
         private void textBox2_Click(object sender, EventArgs e)
