@@ -60,12 +60,15 @@
             this.answerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.questionTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.complition_percent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oPKBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.AnswerTextBox1 = new Tester.CustomStyles.CustomTextBox();
             this.formsStyle1 = new Tester.FormsStyle(this.components);
             this.testTableAdapter = new Tester.testerDataSetTableAdapters.testTableAdapter();
             this.questionTableAdapter = new Tester.testerDataSetTableAdapters.questionTableAdapter();
@@ -78,11 +81,9 @@
             this.opk_resultTableAdapter1 = new Tester.testerDataSetTableAdapters.opk_resultTableAdapter();
             this.opkresultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.adminNetworkDataTableAdapter1 = new Tester.testerDataSetTableAdapters.adminNetworkDataTableAdapter();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.questionTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.question_TypesTableAdapter = new Tester.testerDataSetTableAdapters.Question_TypesTableAdapter();
-            this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AnswerTextBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.questionImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
@@ -92,13 +93,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.answerBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPKBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultanswerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.opkresultBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // countLabel
@@ -120,10 +121,10 @@
             this.answersList.FormattingEnabled = true;
             this.answersList.IntegralHeight = false;
             this.answersList.ItemHeight = 22;
-            this.answersList.Location = new System.Drawing.Point(12, 455);
+            this.answersList.Location = new System.Drawing.Point(12, 410);
             this.answersList.Name = "answersList";
             this.answersList.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.answersList.Size = new System.Drawing.Size(752, 140);
+            this.answersList.Size = new System.Drawing.Size(837, 149);
             this.answersList.TabIndex = 9;
             this.answersList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.answersList_DrawItem);
             this.answersList.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.answersList_MeasureItem);
@@ -134,7 +135,7 @@
             this.nextQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.nextQuestion.Enabled = false;
             this.nextQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nextQuestion.Location = new System.Drawing.Point(778, 455);
+            this.nextQuestion.Location = new System.Drawing.Point(863, 410);
             this.nextQuestion.Name = "nextQuestion";
             this.nextQuestion.Size = new System.Drawing.Size(188, 90);
             this.nextQuestion.TabIndex = 8;
@@ -147,9 +148,9 @@
             this.backQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.backQuestion.Enabled = false;
             this.backQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.backQuestion.Location = new System.Drawing.Point(778, 551);
+            this.backQuestion.Location = new System.Drawing.Point(863, 507);
             this.backQuestion.Name = "backQuestion";
-            this.backQuestion.Size = new System.Drawing.Size(188, 44);
+            this.backQuestion.Size = new System.Drawing.Size(188, 52);
             this.backQuestion.TabIndex = 7;
             this.backQuestion.Text = "Исправить прошлый ответ!";
             this.backQuestion.UseVisualStyleBackColor = true;
@@ -163,7 +164,7 @@
             this.questionImage.BackColor = System.Drawing.Color.Transparent;
             this.questionImage.Location = new System.Drawing.Point(15, 40);
             this.questionImage.Name = "questionImage";
-            this.questionImage.Size = new System.Drawing.Size(924, 382);
+            this.questionImage.Size = new System.Drawing.Size(1009, 333);
             this.questionImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.questionImage.TabIndex = 6;
             this.questionImage.TabStop = false;
@@ -174,7 +175,7 @@
             this.timerLabel.AutoSize = true;
             this.timerLabel.BackColor = System.Drawing.Color.White;
             this.timerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.timerLabel.Location = new System.Drawing.Point(892, 4);
+            this.timerLabel.Location = new System.Drawing.Point(977, 4);
             this.timerLabel.Name = "timerLabel";
             this.timerLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.timerLabel.Size = new System.Drawing.Size(18, 20);
@@ -372,7 +373,7 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(954, 27);
+            this.label1.Size = new System.Drawing.Size(1039, 27);
             this.label1.TabIndex = 15;
             this.label1.Text = "Вопрос 1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -392,8 +393,44 @@
             this.panel1.Controls.Add(this.questionImage);
             this.panel1.Location = new System.Drawing.Point(12, 9);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(954, 422);
+            this.panel1.Size = new System.Drawing.Size(1039, 385);
             this.panel1.TabIndex = 16;
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.AllowUserToAddRows = false;
+            this.dataGridView5.AllowUserToDeleteRows = false;
+            this.dataGridView5.AutoGenerateColumns = false;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn4,
+            this.typeNameDataGridViewTextBoxColumn});
+            this.dataGridView5.DataSource = this.questionTypesBindingSource;
+            this.dataGridView5.Location = new System.Drawing.Point(199, 355);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.ReadOnly = true;
+            this.dataGridView5.Size = new System.Drawing.Size(204, 55);
+            this.dataGridView5.TabIndex = 17;
+            this.dataGridView5.Visible = false;
+            // 
+            // idDataGridViewTextBoxColumn4
+            // 
+            this.idDataGridViewTextBoxColumn4.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn4.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
+            this.idDataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // typeNameDataGridViewTextBoxColumn
+            // 
+            this.typeNameDataGridViewTextBoxColumn.DataPropertyName = "Type_Name";
+            this.typeNameDataGridViewTextBoxColumn.HeaderText = "Type_Name";
+            this.typeNameDataGridViewTextBoxColumn.Name = "typeNameDataGridViewTextBoxColumn";
+            this.typeNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // questionTypesBindingSource
+            // 
+            this.questionTypesBindingSource.DataMember = "Question_Types";
+            this.questionTypesBindingSource.DataSource = this.testerDataSet;
             // 
             // dataGridView4
             // 
@@ -444,25 +481,6 @@
             // 
             this.oPKBindingSource.DataMember = "OPK";
             this.oPKBindingSource.DataSource = this.testerDataSet;
-            // 
-            // AnswerTextBox1
-            // 
-            this.AnswerTextBox1.BackColor = System.Drawing.Color.White;
-            this.AnswerTextBox1.BorderColor = System.Drawing.Color.DarkBlue;
-            this.AnswerTextBox1.BorderColorNotActive = System.Drawing.Color.DarkGray;
-            this.AnswerTextBox1.Font = new System.Drawing.Font("Arial", 11.5F);
-            this.AnswerTextBox1.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.AnswerTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.AnswerTextBox1.Location = new System.Drawing.Point(27, 494);
-            this.AnswerTextBox1.Name = "AnswerTextBox1";
-            this.AnswerTextBox1.Size = new System.Drawing.Size(665, 51);
-            this.AnswerTextBox1.TabIndex = 17;
-            this.AnswerTextBox1.text = null;
-            this.AnswerTextBox1.TextPreview = "Input Text";
-            this.AnswerTextBox1.UseSystemPasswordChars = false;
-            this.AnswerTextBox1.VerticalOffset = 8;
-            this.AnswerTextBox1.TextChanged += new System.EventHandler(this.AnswerTextBox1_TextChanged);
-            this.AnswerTextBox1.Click += new System.EventHandler(this.AnswerTextBox1_TextChanged);
             // 
             // formsStyle1
             // 
@@ -515,52 +533,37 @@
             // 
             this.adminNetworkDataTableAdapter1.ClearBeforeFill = true;
             // 
-            // dataGridView5
-            // 
-            this.dataGridView5.AllowUserToAddRows = false;
-            this.dataGridView5.AllowUserToDeleteRows = false;
-            this.dataGridView5.AutoGenerateColumns = false;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn4,
-            this.typeNameDataGridViewTextBoxColumn});
-            this.dataGridView5.DataSource = this.questionTypesBindingSource;
-            this.dataGridView5.Location = new System.Drawing.Point(199, 355);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.ReadOnly = true;
-            this.dataGridView5.Size = new System.Drawing.Size(204, 55);
-            this.dataGridView5.TabIndex = 17;
-            this.dataGridView5.Visible = false;
-            // 
-            // questionTypesBindingSource
-            // 
-            this.questionTypesBindingSource.DataMember = "Question_Types";
-            this.questionTypesBindingSource.DataSource = this.testerDataSet;
-            // 
             // question_TypesTableAdapter
             // 
             this.question_TypesTableAdapter.ClearBeforeFill = true;
             // 
-            // idDataGridViewTextBoxColumn4
+            // AnswerTextBox1
             // 
-            this.idDataGridViewTextBoxColumn4.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn4.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
-            this.idDataGridViewTextBoxColumn4.ReadOnly = true;
+            this.AnswerTextBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AnswerTextBox1.Location = new System.Drawing.Point(47, 474);
+            this.AnswerTextBox1.Multiline = true;
+            this.AnswerTextBox1.Name = "AnswerTextBox1";
+            this.AnswerTextBox1.Size = new System.Drawing.Size(768, 38);
+            this.AnswerTextBox1.TabIndex = 17;
+            this.AnswerTextBox1.TextChanged += new System.EventHandler(this.AnswerTextBox1_TextChanged);
             // 
-            // typeNameDataGridViewTextBoxColumn
+            // label2
             // 
-            this.typeNameDataGridViewTextBoxColumn.DataPropertyName = "Type_Name";
-            this.typeNameDataGridViewTextBoxColumn.HeaderText = "Type_Name";
-            this.typeNameDataGridViewTextBoxColumn.Name = "typeNameDataGridViewTextBoxColumn";
-            this.typeNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(70, 443);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 18);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Введите ответ";
             // 
             // DoTestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
-            this.ClientSize = new System.Drawing.Size(978, 619);
+            this.ClientSize = new System.Drawing.Size(1063, 605);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.AnswerTextBox1);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.dataGridView1);
@@ -584,14 +587,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.answerBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPKBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultanswerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.opkresultBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -635,7 +639,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn testidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn OPK_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type_id;
-        private CustomStyles.CustomTextBox AnswerTextBox1;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.BindingSource oPKBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
@@ -650,5 +653,7 @@
         private testerDataSetTableAdapters.Question_TypesTableAdapter question_TypesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox AnswerTextBox1;
     }
 }

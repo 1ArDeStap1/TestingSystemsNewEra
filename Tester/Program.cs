@@ -20,7 +20,7 @@ namespace Tester
 
 #if DEBUG == false
 
-            String DbPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            String DbPath = Environment.CurrentDirectory;
             String PathToDB = Path.Combine(DbPath, "TesterProgramDataBase");
             AppDomain.CurrentDomain.SetData("DataDirectory", PathToDB);  
 
