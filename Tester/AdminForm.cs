@@ -11,7 +11,7 @@ using System.Data;
 
 using MaterialSkin;
 using MaterialSkin.Controls;
-using System.Drawing;
+
 
 namespace Tester
 {
@@ -365,6 +365,22 @@ namespace Tester
             materialButton3.Visible = visible;
             materialButton2.Visible = visible;
             materialLabel4.Visible = visible;
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (AddQuestionForm addQuest = new AddQuestionForm(true, (int)Grid.SelectedRows[0].Cells[0].Value))
+                {
+                    Hide();
+                    addQuest.ShowDialog(this);
+                    Show();
+                }
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Произошла ошибка при открытии редактора "+ ex.Message);
+            }
         }
     }
 }

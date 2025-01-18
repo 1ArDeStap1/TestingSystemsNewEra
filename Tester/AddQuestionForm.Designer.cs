@@ -55,9 +55,6 @@
             this.questionQuestionTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.questionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Grid = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oPKidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fKquestiontestBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.testBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.questionOPKBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -73,6 +70,10 @@
             this.questionTableAdapter = new Tester.testerDataSetTableAdapters.questionTableAdapter();
             this.question_TypesTableAdapter = new Tester.testerDataSetTableAdapters.Question_TypesTableAdapter();
             this.testTableAdapter1 = new Tester.testerDataSetTableAdapters.testTableAdapter();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oPKidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customButton1 = new Tester.CustomButton();
             this.textBox9 = new Tester.CustomStyles.CustomTextBox();
             this.textBox8 = new Tester.CustomStyles.CustomTextBox();
@@ -208,6 +209,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.fKquestiontestBindingSource1, "image", true));
             this.pictureBox2.Location = new System.Drawing.Point(305, 104);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(473, 246);
@@ -371,6 +373,7 @@
             this.Grid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
             this.nameDataGridViewTextBoxColumn,
             this.oPKidDataGridViewTextBoxColumn,
             this.Type_id});
@@ -392,27 +395,6 @@
             this.Grid.TabStop = false;
             this.Grid.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.Grid_RowsAdded);
             this.Grid.SelectionChanged += new System.EventHandler(this.Grid_SelectionChanged);
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "НазваниеВопроса";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // oPKidDataGridViewTextBoxColumn
-            // 
-            this.oPKidDataGridViewTextBoxColumn.DataPropertyName = "OPK_id";
-            this.oPKidDataGridViewTextBoxColumn.HeaderText = "Компетенция";
-            this.oPKidDataGridViewTextBoxColumn.Name = "oPKidDataGridViewTextBoxColumn";
-            this.oPKidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Type_id
-            // 
-            this.Type_id.DataPropertyName = "Type_id";
-            this.Type_id.HeaderText = "ТипВопроса";
-            this.Type_id.Name = "Type_id";
-            this.Type_id.ReadOnly = true;
             // 
             // fKquestiontestBindingSource1
             // 
@@ -521,6 +503,35 @@
             // 
             this.testTableAdapter1.ClearBeforeFill = true;
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "НазваниеВопроса";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // oPKidDataGridViewTextBoxColumn
+            // 
+            this.oPKidDataGridViewTextBoxColumn.DataPropertyName = "OPK_id";
+            this.oPKidDataGridViewTextBoxColumn.HeaderText = "Компетенция";
+            this.oPKidDataGridViewTextBoxColumn.Name = "oPKidDataGridViewTextBoxColumn";
+            this.oPKidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Type_id
+            // 
+            this.Type_id.DataPropertyName = "Type_id";
+            this.Type_id.HeaderText = "ТипВопроса";
+            this.Type_id.Name = "Type_id";
+            this.Type_id.ReadOnly = true;
+            // 
             // customButton1
             // 
             this.customButton1.BackColor = System.Drawing.Color.DarkBlue;
@@ -540,6 +551,7 @@
             this.textBox9.BackColor = System.Drawing.Color.White;
             this.textBox9.BorderColor = System.Drawing.Color.DarkBlue;
             this.textBox9.BorderColorNotActive = System.Drawing.Color.DarkGray;
+            this.textBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.questionBindingSource, "description", true));
             this.textBox9.Font = new System.Drawing.Font("Arial", 11.5F);
             this.textBox9.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
             this.textBox9.ForeColor = System.Drawing.Color.Black;
@@ -557,6 +569,7 @@
             this.textBox8.BackColor = System.Drawing.Color.White;
             this.textBox8.BorderColor = System.Drawing.Color.DarkBlue;
             this.textBox8.BorderColorNotActive = System.Drawing.Color.DarkGray;
+            this.textBox8.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fKquestiontestBindingSource1, "name", true));
             this.textBox8.Font = new System.Drawing.Font("Arial", 11.5F);
             this.textBox8.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
             this.textBox8.ForeColor = System.Drawing.Color.Black;
@@ -672,9 +685,6 @@
         private System.Windows.Forms.BindingSource questionTypesBindingSource;
         private testerDataSetTableAdapters.Question_TypesTableAdapter question_TypesTableAdapter;
         internal System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oPKidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Type_id;
         private System.Windows.Forms.GroupBox groupBox2;
         private testerDataSetTableAdapters.testTableAdapter testTableAdapter1;
         private System.Windows.Forms.BindingSource questionQuestionTypesBindingSource;
@@ -703,5 +713,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn complitionpercentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oPKidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Type_id;
     }
 }

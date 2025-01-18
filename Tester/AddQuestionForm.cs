@@ -30,6 +30,10 @@ namespace Tester
             Animator.Start();
             this.isRedact = isRedact;
             this.selectedtest = SelectedTest;
+            if(SelectedTest == 0 )
+            {
+                this.isRedact = false;
+            }
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
@@ -71,7 +75,7 @@ namespace Tester
 
                 this.questionTableAdapter.Fill(this.testerDataSet1.question);
 
-                Grid.SelectedRows.Clear();
+                
 
                 qurrentQuestiion = questionTableAdapter.GetData().Count - 1;
 
@@ -79,6 +83,7 @@ namespace Tester
                 qurrentQuestiion = Convert.ToInt32(questionTableAdapter.GetData()[qurrentQuestiion].id);
             } else
             {
+                questionTableAdapter.Update(textBox8.Text, textBox9.Text, imageToByteArray(pictureBox2.Image), adminForm.testTableAdapter.GetData()[LastTest].id, Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value), (int)Grid.SelectedRows[0].Cells[0].Value, selectedtest, (int)Grid.SelectedRows[0].Cells[2].Value, (int)Grid.SelectedRows[0].Cells[3].Value);
                 QuestionType = Convert.ToString(dataGridView2.SelectedRows[0].Cells[1].Value);
                 qurrentQuestiion = Convert.ToInt32(Grid.SelectedRows[0].Cells[0].Value);
             }
@@ -226,8 +231,7 @@ namespace Tester
                 customButton1.Text = "Добавить вопрос";
                 isRedact = false;
             } else
-            {
-                
+            {                
                 customButton1.Text = "изменить вопрос";
                 isRedact = false;
             }
