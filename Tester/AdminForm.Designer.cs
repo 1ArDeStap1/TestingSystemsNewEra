@@ -146,13 +146,13 @@ namespace Tester
             this.usersTableAdapter1 = new Tester.testerDataSetTableAdapters.usersTableAdapter();
             this.groupTableAdapter1 = new Tester.testerDataSetTableAdapters.groupTableAdapter();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialMultiLineTextBox1 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.materialMultiLineTextBox21 = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.ToolStripMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
@@ -195,6 +195,9 @@ namespace Tester
             // 
             // ToolStripMenu
             // 
+            this.ToolStripMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ToolStripMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.ToolStripMenu.Dock = System.Windows.Forms.DockStyle.None;
             this.ToolStripMenu.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -356,6 +359,9 @@ namespace Tester
             // 
             // materialTextBox1
             // 
+            this.materialTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialTextBox1.AnimateReadOnly = false;
             this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.materialTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "name", true));
@@ -374,12 +380,13 @@ namespace Tester
             // 
             // materialButton3
             // 
-            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.materialButton3.AutoSize = false;
             this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton3.Depth = 0;
             this.materialButton3.HighEmphasis = true;
             this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(17, 476);
+            this.materialButton3.Location = new System.Drawing.Point(19, 474);
             this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton3.Name = "materialButton3";
@@ -394,12 +401,13 @@ namespace Tester
             // 
             // materialButton2
             // 
+            this.materialButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton2.Depth = 0;
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(209, 476);
+            this.materialButton2.Location = new System.Drawing.Point(210, 474);
             this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
@@ -413,12 +421,13 @@ namespace Tester
             // 
             // materialButton1
             // 
+            this.materialButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton1.Depth = 0;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(395, 476);
+            this.materialButton1.Location = new System.Drawing.Point(395, 474);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
@@ -1349,32 +1358,21 @@ namespace Tester
             // 
             // materialLabel1
             // 
+            this.materialLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialLabel1.AutoSize = true;
             this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel1.Location = new System.Drawing.Point(13, 68);
+            this.materialLabel1.Location = new System.Drawing.Point(72, 80);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(208, 44);
+            this.materialLabel1.Size = new System.Drawing.Size(80, 29);
             this.materialLabel1.TabIndex = 10;
             this.materialLabel1.Text = "ТЕСТЫ";
             this.materialLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // materialMultiLineTextBox1
-            // 
-            this.materialMultiLineTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialMultiLineTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialMultiLineTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "description", true));
-            this.materialMultiLineTextBox1.Depth = 0;
-            this.materialMultiLineTextBox1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialMultiLineTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialMultiLineTextBox1.Location = new System.Drawing.Point(17, 251);
-            this.materialMultiLineTextBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialMultiLineTextBox1.Name = "materialMultiLineTextBox1";
-            this.materialMultiLineTextBox1.Size = new System.Drawing.Size(478, 206);
-            this.materialMultiLineTextBox1.TabIndex = 11;
-            this.materialMultiLineTextBox1.Text = "";
             // 
             // materialLabel2
             // 
@@ -1421,6 +1419,9 @@ namespace Tester
             // 
             // materialTextBox2
             // 
+            this.materialTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialTextBox2.AnimateReadOnly = false;
             this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.materialTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "time", true));
@@ -1439,6 +1440,9 @@ namespace Tester
             // 
             // materialLabel3
             // 
+            this.materialLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1452,10 +1456,14 @@ namespace Tester
             // 
             // materialCard1
             // 
+            this.materialCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialCard1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.materialMultiLineTextBox21);
             this.materialCard1.Controls.Add(this.materialLabel3);
             this.materialCard1.Controls.Add(this.materialTextBox2);
-            this.materialCard1.Controls.Add(this.materialMultiLineTextBox1);
             this.materialCard1.Controls.Add(this.materialLabel4);
             this.materialCard1.Controls.Add(this.materialButton2);
             this.materialCard1.Controls.Add(this.materialButton3);
@@ -1471,6 +1479,35 @@ namespace Tester
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(516, 519);
             this.materialCard1.TabIndex = 18;
+            // 
+            // materialMultiLineTextBox21
+            // 
+            this.materialMultiLineTextBox21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialMultiLineTextBox21.AnimateReadOnly = false;
+            this.materialMultiLineTextBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.materialMultiLineTextBox21.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.materialMultiLineTextBox21.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.materialMultiLineTextBox21.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "description", true));
+            this.materialMultiLineTextBox21.Depth = 0;
+            this.materialMultiLineTextBox21.HideSelection = true;
+            this.materialMultiLineTextBox21.Location = new System.Drawing.Point(17, 251);
+            this.materialMultiLineTextBox21.MaxLength = 32767;
+            this.materialMultiLineTextBox21.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialMultiLineTextBox21.Name = "materialMultiLineTextBox21";
+            this.materialMultiLineTextBox21.PasswordChar = '\0';
+            this.materialMultiLineTextBox21.ReadOnly = false;
+            this.materialMultiLineTextBox21.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.materialMultiLineTextBox21.SelectedText = "";
+            this.materialMultiLineTextBox21.SelectionLength = 0;
+            this.materialMultiLineTextBox21.SelectionStart = 0;
+            this.materialMultiLineTextBox21.ShortcutsEnabled = true;
+            this.materialMultiLineTextBox21.Size = new System.Drawing.Size(478, 205);
+            this.materialMultiLineTextBox21.TabIndex = 19;
+            this.materialMultiLineTextBox21.TabStop = false;
+            this.materialMultiLineTextBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.materialMultiLineTextBox21.UseSystemPasswordChar = false;
             // 
             // AdminForm
             // 
@@ -1651,10 +1688,10 @@ namespace Tester
         private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox1;
         private TabPage tabPage1;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialCard materialCard1;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox2 materialMultiLineTextBox21;
     }
 }
