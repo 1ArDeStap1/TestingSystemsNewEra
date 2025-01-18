@@ -34,7 +34,7 @@ namespace Tester
             // Configure color schema
             materialSkinManager.ColorScheme = new ColorScheme(
                 Primary.Blue900, Primary.Blue800,
-                Primary.Blue700, Accent.LightBlue700,
+                Primary.Blue700, Accent.LightBlue100,
                 TextShade.WHITE
             );
 

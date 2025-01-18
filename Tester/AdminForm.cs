@@ -9,14 +9,30 @@ using Tester.testerDataSetTableAdapters;
 using System.Linq;
 using System.Data;
 
+using MaterialSkin;
+using MaterialSkin.Controls;
+using System.Drawing;
+
 namespace Tester
 {
-    public partial class AdminForm : Form
+    public partial class AdminForm : MaterialForm
     {
         public AdminForm()
         {
             InitializeComponent();
-            Animator.Start();
+            
+            // Create a material theme manager and add the form to manage (this)
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            // Configure color schema
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue900, Primary.Blue800,
+                Primary.Blue700, Accent.LightBlue700,
+                TextShade.WHITE
+            );
+
         }
 
         public void AdminForm_Load(object sender, EventArgs e)
@@ -27,6 +43,7 @@ namespace Tester
             {
                 MessageBox.Show("У вас не привязана почта для рассылки результатов. \r\nДля привязки зайдите на вкладку 'Управление почтой' и введите свой почтовый адрес");
             }
+            SwitchElementsVisiblity(false);
         }
 
         private void LoadDataTables()
@@ -78,19 +95,7 @@ namespace Tester
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                testTableAdapter.Update(textBox1.Text, textBox2.Text, 
-                    Convert.ToInt32(numericUpDown1.Text), 
-                    Convert.ToInt32(((Button)sender).Tag), 
-                    Convert.ToInt32(((Button)sender).Tag));
-                testTableAdapter.Fill(testerDataSet.test);
-                UpdatedMessage();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка при обновлении теста: " + ex.Message);
-            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -168,12 +173,7 @@ namespace Tester
 
         private void button4_Click(object sender, EventArgs e)
         {
-            using (TestCreation CreationForm = new TestCreation())
-            {
-                Hide();
-                CreationForm.ShowDialog(this);
-                Show();
-            }
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -319,6 +319,52 @@ namespace Tester
                     Xmls.ImportFromXML(testerDataSet, fbd.FileName);
                 }
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (DeleteConfirm())
+                {
+                    testTableAdapter.Delete(Convert.ToInt32(Grid.SelectedRows[0].Cells[0].Value));
+                    testTableAdapter.Fill(testerDataSet.test);
+                    DeletedMessage();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при удалении теста: " + ex.Message);
+            }
+
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            
+            using (TestCreation tstForm = new TestCreation())
+            {
+                Hide();
+                tstForm.ShowDialog(this);
+                Show();
+            }
+        }
+
+        private void Grid_SelectionChanged(object sender, EventArgs e)
+        {
+            SwitchElementsVisiblity(true);
+        }
+
+        private void SwitchElementsVisiblity(bool visible)
+        {
+            materialLabel3.Visible = visible;
+            materialTextBox1.Visible = visible;
+            materialLabel2.Visible  = visible;
+            materialTextBox2.Visible = visible;
+            materialButton3.Visible = visible;
+            materialButton2.Visible = visible;
+            materialLabel4.Visible = visible;
         }
     }
 }

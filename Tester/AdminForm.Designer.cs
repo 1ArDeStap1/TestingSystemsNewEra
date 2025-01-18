@@ -42,7 +42,6 @@ namespace Tester
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             this.ToolStripMenu = new System.Windows.Forms.MenuStrip();
             this.Группы = new System.Windows.Forms.ToolStripMenuItem();
-            this.Пользователи = new System.Windows.Forms.ToolStripMenuItem();
             this.управлениеПочтойToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьБазуДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьБазуДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,10 +56,10 @@ namespace Tester
             this.testerDataSet = new Tester.testerDataSet();
             this.dataSet1 = new System.Data.DataSet();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabControl3 = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -146,20 +145,20 @@ namespace Tester
             this.adminNetworkDataTableAdapter1 = new Tester.testerDataSetTableAdapters.adminNetworkDataTableAdapter();
             this.usersTableAdapter1 = new Tester.testerDataSetTableAdapters.usersTableAdapter();
             this.groupTableAdapter1 = new Tester.testerDataSetTableAdapters.groupTableAdapter();
-            this.textBox2 = new Tester.CustomStyles.CustomTextBox();
-            this.numericUpDown1 = new Tester.CustomStyles.CustomTextBox();
-            this.textBox1 = new Tester.CustomStyles.CustomTextBox();
-            this.customButton2 = new Tester.CustomButton();
-            this.customButton1 = new Tester.CustomButton();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialMultiLineTextBox1 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.ToolStripMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabControl3.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPKBindingSource)).BeginInit();
@@ -191,57 +190,61 @@ namespace Tester
             ((System.ComponentModel.ISupportInitialize)(this.fKresultvariantanswerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionOPKBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionQuestionTypesBindingSource)).BeginInit();
+            this.materialCard1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ToolStripMenu
             // 
+            this.ToolStripMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.ToolStripMenu.Dock = System.Windows.Forms.DockStyle.None;
+            this.ToolStripMenu.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ToolStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Группы,
-            this.Пользователи,
             this.управлениеПочтойToolStripMenuItem,
             this.сохранитьБазуДанныхToolStripMenuItem,
             this.загрузитьБазуДанныхToolStripMenuItem});
-            this.ToolStripMenu.Location = new System.Drawing.Point(13, 9);
+            this.ToolStripMenu.Location = new System.Drawing.Point(255, 64);
             this.ToolStripMenu.Name = "ToolStripMenu";
             this.ToolStripMenu.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.ToolStripMenu.Size = new System.Drawing.Size(592, 24);
+            this.ToolStripMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.ToolStripMenu.Size = new System.Drawing.Size(478, 24);
             this.ToolStripMenu.TabIndex = 0;
             this.ToolStripMenu.Text = "Группы";
             // 
             // Группы
             // 
+            this.Группы.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Группы.ForeColor = System.Drawing.Color.Black;
             this.Группы.Name = "Группы";
-            this.Группы.Size = new System.Drawing.Size(61, 20);
-            this.Группы.Text = "Группы";
+            this.Группы.Size = new System.Drawing.Size(72, 20);
+            this.Группы.Text = "ГРУППЫ";
             this.Группы.Click += new System.EventHandler(this.группыToolStripMenuItem_Click);
-            // 
-            // Пользователи
-            // 
-            this.Пользователи.Name = "Пользователи";
-            this.Пользователи.Size = new System.Drawing.Size(97, 20);
-            this.Пользователи.Text = "Пользователи";
-            this.Пользователи.Click += new System.EventHandler(this.пользователиToolStripMenuItem_Click);
             // 
             // управлениеПочтойToolStripMenuItem
             // 
+            this.управлениеПочтойToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.управлениеПочтойToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.управлениеПочтойToolStripMenuItem.Name = "управлениеПочтойToolStripMenuItem";
-            this.управлениеПочтойToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
-            this.управлениеПочтойToolStripMenuItem.Text = "Управление почтой";
+            this.управлениеПочтойToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
+            this.управлениеПочтойToolStripMenuItem.Text = "РАССЫЛКА";
             this.управлениеПочтойToolStripMenuItem.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // сохранитьБазуДанныхToolStripMenuItem
             // 
+            this.сохранитьБазуДанныхToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.сохранитьБазуДанныхToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.сохранитьБазуДанныхToolStripMenuItem.Name = "сохранитьБазуДанныхToolStripMenuItem";
-            this.сохранитьБазуДанныхToolStripMenuItem.Size = new System.Drawing.Size(151, 20);
-            this.сохранитьБазуДанныхToolStripMenuItem.Text = "Сохранить Базу Данных";
+            this.сохранитьБазуДанныхToolStripMenuItem.Size = new System.Drawing.Size(154, 20);
+            this.сохранитьБазуДанныхToolStripMenuItem.Text = "СОХРАНИТЬ ДАННЫЕ";
             this.сохранитьБазуДанныхToolStripMenuItem.Click += new System.EventHandler(this.сохранитьБазуДанныхToolStripMenuItem_Click);
             // 
             // загрузитьБазуДанныхToolStripMenuItem
             // 
+            this.загрузитьБазуДанныхToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.загрузитьБазуДанныхToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.загрузитьБазуДанныхToolStripMenuItem.Name = "загрузитьБазуДанныхToolStripMenuItem";
-            this.загрузитьБазуДанныхToolStripMenuItem.Size = new System.Drawing.Size(146, 20);
-            this.загрузитьБазуДанныхToolStripMenuItem.Text = "Загрузить Базу Данных";
+            this.загрузитьБазуДанныхToolStripMenuItem.Size = new System.Drawing.Size(152, 20);
+            this.загрузитьБазуДанныхToolStripMenuItem.Text = "ЗАГРУЗИТЬ ДАННЫЕ";
             this.загрузитьБазуДанныхToolStripMenuItem.Click += new System.EventHandler(this.загрузитьБазуДанныхToolStripMenuItem_Click);
             // 
             // пользователиToolStripMenuItem
@@ -282,7 +285,7 @@ namespace Tester
             this.descriptionDataGridViewTextBoxColumn});
             this.Grid.DataSource = this.testBindingSource;
             this.Grid.GridColor = System.Drawing.SystemColors.Control;
-            this.Grid.Location = new System.Drawing.Point(13, 46);
+            this.Grid.Location = new System.Drawing.Point(13, 116);
             this.Grid.Margin = new System.Windows.Forms.Padding(4);
             this.Grid.MultiSelect = false;
             this.Grid.Name = "Grid";
@@ -294,9 +297,10 @@ namespace Tester
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.Grid.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid.Size = new System.Drawing.Size(211, 591);
+            this.Grid.Size = new System.Drawing.Size(211, 519);
             this.Grid.TabIndex = 9;
             this.Grid.TabStop = false;
+            this.Grid.SelectionChanged += new System.EventHandler(this.Grid_SelectionChanged);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -342,67 +346,90 @@ namespace Tester
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage11);
-            this.tabControl1.Location = new System.Drawing.Point(228, 46);
+            this.tabControl1.Location = new System.Drawing.Point(748, 68);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1094, 595);
+            this.tabControl1.Size = new System.Drawing.Size(508, 45);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.Visible = false;
             // 
-            // tabPage1
+            // materialTextBox1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.Honeydew;
-            this.tabPage1.Controls.Add(this.tabControl3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1086, 567);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Информация о тесте";
+            this.materialTextBox1.AnimateReadOnly = false;
+            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "name", true));
+            this.materialTextBox1.Depth = 0;
+            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox1.LeadingIcon = null;
+            this.materialTextBox1.Location = new System.Drawing.Point(17, 46);
+            this.materialTextBox1.MaxLength = 100;
+            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox1.Multiline = false;
+            this.materialTextBox1.Name = "materialTextBox1";
+            this.materialTextBox1.Size = new System.Drawing.Size(478, 50);
+            this.materialTextBox1.TabIndex = 9;
+            this.materialTextBox1.Text = "";
+            this.materialTextBox1.TrailingIcon = null;
             // 
-            // tabControl3
+            // materialButton3
             // 
-            this.tabControl3.Controls.Add(this.tabPage3);
-            this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl3.Location = new System.Drawing.Point(4, 4);
-            this.tabControl3.Margin = new System.Windows.Forms.Padding(4);
-            this.tabControl3.Name = "tabControl3";
-            this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(1078, 559);
-            this.tabControl3.TabIndex = 7;
+            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton3.Depth = 0;
+            this.materialButton3.HighEmphasis = true;
+            this.materialButton3.Icon = null;
+            this.materialButton3.Location = new System.Drawing.Point(17, 476);
+            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton3.Name = "materialButton3";
+            this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton3.Size = new System.Drawing.Size(91, 36);
+            this.materialButton3.TabIndex = 8;
+            this.materialButton3.Text = "УДАЛИТЬ ";
+            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton3.UseAccentColor = false;
+            this.materialButton3.UseVisualStyleBackColor = true;
+            this.materialButton3.Click += new System.EventHandler(this.linkLabel1_LinkClicked);
             // 
-            // tabPage3
+            // materialButton2
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.Honeydew;
-            this.tabPage3.Controls.Add(this.textBox2);
-            this.tabPage3.Controls.Add(this.numericUpDown1);
-            this.tabPage3.Controls.Add(this.textBox1);
-            this.tabPage3.Controls.Add(this.customButton2);
-            this.tabPage3.Controls.Add(this.customButton1);
-            this.tabPage3.Controls.Add(this.linkLabel1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Size = new System.Drawing.Size(1070, 531);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Изменение";
+            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton2.Depth = 0;
+            this.materialButton2.HighEmphasis = true;
+            this.materialButton2.Icon = null;
+            this.materialButton2.Location = new System.Drawing.Point(209, 476);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton2.Name = "materialButton2";
+            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton2.Size = new System.Drawing.Size(101, 36);
+            this.materialButton2.TabIndex = 7;
+            this.materialButton2.Text = "ИЗМЕНИТЬ";
+            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton2.UseAccentColor = false;
+            this.materialButton2.UseVisualStyleBackColor = true;
             // 
-            // linkLabel1
+            // materialButton1
             // 
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.testBindingSource, "id", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.linkLabel1.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel1.Location = new System.Drawing.Point(40, 488);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(80, 15);
-            this.linkLabel1.TabIndex = 5;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Удалить тест";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(395, 476);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(100, 36);
+            this.materialButton1.TabIndex = 6;
+            this.materialButton1.Text = "ДОБАВИТЬ";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
             // tabPage2
             // 
@@ -414,7 +441,7 @@ namespace Tester
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1086, 567);
+            this.tabPage2.Size = new System.Drawing.Size(563, 541);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Вопросы";
             // 
@@ -620,7 +647,7 @@ namespace Tester
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.fKquestiontestBindingSource, "id", true));
             this.linkLabel2.LinkColor = System.Drawing.Color.Red;
-            this.linkLabel2.Location = new System.Drawing.Point(7, 512);
+            this.linkLabel2.Location = new System.Drawing.Point(7, 518);
             this.linkLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(97, 15);
@@ -641,7 +668,7 @@ namespace Tester
             this.pictureBox1.Location = new System.Drawing.Point(7, 67);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(561, 342);
+            this.pictureBox1.Size = new System.Drawing.Size(561, 348);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
@@ -656,7 +683,7 @@ namespace Tester
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.Lavender;
-            this.button2.Location = new System.Drawing.Point(118, 506);
+            this.button2.Location = new System.Drawing.Point(118, 512);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(695, 26);
@@ -692,7 +719,7 @@ namespace Tester
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label5.Location = new System.Drawing.Point(7, 414);
+            this.label5.Location = new System.Drawing.Point(7, 420);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(248, 15);
@@ -717,7 +744,7 @@ namespace Tester
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox4.BackColor = System.Drawing.SystemColors.Control;
             this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fKquestiontestBindingSource, "description", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.textBox4.Location = new System.Drawing.Point(7, 431);
+            this.textBox4.Location = new System.Drawing.Point(7, 437);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
@@ -772,7 +799,7 @@ namespace Tester
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(838, 452);
+            this.dataGridView2.Size = new System.Drawing.Size(838, 450);
             this.dataGridView2.TabIndex = 12;
             this.dataGridView2.TabStop = false;
             // 
@@ -956,7 +983,7 @@ namespace Tester
             this.tabPage11.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage11.Size = new System.Drawing.Size(1086, 567);
+            this.tabPage11.Size = new System.Drawing.Size(563, 541);
             this.tabPage11.TabIndex = 2;
             this.tabPage11.Text = "Результаты";
             // 
@@ -1117,7 +1144,6 @@ namespace Tester
             this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
             this.idDataGridViewTextBoxColumn3.ReadOnly = true;
             this.idDataGridViewTextBoxColumn3.Visible = false;
-            this.idDataGridViewTextBoxColumn3.Width = 43;
             // 
             // nameDataGridViewTextBoxColumn2
             // 
@@ -1321,96 +1347,139 @@ namespace Tester
             // 
             this.groupTableAdapter1.ClearBeforeFill = true;
             // 
-            // textBox2
+            // materialLabel1
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderColor = System.Drawing.Color.DarkBlue;
-            this.textBox2.BorderColorNotActive = System.Drawing.Color.DarkGray;
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "description", true));
-            this.textBox2.Font = new System.Drawing.Font("Arial", 11.5F);
-            this.textBox2.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(7, 157);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(762, 265);
-            this.textBox2.TabIndex = 14;
-            this.textBox2.text = null;
-            this.textBox2.TextPreview = "Описание теста";
-            this.textBox2.UseSystemPasswordChars = false;
-            this.textBox2.VerticalOffset = 100;
+            this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.materialLabel1.Location = new System.Drawing.Point(13, 68);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(208, 44);
+            this.materialLabel1.TabIndex = 10;
+            this.materialLabel1.Text = "ТЕСТЫ";
+            this.materialLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // numericUpDown1
+            // materialMultiLineTextBox1
             // 
-            this.numericUpDown1.BackColor = System.Drawing.Color.White;
-            this.numericUpDown1.BorderColor = System.Drawing.Color.DarkBlue;
-            this.numericUpDown1.BorderColorNotActive = System.Drawing.Color.DarkGray;
-            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "time", true));
-            this.numericUpDown1.Font = new System.Drawing.Font("Arial", 11.5F);
-            this.numericUpDown1.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.numericUpDown1.ForeColor = System.Drawing.Color.Black;
-            this.numericUpDown1.Location = new System.Drawing.Point(7, 80);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(275, 52);
-            this.numericUpDown1.TabIndex = 13;
-            this.numericUpDown1.text = null;
-            this.numericUpDown1.TextPreview = "Время прохождения теста";
-            this.numericUpDown1.UseSystemPasswordChars = false;
-            this.numericUpDown1.VerticalOffset = 100;
+            this.materialMultiLineTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialMultiLineTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialMultiLineTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "description", true));
+            this.materialMultiLineTextBox1.Depth = 0;
+            this.materialMultiLineTextBox1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialMultiLineTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialMultiLineTextBox1.Location = new System.Drawing.Point(17, 251);
+            this.materialMultiLineTextBox1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialMultiLineTextBox1.Name = "materialMultiLineTextBox1";
+            this.materialMultiLineTextBox1.Size = new System.Drawing.Size(478, 206);
+            this.materialMultiLineTextBox1.TabIndex = 11;
+            this.materialMultiLineTextBox1.Text = "";
             // 
-            // textBox1
+            // materialLabel2
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderColor = System.Drawing.Color.DarkBlue;
-            this.textBox1.BorderColorNotActive = System.Drawing.Color.DarkGray;
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "name", true));
-            this.textBox1.Font = new System.Drawing.Font("Arial", 11.5F);
-            this.textBox1.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(7, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(702, 54);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.text = null;
-            this.textBox1.TextPreview = "Название Теста";
-            this.textBox1.UseSystemPasswordChars = false;
-            this.textBox1.VerticalOffset = 0;
+            this.materialLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.BackColor = System.Drawing.Color.White;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.Location = new System.Drawing.Point(27, 129);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(199, 19);
+            this.materialLabel2.TabIndex = 12;
+            this.materialLabel2.Text = "Время прохождения теста";
             // 
-            // customButton2
+            // materialLabel4
             // 
-            this.customButton2.BackColor = System.Drawing.Color.DarkBlue;
-            this.customButton2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.customButton2.ForeColor = System.Drawing.Color.Chartreuse;
-            this.customButton2.Location = new System.Drawing.Point(339, 452);
-            this.customButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.RoundingEnabled = true;
-            this.customButton2.RoundingPercent = 30;
-            this.customButton2.Size = new System.Drawing.Size(430, 57);
-            this.customButton2.TabIndex = 11;
-            this.customButton2.Text = "Сохранить Изменения";
-            this.customButton2.Click += new System.EventHandler(this.button1_Click);
+            this.materialLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.BackColor = System.Drawing.Color.White;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel4.Location = new System.Drawing.Point(27, 229);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(118, 19);
+            this.materialLabel4.TabIndex = 14;
+            this.materialLabel4.Text = "Описание теста";
             // 
-            // customButton1
+            // tabPage1
             // 
-            this.customButton1.BackColor = System.Drawing.Color.DarkBlue;
-            this.customButton1.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.customButton1.ForeColor = System.Drawing.Color.Chartreuse;
-            this.customButton1.Location = new System.Drawing.Point(716, 8);
-            this.customButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.RoundingEnabled = true;
-            this.customButton1.RoundingPercent = 100;
-            this.customButton1.Size = new System.Drawing.Size(53, 53);
-            this.customButton1.TabIndex = 10;
-            this.customButton1.Text = "+";
-            this.customButton1.Click += new System.EventHandler(this.button4_Click);
+            this.tabPage1.BackColor = System.Drawing.Color.Honeydew;
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Size = new System.Drawing.Size(500, 17);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Информация о тесте";
+            // 
+            // materialTextBox2
+            // 
+            this.materialTextBox2.AnimateReadOnly = false;
+            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.testBindingSource, "time", true));
+            this.materialTextBox2.Depth = 0;
+            this.materialTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox2.LeadingIcon = null;
+            this.materialTextBox2.Location = new System.Drawing.Point(17, 151);
+            this.materialTextBox2.MaxLength = 50;
+            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox2.Multiline = false;
+            this.materialTextBox2.Name = "materialTextBox2";
+            this.materialTextBox2.Size = new System.Drawing.Size(478, 50);
+            this.materialTextBox2.TabIndex = 15;
+            this.materialTextBox2.Text = "";
+            this.materialTextBox2.TrailingIcon = null;
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel3.Location = new System.Drawing.Point(27, 24);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(118, 19);
+            this.materialLabel3.TabIndex = 16;
+            this.materialLabel3.Text = "Название теста";
+            this.materialLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // materialCard1
+            // 
+            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.materialLabel3);
+            this.materialCard1.Controls.Add(this.materialTextBox2);
+            this.materialCard1.Controls.Add(this.materialMultiLineTextBox1);
+            this.materialCard1.Controls.Add(this.materialLabel4);
+            this.materialCard1.Controls.Add(this.materialButton2);
+            this.materialCard1.Controls.Add(this.materialButton3);
+            this.materialCard1.Controls.Add(this.materialButton1);
+            this.materialCard1.Controls.Add(this.materialLabel2);
+            this.materialCard1.Controls.Add(this.materialTextBox1);
+            this.materialCard1.Depth = 0;
+            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard1.Location = new System.Drawing.Point(238, 116);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard1.Name = "materialCard1";
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard1.Size = new System.Drawing.Size(516, 519);
+            this.materialCard1.TabIndex = 18;
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Honeydew;
-            this.ClientSize = new System.Drawing.Size(1319, 648);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(771, 648);
+            this.Controls.Add(this.materialCard1);
+            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.Grid);
             this.Controls.Add(this.ToolStripMenu);
@@ -1422,6 +1491,7 @@ namespace Tester
             this.Name = "AdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Администрирование";
+            this.TransparencyKey = System.Drawing.Color.Yellow;
             this.Activated += new System.EventHandler(this.AdminForm_Activated);
             this.Load += new System.EventHandler(this.AdminForm_Load);
             this.ToolStripMenu.ResumeLayout(false);
@@ -1431,10 +1501,6 @@ namespace Tester
             ((System.ComponentModel.ISupportInitialize)(this.testerDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabControl3.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oPKBindingSource)).EndInit();
@@ -1468,6 +1534,8 @@ namespace Tester
             ((System.ComponentModel.ISupportInitialize)(this.fKresultvariantanswerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionOPKBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionQuestionTypesBindingSource)).EndInit();
+            this.materialCard1.ResumeLayout(false);
+            this.materialCard1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1506,8 +1574,6 @@ namespace Tester
         private BindingSource oPKBindingSource;
         public testerDataSetTableAdapters.Question_TypesTableAdapter question_TypesTableAdapter1;
         private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabControl tabControl3;
         private TabPage tabPage2;
         private DataGridView dataGridView7;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn7;
@@ -1551,15 +1617,7 @@ namespace Tester
         private DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn2;
         private DataGridViewCheckBoxColumn correctDataGridViewCheckBoxColumn1;
         internal DataGridView dataGridView4;
-        private TabPage tabPage3;
-        private CustomStyles.CustomTextBox textBox1;
-        private CustomButton customButton2;
-        private CustomButton customButton1;
-        private LinkLabel linkLabel1;
-        private CustomStyles.CustomTextBox numericUpDown1;
-        private CustomStyles.CustomTextBox textBox2;
         private ToolStripMenuItem Группы;
-        private ToolStripMenuItem Пользователи;
         private Button btnShowOpk_Result;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn3;
@@ -1586,5 +1644,17 @@ namespace Tester
         private ToolStripMenuItem загрузитьБазуДанныхToolStripMenuItem;
         private testerDataSetTableAdapters.usersTableAdapter usersTableAdapter1;
         private testerDataSetTableAdapters.groupTableAdapter groupTableAdapter1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialButton materialButton3;
+        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox1;
+        private TabPage tabPage1;
+        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialCard materialCard1;
     }
 }
