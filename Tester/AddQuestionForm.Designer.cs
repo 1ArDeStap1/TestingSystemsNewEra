@@ -43,6 +43,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.complitionpercentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oPKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -53,6 +56,11 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.questionQuestionTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Grid = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oPKidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.test_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.questionOPKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,17 +81,9 @@
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.textBox9 = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oPKidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.test_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.complitionpercentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.questionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testerDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKquestiontestBindingSource1)).BeginInit();
@@ -245,6 +245,28 @@
             this.dataGridView1.TabIndex = 46;
             this.dataGridView1.TabStop = false;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "идентификатор";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Название";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // complitionpercentDataGridViewTextBoxColumn
+            // 
+            this.complitionpercentDataGridViewTextBoxColumn.DataPropertyName = "complition_percent";
+            this.complitionpercentDataGridViewTextBoxColumn.HeaderText = "Процент для освоения";
+            this.complitionpercentDataGridViewTextBoxColumn.Name = "complitionpercentDataGridViewTextBoxColumn";
+            this.complitionpercentDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // oPKBindingSource
             // 
@@ -414,7 +436,43 @@
             this.Grid.TabIndex = 43;
             this.Grid.TabStop = false;
             this.Grid.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.Grid_RowsAdded);
-            this.Grid.SelectionChanged += new System.EventHandler(this.Grid_SelectionChanged);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "НазваниеВопроса";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // oPKidDataGridViewTextBoxColumn
+            // 
+            this.oPKidDataGridViewTextBoxColumn.DataPropertyName = "OPK_id";
+            this.oPKidDataGridViewTextBoxColumn.HeaderText = "Компетенция";
+            this.oPKidDataGridViewTextBoxColumn.Name = "oPKidDataGridViewTextBoxColumn";
+            this.oPKidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Type_id
+            // 
+            this.Type_id.DataPropertyName = "Type_id";
+            this.Type_id.HeaderText = "ТипВопроса";
+            this.Type_id.Name = "Type_id";
+            this.Type_id.ReadOnly = true;
+            // 
+            // test_id
+            // 
+            this.test_id.DataPropertyName = "test_id";
+            this.test_id.HeaderText = "test_id";
+            this.test_id.Name = "test_id";
+            this.test_id.ReadOnly = true;
+            this.test_id.Visible = false;
             // 
             // questionOPKBindingSource
             // 
@@ -648,43 +706,6 @@
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBox9.UseSystemPasswordChar = false;
             // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "НазваниеВопроса";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // oPKidDataGridViewTextBoxColumn
-            // 
-            this.oPKidDataGridViewTextBoxColumn.DataPropertyName = "OPK_id";
-            this.oPKidDataGridViewTextBoxColumn.HeaderText = "Компетенция";
-            this.oPKidDataGridViewTextBoxColumn.Name = "oPKidDataGridViewTextBoxColumn";
-            this.oPKidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Type_id
-            // 
-            this.Type_id.DataPropertyName = "Type_id";
-            this.Type_id.HeaderText = "ТипВопроса";
-            this.Type_id.Name = "Type_id";
-            this.Type_id.ReadOnly = true;
-            // 
-            // test_id
-            // 
-            this.test_id.DataPropertyName = "test_id";
-            this.test_id.HeaderText = "test_id";
-            this.test_id.Name = "test_id";
-            this.test_id.ReadOnly = true;
-            this.test_id.Visible = false;
-            // 
             // tabControl1
             // 
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -730,28 +751,6 @@
             this.tabPage2.Size = new System.Drawing.Size(706, 602);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "КОМПЕТЕНЦИИ";
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "идентификатор";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Название";
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // complitionpercentDataGridViewTextBoxColumn
-            // 
-            this.complitionpercentDataGridViewTextBoxColumn.DataPropertyName = "complition_percent";
-            this.complitionpercentDataGridViewTextBoxColumn.HeaderText = "Процент для освоения";
-            this.complitionpercentDataGridViewTextBoxColumn.Name = "complitionpercentDataGridViewTextBoxColumn";
-            this.complitionpercentDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // AddQuestionForm
             // 

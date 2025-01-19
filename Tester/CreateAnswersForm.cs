@@ -33,10 +33,11 @@ namespace Tester
         private void CreateAnswersForm_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet.question". При необходимости она может быть перемещена или удалена.
-            this.questionTableAdapter.FillBy1(this.testerDataSet.question);
+            this.questionTableAdapter.FillBy2(this.testerDataSet.question, qurrQuestId);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet.answer". При необходимости она может быть перемещена или удалена.
             this.answerTableAdapter.Fill(this.testerDataSet.answer);
-
+            /*answerTableAdapter.Fill(this.testerDataSet.answer);
+*/
             switch (qType)
             {
                 case "basic":
