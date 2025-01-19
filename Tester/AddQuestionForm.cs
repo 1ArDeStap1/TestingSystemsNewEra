@@ -12,9 +12,13 @@ using System.Windows.Forms;
 using Tester.AnimationClasses;
 using Tester.testerDataSetTableAdapters;
 
+
+using MaterialSkin;
+using MaterialSkin.Controls;
+
 namespace Tester
 {
-    public partial class AddQuestionForm : Form
+    public partial class AddQuestionForm : MaterialForm
     {
         int LastTest;
         AdminForm adminForm = new AdminForm();
@@ -27,13 +31,23 @@ namespace Tester
         public AddQuestionForm(bool isRedact = false, int SelectedTest = 0)
         {
             InitializeComponent();
-            Animator.Start();
             this.isRedact = isRedact;
             this.selectedtest = SelectedTest;
             if(SelectedTest == 0 )
             {
                 this.isRedact = false;
             }
+            // Create a material theme manager and add the form to manage (this)
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            // Configure color schema
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue900, Primary.Blue800,
+                Primary.Blue700, Accent.LightBlue700,
+                TextShade.WHITE
+            );
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
@@ -69,24 +83,16 @@ namespace Tester
                 return;
             }
 
-            if (!isRedact)
-            {
-                questionTableAdapter.Insert(textBox8.Text, textBox9.Text, imageToByteArray(pictureBox2.Image), adminForm.testTableAdapter.GetData()[LastTest].id, Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value));
+            questionTableAdapter.Insert(textBox8.Text, textBox9.Text, imageToByteArray(pictureBox2.Image), adminForm.testTableAdapter.GetData()[LastTest].id, Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value));
 
-                this.questionTableAdapter.Fill(this.testerDataSet1.question);
+            this.questionTableAdapter.Fill(this.testerDataSet1.question);
 
-                
+            qurrentQuestiion = questionTableAdapter.GetData().Count - 1;
 
-                qurrentQuestiion = questionTableAdapter.GetData().Count - 1;
+            QuestionType = Convert.ToString(dataGridView2.SelectedRows[0].Cells[1].Value);
+            qurrentQuestiion = Convert.ToInt32(questionTableAdapter.GetData()[qurrentQuestiion].id);
 
-                QuestionType = Convert.ToString(dataGridView2.SelectedRows[0].Cells[1].Value);
-                qurrentQuestiion = Convert.ToInt32(questionTableAdapter.GetData()[qurrentQuestiion].id);
-            } else
-            {
-                questionTableAdapter.Update(textBox8.Text, textBox9.Text, imageToByteArray(pictureBox2.Image), adminForm.testTableAdapter.GetData()[LastTest].id, Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value), (int)Grid.SelectedRows[0].Cells[0].Value, selectedtest, (int)Grid.SelectedRows[0].Cells[2].Value, (int)Grid.SelectedRows[0].Cells[3].Value);
-                QuestionType = Convert.ToString(dataGridView2.SelectedRows[0].Cells[1].Value);
-                qurrentQuestiion = Convert.ToInt32(Grid.SelectedRows[0].Cells[0].Value);
-            }
+
             CreateAnswersForm addAnswer = new CreateAnswersForm(QuestionType, qurrentQuestiion);
             addAnswer.ShowDialog(this);
             Show();
@@ -96,7 +102,6 @@ namespace Tester
         private void AddQuestionForm_Load(object sender, EventArgs e)
         {
 
-            formsStyle1.Apply();
             // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet1.Question_Types". При необходимости она может быть перемещена или удалена.
             this.question_TypesTableAdapter.Fill(this.testerDataSet1.Question_Types);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet1.question". При необходимости она может быть перемещена или удалена.
@@ -226,21 +231,29 @@ namespace Tester
 
         private void Grid_SelectionChanged(object sender, EventArgs e)
         {
-            if (Grid.SelectedRows[0] == null)
-            {
-                customButton1.Text = "Добавить вопрос";
-                isRedact = false;
-            } else
-            {                
-                customButton1.Text = "изменить вопрос";
-                isRedact = false;
-            }
+            qurrentQuestiion = (int)Grid.SelectedRows[0].Cells[0].Value;
         }
 
         private void Grid_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             isRedact = false;
             
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+            questionTableAdapter.Update(textBox8.Text, textBox9.Text, imageToByteArray(pictureBox2.Image), adminForm.testTableAdapter.GetData()[LastTest].id, Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value), (int)Grid.SelectedRows[0].Cells[0].Value, selectedtest, (int)Grid.SelectedRows[0].Cells[2].Value, (int)Grid.SelectedRows[0].Cells[3].Value);
+            QuestionType = Convert.ToString(dataGridView2.SelectedRows[0].Cells[1].Value);
+            qurrentQuestiion = Convert.ToInt32(Grid.SelectedRows[0].Cells[0].Value);
+            questionTableAdapter.Fill(this.testerDataSet1.question);
+            CreateAnswersForm addAnswer = new CreateAnswersForm(QuestionType, qurrentQuestiion);
+            addAnswer.ShowDialog(this);
+            Show();
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
