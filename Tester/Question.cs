@@ -37,6 +37,7 @@ namespace Tester
         public OPK opk;
         public string cont;
         public Bitmap image;
+        public string description;
         public Answer[] answers;
         public int[] correct;
         public bool answered;
@@ -45,11 +46,12 @@ namespace Tester
         public int type_id;
         public Dictionary<int, string> textAnswer;
 
-        public Question(int id,string cont, Bitmap image, Answer[] answers, int[] correct, Dictionary<int, string> correctText, OPK Opk, bool mix = false, int type = 1)
+        public Question(int id,string cont, Bitmap image, Answer[] answers, int[] correct, Dictionary<int, string> correctText, OPK Opk, string description = "", bool mix = false, int type = 1)
         {
             this.id = id;
             this.cont = cont;
             this.image = image;
+            this.description = description;
             this.answers = answers;
             this.correct = correct;
             if (mix) this.mix();

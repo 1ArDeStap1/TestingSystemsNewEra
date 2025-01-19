@@ -20,7 +20,7 @@ namespace Tester
 
 #if DEBUG == false
 
-            String DbPath = @"C:\КУРСОВАЯ\Новая папка";
+            String DbPath = Directory.GetCurrentDirectory();
             String PathToDB = Path.Combine(DbPath, "TesterProgramDataBase");
             AppDomain.CurrentDomain.SetData("DataDirectory", PathToDB);  
 

@@ -30,12 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoTestForm));
-            this.countLabel = new System.Windows.Forms.Label();
             this.answersList = new System.Windows.Forms.ListBox();
-            this.nextQuestion = new System.Windows.Forms.Button();
-            this.backQuestion = new System.Windows.Forms.Button();
             this.questionImage = new System.Windows.Forms.PictureBox();
-            this.timerLabel = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +54,6 @@
             this.correctDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.questionidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.answerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,8 +64,6 @@
             this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.complition_percent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oPKBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.AnswerTextBox1 = new Tester.CustomStyles.CustomTextBox();
-            this.formsStyle1 = new Tester.FormsStyle(this.components);
             this.testTableAdapter = new Tester.testerDataSetTableAdapters.testTableAdapter();
             this.questionTableAdapter = new Tester.testerDataSetTableAdapters.questionTableAdapter();
             this.answerTableAdapter = new Tester.testerDataSetTableAdapters.answerTableAdapter();
@@ -83,7 +76,16 @@
             this.opkresultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.adminNetworkDataTableAdapter1 = new Tester.testerDataSetTableAdapters.adminNetworkDataTableAdapter();
             this.question_TypesTableAdapter = new Tester.testerDataSetTableAdapters.Question_TypesTableAdapter();
-            this.label2 = new System.Windows.Forms.Label();
+            this.AnswerTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.label2 = new MaterialSkin.Controls.MaterialLabel();
+            this.nextQuestion = new MaterialSkin.Controls.MaterialButton();
+            this.backQuestion = new MaterialSkin.Controls.MaterialButton();
+            this.label1 = new MaterialSkin.Controls.MaterialLabel();
+            this.countLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.timerLabel = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.questionImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
@@ -100,61 +102,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.resultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultanswerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.opkresultBindingSource)).BeginInit();
+            this.materialCard1.SuspendLayout();
+            this.materialCard2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // countLabel
-            // 
-            this.countLabel.AutoSize = true;
-            this.countLabel.BackColor = System.Drawing.Color.White;
-            this.countLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.countLabel.Location = new System.Drawing.Point(3, 4);
-            this.countLabel.Name = "countLabel";
-            this.countLabel.Size = new System.Drawing.Size(52, 20);
-            this.countLabel.TabIndex = 10;
-            this.countLabel.Text = "0 из 0";
             // 
             // answersList
             // 
-            this.answersList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.answersList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.answersList.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.answersList.FormattingEnabled = true;
+            this.answersList.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.answersList.IntegralHeight = false;
             this.answersList.ItemHeight = 22;
-            this.answersList.Location = new System.Drawing.Point(12, 455);
+            this.answersList.Location = new System.Drawing.Point(27, 17);
             this.answersList.Name = "answersList";
             this.answersList.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.answersList.Size = new System.Drawing.Size(752, 140);
+            this.answersList.Size = new System.Drawing.Size(1027, 205);
             this.answersList.TabIndex = 9;
             this.answersList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.answersList_DrawItem);
             this.answersList.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.answersList_MeasureItem);
             this.answersList.SelectedIndexChanged += new System.EventHandler(this.answersList_SelectedIndexChanged);
-            // 
-            // nextQuestion
-            // 
-            this.nextQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.nextQuestion.Enabled = false;
-            this.nextQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nextQuestion.Location = new System.Drawing.Point(778, 455);
-            this.nextQuestion.Name = "nextQuestion";
-            this.nextQuestion.Size = new System.Drawing.Size(188, 90);
-            this.nextQuestion.TabIndex = 8;
-            this.nextQuestion.Text = "Следующий вопрос!";
-            this.nextQuestion.UseVisualStyleBackColor = true;
-            this.nextQuestion.Click += new System.EventHandler(this.nextQuestion_Click);
-            // 
-            // backQuestion
-            // 
-            this.backQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.backQuestion.Enabled = false;
-            this.backQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.backQuestion.Location = new System.Drawing.Point(778, 551);
-            this.backQuestion.Name = "backQuestion";
-            this.backQuestion.Size = new System.Drawing.Size(188, 44);
-            this.backQuestion.TabIndex = 7;
-            this.backQuestion.Text = "Исправить прошлый ответ!";
-            this.backQuestion.UseVisualStyleBackColor = true;
-            this.backQuestion.Click += new System.EventHandler(this.backQuestion_Click);
             // 
             // questionImage
             // 
@@ -162,26 +129,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.questionImage.BackColor = System.Drawing.Color.Transparent;
+            this.questionImage.InitialImage = null;
             this.questionImage.Location = new System.Drawing.Point(15, 40);
             this.questionImage.Name = "questionImage";
-            this.questionImage.Size = new System.Drawing.Size(924, 382);
+            this.questionImage.Size = new System.Drawing.Size(1053, 367);
             this.questionImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.questionImage.TabIndex = 6;
             this.questionImage.TabStop = false;
-            // 
-            // timerLabel
-            // 
-            this.timerLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.timerLabel.AutoSize = true;
-            this.timerLabel.BackColor = System.Drawing.Color.White;
-            this.timerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.timerLabel.Location = new System.Drawing.Point(892, 4);
-            this.timerLabel.Name = "timerLabel";
-            this.timerLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.timerLabel.Size = new System.Drawing.Size(18, 20);
-            this.timerLabel.TabIndex = 11;
-            this.timerLabel.Text = "0";
-            this.timerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // timer
             // 
@@ -199,7 +153,7 @@
             this.nameDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.testBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 120);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 95);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(240, 229);
@@ -252,7 +206,7 @@
             this.OPK_id,
             this.Type_id});
             this.dataGridView2.DataSource = this.fKquestiontestBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(246, 111);
+            this.dataGridView2.Location = new System.Drawing.Point(307, 95);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(446, 229);
@@ -325,7 +279,7 @@
             this.correctDataGridViewCheckBoxColumn,
             this.questionidDataGridViewTextBoxColumn});
             this.dataGridView3.DataSource = this.answerBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(710, 120);
+            this.dataGridView3.Location = new System.Drawing.Point(802, 95);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.Size = new System.Drawing.Size(240, 229);
@@ -365,35 +319,24 @@
             this.answerBindingSource.DataMember = "answer";
             this.answerBindingSource.DataSource = this.testerDataSet;
             // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(954, 27);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Вопрос 1";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Controls.Add(this.dataGridView5);
-            this.panel1.Controls.Add(this.dataGridView4);
-            this.panel1.Controls.Add(this.countLabel);
             this.panel1.Controls.Add(this.timerLabel);
-            this.panel1.Controls.Add(this.dataGridView2);
+            this.panel1.Controls.Add(this.countLabel);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.materialCard2);
+            this.panel1.Controls.Add(this.dataGridView5);
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dataGridView3);
+            this.panel1.Controls.Add(this.dataGridView4);
+            this.panel1.Controls.Add(this.dataGridView2);
             this.panel1.Controls.Add(this.questionImage);
-            this.panel1.Location = new System.Drawing.Point(12, 9);
+            this.panel1.Location = new System.Drawing.Point(12, 67);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(954, 422);
+            this.panel1.Size = new System.Drawing.Size(1083, 427);
             this.panel1.TabIndex = 16;
             // 
             // dataGridView5
@@ -482,29 +425,6 @@
             this.oPKBindingSource.DataMember = "OPK";
             this.oPKBindingSource.DataSource = this.testerDataSet;
             // 
-            // AnswerTextBox1
-            // 
-            this.AnswerTextBox1.BackColor = System.Drawing.Color.White;
-            this.AnswerTextBox1.BorderColor = System.Drawing.Color.DarkBlue;
-            this.AnswerTextBox1.BorderColorNotActive = System.Drawing.Color.DarkGray;
-            this.AnswerTextBox1.Font = new System.Drawing.Font("Arial", 11.5F);
-            this.AnswerTextBox1.FontTextPreview = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this.AnswerTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.AnswerTextBox1.Location = new System.Drawing.Point(27, 494);
-            this.AnswerTextBox1.Name = "AnswerTextBox1";
-            this.AnswerTextBox1.Size = new System.Drawing.Size(665, 51);
-            this.AnswerTextBox1.TabIndex = 17;
-            this.AnswerTextBox1.text = null;
-            this.AnswerTextBox1.TextPreview = "Input Text";
-            this.AnswerTextBox1.UseSystemPasswordChars = false;
-            this.AnswerTextBox1.VerticalOffset = 8;
-            this.AnswerTextBox1.TextChanged += new System.EventHandler(this.AnswerTextBox1_TextChanged);
-            this.AnswerTextBox1.Click += new System.EventHandler(this.AnswerTextBox1_TextChanged);
-            // 
-            // formsStyle1
-            // 
-            this.formsStyle1.form = this;
-            // 
             // testTableAdapter
             // 
             this.testTableAdapter.ClearBeforeFill = true;
@@ -556,28 +476,188 @@
             // 
             this.question_TypesTableAdapter.ClearBeforeFill = true;
             // 
+            // AnswerTextBox1
+            // 
+            this.AnswerTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AnswerTextBox1.AnimateReadOnly = false;
+            this.AnswerTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.AnswerTextBox1.Depth = 0;
+            this.AnswerTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.AnswerTextBox1.LeadingIcon = null;
+            this.AnswerTextBox1.Location = new System.Drawing.Point(27, 86);
+            this.AnswerTextBox1.MaxLength = 50;
+            this.AnswerTextBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.AnswerTextBox1.Multiline = false;
+            this.AnswerTextBox1.Name = "AnswerTextBox1";
+            this.AnswerTextBox1.Size = new System.Drawing.Size(1027, 50);
+            this.AnswerTextBox1.TabIndex = 19;
+            this.AnswerTextBox1.Text = "";
+            this.AnswerTextBox1.TrailingIcon = null;
+            this.AnswerTextBox1.TextChanged += new System.EventHandler(this.AnswerTextBox1_TextChanged);
+            // 
+            // materialCard1
+            // 
+            this.materialCard1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.backQuestion);
+            this.materialCard1.Controls.Add(this.nextQuestion);
+            this.materialCard1.Controls.Add(this.label2);
+            this.materialCard1.Controls.Add(this.AnswerTextBox1);
+            this.materialCard1.Controls.Add(this.answersList);
+            this.materialCard1.Depth = 0;
+            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard1.Location = new System.Drawing.Point(12, 503);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard1.Name = "materialCard1";
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard1.Size = new System.Drawing.Size(1083, 288);
+            this.materialCard1.TabIndex = 20;
+            // 
+            // materialCard2
+            // 
+            this.materialCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialCard2.AutoScroll = true;
+            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard2.Controls.Add(this.materialLabel1);
+            this.materialCard2.Depth = 0;
+            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard2.Location = new System.Drawing.Point(0, 36);
+            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard2.Name = "materialCard2";
+            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard2.Size = new System.Drawing.Size(1083, 391);
+            this.materialCard2.TabIndex = 18;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoEllipsis = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(14, 14);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(1055, 363);
+            this.materialLabel1.TabIndex = 0;
+            this.materialLabel1.Text = "aaaaaaaaaaaadfssdfaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +
+    "aaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaahjgjhgjgaaaaa";
+            // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 478);
+            this.label2.Depth = 0;
+            this.label2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label2.Location = new System.Drawing.Point(32, 61);
+            this.label2.MouseState = MaterialSkin.MouseState.HOVER;
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 19);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Введите ответ";
+            // 
+            // nextQuestion
+            // 
+            this.nextQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.nextQuestion.AutoSize = false;
+            this.nextQuestion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.nextQuestion.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.nextQuestion.Depth = 0;
+            this.nextQuestion.HighEmphasis = true;
+            this.nextQuestion.Icon = null;
+            this.nextQuestion.Location = new System.Drawing.Point(888, 231);
+            this.nextQuestion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.nextQuestion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.nextQuestion.Name = "nextQuestion";
+            this.nextQuestion.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.nextQuestion.Size = new System.Drawing.Size(190, 51);
+            this.nextQuestion.TabIndex = 21;
+            this.nextQuestion.Text = "СЛЕДУЮЩИЙ ВОПРОС";
+            this.nextQuestion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.nextQuestion.UseAccentColor = false;
+            this.nextQuestion.UseVisualStyleBackColor = true;
+            this.nextQuestion.Click += new System.EventHandler(this.nextQuestion_Click);
+            // 
+            // backQuestion
+            // 
+            this.backQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.backQuestion.AutoSize = false;
+            this.backQuestion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.backQuestion.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.backQuestion.Depth = 0;
+            this.backQuestion.HighEmphasis = true;
+            this.backQuestion.Icon = null;
+            this.backQuestion.Location = new System.Drawing.Point(5, 231);
+            this.backQuestion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.backQuestion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.backQuestion.Name = "backQuestion";
+            this.backQuestion.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.backQuestion.Size = new System.Drawing.Size(246, 51);
+            this.backQuestion.TabIndex = 22;
+            this.backQuestion.Text = "ИСПРАВИТЬ ПРОШЛЫЙ ОТВЕТ";
+            this.backQuestion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.backQuestion.UseAccentColor = false;
+            this.backQuestion.UseVisualStyleBackColor = true;
+            this.backQuestion.Click += new System.EventHandler(this.backQuestion_Click);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.label1.Depth = 0;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1083, 37);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Question 1";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // countLabel
+            // 
+            this.countLabel.AutoSize = true;
+            this.countLabel.Depth = 0;
+            this.countLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.countLabel.Location = new System.Drawing.Point(12, 9);
+            this.countLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.countLabel.Name = "countLabel";
+            this.countLabel.Size = new System.Drawing.Size(44, 19);
+            this.countLabel.TabIndex = 20;
+            this.countLabel.Text = "0 из 0";
+            this.countLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.countLabel.Click += new System.EventHandler(this.countLabel_Click);
+            // 
+            // timerLabel
+            // 
+            this.timerLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.timerLabel.AutoSize = true;
+            this.timerLabel.Depth = 0;
+            this.timerLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.timerLabel.Location = new System.Drawing.Point(1058, 9);
+            this.timerLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.timerLabel.Name = "timerLabel";
+            this.timerLabel.Size = new System.Drawing.Size(10, 19);
+            this.timerLabel.TabIndex = 21;
+            this.timerLabel.Text = "0";
+            this.timerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // DoTestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
-            this.ClientSize = new System.Drawing.Size(978, 619);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.AnswerTextBox1);
-            this.Controls.Add(this.dataGridView3);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.answersList);
-            this.Controls.Add(this.nextQuestion);
-            this.Controls.Add(this.backQuestion);
+            this.ClientSize = new System.Drawing.Size(1107, 800);
+            this.Controls.Add(this.materialCard1);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.DarkBlue;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -602,19 +682,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.resultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultanswerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.opkresultBindingSource)).EndInit();
+            this.materialCard1.ResumeLayout(false);
+            this.materialCard1.PerformLayout();
+            this.materialCard2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label countLabel;
         private System.Windows.Forms.ListBox answersList;
-        private System.Windows.Forms.Button nextQuestion;
-        private System.Windows.Forms.Button backQuestion;
         private System.Windows.Forms.PictureBox questionImage;
-        private System.Windows.Forms.Label timerLabel;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.DataGridView dataGridView1;
         private testerDataSet testerDataSet;
@@ -633,13 +710,11 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn correctDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn questionidDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource answerBindingSource;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.BindingSource resultBindingSource;
         private testerDataSetTableAdapters.resultTableAdapter resultTableAdapter;
         private System.Windows.Forms.BindingSource resultanswerBindingSource;
         private testerDataSetTableAdapters.result_answerTableAdapter result_answerTableAdapter;
-        private FormsStyle formsStyle1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn1;
@@ -647,7 +722,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn testidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn OPK_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type_id;
-        private CustomStyles.CustomTextBox AnswerTextBox1;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.BindingSource oPKBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
@@ -662,6 +736,15 @@
         private testerDataSetTableAdapters.Question_TypesTableAdapter question_TypesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label2;
+        private MaterialSkin.Controls.MaterialTextBox AnswerTextBox1;
+        private MaterialSkin.Controls.MaterialCard materialCard1;
+        private MaterialSkin.Controls.MaterialCard materialCard2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel label2;
+        private MaterialSkin.Controls.MaterialButton backQuestion;
+        private MaterialSkin.Controls.MaterialButton nextQuestion;
+        private MaterialSkin.Controls.MaterialLabel label1;
+        private MaterialSkin.Controls.MaterialLabel timerLabel;
+        private MaterialSkin.Controls.MaterialLabel countLabel;
     }
 }

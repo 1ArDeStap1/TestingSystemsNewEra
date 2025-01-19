@@ -14,9 +14,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tester.testerDataSetTableAdapters;
 
+using MaterialSkin;
+using MaterialSkin.Controls;
+
 namespace Tester
 {
-    public partial class DoTestForm : Form
+    public partial class DoTestForm : MaterialForm
     {
         int questionTypeId = 0;
         int testId = 0;
@@ -28,6 +31,19 @@ namespace Tester
         public DoTestForm(int testId, int userId, int timeLimit = 0)
         {
             InitializeComponent();
+
+            // Create a material theme manager and add the form to manage (this)
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            // Configure color schema
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue900, Primary.Blue800,
+                Primary.Blue700, Accent.LightBlue100,
+                TextShade.WHITE
+            );
+
             this.testId = testId;
             this.userId = userId;
             testBindingSource.Filter = "id = " + testId.ToString();
@@ -96,6 +112,7 @@ namespace Tester
                             }
                         }
                         Bitmap question;
+                        string description = "";
                         if ((dataGridView2.Rows[i].Cells[3].Value.ToString().Length == 0) || (((byte[])(dataGridView2.Rows[i].Cells[3].Value)).Length == 0))
                         {
                             question = new Bitmap(questionImage.Width, questionImage.Height);
@@ -108,7 +125,7 @@ namespace Tester
                                 g.SmoothingMode = SmoothingMode.AntiAlias;
                                 g.InterpolationMode = InterpolationMode.HighQualityBicubic;
                                 g.PixelOffsetMode = PixelOffsetMode.HighQuality;
-
+                                description = dataGridView2.Rows[i].Cells[2].Value.ToString();
                                 g.DrawString(dataGridView2.Rows[i].Cells[2].Value.ToString(), answersList.Font, Brushes.Black, new RectangleF(0, 0, questionImage.Width, questionImage.Height));
                             }
                             finally
@@ -121,7 +138,7 @@ namespace Tester
                             question = new Bitmap(new MemoryStream((byte[])(dataGridView2.Rows[i].Cells[3].Value)));
                         }
 
-                        questions[i] = new Question((int)dataGridView2.Rows[i].Cells[0].Value, (string)dataGridView2.Rows[i].Cells[1].Value, question, tmpAnswers, tmpCAnswers, tmpCAnswersData, tmpOpk, false, (int)dataGridView2.Rows[i].Cells[6].Value);
+                        questions[i] = new Question((int)dataGridView2.Rows[i].Cells[0].Value, (string)dataGridView2.Rows[i].Cells[1].Value, question, tmpAnswers, tmpCAnswers, tmpCAnswersData, tmpOpk, description, false, (int)dataGridView2.Rows[i].Cells[6].Value);
                     }
                 }
 
@@ -141,7 +158,19 @@ namespace Tester
         private void fillQuestion(Question question)
         {
             label1.Text = question.cont;
-            questionImage.Image = question.image;
+            if (question.description == "")
+            {
+                questionImage.Visible = true;
+                questionImage.Image = question.image;
+                materialCard2.Visible = false;
+            }
+            else
+            {
+                questionImage.Visible = false;
+                materialCard2.Visible = true;
+                materialLabel1.Text = question.description;
+            }
+
             answersList.Items.Clear();
             answersList.Items.AddRange(question.answers);
             countLabel.Text = q.ToString() + " из " + test.Count.ToString();
@@ -318,7 +347,6 @@ namespace Tester
             this.question_TypesTableAdapter.Fill(this.testerDataSet.Question_Types);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet.opk_result". При необходимости она может быть перемещена или удалена.
             this.opk_resultTableAdapter1.Fill(this.testerDataSet.opk_result);
-            formsStyle1.Apply();
             // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet1.result_answer". При необходимости она может быть перемещена или удалена.
             this.result_answerTableAdapter.Fill(this.testerDataSet.result_answer);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet1.result". При необходимости она может быть перемещена или удалена.
@@ -331,6 +359,16 @@ namespace Tester
 
             answersList.DrawMode = DrawMode.OwnerDrawVariable;
 
+            
+            label1.BackColor = Color.FromArgb(21, 101, 192);
+            label1.ForeColor = Color.White;
+
+            countLabel.BackColor = Color.FromArgb(21, 101, 192);
+            countLabel.ForeColor = Color.White;
+
+            timerLabel.BackColor = Color.FromArgb(21, 101, 192);
+            timerLabel.ForeColor = Color.White;
+
             initGame();
         }
 
@@ -341,21 +379,24 @@ namespace Tester
 
             e.DrawBackground();
             //Let’s declare a brush, so that we can color the items that are added in the listbox. 
-            Brush myBrush = default(Brush);
+            /*Brush myBrush = new SolidBrush(Color.White);*/
             if ((e.State == DrawItemState.Selected))
             {
-                e.Graphics.FillRectangle(Brushes.LightCyan, e.Bounds);
+                e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(21, 101, 192)), e.Bounds);
+            } else
+            {
+                /*myBrush = new SolidBrush(Color.Black);*/
             }
             //Determine the color of the brush to draw each item based on the index of the item to draw. 
-            switch ((e.Index) % 2)
+            /*switch ((e.Index) % 2)
             {
                 case 0:
-                    myBrush = Brushes.Teal;
+                    myBrush = Brushes.Black;
                     break;
                 case 1:
-                    myBrush = Brushes.MediumSlateBlue;
+                    myBrush = Brushes.Black;
                     break;
-            }
+            }*/
             e.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             e.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
@@ -369,11 +410,11 @@ namespace Tester
                                           e.Bounds,
                                           e.Index,
                                           e.State ^ DrawItemState.Selected,
-                                          e.ForeColor,
-                                          Color.Cyan);//Choose the color
+                                          Color.White,
+                                          Color.FromArgb(21, 101, 192));//Choose the color
 
             e.DrawBackground();
-            e.Graphics.DrawString(lb.Items[e.Index].ToString(), lb.Font, myBrush, new RectangleF(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
+            e.Graphics.DrawString(lb.Items[e.Index].ToString(), lb.Font, new SolidBrush(e.ForeColor), new RectangleF(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));
             //If the ListBox has focus, draw a focus rectangle around the selected item. 
             e.DrawFocusRectangle();
         }
@@ -464,6 +505,11 @@ namespace Tester
         private void AnswerTextBox1_TextChanged(object sender, EventArgs e)
         {
             nextQuestion.Enabled = true;
+        }
+
+        private void countLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
