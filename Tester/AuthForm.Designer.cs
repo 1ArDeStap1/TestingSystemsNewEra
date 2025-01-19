@@ -32,17 +32,20 @@
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.textBox1 = new MaterialSkin.Controls.MaterialTextBox2();
             this.textBox2 = new MaterialSkin.Controls.MaterialTextBox2();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // materialButton1
             // 
+            this.materialButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.materialButton1.AutoSize = false;
             this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
             this.materialButton1.Depth = 0;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(404, 278);
+            this.materialButton1.Location = new System.Drawing.Point(421, 303);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
@@ -57,15 +60,18 @@
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.AnimateReadOnly = false;
             this.textBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.textBox1.Depth = 0;
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textBox1.HelperText = "Логин";
             this.textBox1.HideSelection = true;
             this.textBox1.LeadingIcon = null;
-            this.textBox1.Location = new System.Drawing.Point(34, 106);
+            this.textBox1.Location = new System.Drawing.Point(34, 111);
             this.textBox1.MaxLength = 32767;
             this.textBox1.MouseState = MaterialSkin.MouseState.OUT;
             this.textBox1.Name = "textBox1";
@@ -77,7 +83,7 @@
             this.textBox1.SelectionLength = 0;
             this.textBox1.SelectionStart = 0;
             this.textBox1.ShortcutsEnabled = true;
-            this.textBox1.Size = new System.Drawing.Size(476, 48);
+            this.textBox1.Size = new System.Drawing.Size(496, 48);
             this.textBox1.TabIndex = 5;
             this.textBox1.TabStop = false;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -86,6 +92,9 @@
             // 
             // textBox2
             // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.AnimateReadOnly = false;
             this.textBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
@@ -94,7 +103,7 @@
             this.textBox2.HelperText = "Пароль";
             this.textBox2.HideSelection = true;
             this.textBox2.LeadingIcon = null;
-            this.textBox2.Location = new System.Drawing.Point(34, 185);
+            this.textBox2.Location = new System.Drawing.Point(34, 219);
             this.textBox2.MaxLength = 32767;
             this.textBox2.MouseState = MaterialSkin.MouseState.OUT;
             this.textBox2.Name = "textBox2";
@@ -106,17 +115,49 @@
             this.textBox2.SelectionLength = 0;
             this.textBox2.SelectionStart = 0;
             this.textBox2.ShortcutsEnabled = true;
-            this.textBox2.Size = new System.Drawing.Size(476, 48);
+            this.textBox2.Size = new System.Drawing.Size(496, 48);
             this.textBox2.TabIndex = 6;
             this.textBox2.TabStop = false;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBox2.TrailingIcon = null;
             this.textBox2.UseSystemPasswordChar = false;
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(43, 89);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(46, 19);
+            this.materialLabel1.TabIndex = 7;
+            this.materialLabel1.Text = "Логин";
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.Location = new System.Drawing.Point(43, 189);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(57, 19);
+            this.materialLabel2.TabIndex = 8;
+            this.materialLabel2.Text = "Пароль";
+            // 
             // AuthForm
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(549, 377);
+            this.ClientSize = new System.Drawing.Size(567, 377);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.materialButton1);
@@ -127,6 +168,7 @@
             this.Text = "АВТОРИЗАЦИЯ";
             this.Load += new System.EventHandler(this.AuthForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -139,6 +181,8 @@
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialTextBox2 textBox1;
         private MaterialSkin.Controls.MaterialTextBox2 textBox2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
     }
 }
 

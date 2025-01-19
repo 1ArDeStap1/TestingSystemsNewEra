@@ -24,10 +24,10 @@ namespace Tester
             String PathToDB = Path.Combine(DbPath, "TesterProgramDataBase");
             AppDomain.CurrentDomain.SetData("DataDirectory", PathToDB);  
 
-/*#elif DEBUG == true
+#elif DEBUG == true
 
-            String PathToDB = @"C:\st\TestingSystems\DataBase";
-            AppDomain.CurrentDomain.SetData("DataDirectory", PathToDB);*/
+            String PathToDB = @"G:\DataBaseViaTest";
+            AppDomain.CurrentDomain.SetData("DataDirectory", PathToDB);
 
 #endif
 

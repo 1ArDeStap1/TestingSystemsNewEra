@@ -11,6 +11,7 @@ using System.Data;
 
 using MaterialSkin;
 using MaterialSkin.Controls;
+using System.Collections.Generic;
 
 
 namespace Tester
@@ -46,9 +47,25 @@ namespace Tester
             SwitchElementsVisiblity(false);
         }
 
+
+        private void UpdateDataTables()
+        {
+
+            this.adminNetworkDataTableAdapter1.Update(this.testerDataSet.adminNetworkData);
+            this.oPKTableAdapter.Update(this.testerDataSet.OPK);
+            /*this.question_TypesTableAdapter1.Update(this.testerDataSet.Question_Types);*/
+            this.resultTableAdapter.Update(this.testerDataSet.result);
+            this.testTableAdapter.Update(this.testerDataSet.test);
+            this.questionTableAdapter1.Update(this.testerDataSet.question);
+            this.answerTableAdapter.Update(this.testerDataSet.answer);
+            this.groupTableAdapter1.Update(this.testerDataSet.group);
+            this.usersTableAdapter1.Update(this.testerDataSet.users);
+
+        }
+
+
         private void LoadDataTables()
         {
-            
             
             this.oPKTableAdapter.Fill(this.testerDataSet.OPK);
             this.result_answerTableAdapter.Fill(this.testerDataSet.result_answer);
@@ -316,7 +333,26 @@ namespace Tester
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
                     SerializerXML Xmls = new SerializerXML();
-                    Xmls.ImportFromXML(testerDataSet, fbd.FileName);
+                    List<DataTable> returnedData = Xmls.ImportFromXML(testerDataSet, fbd.FileName);
+                    if (returnedData != null)
+                    {
+                        foreach (DataTable returnedDT in returnedData)
+                        {
+                            foreach (DataTable dt in testerDataSet.Tables)
+                            {
+                                if (dt.TableName == returnedDT.TableName)
+                                {
+                                    dt.Merge(returnedDT);
+                                    
+                                    
+                                }
+                            }
+                        }
+                        UpdateDataTables();
+                        LoadDataTables();
+
+                    }
+
                 }
             }
         }

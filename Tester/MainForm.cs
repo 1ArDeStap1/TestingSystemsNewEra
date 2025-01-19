@@ -9,15 +9,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MaterialSkin;
+using MaterialSkin.Controls;
+
 namespace Tester
 {
-    public partial class MainForm : Form
+    public partial class MainForm : MaterialForm
     {
         int userId;
         public MainForm(int userId)
         {
             InitializeComponent();
             this.userId = userId;
+
+            // Create a material theme manager and add the form to manage (this)
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            // Configure color schema
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue900, Primary.Blue800,
+                Primary.Blue700, Accent.LightBlue100,
+                TextShade.WHITE
+            );
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -31,6 +47,8 @@ namespace Tester
             splitContainer1.Panel2.HorizontalScroll.Visible = false;
             splitContainer1.Panel2.AutoScrollPosition = new Point(0,0);
             resetScrolls();
+            label1.BackColor = Color.FromArgb(63, 81, 181);
+            label1.ForeColor = Color.White;
 
         }
 

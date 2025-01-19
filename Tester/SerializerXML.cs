@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -37,8 +38,17 @@ namespace Tester
                         writer.WriteAttributeString("id", dtr[0].ToString());
                         for (int i = 0; i < dtr.Table.Columns.Count; i++) {
                             writer.WriteWhitespace("\r\n\t\t\t");
-                            XElement element = new XElement(dtr.Table.Columns[i].ColumnName, dtr[i].ToString());
-                            element.WriteTo(writer);
+                            if (dtr.Table.Columns[i].ColumnName == "image")
+                            {
+                                string ImgArray = Convert.ToBase64String((System.Byte[])dtr[i]);
+                                XElement element = new XElement(dtr.Table.Columns[i].ColumnName, ImgArray);
+                                element.WriteTo(writer);
+                            }
+                            else
+                            {
+                                XElement element = new XElement(dtr.Table.Columns[i].ColumnName, dtr[i].ToString());
+                                element.WriteTo(writer);
+                            }
                         }
                         writer.WriteWhitespace("\r\n\t\t");
                         writer.WriteEndElement();
@@ -83,7 +93,14 @@ namespace Tester
                                 foreach (DataColumn dr in dtTemp.Columns)
                                 {
                                     reader.ReadToFollowing(dr.ColumnName);
-                                    dtr[dr.ColumnName] = reader.ReadElementContentAsString();
+                                    if (dr.ColumnName == "image")
+                                    {
+                                        dtr[dr.ColumnName] = Convert.FromBase64String(reader.ReadElementContentAsString());
+                                    }
+                                    else
+                                    {
+                                        dtr[dr.ColumnName] = reader.ReadElementContentAsString();
+                                    }
                                 }
                                 dtTemp.Rows.Add(dtr);
                                 
