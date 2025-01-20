@@ -394,6 +394,7 @@ namespace Tester
 
         private void SwitchElementsVisiblity(bool visible)
         {
+            materialMultiLineTextBox21.Visible = visible;
             materialLabel3.Visible = visible;
             materialTextBox1.Visible = visible;
             materialLabel2.Visible  = visible;

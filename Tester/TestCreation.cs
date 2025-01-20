@@ -10,19 +10,22 @@ using System.Windows.Forms;
 using Tester.AnimationClasses;
 using Tester.testerDataSetTableAdapters;
 
+using MaterialSkin;
+using MaterialSkin.Controls;
+
 namespace Tester
 {
-    public partial class TestCreation : Form
+    public partial class TestCreation : MaterialForm
     {
         public TestCreation()
         {
             InitializeComponent();
-            Animator.Start();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            formsStyle1.Apply();
+            
         }
 
         private void button4_Click(object sender, EventArgs e)

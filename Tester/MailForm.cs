@@ -10,25 +10,40 @@ using System.Windows.Forms;
 using Tester.AnimationClasses;
 using Tester.CustomStyles;
 
+
+using MaterialSkin;
+using MaterialSkin.Controls;
+
 namespace Tester
 {
-    public partial class MailForm : Form
+    public partial class MailForm : MaterialForm
     {
         Size DefaultFormSize = new Size(441, 298);
         Size ExtendedSize = new Size(892, 454);
         bool IsExtendedOptions = false;
         public MailForm()
         {
-            Animator.Start();
+            // Create a material theme manager and add the form to manage (this)
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            // Configure color schema
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue900, Primary.Blue800,
+                Primary.Blue700, Accent.LightBlue100,
+                TextShade.WHITE
+            );
             InitializeComponent();
         }
 
         private void MailForm_Load(object sender, EventArgs e)
         {
-            formsStyle1.Apply();
+            
             // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet.adminNetworkData". При необходимости она может быть перемещена или удалена.
             this.adminNetworkDataTableAdapter.Fill(this.testerDataSet.adminNetworkData);
-            this.Size = DefaultFormSize;
+            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -72,14 +87,24 @@ namespace Tester
             if (IsExtendedOptions)
             {
                 this.Size = DefaultFormSize;
-                formsStyle1.Apply(false);
+                
                 IsExtendedOptions = false;
             } else
             {
                 this.Size = ExtendedSize;
-                formsStyle1.Apply(false);
+                
                 IsExtendedOptions = true;
             }
+        }
+
+        private void materialLabel6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialTextBox21_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

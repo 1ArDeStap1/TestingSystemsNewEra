@@ -33,6 +33,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.answerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.questionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.testerDataSet = new Tester.testerDataSet();
@@ -56,9 +59,6 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.correct = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.answerBindingSource)).BeginInit();
@@ -106,7 +106,7 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(-2, 63);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 63);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -122,6 +122,28 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(286, 505);
             this.dataGridView1.TabIndex = 14;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "ОТВЕТ";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // correct
+            // 
+            this.correct.DataPropertyName = "correct";
+            this.correct.HeaderText = "ПРАВИЛЬНЫЙ";
+            this.correct.Name = "correct";
+            this.correct.ReadOnly = true;
             // 
             // answerBindingSource
             // 
@@ -157,7 +179,7 @@
             this.oPKidDataGridViewTextBoxColumn,
             this.typeidDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.questionBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(-2, 455);
+            this.dataGridView2.Location = new System.Drawing.Point(24, 434);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(228, 121);
@@ -338,7 +360,7 @@
             this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.answerBindingSource, "description", true));
             this.textBox1.Depth = 0;
-            this.textBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.textBox1.HideSelection = true;
             this.textBox1.LeadingIcon = null;
             this.textBox1.Location = new System.Drawing.Point(38, 55);
@@ -413,28 +435,6 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(780, 474);
             this.materialCard1.TabIndex = 24;
-            // 
-            // correct
-            // 
-            this.correct.DataPropertyName = "correct";
-            this.correct.HeaderText = "ПРАВИЛЬНЫЙ";
-            this.correct.Name = "correct";
-            this.correct.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "ОТВЕТ";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn1.Visible = false;
             // 
             // materialButton3
             // 

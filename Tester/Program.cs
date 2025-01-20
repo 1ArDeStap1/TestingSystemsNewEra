@@ -26,8 +26,8 @@ namespace Tester
 
 //#elif DEBUG == true
 
-            String PathToDB = @"G:\DataBaseViaTest";
-            AppDomain.CurrentDomain.SetData("DataDirectory", PathToDB);
+            /*String PathToDB = @"G:\DataBaseViaTest";
+            AppDomain.CurrentDomain.SetData("DataDirectory", PathToDB);*/
 
 #endif
 
