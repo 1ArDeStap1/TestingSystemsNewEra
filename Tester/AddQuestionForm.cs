@@ -36,6 +36,7 @@ namespace Tester
             if(SelectedTest == 0 )
             {
                 this.isRedact = false;
+                this.selectedtest = LastTest;
             }
             // Create a material theme manager and add the form to manage (this)
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
@@ -83,7 +84,10 @@ namespace Tester
                 return;
             }
 
-            questionTableAdapter.Insert(textBox8.Text, textBox9.Text, imageToByteArray(pictureBox2.Image), adminForm.testTableAdapter.GetData()[LastTest].id, Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value));
+            int test_id = (int)testerDataSet1.test[0]["id"];
+
+
+            questionTableAdapter.Insert(textBox8.Text, textBox9.Text, imageToByteArray(pictureBox2.Image), test_id, Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value));
 
             this.questionTableAdapter.Fill(this.testerDataSet1.question);
 
