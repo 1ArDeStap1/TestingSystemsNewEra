@@ -84,6 +84,7 @@ namespace Tester
                 {
                     int inserdted = usersTableAdapter.Insert(textBox15.Text, textBox8.Text, textBox9.Text, textBox10.Text, textBox6.Text, Convert.ToInt32(comboBox2.SelectedValue));
                     groupTableAdapter.Fill(testerDataSet.group);
+                    usersTableAdapter.Fill(testerDataSet.users);
                     Program.MessageCreated();
                 }
                 catch (Exception ex)

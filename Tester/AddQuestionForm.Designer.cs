@@ -56,11 +56,6 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.questionQuestionTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Grid = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oPKidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.test_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.questionOPKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,6 +79,11 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oPKidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.test_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.questionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testerDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKquestiontestBindingSource1)).BeginInit();
@@ -135,7 +135,7 @@
             this.groupBox2.Controls.Add(this.dataGridView2);
             this.groupBox2.Location = new System.Drawing.Point(433, 121);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(255, 173);
+            this.groupBox2.Size = new System.Drawing.Size(255, 165);
             this.groupBox2.TabIndex = 44;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Тип Вопроса";
@@ -164,7 +164,7 @@
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(233, 136);
+            this.dataGridView2.Size = new System.Drawing.Size(233, 128);
             this.dataGridView2.TabIndex = 44;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -198,7 +198,7 @@
             this.pictureBox2.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.fKquestiontestBindingSource1, "image", true));
             this.pictureBox2.Location = new System.Drawing.Point(15, 134);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(385, 138);
+            this.pictureBox2.Size = new System.Drawing.Size(385, 130);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 41;
             this.pictureBox2.TabStop = false;
@@ -421,7 +421,7 @@
             this.test_id});
             this.Grid.DataSource = this.fKquestiontestBindingSource1;
             this.Grid.GridColor = System.Drawing.SystemColors.Control;
-            this.Grid.Location = new System.Drawing.Point(12, 78);
+            this.Grid.Location = new System.Drawing.Point(12, 86);
             this.Grid.MultiSelect = false;
             this.Grid.Name = "Grid";
             this.Grid.ReadOnly = true;
@@ -432,47 +432,10 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.Grid.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid.Size = new System.Drawing.Size(331, 608);
+            this.Grid.Size = new System.Drawing.Size(331, 600);
             this.Grid.TabIndex = 43;
             this.Grid.TabStop = false;
             this.Grid.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.Grid_RowsAdded);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "НазваниеВопроса";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // oPKidDataGridViewTextBoxColumn
-            // 
-            this.oPKidDataGridViewTextBoxColumn.DataPropertyName = "OPK_id";
-            this.oPKidDataGridViewTextBoxColumn.HeaderText = "Компетенция";
-            this.oPKidDataGridViewTextBoxColumn.Name = "oPKidDataGridViewTextBoxColumn";
-            this.oPKidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Type_id
-            // 
-            this.Type_id.DataPropertyName = "Type_id";
-            this.Type_id.HeaderText = "ТипВопроса";
-            this.Type_id.Name = "Type_id";
-            this.Type_id.ReadOnly = true;
-            // 
-            // test_id
-            // 
-            this.test_id.DataPropertyName = "test_id";
-            this.test_id.HeaderText = "test_id";
-            this.test_id.Name = "test_id";
-            this.test_id.ReadOnly = true;
-            this.test_id.Visible = false;
             // 
             // questionOPKBindingSource
             // 
@@ -579,7 +542,7 @@
             this.materialButton1.Depth = 0;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(526, 548);
+            this.materialButton1.Location = new System.Drawing.Point(526, 540);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
@@ -600,7 +563,7 @@
             this.materialButton2.Depth = 0;
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(15, 548);
+            this.materialButton2.Location = new System.Drawing.Point(15, 540);
             this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
@@ -641,7 +604,7 @@
             this.materialLabel5.AutoSize = true;
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel5.Location = new System.Drawing.Point(26, 297);
+            this.materialLabel5.Location = new System.Drawing.Point(26, 289);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(139, 19);
@@ -689,7 +652,7 @@
             this.textBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fKquestiontestBindingSource1, "description", true));
             this.textBox9.Depth = 0;
             this.textBox9.HideSelection = true;
-            this.textBox9.Location = new System.Drawing.Point(15, 319);
+            this.textBox9.Location = new System.Drawing.Point(15, 311);
             this.textBox9.MaxLength = 32767;
             this.textBox9.MouseState = MaterialSkin.MouseState.OUT;
             this.textBox9.Name = "textBox9";
@@ -713,10 +676,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(349, 78);
+            this.tabControl1.Location = new System.Drawing.Point(349, 86);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(714, 628);
+            this.tabControl1.Size = new System.Drawing.Size(714, 620);
             this.tabControl1.TabIndex = 48;
             // 
             // tabPage1
@@ -735,7 +698,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(706, 602);
+            this.tabPage1.Size = new System.Drawing.Size(706, 594);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "ВОПРОС";
             // 
@@ -752,6 +715,43 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "КОМПЕТЕНЦИИ";
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Название Вопроса";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // oPKidDataGridViewTextBoxColumn
+            // 
+            this.oPKidDataGridViewTextBoxColumn.DataPropertyName = "OPK_id";
+            this.oPKidDataGridViewTextBoxColumn.HeaderText = "Компетенция";
+            this.oPKidDataGridViewTextBoxColumn.Name = "oPKidDataGridViewTextBoxColumn";
+            this.oPKidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Type_id
+            // 
+            this.Type_id.DataPropertyName = "Type_id";
+            this.Type_id.HeaderText = "ТипВопроса";
+            this.Type_id.Name = "Type_id";
+            this.Type_id.ReadOnly = true;
+            // 
+            // test_id
+            // 
+            this.test_id.DataPropertyName = "test_id";
+            this.test_id.HeaderText = "test_id";
+            this.test_id.Name = "test_id";
+            this.test_id.ReadOnly = true;
+            this.test_id.Visible = false;
+            // 
             // AddQuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -763,9 +763,11 @@
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.Grid);
             this.ForeColor = System.Drawing.Color.DarkBlue;
+            this.FormStyle = MaterialSkin.Controls.MaterialForm.FormStyles.ActionBar_48;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddQuestionForm";
-            this.Text = "AddQuestionForm";
+            this.Padding = new System.Windows.Forms.Padding(3, 72, 3, 3);
+            this.Text = "Редактор вопросов";
             this.Deactivate += new System.EventHandler(this.AddQuestionForm_Deactivate);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddQuestionForm_FormClosed);
             this.Load += new System.EventHandler(this.AddQuestionForm_Load);
@@ -844,16 +846,16 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oPKidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Type_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn test_id;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn complitionpercentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oPKidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Type_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn test_id;
     }
 }

@@ -408,6 +408,7 @@ namespace Tester
         {
             try
             {
+                testTableAdapter.Update(materialTextBox1.Text, materialMultiLineTextBox21.Text, Convert.ToInt32(materialTextBox2.Text), (int)Grid.SelectedRows[0].Cells[0].Value, (int)Grid.SelectedRows[0].Cells[0].Value);
                 using (AddQuestionForm addQuest = new AddQuestionForm(true, (int)Grid.SelectedRows[0].Cells[0].Value))
                 {
                     Hide();

@@ -301,12 +301,12 @@ namespace Tester
                     }
                     opk_resultTableAdapter1.Fill(testerDataSet.opk_result);
                     result_answerTableAdapter.Fill(testerDataSet.result_answer);
-
-                    MessageBox.Show("Молодец, так держать!\nТы ответил правильно на " + test.rightsCount.ToString() + " вопросов из " + test.Count.ToString() + "!\n" +
-                    "Предполагаемая отметка: " + mark.ToString() + "\n" +
-                    "Время прохождения теста в секундах: " + timerLabel.Text + "\r\nОсвоены компетенции: \r\n" + opksResult);
                     this.result_id = inserted;
                     string FileResult = ExportToExcel();
+
+                    MessageBox.Show("Тест пройден " + "\n" +
+                    "Процент правильных ответов: " + mark.ToString() + "%\n" + "Освоены компетенции: \r\n" + opksResult);
+                    
                     this.adminNetworkDataTableAdapter1.Fill(testerDataSet.adminNetworkData);
                     DataRow dataForSend = testerDataSet.adminNetworkData.Select("Id = 1")[0];
                     string testName = testerDataSet.test.Select("id = " + testId.ToString())[0]["name"].ToString();
@@ -320,9 +320,7 @@ namespace Tester
                     }
                 } else
                 {
-                    MessageBox.Show("Молодец, так держать!\nТы ответил правильно на " + test.rightsCount.ToString() + " вопросов из " + test.Count.ToString() + "!\n" +
-                    "Предполагаемая отметка: " + mark.ToString() + "\n" +
-                    "Время прохождения теста в секундах: " + timerLabel.Text);
+                    MessageBox.Show("Предполагаемая отметка: " + mark.ToString() + "\n");
                 }
                 Close();
             }
@@ -479,7 +477,7 @@ namespace Tester
                     y = 1;
                     
                 }
-                workbook.SaveAs(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"/" + SaveFileName);
+                workbook.SaveAs(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"/TestingResults/" + SaveFileName);
                 return SaveFileName;
             }
         }
