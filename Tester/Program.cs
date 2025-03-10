@@ -22,12 +22,11 @@ namespace Tester
 
             String DbPath = Directory.GetCurrentDirectory();
             String PathToDB = Path.Combine(DbPath, "TesterProgramDataBase");
-            AppDomain.CurrentDomain.SetData("DataDirectory", PathToDB);  
+            AppDomain.CurrentDomain.SetData("DataDirectory", PathToDB);
+#elif DEBUG == true
 
-//#elif DEBUG == true
-
-            /*String PathToDB = @"G:\DataBaseViaTest";
-            AppDomain.CurrentDomain.SetData("DataDirectory", PathToDB);*/
+            String PathToDB = @"G:\DataBaseViaTest";
+            AppDomain.CurrentDomain.SetData("DataDirectory", PathToDB);
 
 #endif
 

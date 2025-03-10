@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_01FD723147584E0CA9BE1B96026CE2B4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0757E14E0D37814544A494F104A7EFB3"
         "OwnerKey" = "8:_10EBCD2701B14F429DCE83AA53A82825"
         "MsmSig" = "8:_UNDEFINED"
@@ -41,12 +47,6 @@
         {
         "MsmKey" = "8:_07F58E482A64F781C0BE206B054A4901"
         "OwnerKey" = "8:_10EBCD2701B14F429DCE83AA53A82825"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_0902AEE7AAFC499EAE649E8C7CEB6659"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -364,13 +364,13 @@
         "Entry"
         {
         "MsmKey" = "8:_60A07788882812F84BFECD3F03A41464"
-        "OwnerKey" = "8:_10EBCD2701B14F429DCE83AA53A82825"
+        "OwnerKey" = "8:_4CAA17A77B4653767A1CCA03850B3DC6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_60A07788882812F84BFECD3F03A41464"
-        "OwnerKey" = "8:_4CAA17A77B4653767A1CCA03850B3DC6"
+        "OwnerKey" = "8:_10EBCD2701B14F429DCE83AA53A82825"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -442,13 +442,13 @@
         "Entry"
         {
         "MsmKey" = "8:_700A4427BF5ED231AE7A43022E8CE107"
-        "OwnerKey" = "8:_E2996C7DFFB2DD36AB4F379076CB7947"
+        "OwnerKey" = "8:_10EBCD2701B14F429DCE83AA53A82825"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_700A4427BF5ED231AE7A43022E8CE107"
-        "OwnerKey" = "8:_10EBCD2701B14F429DCE83AA53A82825"
+        "OwnerKey" = "8:_E2996C7DFFB2DD36AB4F379076CB7947"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -515,6 +515,12 @@
         {
         "MsmKey" = "8:_83607687A2E9C0B1852FA40704ADFC7E"
         "OwnerKey" = "8:_10EBCD2701B14F429DCE83AA53A82825"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8A72AE577A81407AA24C0D3F95E55E09"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -652,12 +658,6 @@
         "Entry"
         {
         "MsmKey" = "8:_B3D8196C206A8C019D51A0CC64B561CD"
-        "OwnerKey" = "8:_10EBCD2701B14F429DCE83AA53A82825"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_B3D8196C206A8C019D51A0CC64B561CD"
         "OwnerKey" = "8:_BC81E6CEA84212FDFBFDB13E85D0709B"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -665,6 +665,12 @@
         {
         "MsmKey" = "8:_B3D8196C206A8C019D51A0CC64B561CD"
         "OwnerKey" = "8:_4CAA17A77B4653767A1CCA03850B3DC6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B3D8196C206A8C019D51A0CC64B561CD"
+        "OwnerKey" = "8:_10EBCD2701B14F429DCE83AA53A82825"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -729,6 +735,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_C2A6AEFB3A100A3D4C8B9BABFA5099DB"
+        "OwnerKey" = "8:_10EBCD2701B14F429DCE83AA53A82825"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C2D2CF0E9CAB409576F1CC478B2AFA01"
         "OwnerKey" = "8:_10EBCD2701B14F429DCE83AA53A82825"
         "MsmSig" = "8:_UNDEFINED"
@@ -755,12 +767,6 @@
         {
         "MsmKey" = "8:_CD2CC6B919FD980CCF7736C6B72CCD54"
         "OwnerKey" = "8:_10EBCD2701B14F429DCE83AA53A82825"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_CD4A41AD7C6C48D98B33D6B67D720E01"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -923,6 +929,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_10EBCD2701B14F429DCE83AA53A82825"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C2A6AEFB3A100A3D4C8B9BABFA5099DB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1806,6 +1818,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_01FD723147584E0CA9BE1B96026CE2B4"
+            {
+            "SourcePath" = "8:..\\Tester\\bin\\Release\\tester_log.ldf"
+            "TargetName" = "8:tester_log.ldf"
+            "Tag" = "8:"
+            "Folder" = "8:_4945688319564782B4A02665DD445B69"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0757E14E0D37814544A494F104A7EFB3"
             {
             "AssemblyRegister" = "3:1"
@@ -1866,26 +1898,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0902AEE7AAFC499EAE649E8C7CEB6659"
-            {
-            "SourcePath" = "8:..\\Tester\\tester.mdf"
-            "TargetName" = "8:tester.mdf"
-            "Tag" = "8:"
-            "Folder" = "8:_4945688319564782B4A02665DD445B69"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0BB82E6728BC4A9F769F11593519A7EB"
@@ -3985,6 +3997,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8A72AE577A81407AA24C0D3F95E55E09"
+            {
+            "SourcePath" = "8:..\\Tester\\bin\\Release\\tester.mdf"
+            "TargetName" = "8:tester.mdf"
+            "Tag" = "8:"
+            "Folder" = "8:_4945688319564782B4A02665DD445B69"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8B4AC5ED4CD04A13AF0E3F89703B41D6"
             {
             "AssemblyRegister" = "3:1"
@@ -4791,6 +4823,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C2A6AEFB3A100A3D4C8B9BABFA5099DB"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_C2A6AEFB3A100A3D4C8B9BABFA5099DB"
+                    {
+                    "Name" = "8:MaterialSkin.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:MaterialSkin.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_F7D6F38FA77240479FDB9421EFA45E0C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C2D2CF0E9CAB409576F1CC478B2AFA01"
             {
             "AssemblyRegister" = "3:1"
@@ -4944,26 +5007,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CD4A41AD7C6C48D98B33D6B67D720E01"
-            {
-            "SourcePath" = "8:..\\Tester\\tester_log.ldf"
-            "TargetName" = "8:tester_log.ldf"
-            "Tag" = "8:"
-            "Folder" = "8:_4945688319564782B4A02665DD445B69"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CEA11E297B32E89199AD09BE47732230"
@@ -5696,7 +5739,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:TesterSystem"
         "ProductCode" = "8:{E672CCE2-35ED-47C8-91AD-BB10B188D0EA}"
-        "PackageCode" = "8:{17755BD9-45A6-49D0-9EC9-FA397D36F087}"
+        "PackageCode" = "8:{9AF775C8-9283-4F0E-A9DC-0FF3B7408C12}"
         "UpgradeCode" = "8:{4CD0D977-EE68-4735-ACCD-558EBEB59B30}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -6231,7 +6274,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_10EBCD2701B14F429DCE83AA53A82825"
             {
-            "SourcePath" = "8:..\\Tester\\obj\\Debug\\Tester.exe"
+            "SourcePath" = "8:..\\Tester\\obj\\Release\\Tester.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_F7D6F38FA77240479FDB9421EFA45E0C"
