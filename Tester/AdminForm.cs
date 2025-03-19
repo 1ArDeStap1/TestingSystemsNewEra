@@ -420,5 +420,15 @@ namespace Tester
                 MessageBox.Show("Произошла ошибка при открытии редактора "+ ex.Message);
             }
         }
+
+        private void materialButton4_Click(object sender, EventArgs e)
+        {
+            using (MatchingAnswerForm MAF = new MatchingAnswerForm())
+            {
+                Hide();
+                MAF.ShowDialog(this);
+                Show();
+            }
+        }
     }
 }

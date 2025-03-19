@@ -32,6 +32,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +63,21 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
+            this.MatchingPairsTable = new System.Windows.Forms.DataGridView();
+            this.matchingpairsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.matching_pairsTableAdapter = new Tester.testerDataSetTableAdapters.matching_pairsTableAdapter();
+            this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
+            this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton5 = new MaterialSkin.Controls.MaterialButton();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.RightVal = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
+            this.LeftVal = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.left_text = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.right_text = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.extra_options = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.answerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionBindingSource)).BeginInit();
@@ -67,6 +85,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.fillBy1ToolStrip.SuspendLayout();
             this.materialCard1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MatchingPairsTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matchingpairsBindingSource)).BeginInit();
+            this.materialCard2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -267,7 +288,7 @@
             this.materialButton1.Depth = 0;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(227, 428);
+            this.materialButton1.Location = new System.Drawing.Point(276, 428);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
@@ -288,7 +309,7 @@
             this.checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.answerBindingSource, "correct", true));
             this.checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.answerBindingSource, "correct", true));
             this.checkBox2.Depth = 0;
-            this.checkBox2.Location = new System.Drawing.Point(629, 169);
+            this.checkBox2.Location = new System.Drawing.Point(728, 169);
             this.checkBox2.Margin = new System.Windows.Forms.Padding(0);
             this.checkBox2.MouseLocation = new System.Drawing.Point(-1, -1);
             this.checkBox2.MouseState = MaterialSkin.MouseState.HOVER;
@@ -308,7 +329,7 @@
             this.materialButton2.Depth = 0;
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(424, 428);
+            this.materialButton2.Location = new System.Drawing.Point(523, 428);
             this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
@@ -344,7 +365,7 @@
             this.textBox10.SelectionLength = 0;
             this.textBox10.SelectionStart = 0;
             this.textBox10.ShortcutsEnabled = true;
-            this.textBox10.Size = new System.Drawing.Size(532, 233);
+            this.textBox10.Size = new System.Drawing.Size(631, 233);
             this.textBox10.TabIndex = 20;
             this.textBox10.TabStop = false;
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -375,7 +396,7 @@
             this.textBox1.SelectionLength = 0;
             this.textBox1.SelectionStart = 0;
             this.textBox1.ShortcutsEnabled = true;
-            this.textBox1.Size = new System.Drawing.Size(532, 48);
+            this.textBox1.Size = new System.Drawing.Size(631, 48);
             this.textBox1.TabIndex = 21;
             this.textBox1.TabStop = false;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -433,7 +454,7 @@
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(780, 474);
+            this.materialCard1.Size = new System.Drawing.Size(879, 474);
             this.materialCard1.TabIndex = 24;
             // 
             // materialButton3
@@ -456,11 +477,284 @@
             this.materialButton3.UseAccentColor = false;
             this.materialButton3.UseVisualStyleBackColor = true;
             // 
+            // MatchingPairsTable
+            // 
+            this.MatchingPairsTable.AllowUserToAddRows = false;
+            this.MatchingPairsTable.AllowUserToDeleteRows = false;
+            this.MatchingPairsTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.MatchingPairsTable.AutoGenerateColumns = false;
+            this.MatchingPairsTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.MatchingPairsTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.MatchingPairsTable.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.MatchingPairsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.MatchingPairsTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.MatchingPairsTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(80)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MatchingPairsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.MatchingPairsTable.ColumnHeadersHeight = 25;
+            this.MatchingPairsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.left_text,
+            this.right_text,
+            this.extra_options});
+            this.MatchingPairsTable.DataSource = this.questionBindingSource;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MatchingPairsTable.DefaultCellStyle = dataGridViewCellStyle5;
+            this.MatchingPairsTable.EnableHeadersVisualStyles = false;
+            this.MatchingPairsTable.GridColor = System.Drawing.SystemColors.Control;
+            this.MatchingPairsTable.Location = new System.Drawing.Point(0, 63);
+            this.MatchingPairsTable.MultiSelect = false;
+            this.MatchingPairsTable.Name = "MatchingPairsTable";
+            this.MatchingPairsTable.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MatchingPairsTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.MatchingPairsTable.RowHeadersVisible = false;
+            this.MatchingPairsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.MatchingPairsTable.Size = new System.Drawing.Size(298, 505);
+            this.MatchingPairsTable.TabIndex = 25;
+            // 
+            // matchingpairsBindingSource
+            // 
+            this.matchingpairsBindingSource.DataMember = "matching_pairs";
+            this.matchingpairsBindingSource.DataSource = this.testerDataSet;
+            // 
+            // matching_pairsTableAdapter
+            // 
+            this.matching_pairsTableAdapter.ClearBeforeFill = true;
+            // 
+            // materialCard2
+            // 
+            this.materialCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard2.Controls.Add(this.LeftVal);
+            this.materialCard2.Controls.Add(this.materialButton4);
+            this.materialCard2.Controls.Add(this.materialButton5);
+            this.materialCard2.Controls.Add(this.materialLabel3);
+            this.materialCard2.Controls.Add(this.materialButton6);
+            this.materialCard2.Controls.Add(this.materialLabel4);
+            this.materialCard2.Controls.Add(this.RightVal);
+            this.materialCard2.Depth = 0;
+            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard2.Location = new System.Drawing.Point(301, 91);
+            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard2.Name = "materialCard2";
+            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard2.Size = new System.Drawing.Size(879, 474);
+            this.materialCard2.TabIndex = 25;
+            // 
+            // materialButton4
+            // 
+            this.materialButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.materialButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton4.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton4.Depth = 0;
+            this.materialButton4.HighEmphasis = true;
+            this.materialButton4.Icon = null;
+            this.materialButton4.Location = new System.Drawing.Point(37, 428);
+            this.materialButton4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton4.Name = "materialButton4";
+            this.materialButton4.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton4.Size = new System.Drawing.Size(140, 36);
+            this.materialButton4.TabIndex = 24;
+            this.materialButton4.Text = "УДАЛИТЬ ОТВЕТ";
+            this.materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton4.UseAccentColor = false;
+            this.materialButton4.UseVisualStyleBackColor = true;
+            // 
+            // materialButton5
+            // 
+            this.materialButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton5.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton5.Depth = 0;
+            this.materialButton5.HighEmphasis = true;
+            this.materialButton5.Icon = null;
+            this.materialButton5.Location = new System.Drawing.Point(713, 428);
+            this.materialButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton5.Name = "materialButton5";
+            this.materialButton5.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton5.Size = new System.Drawing.Size(149, 36);
+            this.materialButton5.TabIndex = 19;
+            this.materialButton5.Text = "ДОБАВИТЬ ОТВЕТ";
+            this.materialButton5.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton5.UseAccentColor = false;
+            this.materialButton5.UseVisualStyleBackColor = true;
+            this.materialButton5.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel3.Location = new System.Drawing.Point(470, 92);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(174, 19);
+            this.materialLabel3.TabIndex = 23;
+            this.materialLabel3.Text = "Текст правого столбца";
+            // 
+            // materialButton6
+            // 
+            this.materialButton6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.materialButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton6.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton6.Depth = 0;
+            this.materialButton6.HighEmphasis = true;
+            this.materialButton6.Icon = null;
+            this.materialButton6.Location = new System.Drawing.Point(373, 428);
+            this.materialButton6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton6.Name = "materialButton6";
+            this.materialButton6.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton6.Size = new System.Drawing.Size(151, 36);
+            this.materialButton6.TabIndex = 17;
+            this.materialButton6.Text = "ИЗМЕНИТЬ ОТВЕТ";
+            this.materialButton6.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton6.UseAccentColor = false;
+            this.materialButton6.UseVisualStyleBackColor = true;
+            this.materialButton6.Click += new System.EventHandler(this.materialButton1_Click);
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel4.Location = new System.Drawing.Point(34, 92);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(164, 19);
+            this.materialLabel4.TabIndex = 22;
+            this.materialLabel4.Text = "Текст левого столбца";
+            this.materialLabel4.Click += new System.EventHandler(this.materialLabel4_Click);
+            // 
+            // RightVal
+            // 
+            this.RightVal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RightVal.AnimateReadOnly = false;
+            this.RightVal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.RightVal.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.RightVal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.RightVal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.matchingpairsBindingSource, "right_text", true));
+            this.RightVal.Depth = 0;
+            this.RightVal.HideSelection = true;
+            this.RightVal.Location = new System.Drawing.Point(473, 114);
+            this.RightVal.MaxLength = 32767;
+            this.RightVal.MouseState = MaterialSkin.MouseState.OUT;
+            this.RightVal.Name = "RightVal";
+            this.RightVal.PasswordChar = '\0';
+            this.RightVal.ReadOnly = false;
+            this.RightVal.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.RightVal.SelectedText = "";
+            this.RightVal.SelectionLength = 0;
+            this.RightVal.SelectionStart = 0;
+            this.RightVal.ShortcutsEnabled = true;
+            this.RightVal.Size = new System.Drawing.Size(378, 213);
+            this.RightVal.TabIndex = 20;
+            this.RightVal.TabStop = false;
+            this.RightVal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.RightVal.UseSystemPasswordChar = false;
+            // 
+            // LeftVal
+            // 
+            this.LeftVal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LeftVal.AnimateReadOnly = false;
+            this.LeftVal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.LeftVal.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.LeftVal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.LeftVal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.matchingpairsBindingSource, "left_text", true));
+            this.LeftVal.Depth = 0;
+            this.LeftVal.HideSelection = true;
+            this.LeftVal.Location = new System.Drawing.Point(37, 114);
+            this.LeftVal.MaxLength = 32767;
+            this.LeftVal.MouseState = MaterialSkin.MouseState.OUT;
+            this.LeftVal.Name = "LeftVal";
+            this.LeftVal.PasswordChar = '\0';
+            this.LeftVal.ReadOnly = false;
+            this.LeftVal.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.LeftVal.SelectedText = "";
+            this.LeftVal.SelectionLength = 0;
+            this.LeftVal.SelectionStart = 0;
+            this.LeftVal.ShortcutsEnabled = true;
+            this.LeftVal.Size = new System.Drawing.Size(378, 213);
+            this.LeftVal.TabIndex = 25;
+            this.LeftVal.TabStop = false;
+            this.LeftVal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.LeftVal.UseSystemPasswordChar = false;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.FillWeight = 10.15228F;
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // left_text
+            // 
+            this.left_text.DataPropertyName = "left_text";
+            this.left_text.FillWeight = 129.9492F;
+            this.left_text.HeaderText = "Левый элемент";
+            this.left_text.Name = "left_text";
+            this.left_text.ReadOnly = true;
+            // 
+            // right_text
+            // 
+            this.right_text.DataPropertyName = "right_text";
+            this.right_text.FillWeight = 129.9492F;
+            this.right_text.HeaderText = "Правый элемент";
+            this.right_text.Name = "right_text";
+            this.right_text.ReadOnly = true;
+            // 
+            // extra_options
+            // 
+            this.extra_options.DataPropertyName = "extra_options";
+            this.extra_options.FillWeight = 129.9492F;
+            this.extra_options.HeaderText = "доп";
+            this.extra_options.Name = "extra_options";
+            this.extra_options.ReadOnly = true;
+            // 
             // CreateAnswersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1105, 582);
+            this.ClientSize = new System.Drawing.Size(1204, 582);
+            this.Controls.Add(this.materialCard2);
+            this.Controls.Add(this.MatchingPairsTable);
             this.Controls.Add(this.materialCard1);
             this.Controls.Add(this.fillBy1ToolStrip);
             this.Controls.Add(this.dataGridView2);
@@ -477,6 +771,10 @@
             this.fillBy1ToolStrip.PerformLayout();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MatchingPairsTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matchingpairsBindingSource)).EndInit();
+            this.materialCard2.ResumeLayout(false);
+            this.materialCard2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -511,5 +809,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private MaterialSkin.Controls.MaterialButton materialButton3;
+        internal System.Windows.Forms.DataGridView MatchingPairsTable;
+        private System.Windows.Forms.BindingSource matchingpairsBindingSource;
+        private testerDataSetTableAdapters.matching_pairsTableAdapter matching_pairsTableAdapter;
+        private MaterialSkin.Controls.MaterialCard materialCard2;
+        private MaterialSkin.Controls.MaterialButton materialButton4;
+        private MaterialSkin.Controls.MaterialButton materialButton5;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialButton materialButton6;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox2 RightVal;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox2 LeftVal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn left_text;
+        private System.Windows.Forms.DataGridViewTextBoxColumn right_text;
+        private System.Windows.Forms.DataGridViewTextBoxColumn extra_options;
     }
 }

@@ -79,7 +79,9 @@
     <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
       <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -174,6 +176,18 @@
     <Compile Include="MailForm.Designer.cs">
       <DependentUpon>MailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MatchingAnswerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MatchingAnswerForm.Designer.cs">
+      <DependentUpon>MatchingAnswerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MatchingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MatchingControl.Designer.cs">
+      <DependentUpon>MatchingControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Opk_Result_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +265,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MailForm.resx">
       <DependentUpon>MailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MatchingAnswerForm.resx">
+      <DependentUpon>MatchingAnswerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MatchingControl.resx">
+      <DependentUpon>MatchingControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Opk_Result_Form.resx">
       <DependentUpon>Opk_Result_Form.cs</DependentUpon>
