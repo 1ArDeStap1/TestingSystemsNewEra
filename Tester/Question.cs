@@ -104,7 +104,8 @@ namespace Tester
                         right = false;
                         wrongAnswers++;
 
-                    } else
+                    }
+                    else
                     {
                         CorrectsCurrentAnswers++;
                     }
@@ -114,13 +115,15 @@ namespace Tester
                 {
                     right = true;
                     return true;
-                } else
+                }
+                else
                 {
                     right = false;
                     return false;
                 }
             }
-            else if (answerType == 2) {
+            else if (answerType == 2)
+            {
                 answered = right = true;
                 foreach (var tempAnswer in textAnswer)
                 {
@@ -134,9 +137,39 @@ namespace Tester
                 return false;
 
             }
-            ////////////
-            ///////////
-            return true;
+            else if (answerType == 3)
+            {
+                int CorrectsCurrentAnswers = 0;
+                int wrongAnswers = 0;
+                answered = right = true;
+                foreach (var tempAnswer in textAnswer)
+                {
+                    if (tempAnswer.Value == givedAnswers[tempAnswer.Key])
+                    {
+                        answersIds.Add(tempAnswer.Key);
+                        right = true;
+                        CorrectsCurrentAnswers++;
+                    }
+                    else
+                    {
+                        wrongAnswers++;
+                    }
+                }
+                if (CorrectsCurrentAnswers == correct.Length && wrongAnswers == 0)
+                {
+                    right = true;
+                    return true;
+                }
+                else
+                {
+                    right = false;
+                    return false;
+                }
+
+            }
+                ////////////
+                ///////////
+                return true;
         }
     }
 

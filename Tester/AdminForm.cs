@@ -60,6 +60,7 @@ namespace Tester
             this.answerTableAdapter.Update(this.testerDataSet.answer);
             this.groupTableAdapter1.Update(this.testerDataSet.group);
             this.usersTableAdapter1.Update(this.testerDataSet.users);
+            this.matching_pairsTableAdapter1.Update(this.testerDataSet.matching_pairs);
 
         }
 
@@ -77,6 +78,7 @@ namespace Tester
             this.adminNetworkDataTableAdapter1.Fill(this.testerDataSet.adminNetworkData);
             this.groupTableAdapter1.Fill(this.testerDataSet.group);
             this.usersTableAdapter1.Fill(this.testerDataSet.users);
+            this.matching_pairsTableAdapter1.Fill(this.testerDataSet.matching_pairs);
 
         }
 
@@ -319,7 +321,7 @@ namespace Tester
                 {
 
                     SerializerXML Xmls = new SerializerXML();
-                    Xmls.SaveToXML(testerDataSet, new DataTable[8] { testerDataSet.adminNetworkData, testerDataSet.test, testerDataSet.OPK, testerDataSet.Question_Types, testerDataSet.question, testerDataSet.answer, testerDataSet.group, testerDataSet.users }, fbd.SelectedPath);
+                    Xmls.SaveToXML(testerDataSet, new DataTable[9] { testerDataSet.adminNetworkData, testerDataSet.test, testerDataSet.OPK, testerDataSet.Question_Types, testerDataSet.question, testerDataSet.answer, testerDataSet.matching_pairs, testerDataSet.group, testerDataSet.users }, fbd.SelectedPath);
 
                 }
             }

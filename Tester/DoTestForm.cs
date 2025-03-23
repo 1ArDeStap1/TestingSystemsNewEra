@@ -21,6 +21,7 @@ namespace Tester
 {
     public partial class DoTestForm : MaterialForm
     {
+        MatchingControl matchingControl = new MatchingControl();
         int questionTypeId = 0;
         int testId = 0;
         int userId = 0;
@@ -181,13 +182,32 @@ namespace Tester
                 answersList.Visible = false;
                 label2.Visible = true;
                 AnswerTextBox1.Visible = true;
+                panelMatching.Visible = false;
+            } else if (questionTypeId == 3)
+            {
+                label2.Visible = false;
+                AnswerTextBox1.Visible = false;
+                answersList.Visible = false;
+                panelMatching.Visible = true;
+                FillMatchingPanel(question.id);
             } else
             {
                 answersList.Visible = true;
                 label2.Visible = false;
                 AnswerTextBox1.Visible = false;
+                panelMatching.Visible = false;
             }
 
+        }
+
+        private void FillMatchingPanel(int qId)
+        {
+            this.matchingControl = new MatchingControl();
+
+            this.matchingControl.LoadPairs(matchingControl.LoadMatchingPairs(qId));
+
+            panelMatching.Controls.Clear();
+            panelMatching.Controls.Add(matchingControl);
         }
 
         private void backQuestion_Click(object sender, EventArgs e)
@@ -218,12 +238,23 @@ namespace Tester
                 for (int i = 0; i < answersList.SelectedIndices.Count; i++)
                     currentAnswers.Add(answersList.SelectedIndices[i], "");
                 test.answers = currentAnswers;
-            } else
+            } else if (questionTypeId == 2)
             {
                 currentAnswers.Add(((Tester.Answer)answersList.Items[0]).id, AnswerTextBox1.Text);
                 test.answers = currentAnswers;
             }
-   
+            else if (questionTypeId == 3)
+            {
+                string[] UAnswers = matchingControl.DictToString(matchingControl.GetUserAnswers());
+
+                for (int i = 0; i < UAnswers.Length; i++) {
+
+                    currentAnswers.Add(matchingControl.correctAnswers[i], UAnswers[i]);
+                }
+                test.answers = currentAnswers;
+
+            }
+
             if (!test.isEnd() && !hardEnd)
             {
                 Question NextQuest = test.nextQuestion();
@@ -235,7 +266,25 @@ namespace Tester
                         int NewID = (int)answerTableAdapter.GetData()[answerTableAdapter.GetData().Count - 1][0];
                         test.answersIds.Add(NewID);
                     }
+                } else if (questionTypeId == 3)
+                {
+                    if (!test.questions[test.now - 1].right)
+                    {
+                        string[] UAnswers = matchingControl.DictToString(matchingControl.GetUserAnswers());
+                        string constructorAnswers = "";
+                        for (int i = 0; i < UAnswers.Length; i++)
+                        {
+                            constructorAnswers += UAnswers[i] + "\r\n";
+                        }
+                        
+                        answerTableAdapter.Insert(constructorAnswers, false, test.questions[test.now - 1].id);
+                        answerTableAdapter.Fill(testerDataSet.answer);
+                        int NewID = (int)answerTableAdapter.GetData()[answerTableAdapter.GetData().Count - 1][0];
+                        test.answersIds.Add(NewID);
+
+                    }
                 }
+
                 fillQuestion(NextQuest);
             }
             else
@@ -341,6 +390,8 @@ namespace Tester
 
         private void DoTestForm_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet.matching_pairs". При необходимости она может быть перемещена или удалена.
+            this.matching_pairsTableAdapter.Fill(this.testerDataSet.matching_pairs);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet.Question_Types". При необходимости она может быть перемещена или удалена.
             this.question_TypesTableAdapter.Fill(this.testerDataSet.Question_Types);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "testerDataSet.opk_result". При необходимости она может быть перемещена или удалена.
@@ -508,6 +559,11 @@ namespace Tester
         private void countLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panelMatching_Click(object sender, EventArgs e)
+        {
+            nextQuestion.Enabled = true;
         }
     }
 }

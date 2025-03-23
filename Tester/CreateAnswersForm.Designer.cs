@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,17 +67,18 @@
             this.matchingpairsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.matching_pairsTableAdapter = new Tester.testerDataSetTableAdapters.matching_pairsTableAdapter();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
+            this.LeftVal = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton5 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.RightVal = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
-            this.LeftVal = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.left_text = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.right_text = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.extra_options = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.questionidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lefttextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.righttextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.extraoptionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.answerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionBindingSource)).BeginInit();
@@ -103,42 +104,42 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(80)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(80)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.ColumnHeadersHeight = 25;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn1,
             this.descriptionDataGridViewTextBoxColumn,
             this.correct});
             this.dataGridView1.DataSource = this.answerBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.Location = new System.Drawing.Point(0, 63);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(286, 505);
@@ -490,43 +491,44 @@
             this.MatchingPairsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.MatchingPairsTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.MatchingPairsTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(80)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MatchingPairsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(80)))), ((int)(((byte)(181)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MatchingPairsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.MatchingPairsTable.ColumnHeadersHeight = 25;
             this.MatchingPairsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.left_text,
-            this.right_text,
-            this.extra_options});
-            this.MatchingPairsTable.DataSource = this.questionBindingSource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.MatchingPairsTable.DefaultCellStyle = dataGridViewCellStyle5;
+            this.idDataGridViewTextBoxColumn2,
+            this.questionidDataGridViewTextBoxColumn,
+            this.lefttextDataGridViewTextBoxColumn,
+            this.righttextDataGridViewTextBoxColumn,
+            this.extraoptionsDataGridViewTextBoxColumn});
+            this.MatchingPairsTable.DataSource = this.matchingpairsBindingSource;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MatchingPairsTable.DefaultCellStyle = dataGridViewCellStyle11;
             this.MatchingPairsTable.EnableHeadersVisualStyles = false;
             this.MatchingPairsTable.GridColor = System.Drawing.SystemColors.Control;
             this.MatchingPairsTable.Location = new System.Drawing.Point(0, 63);
             this.MatchingPairsTable.MultiSelect = false;
             this.MatchingPairsTable.Name = "MatchingPairsTable";
             this.MatchingPairsTable.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MatchingPairsTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MatchingPairsTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.MatchingPairsTable.RowHeadersVisible = false;
             this.MatchingPairsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.MatchingPairsTable.Size = new System.Drawing.Size(298, 505);
@@ -563,6 +565,35 @@
             this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard2.Size = new System.Drawing.Size(879, 474);
             this.materialCard2.TabIndex = 25;
+            // 
+            // LeftVal
+            // 
+            this.LeftVal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LeftVal.AnimateReadOnly = false;
+            this.LeftVal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.LeftVal.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.LeftVal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.LeftVal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.matchingpairsBindingSource, "left_text", true));
+            this.LeftVal.Depth = 0;
+            this.LeftVal.HideSelection = true;
+            this.LeftVal.Location = new System.Drawing.Point(37, 114);
+            this.LeftVal.MaxLength = 32767;
+            this.LeftVal.MouseState = MaterialSkin.MouseState.OUT;
+            this.LeftVal.Name = "LeftVal";
+            this.LeftVal.PasswordChar = '\0';
+            this.LeftVal.ReadOnly = false;
+            this.LeftVal.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.LeftVal.SelectedText = "";
+            this.LeftVal.SelectionLength = 0;
+            this.LeftVal.SelectionStart = 0;
+            this.LeftVal.ShortcutsEnabled = true;
+            this.LeftVal.Size = new System.Drawing.Size(378, 213);
+            this.LeftVal.TabIndex = 25;
+            this.LeftVal.TabStop = false;
+            this.LeftVal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.LeftVal.UseSystemPasswordChar = false;
             // 
             // materialButton4
             // 
@@ -686,67 +717,42 @@
             this.RightVal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.RightVal.UseSystemPasswordChar = false;
             // 
-            // LeftVal
+            // idDataGridViewTextBoxColumn2
             // 
-            this.LeftVal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LeftVal.AnimateReadOnly = false;
-            this.LeftVal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.LeftVal.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.LeftVal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.LeftVal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.matchingpairsBindingSource, "left_text", true));
-            this.LeftVal.Depth = 0;
-            this.LeftVal.HideSelection = true;
-            this.LeftVal.Location = new System.Drawing.Point(37, 114);
-            this.LeftVal.MaxLength = 32767;
-            this.LeftVal.MouseState = MaterialSkin.MouseState.OUT;
-            this.LeftVal.Name = "LeftVal";
-            this.LeftVal.PasswordChar = '\0';
-            this.LeftVal.ReadOnly = false;
-            this.LeftVal.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.LeftVal.SelectedText = "";
-            this.LeftVal.SelectionLength = 0;
-            this.LeftVal.SelectionStart = 0;
-            this.LeftVal.ShortcutsEnabled = true;
-            this.LeftVal.Size = new System.Drawing.Size(378, 213);
-            this.LeftVal.TabIndex = 25;
-            this.LeftVal.TabStop = false;
-            this.LeftVal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.LeftVal.UseSystemPasswordChar = false;
+            this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn2.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
+            this.idDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn2.Visible = false;
             // 
-            // id
+            // questionidDataGridViewTextBoxColumn
             // 
-            this.id.DataPropertyName = "id";
-            this.id.FillWeight = 10.15228F;
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
+            this.questionidDataGridViewTextBoxColumn.DataPropertyName = "question_id";
+            this.questionidDataGridViewTextBoxColumn.HeaderText = "question_id";
+            this.questionidDataGridViewTextBoxColumn.Name = "questionidDataGridViewTextBoxColumn";
+            this.questionidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.questionidDataGridViewTextBoxColumn.Visible = false;
             // 
-            // left_text
+            // lefttextDataGridViewTextBoxColumn
             // 
-            this.left_text.DataPropertyName = "left_text";
-            this.left_text.FillWeight = 129.9492F;
-            this.left_text.HeaderText = "Левый элемент";
-            this.left_text.Name = "left_text";
-            this.left_text.ReadOnly = true;
+            this.lefttextDataGridViewTextBoxColumn.DataPropertyName = "left_text";
+            this.lefttextDataGridViewTextBoxColumn.HeaderText = "Левый текст";
+            this.lefttextDataGridViewTextBoxColumn.Name = "lefttextDataGridViewTextBoxColumn";
+            this.lefttextDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // right_text
+            // righttextDataGridViewTextBoxColumn
             // 
-            this.right_text.DataPropertyName = "right_text";
-            this.right_text.FillWeight = 129.9492F;
-            this.right_text.HeaderText = "Правый элемент";
-            this.right_text.Name = "right_text";
-            this.right_text.ReadOnly = true;
+            this.righttextDataGridViewTextBoxColumn.DataPropertyName = "right_text";
+            this.righttextDataGridViewTextBoxColumn.HeaderText = "Правый текст";
+            this.righttextDataGridViewTextBoxColumn.Name = "righttextDataGridViewTextBoxColumn";
+            this.righttextDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // extra_options
+            // extraoptionsDataGridViewTextBoxColumn
             // 
-            this.extra_options.DataPropertyName = "extra_options";
-            this.extra_options.FillWeight = 129.9492F;
-            this.extra_options.HeaderText = "доп";
-            this.extra_options.Name = "extra_options";
-            this.extra_options.ReadOnly = true;
+            this.extraoptionsDataGridViewTextBoxColumn.DataPropertyName = "extra_options";
+            this.extraoptionsDataGridViewTextBoxColumn.HeaderText = "Доп";
+            this.extraoptionsDataGridViewTextBoxColumn.Name = "extraoptionsDataGridViewTextBoxColumn";
+            this.extraoptionsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // CreateAnswersForm
             // 
@@ -761,6 +767,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "CreateAnswersForm";
             this.Text = "РЕДАКТОР ОТВЕТОВ";
+            this.Deactivate += new System.EventHandler(this.CreateAnswersForm_Leave);
             this.Load += new System.EventHandler(this.CreateAnswersForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.answerBindingSource)).EndInit();
@@ -820,9 +827,10 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialMultiLineTextBox2 RightVal;
         private MaterialSkin.Controls.MaterialMultiLineTextBox2 LeftVal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn left_text;
-        private System.Windows.Forms.DataGridViewTextBoxColumn right_text;
-        private System.Windows.Forms.DataGridViewTextBoxColumn extra_options;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn questionidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lefttextDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn righttextDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn extraoptionsDataGridViewTextBoxColumn;
     }
 }

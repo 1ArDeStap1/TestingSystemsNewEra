@@ -241,5 +241,39 @@ namespace Tester
         {
 
         }
+
+        private void AddRightMatchindAnswers(string desc, bool correct = true)
+        {
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.testerConnectionString))
+            {
+                conn.Open();
+                string query = "INSERT INTO answer (question_id, correct, description) VALUES (@qId, @correct, @desc)";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@qId", qurrQuestId);
+                    cmd.Parameters.AddWithValue("@correct", correct);
+                    cmd.Parameters.AddWithValue("@desc", desc);
+                    cmd.ExecuteNonQuery();
+                }
+
+                conn.Close();
+            }
+        }
+
+
+        private void CreateAnswersForm_Leave(object sender, EventArgs e)
+        {
+            if (qType == 3)
+            {
+                for (int i = 0; i < MatchingPairsTable.Rows.Count; i++)
+                {
+                    if (MatchingPairsTable.Rows[i].Cells[4].Value.ToString() == "")
+                    {
+                        string corrString = MatchingPairsTable.Rows[i].Cells[2].Value.ToString() + " - " + MatchingPairsTable.Rows[i].Cells[3].Value.ToString();
+                        AddRightMatchindAnswers(corrString);
+                    }
+                }
+            }
+        }
     }
 }

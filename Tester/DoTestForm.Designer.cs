@@ -55,6 +55,11 @@
             this.questionidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.answerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.timerLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.countLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.label1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,14 +83,18 @@
             this.question_TypesTableAdapter = new Tester.testerDataSetTableAdapters.Question_TypesTableAdapter();
             this.AnswerTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.label2 = new MaterialSkin.Controls.MaterialLabel();
-            this.nextQuestion = new MaterialSkin.Controls.MaterialButton();
             this.backQuestion = new MaterialSkin.Controls.MaterialButton();
-            this.label1 = new MaterialSkin.Controls.MaterialLabel();
-            this.countLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.timerLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.nextQuestion = new MaterialSkin.Controls.MaterialButton();
+            this.label2 = new MaterialSkin.Controls.MaterialLabel();
+            this.matchingPairsDGV = new System.Windows.Forms.DataGridView();
+            this.matchingpairsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.matching_pairsTableAdapter = new Tester.testerDataSetTableAdapters.matching_pairsTableAdapter();
+            this.idDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.questionidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lefttextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.righttextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.extraoptionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelMatching = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.questionImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
@@ -95,6 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.answerBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
+            this.materialCard2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -103,7 +113,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.resultanswerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.opkresultBindingSource)).BeginInit();
             this.materialCard1.SuspendLayout();
-            this.materialCard2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.matchingPairsDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matchingpairsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // answersList
@@ -339,6 +350,82 @@
             this.panel1.Size = new System.Drawing.Size(1083, 427);
             this.panel1.TabIndex = 16;
             // 
+            // timerLabel
+            // 
+            this.timerLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.timerLabel.AutoSize = true;
+            this.timerLabel.Depth = 0;
+            this.timerLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.timerLabel.Location = new System.Drawing.Point(1058, 9);
+            this.timerLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.timerLabel.Name = "timerLabel";
+            this.timerLabel.Size = new System.Drawing.Size(10, 19);
+            this.timerLabel.TabIndex = 21;
+            this.timerLabel.Text = "0";
+            this.timerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // countLabel
+            // 
+            this.countLabel.AutoSize = true;
+            this.countLabel.Depth = 0;
+            this.countLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.countLabel.Location = new System.Drawing.Point(12, 9);
+            this.countLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.countLabel.Name = "countLabel";
+            this.countLabel.Size = new System.Drawing.Size(44, 19);
+            this.countLabel.TabIndex = 20;
+            this.countLabel.Text = "0 из 0";
+            this.countLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.countLabel.Click += new System.EventHandler(this.countLabel_Click);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.label1.Depth = 0;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1083, 37);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Question 1";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // materialCard2
+            // 
+            this.materialCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialCard2.AutoScroll = true;
+            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard2.Controls.Add(this.matchingPairsDGV);
+            this.materialCard2.Controls.Add(this.materialLabel1);
+            this.materialCard2.Depth = 0;
+            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard2.Location = new System.Drawing.Point(0, 36);
+            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard2.Name = "materialCard2";
+            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard2.Size = new System.Drawing.Size(1083, 391);
+            this.materialCard2.TabIndex = 18;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoEllipsis = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(14, 14);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(1055, 363);
+            this.materialLabel1.TabIndex = 0;
+            this.materialLabel1.Text = "aaaaaaaaaaaadfssdfaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +
+    "aaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaahjgjhgjgaaaaa";
+            // 
             // dataGridView5
             // 
             this.dataGridView5.AllowUserToAddRows = false;
@@ -502,6 +589,7 @@
             this.materialCard1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.panelMatching);
             this.materialCard1.Controls.Add(this.backQuestion);
             this.materialCard1.Controls.Add(this.nextQuestion);
             this.materialCard1.Controls.Add(this.label2);
@@ -516,75 +604,6 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(1083, 288);
             this.materialCard1.TabIndex = 20;
-            // 
-            // materialCard2
-            // 
-            this.materialCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialCard2.AutoScroll = true;
-            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard2.Controls.Add(this.materialLabel1);
-            this.materialCard2.Depth = 0;
-            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard2.Location = new System.Drawing.Point(0, 36);
-            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard2.Name = "materialCard2";
-            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard2.Size = new System.Drawing.Size(1083, 391);
-            this.materialCard2.TabIndex = 18;
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoEllipsis = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(14, 14);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(1055, 363);
-            this.materialLabel1.TabIndex = 0;
-            this.materialLabel1.Text = "aaaaaaaaaaaadfssdfaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +
-    "aaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaahjgjhgjgaaaaa";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Depth = 0;
-            this.label2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label2.Location = new System.Drawing.Point(32, 61);
-            this.label2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 19);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Введите ответ";
-            // 
-            // nextQuestion
-            // 
-            this.nextQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.nextQuestion.AutoSize = false;
-            this.nextQuestion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.nextQuestion.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.nextQuestion.Depth = 0;
-            this.nextQuestion.HighEmphasis = true;
-            this.nextQuestion.Icon = null;
-            this.nextQuestion.Location = new System.Drawing.Point(888, 231);
-            this.nextQuestion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.nextQuestion.MouseState = MaterialSkin.MouseState.HOVER;
-            this.nextQuestion.Name = "nextQuestion";
-            this.nextQuestion.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.nextQuestion.Size = new System.Drawing.Size(190, 51);
-            this.nextQuestion.TabIndex = 21;
-            this.nextQuestion.Text = "СЛЕДУЮЩИЙ ВОПРОС";
-            this.nextQuestion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.nextQuestion.UseAccentColor = false;
-            this.nextQuestion.UseVisualStyleBackColor = true;
-            this.nextQuestion.Click += new System.EventHandler(this.nextQuestion_Click);
             // 
             // backQuestion
             // 
@@ -608,48 +627,115 @@
             this.backQuestion.UseVisualStyleBackColor = true;
             this.backQuestion.Click += new System.EventHandler(this.backQuestion_Click);
             // 
-            // label1
+            // nextQuestion
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
-            this.label1.Depth = 0;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1083, 37);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Question 1";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nextQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.nextQuestion.AutoSize = false;
+            this.nextQuestion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.nextQuestion.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.nextQuestion.Depth = 0;
+            this.nextQuestion.HighEmphasis = true;
+            this.nextQuestion.Icon = null;
+            this.nextQuestion.Location = new System.Drawing.Point(888, 231);
+            this.nextQuestion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.nextQuestion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.nextQuestion.Name = "nextQuestion";
+            this.nextQuestion.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.nextQuestion.Size = new System.Drawing.Size(190, 51);
+            this.nextQuestion.TabIndex = 21;
+            this.nextQuestion.Text = "СЛЕДУЮЩИЙ ВОПРОС";
+            this.nextQuestion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.nextQuestion.UseAccentColor = false;
+            this.nextQuestion.UseVisualStyleBackColor = true;
+            this.nextQuestion.Click += new System.EventHandler(this.nextQuestion_Click);
             // 
-            // countLabel
+            // label2
             // 
-            this.countLabel.AutoSize = true;
-            this.countLabel.Depth = 0;
-            this.countLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.countLabel.Location = new System.Drawing.Point(12, 9);
-            this.countLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.countLabel.Name = "countLabel";
-            this.countLabel.Size = new System.Drawing.Size(44, 19);
-            this.countLabel.TabIndex = 20;
-            this.countLabel.Text = "0 из 0";
-            this.countLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.countLabel.Click += new System.EventHandler(this.countLabel_Click);
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Depth = 0;
+            this.label2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.label2.Location = new System.Drawing.Point(32, 61);
+            this.label2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(109, 19);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Введите ответ";
             // 
-            // timerLabel
+            // matchingPairsDGV
             // 
-            this.timerLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.timerLabel.AutoSize = true;
-            this.timerLabel.Depth = 0;
-            this.timerLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.timerLabel.Location = new System.Drawing.Point(1058, 9);
-            this.timerLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.timerLabel.Name = "timerLabel";
-            this.timerLabel.Size = new System.Drawing.Size(10, 19);
-            this.timerLabel.TabIndex = 21;
-            this.timerLabel.Text = "0";
-            this.timerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.matchingPairsDGV.AllowUserToAddRows = false;
+            this.matchingPairsDGV.AllowUserToDeleteRows = false;
+            this.matchingPairsDGV.AutoGenerateColumns = false;
+            this.matchingPairsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.matchingPairsDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn5,
+            this.questionidDataGridViewTextBoxColumn1,
+            this.lefttextDataGridViewTextBoxColumn,
+            this.righttextDataGridViewTextBoxColumn,
+            this.extraoptionsDataGridViewTextBoxColumn});
+            this.matchingPairsDGV.DataSource = this.matchingpairsBindingSource;
+            this.matchingPairsDGV.Location = new System.Drawing.Point(826, 127);
+            this.matchingPairsDGV.Name = "matchingPairsDGV";
+            this.matchingPairsDGV.ReadOnly = true;
+            this.matchingPairsDGV.Size = new System.Drawing.Size(240, 222);
+            this.matchingPairsDGV.TabIndex = 1;
+            this.matchingPairsDGV.Visible = false;
+            // 
+            // matchingpairsBindingSource
+            // 
+            this.matchingpairsBindingSource.DataMember = "matching_pairs";
+            this.matchingpairsBindingSource.DataSource = this.testerDataSet;
+            // 
+            // matching_pairsTableAdapter
+            // 
+            this.matching_pairsTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn5
+            // 
+            this.idDataGridViewTextBoxColumn5.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn5.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn5.Name = "idDataGridViewTextBoxColumn5";
+            this.idDataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // questionidDataGridViewTextBoxColumn1
+            // 
+            this.questionidDataGridViewTextBoxColumn1.DataPropertyName = "question_id";
+            this.questionidDataGridViewTextBoxColumn1.HeaderText = "question_id";
+            this.questionidDataGridViewTextBoxColumn1.Name = "questionidDataGridViewTextBoxColumn1";
+            this.questionidDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // lefttextDataGridViewTextBoxColumn
+            // 
+            this.lefttextDataGridViewTextBoxColumn.DataPropertyName = "left_text";
+            this.lefttextDataGridViewTextBoxColumn.HeaderText = "left_text";
+            this.lefttextDataGridViewTextBoxColumn.Name = "lefttextDataGridViewTextBoxColumn";
+            this.lefttextDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // righttextDataGridViewTextBoxColumn
+            // 
+            this.righttextDataGridViewTextBoxColumn.DataPropertyName = "right_text";
+            this.righttextDataGridViewTextBoxColumn.HeaderText = "right_text";
+            this.righttextDataGridViewTextBoxColumn.Name = "righttextDataGridViewTextBoxColumn";
+            this.righttextDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // extraoptionsDataGridViewTextBoxColumn
+            // 
+            this.extraoptionsDataGridViewTextBoxColumn.DataPropertyName = "extra_options";
+            this.extraoptionsDataGridViewTextBoxColumn.HeaderText = "extra_options";
+            this.extraoptionsDataGridViewTextBoxColumn.Name = "extraoptionsDataGridViewTextBoxColumn";
+            this.extraoptionsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // panelMatching
+            // 
+            this.panelMatching.AutoScroll = true;
+            this.panelMatching.Location = new System.Drawing.Point(27, 8);
+            this.panelMatching.Name = "panelMatching";
+            this.panelMatching.Size = new System.Drawing.Size(1027, 214);
+            this.panelMatching.TabIndex = 23;
+            this.panelMatching.Click += new System.EventHandler(this.panelMatching_Click);
             // 
             // DoTestForm
             // 
@@ -675,6 +761,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.answerBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.materialCard2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
@@ -684,7 +771,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.opkresultBindingSource)).EndInit();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            this.materialCard2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.matchingPairsDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matchingpairsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -746,5 +834,14 @@
         private MaterialSkin.Controls.MaterialLabel label1;
         private MaterialSkin.Controls.MaterialLabel timerLabel;
         private MaterialSkin.Controls.MaterialLabel countLabel;
+        private System.Windows.Forms.DataGridView matchingPairsDGV;
+        private System.Windows.Forms.BindingSource matchingpairsBindingSource;
+        private testerDataSetTableAdapters.matching_pairsTableAdapter matching_pairsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn questionidDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lefttextDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn righttextDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn extraoptionsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel panelMatching;
     }
 }
