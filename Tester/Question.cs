@@ -137,22 +137,30 @@ namespace Tester
                 return false;
 
             }
-            else if (answerType == 3)
+            else if (answerType == 3 || answerType == 5)
             {
                 int CorrectsCurrentAnswers = 0;
                 int wrongAnswers = 0;
                 answered = right = true;
                 foreach (var tempAnswer in textAnswer)
                 {
-                    if (tempAnswer.Value == givedAnswers[tempAnswer.Key])
+                    try
                     {
-                        answersIds.Add(tempAnswer.Key);
-                        right = true;
-                        CorrectsCurrentAnswers++;
-                    }
-                    else
-                    {
-                        wrongAnswers++;
+                        if (tempAnswer.Value == givedAnswers[tempAnswer.Key])
+                        {
+                            answersIds.Add(tempAnswer.Key);
+                            right = true;
+                            CorrectsCurrentAnswers++;
+                        }
+                        else
+                        {
+                            wrongAnswers++;
+                        }
+                    } catch {
+
+                        right = false;
+                        return false;
+                    
                     }
                 }
                 if (CorrectsCurrentAnswers == correct.Length && wrongAnswers == 0)
@@ -167,8 +175,29 @@ namespace Tester
                 }
 
             }
+            else if (answerType == 4)
+            {
+                answered = right = true;
+                foreach (var givedAnswer in givedAnswers)
+                {
+                    answersIds.Add(answers[givedAnswer.Key].id);
+                    if (Array.IndexOf(correct, givedAnswer.Key) == -1)
+                    {
+
+                        right = false;
+                        return false;
+
+                    }
+                    else
+                    {
+                        right = true;
+                        return true;
+                    }
+
+                }
                 ////////////
                 ///////////
+            }
                 return true;
         }
     }

@@ -172,6 +172,7 @@ namespace Tester
                 materialLabel1.Text = question.description;
             }
 
+            answersList.SelectionMode = SelectionMode.MultiSimple;
             answersList.Items.Clear();
             answersList.Items.AddRange(question.answers);
             countLabel.Text = q.ToString() + " из " + test.Count.ToString();
@@ -183,14 +184,33 @@ namespace Tester
                 label2.Visible = true;
                 AnswerTextBox1.Visible = true;
                 panelMatching.Visible = false;
+                AnswerTextBox1.Text = "";
             } else if (questionTypeId == 3)
             {
                 label2.Visible = false;
                 AnswerTextBox1.Visible = false;
                 answersList.Visible = false;
                 panelMatching.Visible = true;
+                panelMatching.Controls.Clear();
                 FillMatchingPanel(question.id);
-            } else
+            } else if (questionTypeId == 4) 
+            {
+                answersList.SelectionMode = SelectionMode.One;
+                answersList.Visible = true;
+                label2.Visible = false;
+                AnswerTextBox1.Visible = false;
+                panelMatching.Visible = false;
+            }
+            else if (questionTypeId == 5)
+            {
+                label2.Visible = false;
+                AnswerTextBox1.Visible = false;
+                answersList.Visible = false;
+                panelMatching.Visible = true;
+                panelMatching.Controls.Clear();
+                FillMatchingPanel(question.id);
+            }
+            else
             {
                 answersList.Visible = true;
                 label2.Visible = false;
@@ -233,17 +253,18 @@ namespace Tester
             backQuestion.Enabled = true;
 
             Dictionary<int, string> currentAnswers = new Dictionary<int, string>();
-            if (questionTypeId == 1)
+            if (questionTypeId == 1 || questionTypeId == 4)
             {
                 for (int i = 0; i < answersList.SelectedIndices.Count; i++)
                     currentAnswers.Add(answersList.SelectedIndices[i], "");
                 test.answers = currentAnswers;
-            } else if (questionTypeId == 2)
+            } 
+            else if (questionTypeId == 2)
             {
                 currentAnswers.Add(((Tester.Answer)answersList.Items[0]).id, AnswerTextBox1.Text);
                 test.answers = currentAnswers;
             }
-            else if (questionTypeId == 3)
+            else if (questionTypeId == 3 || questionTypeId == 5)
             {
                 string[] UAnswers = matchingControl.DictToString(matchingControl.GetUserAnswers());
 
@@ -266,7 +287,7 @@ namespace Tester
                         int NewID = (int)answerTableAdapter.GetData()[answerTableAdapter.GetData().Count - 1][0];
                         test.answersIds.Add(NewID);
                     }
-                } else if (questionTypeId == 3)
+                } else if (questionTypeId == 3 || questionTypeId == 5)
                 {
                     if (!test.questions[test.now - 1].right)
                     {
@@ -353,9 +374,11 @@ namespace Tester
                     this.result_id = inserted;
                     string FileResult = ExportToExcel();
 
-                    MessageBox.Show("Тест пройден " + "\n" +
-                    "Процент правильных ответов: " + mark.ToString() + "%\n" + "Освоены компетенции: \r\n" + opksResult);
-                    
+                    using (SummaryResultForm SumRes = new SummaryResultForm(result_id, mark))
+                    {
+                        SumRes.ShowDialog();
+                    }
+
                     this.adminNetworkDataTableAdapter1.Fill(testerDataSet.adminNetworkData);
                     DataRow dataForSend = testerDataSet.adminNetworkData.Select("Id = 1")[0];
                     string testName = testerDataSet.test.Select("id = " + testId.ToString())[0]["name"].ToString();

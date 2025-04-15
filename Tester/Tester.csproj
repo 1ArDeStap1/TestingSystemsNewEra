@@ -110,6 +110,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddQuestionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,12 @@
     </Compile>
     <Compile Include="SerializerXML.cs" />
     <Compile Include="SMTP_Mail.cs" />
+    <Compile Include="SummaryResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SummaryResultForm.Designer.cs">
+      <DependentUpon>SummaryResultForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestCreation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +251,9 @@
     <Compile Include="WWListBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddQuestionForm.resx">
       <DependentUpon>AddQuestionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Opk_Result_Form.resx">
       <DependentUpon>Opk_Result_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SummaryResultForm.resx">
+      <DependentUpon>SummaryResultForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestCreation.resx">
       <DependentUpon>TestCreation.cs</DependentUpon>

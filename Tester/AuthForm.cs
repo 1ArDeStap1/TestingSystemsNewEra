@@ -140,5 +140,18 @@ namespace Tester
         {
 
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void linkLabel2_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            using (About AbForm = new About())
+            {
+                AbForm.ShowDialog(this);
+            }
+        }
     }
 }

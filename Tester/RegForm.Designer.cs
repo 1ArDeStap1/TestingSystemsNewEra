@@ -52,6 +52,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.usersTableAdapter = new Tester.testerDataSetTableAdapters.usersTableAdapter();
             this.groupTableAdapter = new Tester.testerDataSetTableAdapters.groupTableAdapter();
+            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).BeginInit();
@@ -73,7 +74,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(12, 25);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(276, 20);
+            this.textBox1.Size = new System.Drawing.Size(839, 20);
             this.textBox1.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -95,7 +96,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(276, 39);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(839, 39);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // label2
@@ -110,7 +111,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(94, 0);
+            this.label3.Location = new System.Drawing.Point(282, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 1;
@@ -119,7 +120,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(186, 0);
+            this.label4.Location = new System.Drawing.Point(561, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 2;
@@ -131,25 +132,25 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Location = new System.Drawing.Point(3, 16);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(85, 20);
+            this.textBox2.Size = new System.Drawing.Size(273, 20);
             this.textBox2.TabIndex = 3;
             // 
             // textBox3
             // 
             this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(94, 16);
+            this.textBox3.Location = new System.Drawing.Point(282, 16);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(86, 20);
+            this.textBox3.Size = new System.Drawing.Size(273, 20);
             this.textBox3.TabIndex = 4;
             // 
             // textBox4
             // 
             this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(186, 16);
+            this.textBox4.Location = new System.Drawing.Point(561, 16);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(87, 20);
+            this.textBox4.Size = new System.Drawing.Size(275, 20);
             this.textBox4.TabIndex = 5;
             // 
             // tableLayoutPanel2
@@ -168,7 +169,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(276, 39);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(839, 39);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // label5
@@ -183,7 +184,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(140, 0);
+            this.label6.Location = new System.Drawing.Point(422, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 13);
             this.label6.TabIndex = 1;
@@ -196,17 +197,17 @@
             this.textBox5.Location = new System.Drawing.Point(3, 16);
             this.textBox5.Name = "textBox5";
             this.textBox5.PasswordChar = '•';
-            this.textBox5.Size = new System.Drawing.Size(131, 20);
+            this.textBox5.Size = new System.Drawing.Size(413, 20);
             this.textBox5.TabIndex = 3;
             // 
             // textBox6
             // 
             this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Location = new System.Drawing.Point(140, 16);
+            this.textBox6.Location = new System.Drawing.Point(422, 16);
             this.textBox6.Name = "textBox6";
             this.textBox6.PasswordChar = '•';
-            this.textBox6.Size = new System.Drawing.Size(133, 20);
+            this.textBox6.Size = new System.Drawing.Size(414, 20);
             this.textBox6.TabIndex = 4;
             // 
             // comboBox1
@@ -219,7 +220,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(12, 158);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(276, 21);
+            this.comboBox1.Size = new System.Drawing.Size(839, 21);
             this.comboBox1.TabIndex = 4;
             this.comboBox1.ValueMember = "id";
             // 
@@ -246,7 +247,7 @@
             // 
             this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(12, 190);
+            this.linkLabel1.Location = new System.Drawing.Point(12, 275);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(46, 13);
             this.linkLabel1.TabIndex = 6;
@@ -257,7 +258,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(164, 185);
+            this.button1.Location = new System.Drawing.Point(727, 270);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 23);
             this.button1.TabIndex = 7;
@@ -273,11 +274,21 @@
             // 
             this.groupTableAdapter.ClearBeforeFill = true;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(205, 219);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(118, 32);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // RegForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 220);
+            this.ClientSize = new System.Drawing.Size(863, 305);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label7);
@@ -326,5 +337,6 @@
         private testerDataSetTableAdapters.usersTableAdapter usersTableAdapter;
         private System.Windows.Forms.BindingSource groupBindingSource;
         private testerDataSetTableAdapters.groupTableAdapter groupTableAdapter;
+        private System.Windows.Forms.Button button2;
     }
 }

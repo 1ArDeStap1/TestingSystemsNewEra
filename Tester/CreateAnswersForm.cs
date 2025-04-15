@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using MaterialSkin.Controls;
 using DocumentFormat.OpenXml.Office.SpreadSheetML.Y2023.MsForms;
 using System.Data.SqlClient;
+using DocumentFormat.OpenXml.EMMA;
 
 namespace Tester
 {
@@ -20,7 +21,7 @@ namespace Tester
         int qurrQuestId;
         int qType;
         bool correctAnswer;
-
+        int sequence = 0;
 
         public CreateAnswersForm(int qType, int qurrQuestId)
         {
@@ -149,6 +150,29 @@ namespace Tester
                     dataGridView1.Visible = false;
                     MatchingPairsTable.Visible = true;
                     break;
+                case 4:
+                    materialCard2.Visible = false;
+                    MatchingPairsTable.Visible = false;
+                    dataGridView1.Visible = true;
+                    materialCard1.Visible = true;
+                    materialLabel1.Visible = false;
+                    textBox1.Visible = false;
+                    break;
+                case 5:
+                    LoadMatching_pairsTable();
+                    materialCard1.Visible = false;
+                    materialCard2.Visible = true;
+                    dataGridView1.Visible = false;
+                    LeftVal.Visible = false;
+                    materialLabel4.Visible = false;
+                    MatchingPairsTable.Visible = true;
+
+                    if (MatchingPairsTable.Rows.Count > 0)
+                    {
+                        this.sequence = MatchingPairsTable.Rows.Count;
+                    }
+
+                    break;
                 default:
                     break;
             }
@@ -173,6 +197,15 @@ namespace Tester
                     break;
                 case 3:
                     AddMatching_PairsRow(LeftVal.Text, RightVal.Text);
+                    break;
+                case 4:
+                    correctAnswer = checkBox2.Checked;
+                    answerTableAdapter.Insert(textBox10.Text, correctAnswer, qurrQuestId);
+                    answerTableAdapter.Fill(testerDataSet.answer);
+                    break;
+                case 5:
+                    this.sequence++;
+                    AddMatching_PairsRow(this.sequence.ToString(), RightVal.Text);
                     break;
                 default:
                     break;
@@ -220,7 +253,18 @@ namespace Tester
                         Close();
                         break;
                     case 3:
-                        UpdateMatchingPair((int)MatchingPairsTable.SelectedRows[0].Cells["id"].Value, LeftVal.Text, RightVal.Text);
+                        UpdateMatchingPair((int)MatchingPairsTable.SelectedRows[0].Cells[0].Value, LeftVal.Text, RightVal.Text);
+                        break;
+                    case 4:
+                        // Предположим, что у вас есть текстовые поля для ввода новых ответов
+                        // и вы хотите обновить ответ по ID, который хранится в выбранной строке DataGridView.
+                        newAnswerText = textBox10.Text;
+                        answerId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+                        answerTableAdapter.UpdateQuery(newAnswerText, isCorrect, qurrQuestId, answerId);
+                        answerTableAdapter.Fill(testerDataSet.answer); // обновляем данные в DataSet
+                        break;
+                    case 5:
+                        UpdateMatchingPair((int)MatchingPairsTable.SelectedRows[0].Cells[0].Value, MatchingPairsTable.SelectedRows[0].Cells[2].Value.ToString(), RightVal.Text);
                         break;
                     default:
                         break;
@@ -263,7 +307,7 @@ namespace Tester
 
         private void CreateAnswersForm_Leave(object sender, EventArgs e)
         {
-            if (qType == 3)
+            if (qType == 3 || qType == 5)
             {
                 for (int i = 0; i < MatchingPairsTable.Rows.Count; i++)
                 {
