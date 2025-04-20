@@ -84,7 +84,7 @@
             this.ClientSize = new System.Drawing.Size(1033, 668);
             this.Controls.Add(this.materialCard2);
             this.Name = "SummaryResultForm";
-            this.Text = "SummaryResultForm";
+            this.Text = "РЕЗУЛЬТАТ";
             this.Load += new System.EventHandler(this.SummaryResultForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.OpkResultTable)).EndInit();
             this.materialCard2.ResumeLayout(false);
