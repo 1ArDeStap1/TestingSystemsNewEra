@@ -128,7 +128,7 @@
             this.answersList.Location = new System.Drawing.Point(27, 17);
             this.answersList.Name = "answersList";
             this.answersList.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.answersList.Size = new System.Drawing.Size(1027, 219);
+            this.answersList.Size = new System.Drawing.Size(1027, 266);
             this.answersList.TabIndex = 9;
             this.answersList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.answersList_DrawItem);
             this.answersList.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.answersList_MeasureItem);
@@ -143,7 +143,7 @@
             this.questionImage.InitialImage = null;
             this.questionImage.Location = new System.Drawing.Point(15, 40);
             this.questionImage.Name = "questionImage";
-            this.questionImage.Size = new System.Drawing.Size(1053, 345);
+            this.questionImage.Size = new System.Drawing.Size(1053, 318);
             this.questionImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.questionImage.TabIndex = 6;
             this.questionImage.TabStop = false;
@@ -347,7 +347,7 @@
             this.panel1.Controls.Add(this.questionImage);
             this.panel1.Location = new System.Drawing.Point(12, 67);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1083, 405);
+            this.panel1.Size = new System.Drawing.Size(1083, 378);
             this.panel1.TabIndex = 16;
             // 
             // timerLabel
@@ -409,7 +409,7 @@
             this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard2.Name = "materialCard2";
             this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard2.Size = new System.Drawing.Size(1083, 369);
+            this.materialCard2.Size = new System.Drawing.Size(1083, 331);
             this.materialCard2.TabIndex = 18;
             // 
             // matchingPairsDGV
@@ -481,7 +481,7 @@
             this.materialLabel1.Location = new System.Drawing.Point(14, 14);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(1055, 341);
+            this.materialLabel1.Size = new System.Drawing.Size(1038, 321);
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "aaaaaaaaaaaadfssdfaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +
     "aaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaahjgjhgjgaaaaa";
@@ -657,21 +657,22 @@
             this.materialCard1.Controls.Add(this.answersList);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(12, 489);
+            this.materialCard1.Location = new System.Drawing.Point(12, 442);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(1083, 302);
+            this.materialCard1.Size = new System.Drawing.Size(1083, 349);
             this.materialCard1.TabIndex = 20;
             // 
             // panelMatching
             // 
             this.panelMatching.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelMatching.Location = new System.Drawing.Point(27, 3);
+            this.panelMatching.AutoScroll = true;
+            this.panelMatching.Location = new System.Drawing.Point(27, 17);
             this.panelMatching.Name = "panelMatching";
-            this.panelMatching.Size = new System.Drawing.Size(1027, 233);
+            this.panelMatching.Size = new System.Drawing.Size(1027, 266);
             this.panelMatching.TabIndex = 23;
             this.panelMatching.Click += new System.EventHandler(this.panelMatching_Click);
             // 
@@ -684,7 +685,7 @@
             this.backQuestion.Depth = 0;
             this.backQuestion.HighEmphasis = true;
             this.backQuestion.Icon = null;
-            this.backQuestion.Location = new System.Drawing.Point(5, 245);
+            this.backQuestion.Location = new System.Drawing.Point(5, 292);
             this.backQuestion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.backQuestion.MouseState = MaterialSkin.MouseState.HOVER;
             this.backQuestion.Name = "backQuestion";
@@ -706,7 +707,7 @@
             this.nextQuestion.Depth = 0;
             this.nextQuestion.HighEmphasis = true;
             this.nextQuestion.Icon = null;
-            this.nextQuestion.Location = new System.Drawing.Point(888, 245);
+            this.nextQuestion.Location = new System.Drawing.Point(888, 292);
             this.nextQuestion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.nextQuestion.MouseState = MaterialSkin.MouseState.HOVER;
             this.nextQuestion.Name = "nextQuestion";

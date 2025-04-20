@@ -188,14 +188,9 @@ namespace Tester
             lbox.Width = n*10;
             if (lbox.SelectedItem != null)
             {
-                toolTip.RemoveAll();
-                toolTip.Active = true;
-                toolTip.Show(lbox.SelectedItem.ToString(), lbox);
+                toolTip.SetToolTip(lbox, lbox.SelectedItem.ToString());
             }
-            else
-            {
-                toolTip.RemoveAll();
-            }
+
         }
         /// <summary>
         /// Проверяет, правильно ли выбраны соответствия
