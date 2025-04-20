@@ -59,6 +59,13 @@
             this.countLabel = new MaterialSkin.Controls.MaterialLabel();
             this.label1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
+            this.matchingPairsDGV = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.questionidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lefttextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.righttextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.extraoptionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matchingpairsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,18 +90,11 @@
             this.question_TypesTableAdapter = new Tester.testerDataSetTableAdapters.Question_TypesTableAdapter();
             this.AnswerTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.panelMatching = new System.Windows.Forms.Panel();
             this.backQuestion = new MaterialSkin.Controls.MaterialButton();
             this.nextQuestion = new MaterialSkin.Controls.MaterialButton();
             this.label2 = new MaterialSkin.Controls.MaterialLabel();
-            this.matchingPairsDGV = new System.Windows.Forms.DataGridView();
-            this.matchingpairsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.matching_pairsTableAdapter = new Tester.testerDataSetTableAdapters.matching_pairsTableAdapter();
-            this.idDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.questionidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lefttextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.righttextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.extraoptionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelMatching = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.questionImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testBindingSource)).BeginInit();
@@ -105,6 +105,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.answerBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.materialCard2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.matchingPairsDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matchingpairsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -113,8 +115,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.resultanswerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.opkresultBindingSource)).BeginInit();
             this.materialCard1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.matchingPairsDGV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matchingpairsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // answersList
@@ -128,7 +128,7 @@
             this.answersList.Location = new System.Drawing.Point(27, 17);
             this.answersList.Name = "answersList";
             this.answersList.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.answersList.Size = new System.Drawing.Size(1027, 205);
+            this.answersList.Size = new System.Drawing.Size(1027, 219);
             this.answersList.TabIndex = 9;
             this.answersList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.answersList_DrawItem);
             this.answersList.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.answersList_MeasureItem);
@@ -143,7 +143,7 @@
             this.questionImage.InitialImage = null;
             this.questionImage.Location = new System.Drawing.Point(15, 40);
             this.questionImage.Name = "questionImage";
-            this.questionImage.Size = new System.Drawing.Size(1053, 367);
+            this.questionImage.Size = new System.Drawing.Size(1053, 345);
             this.questionImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.questionImage.TabIndex = 6;
             this.questionImage.TabStop = false;
@@ -347,7 +347,7 @@
             this.panel1.Controls.Add(this.questionImage);
             this.panel1.Location = new System.Drawing.Point(12, 67);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1083, 427);
+            this.panel1.Size = new System.Drawing.Size(1083, 405);
             this.panel1.TabIndex = 16;
             // 
             // timerLabel
@@ -409,8 +409,68 @@
             this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard2.Name = "materialCard2";
             this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard2.Size = new System.Drawing.Size(1083, 391);
+            this.materialCard2.Size = new System.Drawing.Size(1083, 369);
             this.materialCard2.TabIndex = 18;
+            // 
+            // matchingPairsDGV
+            // 
+            this.matchingPairsDGV.AllowUserToAddRows = false;
+            this.matchingPairsDGV.AllowUserToDeleteRows = false;
+            this.matchingPairsDGV.AutoGenerateColumns = false;
+            this.matchingPairsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.matchingPairsDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn5,
+            this.questionidDataGridViewTextBoxColumn1,
+            this.lefttextDataGridViewTextBoxColumn,
+            this.righttextDataGridViewTextBoxColumn,
+            this.extraoptionsDataGridViewTextBoxColumn});
+            this.matchingPairsDGV.DataSource = this.matchingpairsBindingSource;
+            this.matchingPairsDGV.Location = new System.Drawing.Point(826, 127);
+            this.matchingPairsDGV.Name = "matchingPairsDGV";
+            this.matchingPairsDGV.ReadOnly = true;
+            this.matchingPairsDGV.Size = new System.Drawing.Size(240, 222);
+            this.matchingPairsDGV.TabIndex = 1;
+            this.matchingPairsDGV.Visible = false;
+            // 
+            // idDataGridViewTextBoxColumn5
+            // 
+            this.idDataGridViewTextBoxColumn5.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn5.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn5.Name = "idDataGridViewTextBoxColumn5";
+            this.idDataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // questionidDataGridViewTextBoxColumn1
+            // 
+            this.questionidDataGridViewTextBoxColumn1.DataPropertyName = "question_id";
+            this.questionidDataGridViewTextBoxColumn1.HeaderText = "question_id";
+            this.questionidDataGridViewTextBoxColumn1.Name = "questionidDataGridViewTextBoxColumn1";
+            this.questionidDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // lefttextDataGridViewTextBoxColumn
+            // 
+            this.lefttextDataGridViewTextBoxColumn.DataPropertyName = "left_text";
+            this.lefttextDataGridViewTextBoxColumn.HeaderText = "left_text";
+            this.lefttextDataGridViewTextBoxColumn.Name = "lefttextDataGridViewTextBoxColumn";
+            this.lefttextDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // righttextDataGridViewTextBoxColumn
+            // 
+            this.righttextDataGridViewTextBoxColumn.DataPropertyName = "right_text";
+            this.righttextDataGridViewTextBoxColumn.HeaderText = "right_text";
+            this.righttextDataGridViewTextBoxColumn.Name = "righttextDataGridViewTextBoxColumn";
+            this.righttextDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // extraoptionsDataGridViewTextBoxColumn
+            // 
+            this.extraoptionsDataGridViewTextBoxColumn.DataPropertyName = "extra_options";
+            this.extraoptionsDataGridViewTextBoxColumn.HeaderText = "extra_options";
+            this.extraoptionsDataGridViewTextBoxColumn.Name = "extraoptionsDataGridViewTextBoxColumn";
+            this.extraoptionsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // matchingpairsBindingSource
+            // 
+            this.matchingpairsBindingSource.DataMember = "matching_pairs";
+            this.matchingpairsBindingSource.DataSource = this.testerDataSet;
             // 
             // materialLabel1
             // 
@@ -421,7 +481,7 @@
             this.materialLabel1.Location = new System.Drawing.Point(14, 14);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(1055, 363);
+            this.materialLabel1.Size = new System.Drawing.Size(1055, 341);
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "aaaaaaaaaaaadfssdfaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +
     "aaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaahjgjhgjgaaaaa";
@@ -597,13 +657,23 @@
             this.materialCard1.Controls.Add(this.answersList);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(12, 503);
+            this.materialCard1.Location = new System.Drawing.Point(12, 489);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(1083, 288);
+            this.materialCard1.Size = new System.Drawing.Size(1083, 302);
             this.materialCard1.TabIndex = 20;
+            // 
+            // panelMatching
+            // 
+            this.panelMatching.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelMatching.Location = new System.Drawing.Point(27, 3);
+            this.panelMatching.Name = "panelMatching";
+            this.panelMatching.Size = new System.Drawing.Size(1027, 233);
+            this.panelMatching.TabIndex = 23;
+            this.panelMatching.Click += new System.EventHandler(this.panelMatching_Click);
             // 
             // backQuestion
             // 
@@ -614,7 +684,7 @@
             this.backQuestion.Depth = 0;
             this.backQuestion.HighEmphasis = true;
             this.backQuestion.Icon = null;
-            this.backQuestion.Location = new System.Drawing.Point(5, 231);
+            this.backQuestion.Location = new System.Drawing.Point(5, 245);
             this.backQuestion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.backQuestion.MouseState = MaterialSkin.MouseState.HOVER;
             this.backQuestion.Name = "backQuestion";
@@ -636,7 +706,7 @@
             this.nextQuestion.Depth = 0;
             this.nextQuestion.HighEmphasis = true;
             this.nextQuestion.Icon = null;
-            this.nextQuestion.Location = new System.Drawing.Point(888, 231);
+            this.nextQuestion.Location = new System.Drawing.Point(888, 245);
             this.nextQuestion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.nextQuestion.MouseState = MaterialSkin.MouseState.HOVER;
             this.nextQuestion.Name = "nextQuestion";
@@ -664,78 +734,9 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "Введите ответ";
             // 
-            // matchingPairsDGV
-            // 
-            this.matchingPairsDGV.AllowUserToAddRows = false;
-            this.matchingPairsDGV.AllowUserToDeleteRows = false;
-            this.matchingPairsDGV.AutoGenerateColumns = false;
-            this.matchingPairsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.matchingPairsDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn5,
-            this.questionidDataGridViewTextBoxColumn1,
-            this.lefttextDataGridViewTextBoxColumn,
-            this.righttextDataGridViewTextBoxColumn,
-            this.extraoptionsDataGridViewTextBoxColumn});
-            this.matchingPairsDGV.DataSource = this.matchingpairsBindingSource;
-            this.matchingPairsDGV.Location = new System.Drawing.Point(826, 127);
-            this.matchingPairsDGV.Name = "matchingPairsDGV";
-            this.matchingPairsDGV.ReadOnly = true;
-            this.matchingPairsDGV.Size = new System.Drawing.Size(240, 222);
-            this.matchingPairsDGV.TabIndex = 1;
-            this.matchingPairsDGV.Visible = false;
-            // 
-            // matchingpairsBindingSource
-            // 
-            this.matchingpairsBindingSource.DataMember = "matching_pairs";
-            this.matchingpairsBindingSource.DataSource = this.testerDataSet;
-            // 
             // matching_pairsTableAdapter
             // 
             this.matching_pairsTableAdapter.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn5
-            // 
-            this.idDataGridViewTextBoxColumn5.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn5.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn5.Name = "idDataGridViewTextBoxColumn5";
-            this.idDataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // questionidDataGridViewTextBoxColumn1
-            // 
-            this.questionidDataGridViewTextBoxColumn1.DataPropertyName = "question_id";
-            this.questionidDataGridViewTextBoxColumn1.HeaderText = "question_id";
-            this.questionidDataGridViewTextBoxColumn1.Name = "questionidDataGridViewTextBoxColumn1";
-            this.questionidDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // lefttextDataGridViewTextBoxColumn
-            // 
-            this.lefttextDataGridViewTextBoxColumn.DataPropertyName = "left_text";
-            this.lefttextDataGridViewTextBoxColumn.HeaderText = "left_text";
-            this.lefttextDataGridViewTextBoxColumn.Name = "lefttextDataGridViewTextBoxColumn";
-            this.lefttextDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // righttextDataGridViewTextBoxColumn
-            // 
-            this.righttextDataGridViewTextBoxColumn.DataPropertyName = "right_text";
-            this.righttextDataGridViewTextBoxColumn.HeaderText = "right_text";
-            this.righttextDataGridViewTextBoxColumn.Name = "righttextDataGridViewTextBoxColumn";
-            this.righttextDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // extraoptionsDataGridViewTextBoxColumn
-            // 
-            this.extraoptionsDataGridViewTextBoxColumn.DataPropertyName = "extra_options";
-            this.extraoptionsDataGridViewTextBoxColumn.HeaderText = "extra_options";
-            this.extraoptionsDataGridViewTextBoxColumn.Name = "extraoptionsDataGridViewTextBoxColumn";
-            this.extraoptionsDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // panelMatching
-            // 
-            this.panelMatching.AutoScroll = true;
-            this.panelMatching.Location = new System.Drawing.Point(27, 8);
-            this.panelMatching.Name = "panelMatching";
-            this.panelMatching.Size = new System.Drawing.Size(1027, 214);
-            this.panelMatching.TabIndex = 23;
-            this.panelMatching.Click += new System.EventHandler(this.panelMatching_Click);
             // 
             // DoTestForm
             // 
@@ -762,6 +763,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.materialCard2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.matchingPairsDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matchingpairsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.questionTypesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
@@ -771,8 +774,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.opkresultBindingSource)).EndInit();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.matchingPairsDGV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matchingpairsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
