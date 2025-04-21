@@ -246,5 +246,10 @@ namespace Tester
         {
 
         }
+
+        private void MatchingControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

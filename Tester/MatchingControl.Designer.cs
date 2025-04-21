@@ -38,6 +38,7 @@
             this.DoubleBuffered = true;
             this.Name = "MatchingControl";
             this.Size = new System.Drawing.Size(642, 356);
+            this.Load += new System.EventHandler(this.MatchingControl_Load);
             this.ResumeLayout(false);
 
         }

@@ -16,12 +16,14 @@ using Tester.testerDataSetTableAdapters;
 
 using MaterialSkin;
 using MaterialSkin.Controls;
+using System.Data.SqlClient;
 
 namespace Tester
 {
     public partial class DoTestForm : MaterialForm
     {
         MatchingControl matchingControl = new MatchingControl();
+        string groupName = "";
         int questionTypeId = 0;
         int testId = 0;
         int userId = 0;
@@ -44,6 +46,26 @@ namespace Tester
                 Primary.Blue700, Accent.LightBlue100,
                 TextShade.WHITE
             );
+
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.testerConnectionString))
+            {
+                conn.Open();
+                string query = @"SELECT g.name AS group_name
+                                FROM [dbo].[users] u
+                                JOIN [dbo].[group] g ON u.group_id = g.id
+                                WHERE u.id = @UserId";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@UserId", userId);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            this.groupName = reader.GetString(0);
+                        }
+                    }
+                }
+            }
 
             this.testId = testId;
             this.userId = userId;
@@ -551,7 +573,7 @@ namespace Tester
                     y = 1;
                     
                 }
-                workbook.SaveAs(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"/TestingResults/" + SaveFileName);
+                workbook.SaveAs(Environment.CurrentDirectory + @"/TestingResults/" + groupName + "/" + SaveFileName);
                 return SaveFileName;
             }
         }
