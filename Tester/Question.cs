@@ -139,22 +139,15 @@ namespace Tester
             }
             else if (answerType == 3 || answerType == 5)
             {
-                int CorrectsCurrentAnswers = 0;
-                int wrongAnswers = 0;
                 answered = right = true;
                 foreach (var tempAnswer in textAnswer)
                 {
                     try
                     {
-                        if (tempAnswer.Value == givedAnswers[tempAnswer.Key])
+                        if (tempAnswer.Value == givedAnswers[answers[0].id])
                         {
                             answersIds.Add(tempAnswer.Key);
-                            right = true;
-                            CorrectsCurrentAnswers++;
-                        }
-                        else
-                        {
-                            wrongAnswers++;
+                            return true;
                         }
                     } catch {
 
@@ -162,16 +155,6 @@ namespace Tester
                         return false;
                     
                     }
-                }
-                if (CorrectsCurrentAnswers == correct.Length && wrongAnswers == 0)
-                {
-                    right = true;
-                    return true;
-                }
-                else
-                {
-                    right = false;
-                    return false;
                 }
 
             }

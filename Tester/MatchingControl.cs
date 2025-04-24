@@ -180,6 +180,8 @@ namespace Tester
             int n = 0;
             foreach (var element in lbox.Items)
             {
+                
+
                 if (element.ToString().Length > n) 
                     n = element.ToString().Length;
                 element.GetType();

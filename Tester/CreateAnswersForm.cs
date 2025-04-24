@@ -309,14 +309,15 @@ namespace Tester
         {
             if (qType == 3 || qType == 5)
             {
+                string corrString = "";
                 for (int i = 0; i < MatchingPairsTable.Rows.Count; i++)
                 {
                     if (MatchingPairsTable.Rows[i].Cells[4].Value.ToString() == "")
                     {
-                        string corrString = MatchingPairsTable.Rows[i].Cells[2].Value.ToString() + " - " + MatchingPairsTable.Rows[i].Cells[3].Value.ToString();
-                        AddRightMatchindAnswers(corrString);
+                        corrString += MatchingPairsTable.Rows[i].Cells[2].Value.ToString() + " - " + MatchingPairsTable.Rows[i].Cells[3].Value.ToString() + "\n";
                     }
                 }
+                AddRightMatchindAnswers(corrString);
             }
         }
     }

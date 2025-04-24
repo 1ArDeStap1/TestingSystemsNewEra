@@ -289,11 +289,13 @@ namespace Tester
             else if (questionTypeId == 3 || questionTypeId == 5)
             {
                 string[] UAnswers = matchingControl.DictToString(matchingControl.GetUserAnswers());
+                string CurrAnswer = "";
 
                 for (int i = 0; i < UAnswers.Length; i++) {
 
-                    currentAnswers.Add(matchingControl.correctAnswers[i], UAnswers[i]);
+                    CurrAnswer += UAnswers[i] + "\n";
                 }
+                currentAnswers.Add(((Tester.Answer)answersList.Items[0]).id, CurrAnswer);
                 test.answers = currentAnswers;
 
             }
@@ -317,7 +319,7 @@ namespace Tester
                         string constructorAnswers = "";
                         for (int i = 0; i < UAnswers.Length; i++)
                         {
-                            constructorAnswers += UAnswers[i] + "\r\n";
+                            constructorAnswers += UAnswers[i] + "\n";
                         }
                         
                         answerTableAdapter.Insert(constructorAnswers, false, test.questions[test.now - 1].id);
