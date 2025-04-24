@@ -156,6 +156,8 @@ namespace Tester
                     
                     }
                 }
+                right = false;
+                return false;
 
             }
             else if (answerType == 4)
