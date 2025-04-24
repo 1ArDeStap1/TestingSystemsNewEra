@@ -85,7 +85,7 @@
             this.textBox1.SelectionStart = 0;
             this.textBox1.ShortcutsEnabled = true;
             this.textBox1.Size = new System.Drawing.Size(496, 48);
-            this.textBox1.TabIndex = 5;
+            this.textBox1.TabIndex = 1;
             this.textBox1.TabStop = false;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBox1.TrailingIcon = null;
@@ -117,7 +117,7 @@
             this.textBox2.SelectionStart = 0;
             this.textBox2.ShortcutsEnabled = true;
             this.textBox2.Size = new System.Drawing.Size(496, 48);
-            this.textBox2.TabIndex = 6;
+            this.textBox2.TabIndex = 2;
             this.textBox2.TabStop = false;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.textBox2.TrailingIcon = null;

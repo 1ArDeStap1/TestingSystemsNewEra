@@ -76,6 +76,7 @@
             this.materialLabel1.TabIndex = 0;
             this.materialLabel1.Text = "aaaaaaaaaaaadfssdfaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +
     "aaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaahjgjhgjgaaaaa";
+            this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
             // 
             // SummaryResultForm
             // 

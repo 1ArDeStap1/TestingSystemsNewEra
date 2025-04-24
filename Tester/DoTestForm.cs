@@ -31,6 +31,8 @@ namespace Tester
         int result_id;
         int timeLimit = 0;
         bool hardEnd = false;
+
+
         public DoTestForm(int testId, int userId, int timeLimit = 0)
         {
             InitializeComponent();
@@ -609,6 +611,11 @@ namespace Tester
         }
 
         private void panelMatching_Click(object sender, EventArgs e)
+        {
+            nextQuestion.Enabled = true;
+        }
+
+        private void panelMatching_Paint(object sender, PaintEventArgs e)
         {
             nextQuestion.Enabled = true;
         }

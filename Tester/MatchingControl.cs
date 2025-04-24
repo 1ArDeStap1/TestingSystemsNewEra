@@ -110,7 +110,7 @@ namespace Tester
                 {
                     Location = new Point(columnWidth + 2 * padding, y),
                     Width = columnWidth,
-                    DropDownStyle = ComboBoxStyle.DropDownList,
+                    DropDownStyle = ComboBoxStyle.DropDown,
                     IntegralHeight = false,
                     FlatStyle = FlatStyle.Flat,
                     DrawMode = DrawMode.OwnerDrawVariable,
@@ -119,7 +119,9 @@ namespace Tester
                     Anchor = AnchorStyles.Bottom | AnchorStyles.Right,
                     AutoResize = false,
                     AutoCompleteSource = AutoCompleteSource.ListItems,
-                    AutoCompleteMode = AutoCompleteMode.Append  
+                    AutoCompleteMode = AutoCompleteMode.SuggestAppend,  
+                    FormattingEnabled = true,
+
                 };
 
                 comboBox.DrawItem += comboBoxRabot_DrawItem;
@@ -133,6 +135,8 @@ namespace Tester
 
                 foreach (string item in rightItems)
                 {
+                    //for (int i = 50; i < item.Length; i += 50)
+                    //    item.Insert(i, "\r\n");
                     comboBox.Items.Add(item);
                 }
 
@@ -226,7 +230,7 @@ namespace Tester
             int i = 0;
             foreach (var pair in dict)
             {
-                returnedArray[i] = pair.Key + " - " + pair.Value;
+                returnedArray[i] = pair.Key + " - " + pair.Value/*.Replace("\n\r", "")*/;
                 i++;
             }
             return returnedArray;
