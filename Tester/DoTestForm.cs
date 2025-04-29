@@ -577,7 +577,7 @@ namespace Tester
                     y = 1;
                     
                 }
-                workbook.SaveAs(Environment.CurrentDirectory + @"/TestingResults/" + groupName + "/" + SaveFileName);
+                workbook.SaveAs(Properties.Settings.Default.SavingPathData + groupName + "/" + SaveFileName);
                 return SaveFileName;
             }
         }

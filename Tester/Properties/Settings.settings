@@ -16,5 +16,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\tester.mdf;Integrated Security=True;Connect Timeout=30</Value>
     </Setting>
+    <Setting Name="SavingPathData" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\TestResults</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

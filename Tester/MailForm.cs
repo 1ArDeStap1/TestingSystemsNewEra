@@ -106,5 +106,20 @@ namespace Tester
         {
 
         }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+            {
+                if (fbd.ShowDialog() == DialogResult.OK)
+                {
+
+                    Properties.Settings.Default.SavingPathData = fbd.SelectedPath + @"\";
+                    Properties.Settings.Default.Save();
+                    MessageBox.Show("Путь выгрузки успешно сохранён");
+
+                }
+            }
+        }
     }
 }
