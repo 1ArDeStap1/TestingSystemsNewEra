@@ -92,14 +92,25 @@ namespace Tester
                                 DataRow dtr = dtTemp.NewRow();
                                 foreach (DataColumn dr in dtTemp.Columns)
                                 {
-                                    reader.ReadToFollowing(dr.ColumnName);
-                                    if (dr.ColumnName == "image")
+                                    try
                                     {
-                                        dtr[dr.ColumnName] = Convert.FromBase64String(reader.ReadElementContentAsString());
-                                    }
-                                    else
+                                        if (dr.ColumnName == "points") {
+                                            dtr[dr.ColumnName] = 1.0;
+                                            continue;
+                                        }
+                                        reader.ReadToFollowing(dr.ColumnName);
+                                        if (dr.ColumnName == "image")
+                                        {
+                                            dtr[dr.ColumnName] = Convert.FromBase64String(reader.ReadElementContentAsString());
+                                        }
+                                        else
+                                        {
+                                            dtr[dr.ColumnName] = reader.ReadElementContentAsString();
+                                        }
+                                    } catch
                                     {
-                                        dtr[dr.ColumnName] = reader.ReadElementContentAsString();
+                                        dtr[dr.ColumnName] = 1.0;
+                                        
                                     }
                                 }
                                 dtTemp.Rows.Add(dtr);

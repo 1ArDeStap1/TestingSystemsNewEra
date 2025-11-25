@@ -160,11 +160,11 @@ namespace Tester
         {
             try
             {
-                answerTableAdapter.UpdateQuery(textBox5.Text, checkBox1.Checked,
-                    Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value),
-                    Convert.ToInt32(((Button)sender).Tag));
-                answerTableAdapter.Fill(testerDataSet.answer);
-                UpdatedMessage();
+                //answerTableAdapter.UpdateQuery(textBox5.Text, checkBox1.Checked,
+                //    Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value),
+                //    Convert.ToInt32(((Button)sender).Tag), );
+                //answerTableAdapter.Fill(testerDataSet.answer);
+                //UpdatedMessage();
             }
             catch (Exception ex)
             {
@@ -222,9 +222,9 @@ namespace Tester
             {
                 if (DeleteConfirm())
                 {
-                    answerTableAdapter.Delete((int)(dataGridView2.SelectedRows[0].Cells[0].Value));
-                    answerTableAdapter.Fill(testerDataSet.answer);
-                    DeletedMessage();
+                    //answerTableAdapter.Delete((int)(dataGridView2.SelectedRows[0].Cells[0].Value));
+                    //answerTableAdapter.Fill(testerDataSet.answer);
+                    //DeletedMessage();
                 }
             }
             catch (Exception ex)

@@ -186,12 +186,12 @@ namespace Tester
             {
                 case 1:
                     correctAnswer = checkBox2.Checked;
-                    answerTableAdapter.Insert(textBox10.Text, correctAnswer, qurrQuestId);
+                    answerTableAdapter.Insert(textBox10.Text, correctAnswer, qurrQuestId, Convert.ToDouble(AnswerPoints.Value));
                     answerTableAdapter.Fill(testerDataSet.answer);
                     break;
                 case 2:
                     correctAnswer = true; 
-                    answerTableAdapter.Insert(textBox1.Text, correctAnswer, qurrQuestId);
+                    answerTableAdapter.Insert(textBox1.Text, correctAnswer, qurrQuestId, Convert.ToDouble(AnswerPoints.Value));
                     answerTableAdapter.Fill(testerDataSet.answer);
                     Close();
                     break;
@@ -200,7 +200,7 @@ namespace Tester
                     break;
                 case 4:
                     correctAnswer = checkBox2.Checked;
-                    answerTableAdapter.Insert(textBox10.Text, correctAnswer, qurrQuestId);
+                    answerTableAdapter.Insert(textBox10.Text, correctAnswer, qurrQuestId, Convert.ToDouble(AnswerPoints.Value));
                     answerTableAdapter.Fill(testerDataSet.answer);
                     break;
                 case 5:
@@ -241,14 +241,14 @@ namespace Tester
                         // и вы хотите обновить ответ по ID, который хранится в выбранной строке DataGridView.
                         newAnswerText = textBox10.Text;
                         answerId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
-                        answerTableAdapter.UpdateQuery(newAnswerText, isCorrect, qurrQuestId, answerId);
+                        answerTableAdapter.UpdateQuery(newAnswerText, isCorrect, qurrQuestId, answerId, Convert.ToDouble(AnswerPoints.Value));
                         answerTableAdapter.Fill(testerDataSet.answer); // обновляем данные в DataSet
                         break;
                     case 2:
                         isCorrect = true;
                         newAnswerText = textBox1.Text;
                         answerId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
-                        answerTableAdapter.UpdateQuery(newAnswerText, isCorrect, qurrQuestId, answerId);
+                        answerTableAdapter.UpdateQuery(newAnswerText, isCorrect, qurrQuestId, answerId, Convert.ToDouble(AnswerPoints.Value));
                         answerTableAdapter.Fill(testerDataSet.answer); // обновляем данные в DataSet
                         Close();
                         break;
@@ -260,7 +260,7 @@ namespace Tester
                         // и вы хотите обновить ответ по ID, который хранится в выбранной строке DataGridView.
                         newAnswerText = textBox10.Text;
                         answerId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
-                        answerTableAdapter.UpdateQuery(newAnswerText, isCorrect, qurrQuestId, answerId);
+                        answerTableAdapter.UpdateQuery(newAnswerText, isCorrect, qurrQuestId, answerId, Convert.ToDouble(AnswerPoints.Value));
                         answerTableAdapter.Fill(testerDataSet.answer); // обновляем данные в DataSet
                         break;
                     case 5:
@@ -319,6 +319,11 @@ namespace Tester
                 }
                 AddRightMatchindAnswers(corrString);
             }
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

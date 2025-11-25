@@ -308,7 +308,7 @@ namespace Tester
                 if (questionTypeId == 2)
                 {
                     if (!test.questions[test.now - 1].right) {
-                        answerTableAdapter.Insert(AnswerTextBox1.Text, false, test.questions[test.now - 1].id);
+                        answerTableAdapter.Insert(AnswerTextBox1.Text, false, test.questions[test.now - 1].id, 0);
                         answerTableAdapter.Fill(testerDataSet.answer);
                         int NewID = (int)answerTableAdapter.GetData()[answerTableAdapter.GetData().Count - 1][0];
                         test.answersIds.Add(NewID);
@@ -324,7 +324,7 @@ namespace Tester
                             constructorAnswers += UAnswers[i] + "\n";
                         }
                         
-                        answerTableAdapter.Insert(constructorAnswers, false, test.questions[test.now - 1].id);
+                        answerTableAdapter.Insert(constructorAnswers, false, test.questions[test.now - 1].id, 0);
                         answerTableAdapter.Fill(testerDataSet.answer);
                         int NewID = (int)answerTableAdapter.GetData()[answerTableAdapter.GetData().Count - 1][0];
                         test.answersIds.Add(NewID);
@@ -557,6 +557,7 @@ namespace Tester
                     tmpColumnNames.Add(column.ColumnName);
                 tmpColumnNames.Add("Ответ");
                 tmpColumnNames.Add("Правильный");
+                tmpColumnNames.Add("Кол-во баллов");
                 worksheetResult_QA.Cell(1, 1).InsertData(tmpColumnNames, true);
                 int x = 2;
                 int y = 1;
@@ -570,7 +571,7 @@ namespace Tester
                     DataRow[] dtrA = dtRA.Select("question_id = "+ Row[0].ToString());
                     foreach (DataRow AnswerRow in dtrA)
                     {
-                        worksheetResult_QA.Cell(x, y).InsertData(new string[] { AnswerRow[3].ToString(), (bool)AnswerRow[4]? "ДА": "НЕТ" }, true);
+                        worksheetResult_QA.Cell(x, y).InsertData(new string[] { AnswerRow[3].ToString(), (bool)AnswerRow[4]? "ДА": "НЕТ" , AnswerRow[5].ToString()}, true);
                         x++;
                     }
                     x++;
