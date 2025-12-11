@@ -163,7 +163,7 @@ namespace Tester
                             question = new Bitmap(new MemoryStream((byte[])(dataGridView2.Rows[i].Cells[3].Value)));
                         }
 
-                        questions[i] = new Question((int)dataGridView2.Rows[i].Cells[0].Value, (string)dataGridView2.Rows[i].Cells[1].Value, question, tmpAnswers, tmpCAnswers, tmpCAnswersData, tmpOpk, description, false, (int)dataGridView2.Rows[i].Cells[6].Value);
+                        questions[i] = new Question((int)dataGridView2.Rows[i].Cells[0].Value, (string)dataGridView2.Rows[i].Cells[1].Value, question, tmpAnswers, tmpCAnswers, tmpCAnswersData, tmpOpk, description, false, (int)dataGridView2.Rows[i].Cells[6].Value, (double)dataGridView2.Rows[i].Cells[7].Value);
                     }
                 }
 
@@ -308,7 +308,7 @@ namespace Tester
                 if (questionTypeId == 2)
                 {
                     if (!test.questions[test.now - 1].right) {
-                        answerTableAdapter.Insert(AnswerTextBox1.Text, false, test.questions[test.now - 1].id, 0);
+                        answerTableAdapter.Insert(AnswerTextBox1.Text, false, test.questions[test.now - 1].id);
                         answerTableAdapter.Fill(testerDataSet.answer);
                         int NewID = (int)answerTableAdapter.GetData()[answerTableAdapter.GetData().Count - 1][0];
                         test.answersIds.Add(NewID);
@@ -324,7 +324,7 @@ namespace Tester
                             constructorAnswers += UAnswers[i] + "\n";
                         }
                         
-                        answerTableAdapter.Insert(constructorAnswers, false, test.questions[test.now - 1].id, 0);
+                        answerTableAdapter.Insert(constructorAnswers, false, test.questions[test.now - 1].id);
                         answerTableAdapter.Fill(testerDataSet.answer);
                         int NewID = (int)answerTableAdapter.GetData()[answerTableAdapter.GetData().Count - 1][0];
                         test.answersIds.Add(NewID);
@@ -571,7 +571,7 @@ namespace Tester
                     DataRow[] dtrA = dtRA.Select("question_id = "+ Row[0].ToString());
                     foreach (DataRow AnswerRow in dtrA)
                     {
-                        worksheetResult_QA.Cell(x, y).InsertData(new string[] { AnswerRow[3].ToString(), (bool)AnswerRow[4]? "ДА": "НЕТ" , AnswerRow[5].ToString()}, true);
+                        worksheetResult_QA.Cell(x, y).InsertData(new string[] { AnswerRow[3].ToString(), (bool)AnswerRow[4]? "ДА": "НЕТ" , AnswerRow[6].ToString()}, true);
                         x++;
                     }
                     x++;

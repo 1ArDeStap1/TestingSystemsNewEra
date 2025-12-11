@@ -78,9 +78,10 @@ namespace Tester
 
         public static void MessageError(Exception ex = null)
         {
-            MessageBox.Show("Во время совершения операции произошла ошибка, проверьте входные данные.");
+            string errorMessage = "Во время совершения операции произошла ошибка, проверьте входные данные.";
             if (ex != null)
-                Debug.WriteLine(ex.Message);
+                errorMessage += "\r\n"+ex.Message;
+            MessageBox.Show(errorMessage);
         }
 
         public static IEnumerable<T> RandomizeList<T>(this IEnumerable<T> source)

@@ -87,7 +87,7 @@ namespace Tester
             int test_id = (int)testerDataSet1.test[0]["id"];
 
 
-            questionTableAdapter.Insert(textBox8.Text, textBox9.Text, imageToByteArray(pictureBox2.Image), test_id, Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value));
+            questionTableAdapter.Insert(textBox8.Text, textBox9.Text, imageToByteArray(pictureBox2.Image), test_id, Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value), (decimal)NumberPoints.Value);
 
             this.questionTableAdapter.Fill(this.testerDataSet1.question);
 
@@ -246,7 +246,7 @@ namespace Tester
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
-            questionTableAdapter.Update(textBox8.Text, textBox9.Text, imageToByteArray(pictureBox2.Image), adminForm.testTableAdapter.GetData()[LastTest].id, Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value), (int)Grid.SelectedRows[0].Cells[0].Value, selectedtest, (int)Grid.SelectedRows[0].Cells[2].Value, (int)Grid.SelectedRows[0].Cells[3].Value);
+            questionTableAdapter.Update(textBox8.Text, textBox9.Text, imageToByteArray(pictureBox2.Image), adminForm.testTableAdapter.GetData()[LastTest].id, Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value), (decimal)NumberPoints.Value, (int)Grid.SelectedRows[0].Cells[0].Value, selectedtest, (int)Grid.SelectedRows[0].Cells[2].Value, (int)Grid.SelectedRows[0].Cells[3].Value);
             QuestionType = (int)dataGridView2.SelectedRows[0].Cells[0].Value;
             qurrentQuestiion = Convert.ToInt32(Grid.SelectedRows[0].Cells[0].Value);
             questionTableAdapter.Fill(this.testerDataSet1.question);
@@ -256,6 +256,11 @@ namespace Tester
         }
 
         private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }

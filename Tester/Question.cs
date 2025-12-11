@@ -45,8 +45,9 @@ namespace Tester
         public int id;
         public int type_id;
         public Dictionary<int, string> textAnswer;
+        public double points;
 
-        public Question(int id,string cont, Bitmap image, Answer[] answers, int[] correct, Dictionary<int, string> correctText, OPK Opk, string description = "", bool mix = false, int type = 1)
+        public Question(int id,string cont, Bitmap image, Answer[] answers, int[] correct, Dictionary<int, string> correctText, OPK Opk, string description = "", bool mix = false, int type = 1, double points = 0)
         {
             this.id = id;
             this.cont = cont;
@@ -58,6 +59,7 @@ namespace Tester
             this.type_id = type;
             this.textAnswer = correctText;
             this.opk = Opk;
+            this.points = points;
         }
 
         private void mix()
@@ -195,6 +197,7 @@ namespace Tester
         public List<int> answersIds = new List<int>();
         public int lastAnswersCount;
         public int now = -1;
+        public double curPoints = 0.0; 
         bool returned = false;
 
         public int Count

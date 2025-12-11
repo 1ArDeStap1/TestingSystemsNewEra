@@ -186,12 +186,12 @@ namespace Tester
             {
                 case 1:
                     correctAnswer = checkBox2.Checked;
-                    answerTableAdapter.Insert(textBox10.Text, correctAnswer, qurrQuestId, Convert.ToDouble(AnswerPoints.Value));
+                    answerTableAdapter.Insert(textBox10.Text, correctAnswer, qurrQuestId);
                     answerTableAdapter.Fill(testerDataSet.answer);
                     break;
                 case 2:
                     correctAnswer = true; 
-                    answerTableAdapter.Insert(textBox1.Text, correctAnswer, qurrQuestId, Convert.ToDouble(AnswerPoints.Value));
+                    answerTableAdapter.Insert(textBox1.Text, correctAnswer, qurrQuestId);
                     answerTableAdapter.Fill(testerDataSet.answer);
                     Close();
                     break;
@@ -200,7 +200,7 @@ namespace Tester
                     break;
                 case 4:
                     correctAnswer = checkBox2.Checked;
-                    answerTableAdapter.Insert(textBox10.Text, correctAnswer, qurrQuestId, Convert.ToDouble(AnswerPoints.Value));
+                    answerTableAdapter.Insert(textBox10.Text, correctAnswer, qurrQuestId);
                     answerTableAdapter.Fill(testerDataSet.answer);
                     break;
                 case 5:

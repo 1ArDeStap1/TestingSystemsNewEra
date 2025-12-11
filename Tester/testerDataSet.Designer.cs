@@ -1488,6 +1488,8 @@ namespace Tester {
             
             private global::System.Data.DataColumn columnquestion_id;
             
+            private global::System.Data.DataColumn columnpoints;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public result_answerDataTable() {
@@ -1571,6 +1573,14 @@ namespace Tester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn pointsColumn {
+                get {
+                    return this.columnpoints;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1606,7 +1616,7 @@ namespace Tester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public result_answerRow Addresult_answerRow(resultRow parentresultRowByFK_result_variant_result, answerRow parentanswerRowByFK_result_variant_answer, string description, bool correct, questionRow parentquestionRowByFK_answer_question1) {
+            public result_answerRow Addresult_answerRow(resultRow parentresultRowByFK_result_variant_result, answerRow parentanswerRowByFK_result_variant_answer, string description, bool correct, questionRow parentquestionRowByFK_answer_question1, double points) {
                 result_answerRow rowresult_answerRow = ((result_answerRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1614,7 +1624,8 @@ namespace Tester {
                         null,
                         description,
                         correct,
-                        null};
+                        null,
+                        points};
                 if ((parentresultRowByFK_result_variant_result != null)) {
                     columnValuesArray[1] = parentresultRowByFK_result_variant_result[0];
                 }
@@ -1659,6 +1670,7 @@ namespace Tester {
                 this.columndescription = base.Columns["description"];
                 this.columncorrect = base.Columns["correct"];
                 this.columnquestion_id = base.Columns["question_id"];
+                this.columnpoints = base.Columns["points"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1676,6 +1688,8 @@ namespace Tester {
                 base.Columns.Add(this.columncorrect);
                 this.columnquestion_id = new global::System.Data.DataColumn("question_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnquestion_id);
+                this.columnpoints = new global::System.Data.DataColumn("points", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpoints);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -1689,6 +1703,7 @@ namespace Tester {
                 this.columndescription.MaxLength = 2147483647;
                 this.columncorrect.AllowDBNull = false;
                 this.columnquestion_id.AllowDBNull = false;
+                this.columnpoints.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2515,8 +2530,6 @@ namespace Tester {
             
             private global::System.Data.DataColumn columnquestion_id;
             
-            private global::System.Data.DataColumn columnpoints;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public answerDataTable() {
@@ -2584,14 +2597,6 @@ namespace Tester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn pointsColumn {
-                get {
-                    return this.columnpoints;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2627,14 +2632,13 @@ namespace Tester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public answerRow AddanswerRow(string description, bool correct, questionRow parentquestionRowByFK_answer_question, double points) {
+            public answerRow AddanswerRow(string description, bool correct, questionRow parentquestionRowByFK_answer_question) {
                 answerRow rowanswerRow = ((answerRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         description,
                         correct,
-                        null,
-                        points};
+                        null};
                 if ((parentquestionRowByFK_answer_question != null)) {
                     columnValuesArray[3] = parentquestionRowByFK_answer_question[0];
                 }
@@ -2671,7 +2675,6 @@ namespace Tester {
                 this.columndescription = base.Columns["description"];
                 this.columncorrect = base.Columns["correct"];
                 this.columnquestion_id = base.Columns["question_id"];
-                this.columnpoints = base.Columns["points"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2685,8 +2688,6 @@ namespace Tester {
                 base.Columns.Add(this.columncorrect);
                 this.columnquestion_id = new global::System.Data.DataColumn("question_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnquestion_id);
-                this.columnpoints = new global::System.Data.DataColumn("points", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpoints);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -2699,7 +2700,6 @@ namespace Tester {
                 this.columndescription.MaxLength = 2147483647;
                 this.columncorrect.AllowDBNull = false;
                 this.columnquestion_id.AllowDBNull = false;
-                this.columnpoints.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3124,6 +3124,8 @@ namespace Tester {
             
             private global::System.Data.DataColumn columnType_id;
             
+            private global::System.Data.DataColumn columnpoints;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public questionDataTable() {
@@ -3215,6 +3217,14 @@ namespace Tester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn pointsColumn {
+                get {
+                    return this.columnpoints;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3250,7 +3260,7 @@ namespace Tester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public questionRow AddquestionRow(string name, string description, byte[] image, testRow parenttestRowByFK_question_test, int OPK_id, int Type_id) {
+            public questionRow AddquestionRow(string name, string description, byte[] image, testRow parenttestRowByFK_question_test, int OPK_id, int Type_id, decimal points) {
                 questionRow rowquestionRow = ((questionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3259,7 +3269,8 @@ namespace Tester {
                         image,
                         null,
                         OPK_id,
-                        Type_id};
+                        Type_id,
+                        points};
                 if ((parenttestRowByFK_question_test != null)) {
                     columnValuesArray[4] = parenttestRowByFK_question_test[0];
                 }
@@ -3299,6 +3310,7 @@ namespace Tester {
                 this.columntest_id = base.Columns["test_id"];
                 this.columnOPK_id = base.Columns["OPK_id"];
                 this.columnType_id = base.Columns["Type_id"];
+                this.columnpoints = base.Columns["points"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3318,6 +3330,8 @@ namespace Tester {
                 base.Columns.Add(this.columnOPK_id);
                 this.columnType_id = new global::System.Data.DataColumn("Type_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnType_id);
+                this.columnpoints = new global::System.Data.DataColumn("points", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpoints);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -5199,6 +5213,17 @@ namespace Tester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public double points {
+                get {
+                    return ((double)(this[this.tableresult_answer.pointsColumn]));
+                }
+                set {
+                    this[this.tableresult_answer.pointsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public resultRow resultRow {
                 get {
                     return ((resultRow)(this.GetParentRow(this.Table.ParentRelations["FK_result_variant_result"])));
@@ -5520,17 +5545,6 @@ namespace Tester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public double points {
-                get {
-                    return ((double)(this[this.tableanswer.pointsColumn]));
-                }
-                set {
-                    this[this.tableanswer.pointsColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public questionRow questionRow {
                 get {
                     return ((questionRow)(this.GetParentRow(this.Table.ParentRelations["FK_answer_question"])));
@@ -5698,6 +5712,22 @@ namespace Tester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal points {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablequestion.pointsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'points\' в таблице \'question\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablequestion.pointsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public testRow testRow {
                 get {
                     return ((testRow)(this.GetParentRow(this.Table.ParentRelations["FK_question_test"])));
@@ -5717,6 +5747,18 @@ namespace Tester {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetimageNull() {
                 this[this.tablequestion.imageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IspointsNull() {
+                return this.IsNull(this.tablequestion.pointsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetpointsNull() {
+                this[this.tablequestion.pointsColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7491,6 +7533,7 @@ FROM            result INNER JOIN
             tableMapping.ColumnMappings.Add("description", "description");
             tableMapping.ColumnMappings.Add("correct", "correct");
             tableMapping.ColumnMappings.Add("question_id", "question_id");
+            tableMapping.ColumnMappings.Add("points", "points");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -7507,10 +7550,9 @@ FROM            result INNER JOIN
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        result_answer.id, result_answer.result_id, result_answer.answer_id," +
-                " answer.description, answer.correct, answer.question_id\r\nFROM            result_" +
-                "answer INNER JOIN\r\n                         answer ON result_answer.answer_id = " +
-                "answer.id";
+            this._commandCollection[0].CommandText = @"SELECT        result_answer.id, result_answer.result_id, result_answer.answer_id, answer.description, answer.correct, answer.question_id, answer.points
+FROM            result_answer INNER JOIN
+                         answer ON result_answer.answer_id = answer.id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -7548,7 +7590,6 @@ FROM            result INNER JOIN
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(int result_id, global::System.Nullable<int> answer_id) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             command.Parameters[0].Value = ((int)(result_id));
@@ -8438,41 +8479,35 @@ FROM            result INNER JOIN
             tableMapping.ColumnMappings.Add("description", "description");
             tableMapping.ColumnMappings.Add("correct", "correct");
             tableMapping.ColumnMappings.Add("question_id", "question_id");
-            tableMapping.ColumnMappings.Add("points", "points");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[answer] WHERE (([id] = @Original_id) AND ([correct] = @Origina" +
-                "l_correct) AND ([question_id] = @Original_question_id) AND ([points] = @Original" +
-                "_points))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [answer] WHERE (([id] = @Original_id) AND ([correct] = @Original_corr" +
+                "ect) AND ([question_id] = @Original_question_id))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_correct", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "correct", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_question_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "question_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_points", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "points", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[answer] ([description], [correct], [question_id], [points]) VA" +
-                "LUES (@description, @correct, @question_id, @points);\r\nSELECT id, description, c" +
-                "orrect, question_id, points FROM answer WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [answer] ([description], [correct], [question_id]) VALUES (@descripti" +
+                "on, @correct, @question_id);\r\nSELECT id, description, correct, question_id FROM " +
+                "answer WHERE (id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@correct", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "correct", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@question_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "question_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@points", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "points", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[answer] SET [description] = @description, [correct] = @correct, [question_id] = @question_id, [points] = @points WHERE (([id] = @Original_id) AND ([correct] = @Original_correct) AND ([question_id] = @Original_question_id) AND ([points] = @Original_points));
-SELECT id, description, correct, question_id, points FROM answer WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [answer] SET [description] = @description, [correct] = @correct, [question_id] = @question_id WHERE (([id] = @Original_id) AND ([correct] = @Original_correct) AND ([question_id] = @Original_question_id));
+SELECT id, description, correct, question_id FROM answer WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@correct", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "correct", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@question_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "question_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@points", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "points", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_correct", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "correct", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_question_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "question_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_points", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "points", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -8489,7 +8524,7 @@ SELECT id, description, correct, question_id, points FROM answer WHERE (id = @id
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, description, correct, question_id, points FROM dbo.answer";
+            this._commandCollection[0].CommandText = "SELECT        id, description, correct, question_id\r\nFROM            answer";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -8560,11 +8595,10 @@ SELECT id, description, correct, question_id, points FROM answer WHERE (id = @id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, bool Original_correct, int Original_question_id, double Original_points) {
+        public virtual int Delete(int Original_id, bool Original_correct, int Original_question_id) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((bool)(Original_correct));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_question_id));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((double)(Original_points));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8585,7 +8619,7 @@ SELECT id, description, correct, question_id, points FROM answer WHERE (id = @id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string description, bool correct, int question_id, double points) {
+        public virtual int Insert(string description, bool correct, int question_id) {
             if ((description == null)) {
                 throw new global::System.ArgumentNullException("description");
             }
@@ -8594,7 +8628,6 @@ SELECT id, description, correct, question_id, points FROM answer WHERE (id = @id
             }
             this.Adapter.InsertCommand.Parameters[1].Value = ((bool)(correct));
             this.Adapter.InsertCommand.Parameters[2].Value = ((int)(question_id));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((double)(points));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8615,7 +8648,7 @@ SELECT id, description, correct, question_id, points FROM answer WHERE (id = @id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string description, bool correct, int question_id, double points, int Original_id, bool Original_correct, int Original_question_id, double Original_points, int id) {
+        public virtual int Update(string description, bool correct, int question_id, int Original_id, bool Original_correct, int Original_question_id, int id) {
             if ((description == null)) {
                 throw new global::System.ArgumentNullException("description");
             }
@@ -8624,12 +8657,10 @@ SELECT id, description, correct, question_id, points FROM answer WHERE (id = @id
             }
             this.Adapter.UpdateCommand.Parameters[1].Value = ((bool)(correct));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(question_id));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((double)(points));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((bool)(Original_correct));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_question_id));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((double)(Original_points));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(id));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_id));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((bool)(Original_correct));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_question_id));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8650,8 +8681,8 @@ SELECT id, description, correct, question_id, points FROM answer WHERE (id = @id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string description, bool correct, int question_id, double points, int Original_id, bool Original_correct, int Original_question_id, double Original_points) {
-            return this.Update(description, correct, question_id, points, Original_id, Original_correct, Original_question_id, Original_points, Original_id);
+        public virtual int Update(string description, bool correct, int question_id, int Original_id, bool Original_correct, int Original_question_id) {
+            return this.Update(description, correct, question_id, Original_id, Original_correct, Original_question_id, Original_id);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9151,21 +9182,25 @@ SELECT id, description, correct, question_id, points FROM answer WHERE (id = @id
             tableMapping.ColumnMappings.Add("test_id", "test_id");
             tableMapping.ColumnMappings.Add("OPK_id", "OPK_id");
             tableMapping.ColumnMappings.Add("Type_id", "Type_id");
+            tableMapping.ColumnMappings.Add("points", "points");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[question] WHERE (([id] = @Original_id) AND ([test_id] = @Origi" +
                 "nal_test_id) AND ([OPK_id] = @Original_OPK_id) AND ([Type_id] = @Original_Type_i" +
-                "d))";
+                "d) AND ((@IsNull_points = 1 AND [points] IS NULL) OR ([points] = @Original_point" +
+                "s)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_test_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "test_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OPK_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPK_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_points", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "points", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_points", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "points", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[question] ([name], [description], [image], [test_id], [OPK_id], [Type_id]) VALUES (@name, @description, @image, @test_id, @OPK_id, @Type_id);
-SELECT id, name, description, image, test_id, OPK_id, Type_id FROM question WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[question] ([name], [description], [image], [test_id], [OPK_id], [Type_id], [points]) VALUES (@name, @description, @image, @test_id, @OPK_id, @Type_id, @points);
+SELECT id, name, description, image, test_id, OPK_id, Type_id, points FROM question WHERE (id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -9173,22 +9208,26 @@ SELECT id, name, description, image, test_id, OPK_id, Type_id FROM question WHER
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@test_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "test_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OPK_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPK_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@points", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "points", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[question] SET [name] = @name, [description] = @description, [image] = @image, [test_id] = @test_id, [OPK_id] = @OPK_id, [Type_id] = @Type_id WHERE (([id] = @Original_id) AND ([test_id] = @Original_test_id) AND ([OPK_id] = @Original_OPK_id) AND ([Type_id] = @Original_Type_id));
-SELECT id, name, description, image, test_id, OPK_id, Type_id FROM question WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE       question
+SET                name = @name, description = @description, image = @image, test_id = @test_id, OPK_id = @OPK_id, Type_id = @Type_id, points = @points
+WHERE        (id = @Original_id) AND (test_id = @Original_test_id) AND (OPK_id = @Original_OPK_id) AND (Type_id = @Original_Type_id) AND (@IsNull_points = 1) AND (points IS NULL) OR
+                         (id = @Original_id) AND (test_id = @Original_test_id) AND (OPK_id = @Original_OPK_id) AND (Type_id = @Original_Type_id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@image", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "image", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@test_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "test_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OPK_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPK_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_test_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "test_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OPK_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPK_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Type_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@image", global::System.Data.SqlDbType.Image, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "image", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@test_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "test_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OPK_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OPK_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Type_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@points", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 2, "points", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_test_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "test_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OPK_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OPK_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Type_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_points", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "points", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9204,26 +9243,24 @@ SELECT id, name, description, image, test_id, OPK_id, Type_id FROM question WHER
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, name, description, image, test_id, OPK_id, Type_id FROM dbo.question";
+            this._commandCollection[0].CommandText = "SELECT id, name, description, image, test_id, OPK_id, Type_id, points FROM dbo.qu" +
+                "estion";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        question.id, question.name, question.description, question.image, question.test_id, question.OPK_id, question.Type_id
-FROM            question INNER JOIN
-                         test ON question.test_id =
-                             (SELECT        MAX(id) AS Expr1
-                               FROM            test)";
+            this._commandCollection[1].CommandText = "SELECT question.OPK_id, question.Type_id, question.description, question.id, ques" +
+                "tion.image, question.name, question.points, question.test_id FROM question INNER" +
+                " JOIN test ON question.test_id = (SELECT MAX(id) AS Expr1 FROM test)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        id, name, description, image, test_id, OPK_id, Type_id\r\nFROM       " +
-                "     question\r\nWHERE        (id =\r\n                             (SELECT        I" +
-                "DENT_CURRENT(\'question\') AS Expr1))";
+            this._commandCollection[2].CommandText = "SELECT OPK_id, Type_id, description, id, image, name, points, test_id FROM questi" +
+                "on WHERE (id = (SELECT IDENT_CURRENT(\'question\') AS Expr1))";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        id, name, description, image, test_id, OPK_id, Type_id\r\nFROM       " +
-                "     question\r\nWHERE        (id = @id)";
+            this._commandCollection[3].CommandText = "SELECT OPK_id, Type_id, description, id, image, name, points, test_id FROM questi" +
+                "on WHERE (id = @id)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -9337,11 +9374,19 @@ FROM            question INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, int Original_test_id, int Original_OPK_id, int Original_Type_id) {
+        public virtual int Delete(int Original_id, int Original_test_id, int Original_OPK_id, int Original_Type_id, global::System.Nullable<decimal> Original_points) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_test_id));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_OPK_id));
             this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_Type_id));
+            if ((Original_points.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((decimal)(Original_points.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9362,7 +9407,7 @@ FROM            question INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string name, string description, byte[] image, int test_id, int OPK_id, int Type_id) {
+        public virtual int Insert(string name, string description, byte[] image, int test_id, int OPK_id, int Type_id, global::System.Nullable<decimal> points) {
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
             }
@@ -9384,6 +9429,12 @@ FROM            question INNER JOIN
             this.Adapter.InsertCommand.Parameters[3].Value = ((int)(test_id));
             this.Adapter.InsertCommand.Parameters[4].Value = ((int)(OPK_id));
             this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Type_id));
+            if ((points.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(points.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9404,7 +9455,7 @@ FROM            question INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string name, string description, byte[] image, int test_id, int OPK_id, int Type_id, int Original_id, int Original_test_id, int Original_OPK_id, int Original_Type_id, int id) {
+        public virtual int Update(string name, string description, byte[] image, int test_id, int OPK_id, int Type_id, global::System.Nullable<decimal> points, int Original_id, int Original_test_id, int Original_OPK_id, int Original_Type_id) {
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
             }
@@ -9426,11 +9477,16 @@ FROM            question INNER JOIN
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(test_id));
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(OPK_id));
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Type_id));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_id));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_test_id));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_OPK_id));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Type_id));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(id));
+            if ((points.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(points.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_id));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_test_id));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_OPK_id));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Type_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9445,14 +9501,6 @@ FROM            question INNER JOIN
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string name, string description, byte[] image, int test_id, int OPK_id, int Type_id, int Original_id, int Original_test_id, int Original_OPK_id, int Original_Type_id) {
-            return this.Update(name, description, image, test_id, OPK_id, Type_id, Original_id, Original_test_id, Original_OPK_id, Original_Type_id, Original_id);
         }
     }
     

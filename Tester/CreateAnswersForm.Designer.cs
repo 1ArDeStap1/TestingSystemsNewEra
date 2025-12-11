@@ -477,7 +477,6 @@
             // 
             // AnswerPoints
             // 
-            this.AnswerPoints.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.answerBindingSource, "points", true));
             this.AnswerPoints.Location = new System.Drawing.Point(728, 83);
             this.AnswerPoints.Name = "AnswerPoints";
             this.AnswerPoints.Size = new System.Drawing.Size(123, 20);
