@@ -69,7 +69,7 @@ namespace Tester
         {
             
             this.oPKTableAdapter.Fill(this.testerDataSet.OPK);
-            this.result_answerTableAdapter.Fill(this.testerDataSet.result_answer);
+            //this.result_answerTableAdapter.Fill(this.testerDataSet.result_answer);
             this.resultTableAdapter.Fill(this.testerDataSet.result);
             this.answerTableAdapter.Fill(this.testerDataSet.answer);
             this.questionTableAdapter1.Fill(this.testerDataSet.question);
@@ -126,6 +126,7 @@ namespace Tester
                     Convert.ToInt32(Grid.SelectedRows[0].Cells[0].Value),
                     Convert.ToInt32(dataGridView7.SelectedRows[0].Cells[0].Value),
                     Convert.ToInt32(dataGridView8.SelectedRows[0].Cells[0].Value),
+                    (decimal)0.0,
                     Convert.ToInt32(((Button)sender).Tag),
                     Convert.ToInt32(Grid.SelectedRows[0].Cells[0].Value),
                     Convert.ToInt32(dataGridView7.SelectedRows[0].Cells[0].Value),
@@ -160,11 +161,11 @@ namespace Tester
         {
             try
             {
-                answerTableAdapter.UpdateQuery(textBox5.Text, checkBox1.Checked,
-                    Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value),
-                    Convert.ToInt32(((Button)sender).Tag));
-                answerTableAdapter.Fill(testerDataSet.answer);
-                UpdatedMessage();
+                //answerTableAdapter.UpdateQuery(textBox5.Text, checkBox1.Checked,
+                //    Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value),
+                //    Convert.ToInt32(((Button)sender).Tag), );
+                //answerTableAdapter.Fill(testerDataSet.answer);
+                //UpdatedMessage();
             }
             catch (Exception ex)
             {
@@ -222,9 +223,9 @@ namespace Tester
             {
                 if (DeleteConfirm())
                 {
-                    answerTableAdapter.Delete((int)(dataGridView2.SelectedRows[0].Cells[0].Value));
-                    answerTableAdapter.Fill(testerDataSet.answer);
-                    DeletedMessage();
+                    //answerTableAdapter.Delete((int)(dataGridView2.SelectedRows[0].Cells[0].Value));
+                    //answerTableAdapter.Fill(testerDataSet.answer);
+                    //DeletedMessage();
                 }
             }
             catch (Exception ex)

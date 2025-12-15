@@ -16,12 +16,14 @@ using Tester.testerDataSetTableAdapters;
 
 using MaterialSkin;
 using MaterialSkin.Controls;
+using System.Data.SqlClient;
 
 namespace Tester
 {
     public partial class DoTestForm : MaterialForm
     {
         MatchingControl matchingControl = new MatchingControl();
+        string groupName = "";
         int questionTypeId = 0;
         int testId = 0;
         int userId = 0;
@@ -29,6 +31,8 @@ namespace Tester
         int result_id;
         int timeLimit = 0;
         bool hardEnd = false;
+
+
         public DoTestForm(int testId, int userId, int timeLimit = 0)
         {
             InitializeComponent();
@@ -44,6 +48,26 @@ namespace Tester
                 Primary.Blue700, Accent.LightBlue100,
                 TextShade.WHITE
             );
+
+            using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.testerConnectionString))
+            {
+                conn.Open();
+                string query = @"SELECT g.name AS group_name
+                                FROM [dbo].[users] u
+                                JOIN [dbo].[group] g ON u.group_id = g.id
+                                WHERE u.id = @UserId";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@UserId", userId);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            this.groupName = reader.GetString(0);
+                        }
+                    }
+                }
+            }
 
             this.testId = testId;
             this.userId = userId;
@@ -139,7 +163,7 @@ namespace Tester
                             question = new Bitmap(new MemoryStream((byte[])(dataGridView2.Rows[i].Cells[3].Value)));
                         }
 
-                        questions[i] = new Question((int)dataGridView2.Rows[i].Cells[0].Value, (string)dataGridView2.Rows[i].Cells[1].Value, question, tmpAnswers, tmpCAnswers, tmpCAnswersData, tmpOpk, description, false, (int)dataGridView2.Rows[i].Cells[6].Value);
+                        questions[i] = new Question((int)dataGridView2.Rows[i].Cells[0].Value, (string)dataGridView2.Rows[i].Cells[1].Value, question, tmpAnswers, tmpCAnswers, tmpCAnswersData, tmpOpk, description, false, (int)dataGridView2.Rows[i].Cells[6].Value, (double)dataGridView2.Rows[i].Cells[7].Value);
                     }
                 }
 
@@ -267,11 +291,13 @@ namespace Tester
             else if (questionTypeId == 3 || questionTypeId == 5)
             {
                 string[] UAnswers = matchingControl.DictToString(matchingControl.GetUserAnswers());
+                string CurrAnswer = "";
 
                 for (int i = 0; i < UAnswers.Length; i++) {
 
-                    currentAnswers.Add(matchingControl.correctAnswers[i], UAnswers[i]);
+                    CurrAnswer += UAnswers[i] + "\n";
                 }
+                currentAnswers.Add(((Tester.Answer)answersList.Items[0]).id, CurrAnswer);
                 test.answers = currentAnswers;
 
             }
@@ -295,7 +321,7 @@ namespace Tester
                         string constructorAnswers = "";
                         for (int i = 0; i < UAnswers.Length; i++)
                         {
-                            constructorAnswers += UAnswers[i] + "\r\n";
+                            constructorAnswers += UAnswers[i] + "\n";
                         }
                         
                         answerTableAdapter.Insert(constructorAnswers, false, test.questions[test.now - 1].id);
@@ -531,6 +557,7 @@ namespace Tester
                     tmpColumnNames.Add(column.ColumnName);
                 tmpColumnNames.Add("Ответ");
                 tmpColumnNames.Add("Правильный");
+                tmpColumnNames.Add("Кол-во баллов");
                 worksheetResult_QA.Cell(1, 1).InsertData(tmpColumnNames, true);
                 int x = 2;
                 int y = 1;
@@ -544,14 +571,14 @@ namespace Tester
                     DataRow[] dtrA = dtRA.Select("question_id = "+ Row[0].ToString());
                     foreach (DataRow AnswerRow in dtrA)
                     {
-                        worksheetResult_QA.Cell(x, y).InsertData(new string[] { AnswerRow[3].ToString(), (bool)AnswerRow[4]? "ДА": "НЕТ" }, true);
+                        worksheetResult_QA.Cell(x, y).InsertData(new string[] { AnswerRow[3].ToString(), (bool)AnswerRow[4]? "ДА": "НЕТ" , AnswerRow[6].ToString()}, true);
                         x++;
                     }
                     x++;
                     y = 1;
                     
                 }
-                workbook.SaveAs(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"/TestingResults/" + SaveFileName);
+                workbook.SaveAs(Properties.Settings.Default.SavingPathData + groupName + "/" + SaveFileName);
                 return SaveFileName;
             }
         }
@@ -585,6 +612,11 @@ namespace Tester
         }
 
         private void panelMatching_Click(object sender, EventArgs e)
+        {
+            nextQuestion.Enabled = true;
+        }
+
+        private void panelMatching_Paint(object sender, PaintEventArgs e)
         {
             nextQuestion.Enabled = true;
         }

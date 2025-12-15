@@ -33,6 +33,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MailForm));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.smtpServerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.smtpPortDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.smtpUsernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.smtpUserpasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.smtpSendFromDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.smtpSenderNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sendToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adminNetworkDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.testerDataSet = new Tester.testerDataSet();
             this.adminNetworkDataTableAdapter = new Tester.testerDataSetTableAdapters.adminNetworkDataTableAdapter();
@@ -52,14 +60,7 @@
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.customTextBox7 = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.smtpServerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.smtpPortDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.smtpUsernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.smtpUserpasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.smtpSendFromDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.smtpSenderNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sendToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminNetworkDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testerDataSet)).BeginInit();
@@ -114,6 +115,63 @@
             this.dataGridView1.ShowRowErrors = false;
             this.dataGridView1.Size = new System.Drawing.Size(845, 87);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // smtpServerDataGridViewTextBoxColumn
+            // 
+            this.smtpServerDataGridViewTextBoxColumn.DataPropertyName = "smtpServer";
+            this.smtpServerDataGridViewTextBoxColumn.HeaderText = "smtp сервер";
+            this.smtpServerDataGridViewTextBoxColumn.Name = "smtpServerDataGridViewTextBoxColumn";
+            this.smtpServerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // smtpPortDataGridViewTextBoxColumn
+            // 
+            this.smtpPortDataGridViewTextBoxColumn.DataPropertyName = "smtpPort";
+            this.smtpPortDataGridViewTextBoxColumn.HeaderText = "smtp порт";
+            this.smtpPortDataGridViewTextBoxColumn.Name = "smtpPortDataGridViewTextBoxColumn";
+            this.smtpPortDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // smtpUsernameDataGridViewTextBoxColumn
+            // 
+            this.smtpUsernameDataGridViewTextBoxColumn.DataPropertyName = "smtpUsername";
+            this.smtpUsernameDataGridViewTextBoxColumn.HeaderText = "smtp Пользователь";
+            this.smtpUsernameDataGridViewTextBoxColumn.Name = "smtpUsernameDataGridViewTextBoxColumn";
+            this.smtpUsernameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // smtpUserpasswordDataGridViewTextBoxColumn
+            // 
+            this.smtpUserpasswordDataGridViewTextBoxColumn.DataPropertyName = "smtpUserpassword";
+            this.smtpUserpasswordDataGridViewTextBoxColumn.HeaderText = "smtp Пароль";
+            this.smtpUserpasswordDataGridViewTextBoxColumn.Name = "smtpUserpasswordDataGridViewTextBoxColumn";
+            this.smtpUserpasswordDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // smtpSendFromDataGridViewTextBoxColumn
+            // 
+            this.smtpSendFromDataGridViewTextBoxColumn.DataPropertyName = "smtpSendFrom";
+            this.smtpSendFromDataGridViewTextBoxColumn.HeaderText = "smtp Отправитель";
+            this.smtpSendFromDataGridViewTextBoxColumn.Name = "smtpSendFromDataGridViewTextBoxColumn";
+            this.smtpSendFromDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // smtpSenderNameDataGridViewTextBoxColumn
+            // 
+            this.smtpSenderNameDataGridViewTextBoxColumn.DataPropertyName = "smtpSenderName";
+            this.smtpSenderNameDataGridViewTextBoxColumn.HeaderText = "smtp Имя отправителя";
+            this.smtpSenderNameDataGridViewTextBoxColumn.Name = "smtpSenderNameDataGridViewTextBoxColumn";
+            this.smtpSenderNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sendToDataGridViewTextBoxColumn
+            // 
+            this.sendToDataGridViewTextBoxColumn.DataPropertyName = "SendTo";
+            this.sendToDataGridViewTextBoxColumn.HeaderText = "Кому отправить";
+            this.sendToDataGridViewTextBoxColumn.Name = "sendToDataGridViewTextBoxColumn";
+            this.sendToDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // adminNetworkDataBindingSource
             // 
@@ -487,6 +545,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.materialButton2);
             this.materialCard1.Controls.Add(this.dataGridView1);
             this.materialCard1.Controls.Add(this.materialLabel7);
             this.materialCard1.Controls.Add(this.customTextBox1);
@@ -513,62 +572,27 @@
             this.materialCard1.Size = new System.Drawing.Size(911, 698);
             this.materialCard1.TabIndex = 35;
             // 
-            // idDataGridViewTextBoxColumn
+            // materialButton2
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // smtpServerDataGridViewTextBoxColumn
-            // 
-            this.smtpServerDataGridViewTextBoxColumn.DataPropertyName = "smtpServer";
-            this.smtpServerDataGridViewTextBoxColumn.HeaderText = "smtp сервер";
-            this.smtpServerDataGridViewTextBoxColumn.Name = "smtpServerDataGridViewTextBoxColumn";
-            this.smtpServerDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // smtpPortDataGridViewTextBoxColumn
-            // 
-            this.smtpPortDataGridViewTextBoxColumn.DataPropertyName = "smtpPort";
-            this.smtpPortDataGridViewTextBoxColumn.HeaderText = "smtp порт";
-            this.smtpPortDataGridViewTextBoxColumn.Name = "smtpPortDataGridViewTextBoxColumn";
-            this.smtpPortDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // smtpUsernameDataGridViewTextBoxColumn
-            // 
-            this.smtpUsernameDataGridViewTextBoxColumn.DataPropertyName = "smtpUsername";
-            this.smtpUsernameDataGridViewTextBoxColumn.HeaderText = "smtp Пользователь";
-            this.smtpUsernameDataGridViewTextBoxColumn.Name = "smtpUsernameDataGridViewTextBoxColumn";
-            this.smtpUsernameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // smtpUserpasswordDataGridViewTextBoxColumn
-            // 
-            this.smtpUserpasswordDataGridViewTextBoxColumn.DataPropertyName = "smtpUserpassword";
-            this.smtpUserpasswordDataGridViewTextBoxColumn.HeaderText = "smtp Пароль";
-            this.smtpUserpasswordDataGridViewTextBoxColumn.Name = "smtpUserpasswordDataGridViewTextBoxColumn";
-            this.smtpUserpasswordDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // smtpSendFromDataGridViewTextBoxColumn
-            // 
-            this.smtpSendFromDataGridViewTextBoxColumn.DataPropertyName = "smtpSendFrom";
-            this.smtpSendFromDataGridViewTextBoxColumn.HeaderText = "smtp Отправитель";
-            this.smtpSendFromDataGridViewTextBoxColumn.Name = "smtpSendFromDataGridViewTextBoxColumn";
-            this.smtpSendFromDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // smtpSenderNameDataGridViewTextBoxColumn
-            // 
-            this.smtpSenderNameDataGridViewTextBoxColumn.DataPropertyName = "smtpSenderName";
-            this.smtpSenderNameDataGridViewTextBoxColumn.HeaderText = "smtp Имя отправителя";
-            this.smtpSenderNameDataGridViewTextBoxColumn.Name = "smtpSenderNameDataGridViewTextBoxColumn";
-            this.smtpSenderNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sendToDataGridViewTextBoxColumn
-            // 
-            this.sendToDataGridViewTextBoxColumn.DataPropertyName = "SendTo";
-            this.sendToDataGridViewTextBoxColumn.HeaderText = "Кому отправить";
-            this.sendToDataGridViewTextBoxColumn.Name = "sendToDataGridViewTextBoxColumn";
-            this.sendToDataGridViewTextBoxColumn.ReadOnly = true;
+            this.materialButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.materialButton2.AutoSize = false;
+            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton2.Depth = 0;
+            this.materialButton2.HighEmphasis = true;
+            this.materialButton2.Icon = null;
+            this.materialButton2.Location = new System.Drawing.Point(30, 309);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton2.Name = "materialButton2";
+            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton2.Size = new System.Drawing.Size(262, 60);
+            this.materialButton2.TabIndex = 35;
+            this.materialButton2.Text = "Указать путь для сохранения результатов тестирования";
+            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton2.UseAccentColor = false;
+            this.materialButton2.UseVisualStyleBackColor = true;
+            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
             // 
             // MailForm
             // 
@@ -621,5 +645,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn smtpSendFromDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn smtpSenderNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sendToDataGridViewTextBoxColumn;
+        private MaterialSkin.Controls.MaterialButton materialButton2;
     }
 }

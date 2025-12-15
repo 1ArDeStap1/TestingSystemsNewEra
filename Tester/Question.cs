@@ -45,8 +45,9 @@ namespace Tester
         public int id;
         public int type_id;
         public Dictionary<int, string> textAnswer;
+        public double points;
 
-        public Question(int id,string cont, Bitmap image, Answer[] answers, int[] correct, Dictionary<int, string> correctText, OPK Opk, string description = "", bool mix = false, int type = 1)
+        public Question(int id,string cont, Bitmap image, Answer[] answers, int[] correct, Dictionary<int, string> correctText, OPK Opk, string description = "", bool mix = false, int type = 1, double points = 0)
         {
             this.id = id;
             this.cont = cont;
@@ -58,6 +59,7 @@ namespace Tester
             this.type_id = type;
             this.textAnswer = correctText;
             this.opk = Opk;
+            this.points = points;
         }
 
         private void mix()
@@ -139,22 +141,15 @@ namespace Tester
             }
             else if (answerType == 3 || answerType == 5)
             {
-                int CorrectsCurrentAnswers = 0;
-                int wrongAnswers = 0;
                 answered = right = true;
                 foreach (var tempAnswer in textAnswer)
                 {
                     try
                     {
-                        if (tempAnswer.Value == givedAnswers[tempAnswer.Key])
+                        if (tempAnswer.Value == givedAnswers[answers[0].id])
                         {
                             answersIds.Add(tempAnswer.Key);
-                            right = true;
-                            CorrectsCurrentAnswers++;
-                        }
-                        else
-                        {
-                            wrongAnswers++;
+                            return true;
                         }
                     } catch {
 
@@ -163,16 +158,8 @@ namespace Tester
                     
                     }
                 }
-                if (CorrectsCurrentAnswers == correct.Length && wrongAnswers == 0)
-                {
-                    right = true;
-                    return true;
-                }
-                else
-                {
-                    right = false;
-                    return false;
-                }
+                right = false;
+                return false;
 
             }
             else if (answerType == 4)
@@ -210,6 +197,7 @@ namespace Tester
         public List<int> answersIds = new List<int>();
         public int lastAnswersCount;
         public int now = -1;
+        public double curPoints = 0.0; 
         bool returned = false;
 
         public int Count

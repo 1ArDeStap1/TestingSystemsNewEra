@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.SqlClient;
@@ -17,6 +18,7 @@ namespace Tester
         private Dictionary<string, string> correctPairs = new Dictionary<string, string>();
         private Dictionary<string, ComboBox> userAnswers = new Dictionary<string, ComboBox>();
         public List<int> correctAnswers = new List<int>();
+        ToolTip toolTip = new ToolTip();
 
         public MatchingControl()
         {
@@ -71,8 +73,8 @@ namespace Tester
             userAnswers.Clear();
             this.Controls.Clear();
 
-            int padding = 10;
-            int columnWidth = this.Width / 2 - 2 * padding; // Делим ширину на два столбца
+            int padding = 20;
+            int columnWidth = (Width / 2) + 2 * padding; // Делим ширину на два столбца
             int y = padding;
 
             List<string> rightItems = new List<string>(pairs.Values);
@@ -86,13 +88,13 @@ namespace Tester
                 Label leftLabel = new Label
                 {
                     Text = pair.Key,
-                    Location = new System.Drawing.Point(padding, y),
+                    Location = new Point(padding, y),
                     Width = columnWidth,
                     AutoSize = false,
                     BorderStyle = BorderStyle.FixedSingle,
                     Padding = new Padding(5),
                     Font = new Font("Arial", 10),
-                    Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right
+                    Anchor = AnchorStyles.Left | AnchorStyles.Bottom
                 };
 
                 // Устанавливаем перенос текста
@@ -104,20 +106,37 @@ namespace Tester
                 toolTip.SetToolTip(leftLabel, pair.Key); // Показываем полный текст при наведении
 
                 // Комбобокс для правой колонки
-                ComboBox comboBox = new ComboBox
+                MaterialComboBox comboBox = new MaterialComboBox
                 {
-                    Location = new System.Drawing.Point(columnWidth + 2 * padding, y),
+                    Location = new Point(columnWidth + 2 * padding, y),
                     Width = columnWidth,
-                    DropDownStyle = ComboBoxStyle.DropDownList,
+                    DropDownStyle = ComboBoxStyle.DropDown,
                     IntegralHeight = false,
-                    MaxDropDownItems = 10,
+                    FlatStyle = FlatStyle.Flat,
+                    DrawMode = DrawMode.OwnerDrawVariable,
+                    MaxDropDownItems = 20,
                     Font = new Font("Arial", 10),
-                    Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right
+                    Anchor = AnchorStyles.Bottom | AnchorStyles.Right,
+                    AutoResize = false,
+                    AutoCompleteSource = AutoCompleteSource.ListItems,
+                    AutoCompleteMode = AutoCompleteMode.SuggestAppend,  
+                    FormattingEnabled = true,
+
                 };
 
+                comboBox.DrawItem += comboBoxRabot_DrawItem;
+                comboBox.MeasureItem += comboBoxRabot_MeasureItem;
+
+                //DataTable rabot = new DataTable();
+                //NpgsqlDataAdapter adap = new NpgsqlDataAdapter("SELECT  right_text FROM matching_pairs WHERE question_id = @questionId", conn);
+                //adap.Fill(rabot);
+
                 // Добавляем длинные элементы в ComboBox с переносом строк
+
                 foreach (string item in rightItems)
                 {
+                    //for (int i = 50; i < item.Length; i += 50)
+                    //    item.Insert(i, "\r\n");
                     comboBox.Items.Add(item);
                 }
 
@@ -126,14 +145,14 @@ namespace Tester
                 // Вычисляем высоту с учетом многострочного текста
                 int calculatedHeight = GetMultilineHeight(pair.Key, leftLabel.Font, columnWidth) + 10;
                 leftLabel.Height = calculatedHeight;
-                comboBox.Height = calculatedHeight;
+
 
                 this.Controls.Add(leftLabel);
                 this.Controls.Add(comboBox);
 
                 userAnswers[pair.Key] = comboBox;
 
-                y += calculatedHeight + padding; // Двигаем вниз с учетом высоты
+                y += calculatedHeight + padding + 20; // Двигаем вниз с учетом высоты
             }
         }
 
@@ -149,18 +168,36 @@ namespace Tester
         /// <summary>
         /// Функция для добавления переноса строки в длинные тексты
         /// </summary>
-        private string WrapText(string text, int maxLength)
+        private void comboBoxRabot_MeasureItem(object sender, MeasureItemEventArgs e)
         {
-            if (text.Length <= maxLength) return text;
-
-            StringBuilder wrappedText = new StringBuilder();
-            for (int i = 0; i < text.Length; i += maxLength)
-            {
-                wrappedText.Append(text.Substring(i, Math.Min(maxLength, text.Length - i)) + Environment.NewLine);
-            }
-            return wrappedText.ToString();
+            var lbox = (ComboBox)sender;
+            //var text = lbox.Items[e.Index].ToString();
+            var text = lbox.Items[e.Index].ToString();
+            var width = lbox.ClientSize.Width;
+            var size = e.Graphics.MeasureString(text, lbox.Font, width);
+            e.ItemHeight = (int)size.Height;
         }
 
+        private void comboBoxRabot_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            var lbox = (MaterialComboBox)sender;
+            int n = 0;
+            foreach (var element in lbox.Items)
+            {
+                
+
+                if (element.ToString().Length > n) 
+                    n = element.ToString().Length;
+                element.GetType();
+            }
+            lbox.Hint = lbox.SelectedText;
+            lbox.Width = n*10;
+            if (lbox.SelectedItem != null)
+            {
+                toolTip.SetToolTip(lbox, lbox.SelectedItem.ToString());
+            }
+
+        }
         /// <summary>
         /// Проверяет, правильно ли выбраны соответствия
         /// </summary>
@@ -193,7 +230,7 @@ namespace Tester
             int i = 0;
             foreach (var pair in dict)
             {
-                returnedArray[i] = pair.Key + " - " + pair.Value;
+                returnedArray[i] = pair.Key + " - " + pair.Value/*.Replace("\n\r", "")*/;
                 i++;
             }
             return returnedArray;
@@ -206,17 +243,17 @@ namespace Tester
             InitializeComponent();
         }
 
-        private void MatchingControl_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
         private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
+
+        private void MatchingControl_Load(object sender, EventArgs e)
         {
 
         }

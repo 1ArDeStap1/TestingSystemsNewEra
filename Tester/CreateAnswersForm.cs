@@ -241,14 +241,14 @@ namespace Tester
                         // и вы хотите обновить ответ по ID, который хранится в выбранной строке DataGridView.
                         newAnswerText = textBox10.Text;
                         answerId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
-                        answerTableAdapter.UpdateQuery(newAnswerText, isCorrect, qurrQuestId, answerId);
+                        answerTableAdapter.UpdateQuery(newAnswerText, isCorrect, qurrQuestId, answerId, Convert.ToDouble(AnswerPoints.Value));
                         answerTableAdapter.Fill(testerDataSet.answer); // обновляем данные в DataSet
                         break;
                     case 2:
                         isCorrect = true;
                         newAnswerText = textBox1.Text;
                         answerId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
-                        answerTableAdapter.UpdateQuery(newAnswerText, isCorrect, qurrQuestId, answerId);
+                        answerTableAdapter.UpdateQuery(newAnswerText, isCorrect, qurrQuestId, answerId, Convert.ToDouble(AnswerPoints.Value));
                         answerTableAdapter.Fill(testerDataSet.answer); // обновляем данные в DataSet
                         Close();
                         break;
@@ -260,7 +260,7 @@ namespace Tester
                         // и вы хотите обновить ответ по ID, который хранится в выбранной строке DataGridView.
                         newAnswerText = textBox10.Text;
                         answerId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
-                        answerTableAdapter.UpdateQuery(newAnswerText, isCorrect, qurrQuestId, answerId);
+                        answerTableAdapter.UpdateQuery(newAnswerText, isCorrect, qurrQuestId, answerId, Convert.ToDouble(AnswerPoints.Value));
                         answerTableAdapter.Fill(testerDataSet.answer); // обновляем данные в DataSet
                         break;
                     case 5:
@@ -309,15 +309,21 @@ namespace Tester
         {
             if (qType == 3 || qType == 5)
             {
+                string corrString = "";
                 for (int i = 0; i < MatchingPairsTable.Rows.Count; i++)
                 {
                     if (MatchingPairsTable.Rows[i].Cells[4].Value.ToString() == "")
                     {
-                        string corrString = MatchingPairsTable.Rows[i].Cells[2].Value.ToString() + " - " + MatchingPairsTable.Rows[i].Cells[3].Value.ToString();
-                        AddRightMatchindAnswers(corrString);
+                        corrString += MatchingPairsTable.Rows[i].Cells[2].Value.ToString() + " - " + MatchingPairsTable.Rows[i].Cells[3].Value.ToString() + "\n";
                     }
                 }
+                AddRightMatchindAnswers(corrString);
             }
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
