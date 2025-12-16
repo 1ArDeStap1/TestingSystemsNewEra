@@ -246,7 +246,7 @@ namespace Tester
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
-            questionTableAdapter.Update(textBox8.Text, textBox9.Text, imageToByteArray(pictureBox2.Image), adminForm.testTableAdapter.GetData()[LastTest].id, Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value), (decimal)NumberPoints.Value, (int)Grid.SelectedRows[0].Cells[0].Value, selectedtest, (int)Grid.SelectedRows[0].Cells[2].Value, Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value));
+            questionTableAdapter.Update(textBox8.Text, textBox9.Text, imageToByteArray(pictureBox2.Image), adminForm.testTableAdapter.GetData()[LastTest].id, Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value), Convert.ToInt32(dataGridView2.SelectedRows[0].Cells[0].Value), (decimal)NumberPoints.Value, (int)Grid.SelectedRows[0].Cells[0].Value, selectedtest, (int)Grid.SelectedRows[0].Cells[4].Value, Convert.ToInt32(Grid.SelectedRows[0].Cells[1].Value));
             QuestionType = (int)dataGridView2.SelectedRows[0].Cells[0].Value;
             qurrentQuestiion = Convert.ToInt32(Grid.SelectedRows[0].Cells[0].Value);
             questionTableAdapter.Fill(this.testerDataSet1.question);

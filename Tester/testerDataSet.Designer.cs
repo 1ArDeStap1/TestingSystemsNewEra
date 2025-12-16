@@ -9187,7 +9187,7 @@ SELECT id, name, description, image, test_id, OPK_id, Type_id, points FROM quest
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE       question
 SET                name = @name, description = @description, image = @image, test_id = @test_id, OPK_id = @OPK_id, Type_id = @Type_id, points = @points
-WHERE        (id = @Original_id) AND (test_id = @Original_test_id) AND (OPK_id = @Original_OPK_id) AND (Type_id = @Original_Type_id) AND (@IsNull_points = 1) AND (points IS NULL) OR
+WHERE        (id = @Original_id) AND (test_id = @Original_test_id) AND (OPK_id = @Original_OPK_id) AND (Type_id = @Original_Type_id) OR
                          (id = @Original_id) AND (test_id = @Original_test_id) AND (OPK_id = @Original_OPK_id) AND (Type_id = @Original_Type_id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -9201,7 +9201,6 @@ WHERE        (id = @Original_id) AND (test_id = @Original_test_id) AND (OPK_id =
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_test_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "test_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OPK_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OPK_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Type_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Type_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_points", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "points", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
