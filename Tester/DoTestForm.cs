@@ -339,7 +339,7 @@ namespace Tester
                 timer.Stop();
                 q--;
                 test.nextQuestion();
-                double mark = Math.Floor((Convert.ToDouble(test.rightsCount) / Convert.ToDouble(test.Count)) * 100.0);
+                double mark = Math.Floor((Convert.ToDouble(test.rightsCount) / Convert.ToDouble(test.maxPoints)) * 100.0);
                 
                 if (!trening)
                 {
@@ -401,11 +401,6 @@ namespace Tester
                     string FileResult = ExportToExcel();
                     string exportedFile = Properties.Settings.Default.SavingPathData + groupName + "/" + FileResult;
 
-                    using (SummaryResultForm SumRes = new SummaryResultForm(result_id, mark))
-                    {
-                        SumRes.ShowDialog();
-                    }
-
                     this.adminNetworkDataTableAdapter1.Fill(testerDataSet.adminNetworkData);
                     DataRow dataForSend = testerDataSet.adminNetworkData.Select("Id = 1")[0];
                     string testName = testerDataSet.test.Select("id = " + testId.ToString())[0]["name"].ToString();
@@ -416,6 +411,10 @@ namespace Tester
                         StreamReader fileReader = new StreamReader(@"SendTemplate.html");
                         string template = fileReader.ReadToEnd();
                         SendMail.SendMail(dataForSend["smtpServer"].ToString(), dataForSend["smtpPort"].ToString(), dataForSend["smtpUsername"].ToString(), dataForSend["smtpUserpassword"].ToString(), dataForSend["smtpSendFrom"].ToString(), dataForSend["smtpSenderName"].ToString(), fi[0] + " " + fi[1] + " Прошёл тест " + testName, template, dataForSend["SendTo"].ToString(), true, exportedFile);
+                    }
+                    using (SummaryResultForm SumRes = new SummaryResultForm(result_id, mark))
+                    {
+                        SumRes.ShowDialog();
                     }
                 } else
                 {

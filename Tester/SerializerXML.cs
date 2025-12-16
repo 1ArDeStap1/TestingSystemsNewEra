@@ -94,10 +94,11 @@ namespace Tester
                                 {
                                     try
                                     {
-                                        //if (dr.ColumnName == "points") {
-                                        //    dtr[dr.ColumnName] = 1.0;
-                                        //    continue;
-                                        //}
+                                        if (dr.ColumnName == "points")
+                                        {
+                                            dtr[dr.ColumnName] = 1.0;
+                                            continue;
+                                        }
                                         reader.ReadToFollowing(dr.ColumnName);
                                         if (dr.ColumnName == "image")
                                         {
