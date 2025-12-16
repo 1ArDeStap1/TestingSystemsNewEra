@@ -252,19 +252,31 @@ namespace Tester
             mix();
         }
 
-        public int rightsCount
+        public double rightsCount
         {
             get
             {
-                int r = 0;
+                double r = 0;
                 for (int i = 0; i < questions.Length; i++)
                     if (questions[i].answered)
                     {
                         if (questions[i].right)
-                            r++;
+                            r+= questions[i].points;
                     }
                     else break;
                 return r;
+            }
+        }
+
+        public double maxPoints
+        {
+            get {
+
+                double r = 0;
+                for (int i = 0; i < questions.Length; i++)
+                    r += questions[i].points;
+                return r;
+
             }
         }
 

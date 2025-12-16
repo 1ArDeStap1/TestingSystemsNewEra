@@ -163,7 +163,7 @@ namespace Tester
                             question = new Bitmap(new MemoryStream((byte[])(dataGridView2.Rows[i].Cells[3].Value)));
                         }
 
-                        questions[i] = new Question((int)dataGridView2.Rows[i].Cells[0].Value, (string)dataGridView2.Rows[i].Cells[1].Value, question, tmpAnswers, tmpCAnswers, tmpCAnswersData, tmpOpk, description, false, (int)dataGridView2.Rows[i].Cells[6].Value, (double)dataGridView2.Rows[i].Cells[7].Value);
+                        questions[i] = new Question((int)dataGridView2.Rows[i].Cells[0].Value, (string)dataGridView2.Rows[i].Cells[1].Value, question, tmpAnswers, tmpCAnswers, tmpCAnswersData, tmpOpk, description, false, (int)dataGridView2.Rows[i].Cells[6].Value, Convert.ToDouble(dataGridView2.Rows[i].Cells[7].Value));
                     }
                 }
 
@@ -399,6 +399,7 @@ namespace Tester
                     result_answerTableAdapter.Fill(testerDataSet.result_answer);
                     this.result_id = inserted;
                     string FileResult = ExportToExcel();
+                    string exportedFile = Properties.Settings.Default.SavingPathData + groupName + "/" + FileResult;
 
                     using (SummaryResultForm SumRes = new SummaryResultForm(result_id, mark))
                     {
@@ -414,7 +415,7 @@ namespace Tester
                         string[] fi = FileResult.Split(new[] { "_" }, StringSplitOptions.None);
                         StreamReader fileReader = new StreamReader(@"SendTemplate.html");
                         string template = fileReader.ReadToEnd();
-                        SendMail.SendMail(dataForSend["smtpServer"].ToString(), dataForSend["smtpPort"].ToString(), dataForSend["smtpUsername"].ToString(), dataForSend["smtpUserpassword"].ToString(), dataForSend["smtpSendFrom"].ToString(), dataForSend["smtpSenderName"].ToString(), fi[0] + " " + fi[1] + " Прошёл тест " + testName, template, dataForSend["SendTo"].ToString(), true, FileResult);
+                        SendMail.SendMail(dataForSend["smtpServer"].ToString(), dataForSend["smtpPort"].ToString(), dataForSend["smtpUsername"].ToString(), dataForSend["smtpUserpassword"].ToString(), dataForSend["smtpSendFrom"].ToString(), dataForSend["smtpSenderName"].ToString(), fi[0] + " " + fi[1] + " Прошёл тест " + testName, template, dataForSend["SendTo"].ToString(), true, exportedFile);
                     }
                 } else
                 {
@@ -551,10 +552,13 @@ namespace Tester
                 dtr = testerDataSet.question.Select("test_id = " + testId);
                 dt = dtr.CopyToDataTable();
                 dt = DtColumnsRemove(dt, new string[] { "id", "image", "test_id" });
-                dt = DtColumnsRename(dt, new string[] { "Название", "Описание", "Идентификатор компетенции", "Идентификатор типа" });
+                dt = DtColumnsRename(dt, new string[] { "Название", "Описание", "компетенция", "Тип вопроса" });
                 List<string> tmpColumnNames = new List<string>();
                 foreach (DataColumn column in dt.Columns)
-                    tmpColumnNames.Add(column.ColumnName);
+                {
+                    if (column.ColumnName != "points")
+                        tmpColumnNames.Add(column.ColumnName);
+                }
                 tmpColumnNames.Add("Ответ");
                 tmpColumnNames.Add("Правильный");
                 tmpColumnNames.Add("Кол-во баллов");
@@ -562,6 +566,7 @@ namespace Tester
                 int x = 2;
                 int y = 1;
                 DataTable dtRA = testerDataSet.result_answer.Select("result_id = "+result_id.ToString()).CopyToDataTable();
+                int n = 0;
                 foreach (DataRow Row in dtr)
                 {
                     DataRow opkTextRow = testerDataSet.OPK.Select("Id = " + Row[5])[0];
@@ -569,13 +574,22 @@ namespace Tester
                     worksheetResult_QA.Cell(x, y).InsertData(new string[] { Row[1].ToString(), Row[2].ToString(), opkTextRow[1].ToString(), TypeTextRow[1].ToString()  }, true);
                     y += 4;
                     DataRow[] dtrA = dtRA.Select("question_id = "+ Row[0].ToString());
+                    double pts = 0;
+                    if (test.questions[n].right)
+                        pts = test.questions[n].points;
+                    int k = 0;
                     foreach (DataRow AnswerRow in dtrA)
                     {
-                        worksheetResult_QA.Cell(x, y).InsertData(new string[] { AnswerRow[3].ToString(), (bool)AnswerRow[4]? "ДА": "НЕТ" , AnswerRow[6].ToString()}, true);
+                        if (k == 0)
+                            worksheetResult_QA.Cell(x, y).InsertData(new string[] { AnswerRow[3].ToString(), (bool)AnswerRow[4] ? "ДА" : "НЕТ", pts.ToString() }, true);
+                        else
+                            worksheetResult_QA.Cell(x, y).InsertData(new string[] { AnswerRow[3].ToString(), (bool)AnswerRow[4] ? "ДА" : "НЕТ"}, true);
                         x++;
+                        k++;
                     }
                     x++;
                     y = 1;
+                    n++;
                     
                 }
                 workbook.SaveAs(Properties.Settings.Default.SavingPathData + groupName + "/" + SaveFileName);

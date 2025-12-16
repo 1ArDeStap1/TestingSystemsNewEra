@@ -1488,8 +1488,6 @@ namespace Tester {
             
             private global::System.Data.DataColumn columnquestion_id;
             
-            private global::System.Data.DataColumn columnpoints;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public result_answerDataTable() {
@@ -1573,14 +1571,6 @@ namespace Tester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn pointsColumn {
-                get {
-                    return this.columnpoints;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1616,7 +1606,7 @@ namespace Tester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public result_answerRow Addresult_answerRow(resultRow parentresultRowByFK_result_variant_result, answerRow parentanswerRowByFK_result_variant_answer, string description, bool correct, questionRow parentquestionRowByFK_answer_question1, double points) {
+            public result_answerRow Addresult_answerRow(resultRow parentresultRowByFK_result_variant_result, answerRow parentanswerRowByFK_result_variant_answer, string description, bool correct, questionRow parentquestionRowByFK_answer_question1) {
                 result_answerRow rowresult_answerRow = ((result_answerRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1624,8 +1614,7 @@ namespace Tester {
                         null,
                         description,
                         correct,
-                        null,
-                        points};
+                        null};
                 if ((parentresultRowByFK_result_variant_result != null)) {
                     columnValuesArray[1] = parentresultRowByFK_result_variant_result[0];
                 }
@@ -1670,7 +1659,6 @@ namespace Tester {
                 this.columndescription = base.Columns["description"];
                 this.columncorrect = base.Columns["correct"];
                 this.columnquestion_id = base.Columns["question_id"];
-                this.columnpoints = base.Columns["points"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1688,8 +1676,6 @@ namespace Tester {
                 base.Columns.Add(this.columncorrect);
                 this.columnquestion_id = new global::System.Data.DataColumn("question_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnquestion_id);
-                this.columnpoints = new global::System.Data.DataColumn("points", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpoints);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -1703,7 +1689,6 @@ namespace Tester {
                 this.columndescription.MaxLength = 2147483647;
                 this.columncorrect.AllowDBNull = false;
                 this.columnquestion_id.AllowDBNull = false;
-                this.columnpoints.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5213,17 +5198,6 @@ namespace Tester {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public double points {
-                get {
-                    return ((double)(this[this.tableresult_answer.pointsColumn]));
-                }
-                set {
-                    this[this.tableresult_answer.pointsColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public resultRow resultRow {
                 get {
                     return ((resultRow)(this.GetParentRow(this.Table.ParentRelations["FK_result_variant_result"])));
@@ -7533,7 +7507,6 @@ FROM            result INNER JOIN
             tableMapping.ColumnMappings.Add("description", "description");
             tableMapping.ColumnMappings.Add("correct", "correct");
             tableMapping.ColumnMappings.Add("question_id", "question_id");
-            tableMapping.ColumnMappings.Add("points", "points");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -7550,9 +7523,10 @@ FROM            result INNER JOIN
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        result_answer.id, result_answer.result_id, result_answer.answer_id, answer.description, answer.correct, answer.question_id, answer.points
-FROM            result_answer INNER JOIN
-                         answer ON result_answer.answer_id = answer.id";
+            this._commandCollection[0].CommandText = "SELECT        result_answer.id, result_answer.result_id, result_answer.answer_id," +
+                " answer.description, answer.correct, answer.question_id\r\nFROM            result_" +
+                "answer INNER JOIN\r\n                         answer ON result_answer.answer_id = " +
+                "answer.id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
